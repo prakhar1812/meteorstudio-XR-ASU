@@ -4,10 +4,10 @@ var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var methodOverride = require('method-override');
 var hostname = process.env.HOSTNAME || 'localhost';
-var port = 8080;
+var port = 1234;
 var MS = require("mongoskin");
 
-var db = MS.db("mongodb://127.0.0.1:27017/rssParser")
+var db = MS.db("mongodb://127.0.0.1:27017/test")
 /*
 db.collection("data").remove({}, function(err, result){
   if(!err){
@@ -30,27 +30,20 @@ db.collection("data").find().toArray(function(err, result){
 var Client = require('node-rest-client').Client;
 
 app.get("/", function (req, res) {
-    db.collection("data").find().toArray(function(err, result){
-    res.send(JSON.stringify(result)); // send response body
-  });
+      res.redirect("/index.html");
 });
 
-ap.get("/search", function(req, res) {
-    var search = req.query.search;
-    db.collection("data").find(search).toArray(function(err, result){
-    res.send(JSON.stringify(result)); // send response body
-  });
-});
-
-// var allFeeds = [];
+var allFeeds = [];
 
 // app.get("/addfeed", function (req, res) {
 //     var url = req.query.a;
+//     var uID = req.query.userID;
 //     var x = {
 //       id:new Date().getTime(),
+//       userID: uID,
 //       url: url
 //     }
-
+//
 //   db.collection("data").insert(x, function(err, result){
 //     if(!err){
 //       res.end("1");
@@ -58,24 +51,28 @@ ap.get("/search", function(req, res) {
 //   });
 // });
 
-//  app.get("/deleteFeed", function(req,res){
-//     var id = parseInt(req.query.a);
+//
+// app.get("/deletefeed", function (req, res) {
+//     var id = parseInt(req.query.id);
+//     var uID = req.query.userID;
 //     var x = {
-//       id: id
+//       id:id,
+//       userID: uID
 //     }
-
+//
 //   db.collection("data").remove(x, function(err, result){
 //     if(!err){
 //       res.end("1");
 //     }
 //   });
-//  });
-
-// app.get("/getallfeeds", function (req, res) {
-//   db.collection("data").find().toArray(function(err, result){
-//       res.send(JSON.stringify(result)); // send response body
-//   });
 // });
+
+app.get("/getallfeeds", function (req, res) {
+    //var uID = req.query.userID;
+  db.collection("mst").find().toArray(function(err, result){
+      res.send(JSON.stringify(result)); // send response body
+  });
+});
 
 // app.get("/getrss", function (req, res) {
 //     var url = req.query.a;
