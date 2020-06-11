@@ -40,6 +40,7 @@
       //var uID = location.hash.replace("#","");
       loadFile("./getallfeeds", function(data){
         allFeeds = JSON.parse(data);
+        allFeeds = data;
         var markup = "";
         for(var i = 0; i < allFeeds.length; i++){
           markup = markup + allFeeds[i]+ "<br>";
