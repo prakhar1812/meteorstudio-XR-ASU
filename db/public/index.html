@@ -42,7 +42,7 @@
         allFeeds = JSON.parse(data);
         var markup = "";
         for(var i = 0; i < allFeeds.length; i++){
-          markup = markup + allFeeds[i].url + "<br>";
+          markup = markup + allFeeds[i]+ "<br>";
         }
         document.getElementById("feed").innerHTML = markup;
       })
