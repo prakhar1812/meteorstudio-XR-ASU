@@ -123,10 +123,14 @@ right: 0;
 #a_li ul li {
 
 }
-#asu_home_submenu{
+#menu_submenu{
 	display: none;
 }
 
-#asu_home:hover #asu_home_submenu{
+#main_menu_items{
+	float: left;
+}
+
+#main_menu_items:hover #menu_submenu{
 	display: block;
 }
