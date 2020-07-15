@@ -1,0 +1,247 @@
+<html>
+<head>
+	<title>MapRoom Data Manager</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+
+	<style>
+		td {
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+
+	<script src="asyncReq.js"></script>
+</head>
+
+<body> 
+
+	<button onclick="manageData()">Manage data</button>	
+
+
+	<!-- form for uploading new dataset -->
+	<form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">
+		<label for="datasetname">Dataset Name:</label>
+		<input type="text" id="datasetname" name="datasetname" required>
+		<br>
+		<label for="csvfile">Your file:</label>
+	    <input type="file" id="csvfile" name="csvfile">
+	    <br>
+		<label for="colorScheme">Color Scheme:</label>
+	    <select name="colorScheme" id="colorSchemeDropdown">
+	    	<option value="0" selected>Scheme 1</option>
+	    	<option value="1">Scheme 2</option>
+	    	<!-- <option value="2">Scheme 3</option>
+	    	<option value="3">Custom</option> -->
+	    </select>
+	    <br>
+	    <table>
+	      <tr id="colorsRow">
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	        <td></td>
+	      </tr>
+	    </table>
+		<div id="colorFields" style="display: none;">
+		    <input type="number" id="color0_r" name="color0_r" required>
+		    <input type="number" id="color0_g" name="color0_g" required>
+		    <input type="number" id="color0_b" name="color0_b" required>
+
+		    <input type="number" id="color1_r" name="color1_r" required>
+		    <input type="number" id="color1_g" name="color1_g" required>
+		    <input type="number" id="color1_b" name="color1_b" required>
+
+		    <input type="number" id="color2_r" name="color2_r" required>
+		    <input type="number" id="color2_g" name="color2_g" required>
+		    <input type="number" id="color2_b" name="color2_b" required>
+
+		    <input type="number" id="color3_r" name="color3_r" required>
+		    <input type="number" id="color3_g" name="color3_g" required>
+		    <input type="number" id="color3_b" name="color3_b" required>
+
+		    <input type="number" id="color4_r" name="color4_r" required>
+		    <input type="number" id="color4_g" name="color4_g" required>
+		    <input type="number" id="color4_b" name="color4_b" required>
+
+		    <input type="number" id="color5_r" name="color5_r" required>
+		    <input type="number" id="color5_g" name="color5_g" required>
+		    <input type="number" id="color5_b" name="color5_b" required>
+
+		    <input type="number" id="color6_r" name="color6_r" required>
+		    <input type="number" id="color6_g" name="color6_g" required>
+		    <input type="number" id="color6_b" name="color6_b" required>
+
+		    <input type="number" id="color7_r" name="color7_r" required>
+		    <input type="number" id="color7_g" name="color7_g" required>
+		    <input type="number" id="color7_b" name="color7_b" required>
+
+		    <input type="number" id="color8_r" name="color8_r" required>
+		    <input type="number" id="color8_g" name="color8_g" required>
+		    <input type="number" id="color8_b" name="color8_b" required>
+
+		    <input type="number" id="color9_r" name="color9_r" required>
+		    <input type="number" id="color9_g" name="color9_g" required>
+		    <input type="number" id="color9_b" name="color9_b" required>
+		</div>
+
+
+	    <br>
+	    <input type="submit" value="Submit" name="submit" id="uploadButton">
+	</form>
+
+
+	<table id="dataList"></table>
+
+
+	<script>
+	   	var colors_0 = [
+			{r: 18, g: 0, b: 66, a: 1}, //dark purple
+			{r: 84, g: 40, b: 201, a: 1}, //medium purple
+			{r: 190, g: 165, b: 255, a: 1}, //light purple
+			{r: 7, g: 46, b: 76, a: 1},//dark blue
+			{r: 0, g: 170, b: 255, a: 1}, //light blue
+			{r: 0, g: 196, b: 101, a: 1}, //spotify green
+			{r: 15, g: 71, b: 34, a: 1}, //darkish green
+			{r: 113, g: 204, b: 16 , a: 1}, //lime green
+			{r: 242, g: 239, b: 65, a: 1}, //yellow
+			{r: 255, g: 177, b: 68, a: 1} //orange
+	   	];
+
+	   	var colors_1 = [
+		   	{r: 108, g: 0, b: 12, a: 1}, //dark purple
+            {r: 254, g: 38, b:31, a: 1}, //medium purple
+            {r: 255, g: 178, b:206, a: 1}, //light purple
+            {r: 143, g: 215, b:225, a: 1},//dark blue
+            {r: 255, g: 198, b:10, a: 1}, //light blue
+            {r: 129, g: 45, b:198, a: 1}, //spotify green
+            {r: 188, g: 161, b:221, a: 1}, //darkish green
+            {r: 62, g:  23, b:206, a: 1}, //lime green
+            {r: 68, g: 19, b:48, a: 1}, //yellow
+            {r: 224, g: 66, b:31, a: 1} //orange
+	   	];
+
+		window.onload = function(e){ 
+			// set default color scheme to option
+		    var dropdown = document.getElementById("colorSchemeDropdown");
+		    dropdown.value = 0;
+	    	$('#colorsRow').children('td').each(function (index, i) { 
+	    		$(this).css("background-color", "rgb(" + colors_0[index].r + "," + colors_0[index].g + "," + colors_0[index].b + ")");
+	    	});
+
+    		for (var i = 0; i < colors_0.length; i++) {
+	    		document.getElementById('color' + i + '_r').value = colors_0[i].r;
+	    		document.getElementById('color' + i + '_g').value = colors_0[i].g;
+	    		document.getElementById('color' + i + '_b').value = colors_0[i].b;
+	    	}
+		}
+		
+
+		$(document).ready(function(){
+			// $('#uploadButton').click(function(){
+			// 	$.post('./upload');
+   //        	});
+
+
+
+
+
+
+			$('#colorSchemeDropdown').change(function(){
+			   	var dropdown = document.getElementById("colorSchemeDropdown");
+			    if (dropdown.options[dropdown.selectedIndex].value == 0) {
+			    	$('#colorsRow').children('td').each(function (index, i) { 
+			    		$(this).css("background-color", "rgb(" + colors_0[index].r + "," + colors_0[index].g + "," + colors_0[index].b + ")");
+			    	});
+
+		    		for (var i = 0; i < colors_0.length; i++) {
+			    		document.getElementById('color' + i + '_r').value = colors_0[i].r;
+			    		document.getElementById('color' + i + '_g').value = colors_0[i].g;
+			    		document.getElementById('color' + i + '_b').value = colors_0[i].b;
+			    	}
+			    }  
+			    else if (dropdown.options[dropdown.selectedIndex].value == 1) {
+			    	$('#colorsRow').children('td').each(function (index, i) { 
+			    		$(this).css("background-color", "rgb(" + colors_1[index].r + "," + colors_1[index].g + "," + colors_1[index].b + ")");
+			    	});
+
+    	    		for (var i = 0; i < colors_1.length; i++) {
+    		    		document.getElementById('color' + i + '_r').value = colors_1[i].r;
+    		    		document.getElementById('color' + i + '_g').value = colors_1[i].g;
+    		    		document.getElementById('color' + i + '_b').value = colors_1[i].b;
+    		    	}
+   				}  
+			    else if (dropdown.options[dropdown.selectedIndex].value == 2) {
+			    	$('#colorsRow').children('td').each(function (index, i) { 
+			    		$(this).css("background-color", "rgb(" + colors_2[index].r + "," + colors_2[index].g + "," + colors_2[index].b + ")");
+			    	});
+
+    	    		for (var i = 0; i < colors_2.length; i++) {
+    		    		document.getElementById('color' + i + '_r').value = colors_2[i].r;
+    		    		document.getElementById('color' + i + '_g').value = colors_2[i].g;
+    		    		document.getElementById('color' + i + '_b').value = colors_2[i].b;
+    		    	}
+			    }  
+
+			});
+
+		})
+
+
+		function manageData() {
+			loadFile("./manageData", function(result){
+				// show a table of the user's datasets
+				var data = JSON.parse(result);
+				var table = document.getElementById('dataList');
+
+				for (var i = 0; i < data.length; i++) {
+					var name = data[i].datasetName;
+					var date = data[i].date;
+
+					//create a row for each dataset
+					var row = document.createElement("TR");
+
+					// insert the dataset name into a cell
+					var nameCell = document.createElement("TD");
+					var nameText = document.createTextNode(name);
+					nameCell.appendChild(nameText);
+					row.appendChild(nameCell);
+
+					// insert a link to into a cell to delete the corresponding dataset
+					var delCell = document.createElement("TD");
+					var link = document.createElement("A");
+					var linkText = document.createTextNode("delete");
+					link.href = "javascript:" + "deleteData('" + i + "','" + name + "','" + date + "')";
+					console.log(date);
+
+					link.appendChild(linkText);
+					delCell.appendChild(link);
+					row.appendChild(delCell);
+
+					// add the finished row
+					document.getElementById("dataList").appendChild(row);
+				}
+			});
+		}
+
+		function deleteData(rowNum, datasetName, date) {
+			//console.log("deleting " + datasetName);
+			if (confirm('Are you sure you want to delete "' + datasetName + '"?') == true) {
+				loadFile("./deleteDataset?datasetName=" + datasetName + "&date=" + date + "&rowIndex=" + rowNum,  function(row){
+					document.getElementById("dataList").deleteRow(row);
+				});
+			} else {
+			 	console.log("Canceled");
+			    return
+			}
+		}
+	</script>
+</html>
