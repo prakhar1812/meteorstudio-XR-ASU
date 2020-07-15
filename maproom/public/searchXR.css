@@ -1,0 +1,333 @@
+
+#logo_img{
+top: 24px;
+left: 85px;
+width: 207px;
+height: 37px;
+background: transparent url('img/full_logo.png') 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#belowimagetext{
+top: 68px;
+left: 85px;
+width: 78px;
+height: 29px;
+text-align: left;
+font: Black 24px/34px Roboto;
+letter-spacing: -0.12px;
+color: #2A2A2A;
+opacity: 1;
+}
+
+#weblinks{
+top: 11px;
+left: 736px;
+width: 463px;
+height: 33px;
+background: transparent url('img/2018-06-07_12-29-21.png') 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#mainimage{
+top: 169px;
+left: -2px;
+width: 1280px;
+height: 173px;
+background: transparent linear-gradient(180deg, #000000 0%, #00000063 29%, #00000000 100%) 0% 0% no-repeat padding-box;
+opacity: 0.14;
+}
+
+#maskimage{
+top: 78px;
+left: 537px;
+width: 700px;
+height: 619px;
+background: url("views/Mask Group 31.png") 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#tagline{
+top: 308px;
+left: 107px;
+width: 478px;
+height: 116px;
+text-align: left;
+font: Black 48px/58px Roboto;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+}
+
+#recttagline{
+top: 297px;
+left: 85px;
+width: 665px;
+height: 78px;
+background: #000000 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #0000000F;
+opacity: 0.6;
+}
+
+#rectabovexr
+{
+top: 655px;
+left: 508px;
+width: 100px;
+height: 80px;
+background: #00FFFF00 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#whatisxrasu
+{
+top: 722px;
+left: 490px;
+width: 302px;
+height: 48px;
+text-align: center;
+font: Black 36px/46px Roboto;
+letter-spacing: -0.18px;
+color: #2A2A2A;
+opacity: 1;
+}
+
+#whatisxrblurb
+{
+top: 783px;
+left: 370px;
+width: 541px;
+height: 81px;
+text-align: center;
+font: Regular 18px/27px Roboto;
+letter-spacing: 0.09px;
+color: #2A2A2A;
+opacity: 1;
+}
+
+#yellowbit
+{
+top: 903px;
+left: 601px;
+width: 80px;
+height: 0px;
+border: 5px solid #FFC627;
+opacity: 1;
+}
+
+#searchxp
+{
+top: 889px;
+left: -31.7435302734375px;
+width: 1328px;
+height: 181px;
+border: 0.5573769807815552px solid #FFC627;
+opacity: 1;
+}
+
+#searchbar
+{
+top: 946px;
+left: 376px;
+width: 529px;
+height: 48px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #9999996E;
+border-radius: 28px;
+opacity: 1;
+}
+
+#searchbartext
+{
+top: 960px;
+left: 397px;
+width: 174px;
+height: 20px;
+text-align: left;
+font: Regular 17px/25px Roboto;
+letter-spacing: 0.09px;
+color: #DBDBDB;
+opacity: 1;
+}
+
+#searchbody
+{
+top: 1088px;
+left: 0.1982421875px;
+width: 1280px;
+height: 869px;
+background: #FBFBFB 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#maskgroup31
+{
+top: 78px;
+left: 537px;
+width: 700px;
+height: 619px;
+background: transparent url('img/Mask Group 31.png') 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#maskgroup32
+{
+top: 198px;
+left: 315px;
+width: 951px;
+height: 430px;
+opacity: 1;
+}
+
+body{
+top: 0px;
+left: 0px;
+width: 1280px;
+height: 3644px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+#titlediv{
+top: 314px;
+left: 85px;
+width: 473px;
+height: 67px;
+text-align: left;
+font: Black 56px/67px Roboto;
+letter-spacing: -0.28px;
+color: #FFFFFF;
+opacity: 1;
+}
+
+#background3{
+top: 109px;
+left: 0px;
+width: 1280px;
+height: 60px;
+background: #353535 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#text2{
+top: 68px;
+left: 85px;
+width: 78px;
+height: 29px;
+text-align: left;
+font: Black 24px/34px Roboto;
+letter-spacing: -0.12px;
+color: #ed4040;
+opacity: 1;
+
+}
+
+#mainxr{
+top: 1088px;
+left: 0.1982421875px;
+width: 1280px;
+height: 869px;
+background: #FBFBFB 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#searchbox{
+	top: 602px;
+left: 85px;
+width: 256px;
+height: 33px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #999999;
+border-radius: 3px;
+opacity: 1;
+}
+#searchicon{
+	top: 611px;
+left: 319px;
+width: 14px;
+height: 14px;
+background: transparent url('searchicon.svg') 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#para1{
+	top: 468px;
+left: 85px;
+width: 688px;
+height: 51px;
+text-align: left;
+font: Regular 16px/22px Roboto;
+letter-spacing: 0.08px;
+color: #2A2A2A;
+opacity: 1;
+}
+#table{
+right: 0;
+}
+
+.header{
+	width: 100%;
+	height: 58px;
+	display: block;
+	background-color: #FFFFFF;
+}
+
+.header ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.header ul li{
+	float: left;
+	width: 120px;
+	height 40px;
+
+}
+
+#asu_hdr{
+	width: 80%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+	background-color: white;
+}
+
+#asu_logo{
+	height: 100%;
+	display: table;
+	float: left;
+}
+
+#a_li{
+	float: left;
+	text-align: center;
+	font-size: 10px;
+}
+#a_li a {
+	display: block;
+}
+
+#a_li a:link {
+  text-decoration: none;
+}
+
+
+#a_li a:visited {
+  text-decoration: none;
+}
+
+#a_li a:hover {
+	text-decoration-color: #8E0C3A;
+	text-decoration: underline;
+}
+
+#a_li ul li {
+
+}
+#asu_home_submenu{
+	display: none;
+}
+
+#asu_home:hover #asu_home_submenu{
+	display: block;
+}
