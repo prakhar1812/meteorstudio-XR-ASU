@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="searchingXR.css">
+  </head>
+  <body onload="manageData()">
+
+
+    <header>
+      <div class="container">
+        <!-- Logo -->
+        <div id="asu_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" class="logo" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a><!--<a id="asu-hdr-mobile-logo" href="https://www.asu.edu/" target="_top"> <img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/asu-logo.png"></a>--></div>
+
+        <nav>
+            <ul><!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+                <li><a href="https://www.asu.edu/" target="_top" id="main_menu_items">ASU Home</a>
+
+                  <ul>
+                       <li><a class="first" href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a></li>
+                       <li><a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a></li>
+                       <li><a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a></li>
+                       <li><a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a></li>
+                       <li><a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a></li>
+                       <li><a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a></li>
+                       <li><a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a></li>
+                       <li><a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://my.asu.edu/" target="_top">My ASU</a></li>
+                <li><a href="https://www.asu.edu/colleges/" target="_top" id="menu_main">Colleges and Schools</a>
+
+                  <ul>
+                     <li class="ccb"><a class="first" href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and Sciences</a></li>
+                     <li class="ccb"><a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a></li>
+                     <li class="ccb"><a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the Arts</a></li>
+                     <li class="ccb"><a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a></li>
+                     <li class="ccb"><a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a></li>
+                     <li class="ccb"><a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future of
+                        Innovation in Society</a>
+                     </li>
+                     <li class="ccb"><a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a></li>
+                     <li class="ccb"><a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a></li>
+                     <li class="ccb"><a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a></li>
+                     <li class="ccb"><a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a></li>
+                     <li class="ccb"><a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a></li>
+                     <li class="ccb"><a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a></li>
+                     <li class="ccb"><a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service and
+                        Community Solutions</a>
+                     </li>
+                     <li class="ccb"><a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a></li>
+                     <li class="ccb"><a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a></li>
+                     <li class="ccb"><a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://www.asu.edu/map/" target="_top">Map and Locations</a>
+
+                  <ul>
+                     <li class="ccb"><a class="border first" href="https://www.asu.edu/map/" target="_top">Map</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
+                        Phoenix</a>
+                     </li>
+                     <li class="ccb"><a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
+                        Extended</a>
+                     </li>
+                     <li class="ccb"><a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a></li>
+                     <li class="ccb"><a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a></li>
+                     <li class="ccb"><a href="https://asuresearchpark.com/" target="_top">Research Park</a></li>
+                     <li class="ccb"><a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a></li>
+                     <li class="ccb"><a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://isearch.asu.edu/" target="_top" title="Directory, Index and other info">Directory</a></li>
+                <li><a href="https://weblogin.asu.edu/cgi-bin/login" onclick="this.href=ASUHeader.alterLoginHref(this.href);" onfocus="this.href=ASUHeader.alterLoginHref(this.href);" onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
+            </ul>
+            <div>
+              <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie" type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client" type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box" placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit" value="Search"></form>
+            </div>
+        </nav>
+      </div>
+    </header>
+
+<br><br><br><br>
+    <input type="text" placeholder="Search.." id="search" name="search">
+    <button onclick="findData()">Search XR!</button>
+
+    <div class="grid-container" id= "container" style="float:right; display: block;">
+    <div class = "grid-item item1" id = "grid-item item1">
+    <img id = "item-image1" src="" style="width:200px;height:200px;"  >
+    </div>
+
+    <div class="grid-item item2" id = "grid-item item2">
+    <img id = "item-image2" src="" style="width:200px;height:200px;"  >
+    <font color ="red"></font>
+    </div>
+
+    <div class="grid-item item3" id = "grid-item item3">
+    <img id = "item-image3" src="" style="width:200px;height:200px;"  >
+    <font color ="red"></font>
+    </div>
+
+    </div>
+
+
+
+
+
+  </body>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <script src="asyncReq.js"></script>
+
+
+  <script>
+      function showLoginForm() {
+          $("#loginForm").show();
+          $("#signupForm").hide();
+      }
+      function incrementValue() {
+  	page++;
+  	manageData();
+      }
+    function manageData() {
+      loadFile("./showDatasetTable", function(result){
+        // show a table of the user's datasets
+        var data = JSON.parse(result);
+        var totalItemsCount = data.length;
+        var numberOfItemsPerPage = 5;
+        var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+        var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+        var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+
+  	//this was 20
+        for (var i = start; i < end; i++) {
+          var name = data[i].name;
+          var date = data[i].address.country;
+  	var image = data[i].images.picture_url;
+  	document.getElementById("item-image" + i).src = image;
+          //create a row for each dataset
+          var row = document.createElement("TR1");
+  	var row2 = document.createElement("TR2");
+  	var row3 = document.createElement("image");
+  	row3.src = image;
+
+          var nameCell = document.createElement("TD");
+          var nameText = document.createTextNode(name);
+          var dateCell = document.createElement("TD");
+          var dateText = document.createTextNode(date);
+          nameCell.appendChild(nameText);
+          row.appendChild(nameCell);
+          dateCell.appendChild(dateText);
+          row2.appendChild(dateCell);
+
+  	//imageCell.appendChild(imageText);
+  	//row3.appendChild(image);
+          // add the finished row
+  	document.getElementById("grid-item item"+ i).appendChild(row3);
+          document.getElementById("grid-item item"+ i).appendChild(row);
+  	document.getElementById("grid-item item"+ i).appendChild(row2);
+        }
+      });
+    }
+    function findData() {
+      var search = document.getElementById("search").value;
+      loadFile("./findDatasetTable?search="+search, function(result){
+        // show a table of the user's datasets
+        var data = JSON.parse(result);
+        var totalItemsCount = data.length;
+        var numberOfItemsPerPage = 5;
+        var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+        var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+        var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+
+  	//this was 20
+        for (var i = start; i < end; i++) {
+          var name = data[i].name;
+          var date = data[i].address.country;
+  	var image = data[i].images.picture_url;
+  	document.getElementById("item-image" + i).src = image;
+          //create a row for each dataset
+          var row = document.createElement("TR");
+  	var row2 = document.createElement("TR");
+  	var row3 = document.createElement("image");
+  	row3.src = image;
+
+          // insert the dataset name into a cell
+  	//var imageCell = document.createElement("TD");
+  	//var imageText = document.createTextNode(<img src=+'"'+image+'"'+">");
+
+          var nameCell = document.createElement("TD");
+          var nameText = document.createTextNode(name);
+          var dateCell = document.createElement("TD");
+          var dateText = document.createTextNode(date);
+          nameCell.appendChild(nameText);
+          row.appendChild(nameCell);
+          dateCell.appendChild(dateText);
+          row2.appendChild(dateCell);
+
+  	//imageCell.appendChild(imageText);
+  	//row3.appendChild(image);
+          // add the finished row
+  	var oldrow = document.getElementById("TR1");
+  	alert("row1 done");
+  	var oldrow2 = document.getElementById("TR2");
+  	alert("Row2 done");
+  	var oldimage = document.getElementById("image");
+  	//document.getElementById("grid-item item"+ i).parentNode.removeChild("image");
+          //document.getElementById("grid-item item"+ i).removeChild("TR1");
+  	//document.getElementById("grid-item item"+ i).removeChild("TR2");
+          // add the finished row
+  //	document.getElementById("grid-item item"+ i).appendChild(row3);
+          document.getElementById("grid-item item"+ i).appendChild(row);
+  	document.getElementById("grid-item item"+ i).appendChild(row2);
+        }
+      });
+    }
+      function showSignupForm() {
+          $("#signupForm").show();
+          $("#loginForm").hide();
+      }
+      $(document).ready(function() {
+          var url = window.location.href;
+          var n = url.lastIndexOf('/');
+          var href = url.substring(n + 1);
+          console.log(href);
+          //console.log(window.location.href.split('/')[1]);
+          if (href == "#loginBtn") {
+              showLoginForm();
+          } else if (href == "#signinBtn") {
+              showSignupForm();
+          }
+          $("#loginBtn").click(function() {
+              showLoginForm();
+          });
+          $("#signupBtn").click(function() {
+              showSignupForm();
+          });
+          var password = document.getElementById("password"),
+              confirm_password = document.getElementById("confirm_password");
+          function validatePassword() {
+              if (password.value != confirm_password.value) {
+                  confirm_password.setCustomValidity("Passwords do not match");
+              } else if (password.value.length < 6) {
+                  confirm_password.setCustomValidity("Password must be six digits");
+              } else {
+                  confirm_password.setCustomValidity('');
+              }
+          }
+          password.onchange = validatePassword;
+          confirm_password.onkeyup = validatePassword;
+      });
+  const rmCheck = document.getElementById("rememberMe"),
+      emailInput = document.getElementById("email");
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  </script>
+
+
+</html>
