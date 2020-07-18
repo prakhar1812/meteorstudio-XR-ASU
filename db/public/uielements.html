@@ -6,6 +6,33 @@
     <link rel="stylesheet" type="text/css" href="uielements.css">
   </head>
   <body>
+  <style>
+  .grid-container {
+  display: grid;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
+.item1 {
+  grid-column: 1
+  grid-row: 1 / span2;
+  text-align: center;
+}
+.item2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.item3 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+  </style>
 
     <header>
       <div class="container">
@@ -93,15 +120,198 @@
         </div> -->
       </div>
 
-    <img src="home1.png" alt="1" style="width: 100%">
+    <img src="public\home1.png" alt="1" style="width: 100%">
     <img src="home2.png" alt="2" style="width: 100%">
 
     <input type="text" placeholder="Search.." id="search" name="search" >
     <button onclick="findData()" id="search_button">Search XR!</button>
 
-    <img src="home3.png" alt="3" style="width: 100%">
+
+<div class="grid-container" id= "container">
+<div class = "grid-item item1" id = "grid-item item1">
+<img id = "item-image1" src="" style="width:200px;height:200px;"  align="right"> 
+</div>
+
+<div class="grid-item item2" id = "grid-item item2">
+<img id = "item-image2" src="" style="width:200px;height:200px;"  align="right"> 
+<font color ="red"></font>
+</div>
+
+<div class="grid-item item3" id = "grid-item item3">
+<img id = "item-image3" src="" style="width:200px;height:200px;"  align="right"> 
+<font color ="red"></font>
+</div>
+
+</div>
+
     <img src="home4.png" alt="4" style="width: 100%">
     <img src="home5.png" alt="5" style="width: 100%">
     <img src="home6.png" alt="6" style="width: 100%">
   </body>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="asyncReq.js"></script>
+
+
+<script>
+    function showLoginForm() {
+        $("#loginForm").show();
+        $("#signupForm").hide();
+    }
+    function incrementValue() {
+	page++;
+	manageData();
+    }
+  function manageData() {
+    loadFile("./showDatasetTable", function(result){
+      // show a table of the user's datasets
+      var data = JSON.parse(result);
+      var totalItemsCount = data.length;
+      var numberOfItemsPerPage = 5;
+      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+	
+	//this was 20
+      for (var i = start; i < end; i++) {
+        var name = data[i].name;
+        var date = data[i].address.country;
+	var image = data[i].images.picture_url;
+	document.getElementById("item-image" + i).src = image;
+        //create a row for each dataset
+        var row = document.createElement("TR1");
+	var row2 = document.createElement("TR2");
+	var row3 = document.createElement("image");
+	row3.src = image;
+		
+        var nameCell = document.createElement("TD");
+        var nameText = document.createTextNode(name);
+        var dateCell = document.createElement("TD");
+        var dateText = document.createTextNode(date);
+        nameCell.appendChild(nameText);
+        row.appendChild(nameCell);
+        dateCell.appendChild(dateText);
+        row2.appendChild(dateCell);
+	
+	//imageCell.appendChild(imageText);
+	//row3.appendChild(image);
+        // add the finished row
+	document.getElementById("grid-item item"+ i).appendChild(row3);
+        document.getElementById("grid-item item"+ i).appendChild(row);
+	document.getElementById("grid-item item"+ i).appendChild(row2);
+      }
+    });
+  }
+  function findData() {
+    var search = document.getElementById("search").value;
+    loadFile("./findDatasetTable?search="+search, function(result){
+      // show a table of the user's datasets
+      var data = JSON.parse(result);
+      var totalItemsCount = data.length;
+      var numberOfItemsPerPage = 5;
+      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+	
+	//this was 20
+      for (var i = start; i < end; i++) {
+        var name = data[i].name;
+        var date = data[i].address.country;
+	var image = data[i].images.picture_url;
+	document.getElementById("item-image" + i).src = image;
+        //create a row for each dataset
+        var row = document.createElement("TR");
+	var row2 = document.createElement("TR");
+	var row3 = document.createElement("image");
+	row3.src = image;
+	
+        // insert the dataset name into a cell
+	//var imageCell = document.createElement("TD");
+	//var imageText = document.createTextNode(<img src=+'"'+image+'"'+">");
+	
+        var nameCell = document.createElement("TD");
+        var nameText = document.createTextNode(name);
+        var dateCell = document.createElement("TD");
+        var dateText = document.createTextNode(date);
+        nameCell.appendChild(nameText);
+        row.appendChild(nameCell);
+        dateCell.appendChild(dateText);
+        row2.appendChild(dateCell);
+	
+	//imageCell.appendChild(imageText);
+	//row3.appendChild(image);
+        // add the finished row
+	var oldrow = document.getElementById("TR1");
+	alert("row1 done");
+	var oldrow2 = document.getElementById("TR2");
+	alert("Row2 done");
+	var oldimage = document.getElementById("image");
+	//document.getElementById("grid-item item"+ i).parentNode.removeChild("image");
+        //document.getElementById("grid-item item"+ i).removeChild("TR1");
+	//document.getElementById("grid-item item"+ i).removeChild("TR2");
+        // add the finished row
+//	document.getElementById("grid-item item"+ i).appendChild(row3);
+        document.getElementById("grid-item item"+ i).appendChild(row);
+	document.getElementById("grid-item item"+ i).appendChild(row2);
+      }
+    });
+  }
+    function showSignupForm() {
+        $("#signupForm").show();
+        $("#loginForm").hide();
+    }
+    $(document).ready(function() {
+        var url = window.location.href;
+        var n = url.lastIndexOf('/');
+        var href = url.substring(n + 1);
+        console.log(href);
+        //console.log(window.location.href.split('/')[1]);
+        if (href == "#loginBtn") {
+            showLoginForm();
+        } else if (href == "#signinBtn") {
+            showSignupForm();
+        }
+        $("#loginBtn").click(function() {
+            showLoginForm();
+        });
+        $("#signupBtn").click(function() {
+            showSignupForm();
+        });
+        var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords do not match");
+            } else if (password.value.length < 6) {
+                confirm_password.setCustomValidity("Password must be six digits");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    });
+const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("email");
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+</script>
+
+  
 </html>
