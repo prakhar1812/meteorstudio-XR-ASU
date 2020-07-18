@@ -1,5 +1,4 @@
-function getXMLHTTPRequest()
-{
+function getXMLHTTPRequest(){
     var request;
     // Lets try using ActiveX to instantiate the XMLHttpRequest object
     try{
@@ -22,15 +21,14 @@ function getXMLHTTPRequest()
 }
 
 
-function loadFile(filename, callback)
-{
+function loadFile(filename, callback){
     var aXMLHttpRequest = getXMLHTTPRequest();
     var allData;
 
     if (aXMLHttpRequest)
     {
         aXMLHttpRequest.open("GET", filename, true);
-        
+
       aXMLHttpRequest.onreadystatechange = function (aEvt) {
         if(aXMLHttpRequest.readyState == 4){
         allData = aXMLHttpRequest.responseText;

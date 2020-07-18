@@ -199,13 +199,50 @@ app.get("/showDatasetTable", function(req, res) {
 MongoClient.connect(mongoUri, function (err, db) {
 	if (err) throw err;
     var dbo = db.db("sample_airbnb");
-    var keyword = "apartment";
+    var keyword = "flat";
     var regex = RegExp(".*" + keyword + ".*");
    // Note.find({ noteBody: regex, userID: userID })
     var myquery = { name: regex };
+	console.log(myquery);
 	//var myquery = { name: "Spacious and well located apartment" };
 	//  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1 } }).toArray(function (err, result) {
+    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
+        if (err) throw err;
+        console.log(result[0]);
+		var namesList = [];
+        for (var i = 0; i < result.length; i++) {
+            namesList.push(result[i]);
+        }
+        res.send(JSON.stringify(namesList));
+        db.close();
+    });
+        });
+
+
+    });
+	
+	/**
+	* findDataSet
+	*/
+	app.get("/findDatasetTable", function(req, res) {
+		const query = req.query.search; 
+		var query2 = "";
+		query2 = String(query);
+		
+		console.log(query);
+		
+	
+MongoClient.connect(mongoUri, function (err, db) {
+	if (err) throw err;
+    var dbo = db.db("sample_airbnb");
+    var keyword = query;
+    var regex = RegExp(".*" + keyword + ".*");
+   // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { name: regex };
+	console.log(myquery);
+	//var myquery = { name: "Spacious and well located apartment" };
+	//  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
         if (err) throw err;
         console.log(result[0]);
 		var namesList = [];
