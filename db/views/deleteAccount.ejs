@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Coordinate Delete</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+
+    <style>
+        #colorsRow td {
+            height: 50px;
+            width: 50px;
+            border: 5px solid white;
+        }
+        
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+td {
+    padding-right: 15px
+}
+.space {
+    padding-right: 75px;
+}
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard">Coordinate</a>
+        <a class="nav-link" href="logout" style="color: white">Logout</a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard">
+              Dashboard 
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+              Create a New Dataset <span class="sr-only">(current)</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manageData">
+              Manage Existing Datasets
+            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Other</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                        </a>
+                    </h6>
+                            <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="support">
+              <span data-feather="file-text"></span>
+              Contact Us
+            </a>
+          </li>
+        </ul>
+	<ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link active" href="deleteAccount">
+              <span data-feather="file-text"></span>
+              Delete Account
+            </a>
+          </li>
+        </ul>
+        </ul>
+	<ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="privacyPolicy">
+              <span data-feather="file-text"></span>
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Delete Account</h1>
+                </div>
+
+                <!-- Spreadsheet guidelines -->
+                <div class="accordion" id="guidelinesAccordion">
+                    <div class="card">
+                        Oh no! We're sorry to see you go. Please note that this action is permanent, and deleted data cannot be retrieved. To continue with account deletion, follow the steps below.
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#guidelinesAccordion">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card col-lg-12">
+                    <div class="card-body">
+                        
+                        <p class="card-text"></p>
+                        <form id="uploadForm" enctype="multipart/form-data" action="/delete" method="post">
+                            <label for="delConfirmation">Type DELETE:</label>
+                            <input type="text" id="delConfirmation" name="delConfirmation" required>                            
+                            
+                            <br>
+                            </div>
+                            <br>
+                            <input type="submit" value="Submit" name="submit" id="uploadButton">
+                        </form>
+                    </div>
+                </div>
+                <div id="appendtable">
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+<script>
+$(document).ready(function() {
+
+        function validateDeletion() {
+		var string1 = new String(delConfirmation.value).valueOf();
+
+		var string2 = new String("DELETE").valueOf();
+		alert(string1 == string2); 
+
+            if (string1 != string2) {
+                delConfirmation.setCustomValidity("DELETE must be entered to continue with account deletion");
+            } 
+
+		else return;
+        }
+
+        delConfirmation.onchange = validateDeletion;
+       // delConfirmation.onkeyup = validateDeletion;
+    });
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="public/js/create.js"></script>
+
+
+
+</body>
+</html>
