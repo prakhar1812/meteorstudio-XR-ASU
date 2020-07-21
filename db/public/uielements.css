@@ -66,3 +66,7 @@ nav ul li:hover ul li {
     top: 1090px;
     left: 1080px;
 }
+
+.explore_tags p::selection{
+  background-color: #FFC627
+}

@@ -5,8 +5,8 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="uielements.css">
   </head>
-  <script> 
-var error = ""; 
+  <script>
+var error = "";
 var error2 = "";
 var error3 = "";
 var page = 1;
@@ -26,7 +26,7 @@ var page = 1;
   text-align: center;
   padding: 10px;
   font-size: 12px;
- 
+
 justify-content: center;
 }
 
@@ -41,7 +41,7 @@ opacity: 1;
   grid-column: 1
   grid-row: 1 / span2;
   background-color: #FFFFFF;
-  
+
 }
 .item2 {
   grid-column: 2;
@@ -50,6 +50,27 @@ opacity: 1;
 .item3 {
   grid-column: 3;
   grid-row: 1 / span 2;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
   </style>
 
@@ -145,23 +166,36 @@ opacity: 1;
     <input type="text" placeholder="Search.." id="search" name="search" >
     <button onclick="findData()" id="search_button">Search XR!</button>
 
+    <!-- begin grid work here -->
+
+  <div class="row">
+    <div class="column left" style="background-color:#aaa;">
+      <h2>Column 1</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column right" style="background-color:#bbb;">
+      <h2>Column 2</h2>
+      <p>Some text..</p>
+    </div>
+</div>
+
 <frameset id="cntfrm" cols="250,*">
 <div class="grid-container" id= "container">
 <div class = "grid-item item1" id = "grid-item item1">
-<img id = "item-image1" src="" style="width:200px;height:200px;"  align="center"> 
+<img id = "item-image1" src="" style="width:200px;height:200px;"  align="center">
 <p id=itemname1></p>
 <p id=itemdesc1> </p>
 </div>
 
 <div class="grid-item item2" id = "grid-item item2">
-<img id = "item-image2" src="" style="width:200px;height:200px;"  align="center"> 
+<img id = "item-image2" src="" style="width:200px;height:200px;"  align="center">
 <p id=itemname2></p>
 <p id=itemdesc2> </p>
 <font color ="red"></font>
 </div>
 
 <div class="grid-item item3" id = "grid-item item3">
-<img id = "item-image3" src="" style="width:200px;height:200px;"  align="center"> 
+<img id = "item-image3" src="" style="width:200px;height:200px;"  align="center">
 <p id=itemname3></p>
 <p id=itemdesc3> </p>
 <font color ="red"></font>
@@ -176,7 +210,7 @@ opacity: 1;
     <img src="home5.png" alt="5" style="width: 100%">
     <img src="home6.png" alt="6" style="width: 100%">
   </body>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -198,7 +232,7 @@ opacity: 1;
       var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
       var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
       var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-	
+
 	//this was 20
       for (var i = start; i < end; i++) {
         var name = data[i].name;
@@ -210,7 +244,7 @@ opacity: 1;
 	var row2 = document.createElement("TR2");
 	var row3 = document.createElement("image");
 	row3.src = image;
-		
+
         var nameCell = document.createElement("TD");
         var nameText = document.createTextNode(name);
         var dateCell = document.createElement("TD");
@@ -219,12 +253,12 @@ opacity: 1;
         row.appendChild(nameCell);
         dateCell.appendChild(dateText);
         row2.appendChild(dateCell);
-	
+
 	//imageCell.appendChild(imageText);
 	//row3.appendChild(image);
         // add the finished row
-	document.getElementById("itemname"+ i).innerHTML = name;	
-	document.getElementById("itemdesc"+ i).innerHTML = date;	
+	document.getElementById("itemname"+ i).innerHTML = name;
+	document.getElementById("itemdesc"+ i).innerHTML = date;
 	//document.getElementById("grid-item item"+ i).appendChild(row3);
     //    document.getElementById("grid-item item"+ i).appendChild(row);
 	//document.getElementById("grid-item item"+ i).appendChild(row2);
@@ -241,7 +275,7 @@ opacity: 1;
       var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
       var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
       var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-	
+
       for (var i = start; i < end; i++) {
         var name = data[i].name;
         var date = data[i].address.country;
@@ -257,11 +291,11 @@ opacity: 1;
 	var row2 = document.createElement("TR2");
 	var row3 = document.createElement("image2");
 	row3.src = image;
-	
+
         // insert the dataset name into a cell
 	//var imageCell = document.createElement("TD");
 	//var imageText = document.createTextNode(<img src=+'"'+image+'"'+">");
-	
+
         var nameCell = document.createElement("TD");
         var nameText = document.createTextNode(name);
         var dateCell = document.createElement("TD");
@@ -270,11 +304,11 @@ opacity: 1;
         row.appendChild(nameCell);
         dateCell.appendChild(dateText);
         row2.appendChild(dateCell);
-	
+
 	//imageCell.appendChild(imageText);
 	//row3.appendChild(image);
         // add the finished row
-			document.getElementById("itemname"+ i).innerHTML = name;	
+			document.getElementById("itemname"+ i).innerHTML = name;
 	document.getElementById("itemdesc"+ i).innerHTML = date;
 	var oldrow = document.getElementById("TR1");
 //	alert("row1 done");
@@ -336,5 +370,5 @@ function getCookie(cname) {
 }
 </script>
 
-  
+
 </html>
