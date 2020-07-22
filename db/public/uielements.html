@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="uielements.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   </head>
   <script>
 var error = "";
@@ -17,7 +18,7 @@ var page = 1;
   display: inline-grid;
     grid-column-gap: 50px;
   grid-template-columns: auto auto auto;
-  background-color: #FFC627;
+  background-color: #FFFFFF;
   padding: 10px;
   align-content: center;
 }
@@ -27,7 +28,7 @@ var page = 1;
   padding: 10px;
   font-size: 12px;
 
-justify-content: center;
+/* justify-content: center; */
 }
 
 .sidebar{
@@ -37,7 +38,7 @@ width: 220px;
 height: 363px;
 opacity: 1;
 }
-.item1 {
+/* .item1 {
   grid-column: 1
   grid-row: 1 / span2;
   background-color: #FFFFFF;
@@ -50,7 +51,7 @@ opacity: 1;
 .item3 {
   grid-column: 3;
   grid-row: 1 / span 2;
-}
+} */
 * {
   box-sizing: border-box;
 }
@@ -176,9 +177,9 @@ opacity: 1;
 
       <div class="explore_tags">
 
-      <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
+      <p style="background-color:#000; color:#FFF; width: 140px; height: 70px; margin-left: 60px; font-size: 35px; font-weight: bolder; text-align: center; padding: 15px 0;">Explore</p>
 
-      <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
+      <p style="margin-left: 60px; font-weight: bold; font-size: 20px;">Popular tags</p>
 
 
 
@@ -188,7 +189,7 @@ opacity: 1;
       <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
       <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
       <p style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Geographical Sciences & Urban Planning</p>
-      <p style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
+      <p style="margin-left: 60px; height: 45px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
       <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">History</p>
 
       <hr style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
@@ -198,29 +199,45 @@ opacity: 1;
       </div>
 
     </div>
-    <div class="column right" style="background-color:#bbb;">
+    <div class="column_right" style="background-color:#FFF;">
 
       <frameset id="cntfrm" cols="250,*">
       <div class="grid-container" id= "container">
-      <div class = "grid-item item1" id = "grid-item item1">
-      <img id = "item-image1" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname1></p>
-      <p id=itemdesc1> </p>
+        <div class = "grid-item item1" id = "grid-item item1">
+        <img id = "item-image1" src="" onerror=this.src="gridimg1.png" style="width: 800px; height: 320px;" >
+        <p id=itemname1></p>
+        <p id=itemdesc1> </p>
+        </div>
+
+      <div class="second_layer_grid_items" >
+
+        <div class = "grid-item item1" id = "grid-item item1">
+        <img id = "item-image1" src="" onerror=this.src="imageAmountain.png" style=" width: 200px; height: 200px;" >
+        <p id=itemname1></p>
+        <p id=itemdesc1> </p>
+        </div>
+
+
+        <div class="grid-item_item2" id = "grid-item item2">
+        <img id = "item-image2" src="" onerror=this.src="imageAmountain.png" style="padding-left: 10px; margin-top: 10px; width:200px;height:200px;"  >
+        <p id=itemname2></p>
+        <p id=itemdesc2> </p>
+        <font color ="red"></font>
+        </div>
+
+        <div class="grid-item_item3" id = "grid-item item3">
+        <img id = "item-image3" src="" onerror=this.src="imageAmountain.png" style=" padding-left: 20px; margin-top: 10px; width:200px;height:200px;"  >
+        <p id=itemname3></p>
+        <p id=itemdesc3></p>
+        <font color ="red"></font>
+        </div>
+
+
+        <br>
+        <p style="background-color:#000; margin-top: 300px; left: 200px;color:#FFF; width: 140px; height: 70px; margin-left: 60px; font-size: 35px; font-weight: bolder; position: inherit; align: center; text-align: center; padding: 15px 0;">View All</p>
+
       </div>
 
-      <div class="grid-item item2" id = "grid-item item2">
-      <img id = "item-image2" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname2></p>
-      <p id=itemdesc2> </p>
-      <font color ="red"></font>
-      </div>
-
-      <div class="grid-item item3" id = "grid-item item3">
-      <img id = "item-image3" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname3></p>
-      <p id=itemdesc3> </p>
-      <font color ="red"></font>
-      </div>
 
       </div>
             <frame src="index1.html" scrolling="auto" frameborder="1" />
