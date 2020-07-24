@@ -5,24 +5,43 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="uielements.css">
   </head>
-  <body>
+  <script>
+var error = "";
+var error2 = "";
+var error3 = "";
+var page = 1;
+</script>
+<body onload="manageData()">
   <style>
   .grid-container {
-  display: grid;
-  grid-gap: 10px;
-  background-color: #2196F3;
+  display: inline-grid;
+    grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #FFC627;
   padding: 10px;
+  align-content: center;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #FFFFFF;
   text-align: center;
   padding: 10px;
   font-size: 12px;
+
+justify-content: center;
+}
+
+.sidebar{
+top: 1310px;
+left: 78px;
+width: 220px;
+height: 363px;
+opacity: 1;
 }
 .item1 {
   grid-column: 1
   grid-row: 1 / span2;
-  text-align: center;
+  background-color: #FFFFFF;
+
 }
 .item2 {
   grid-column: 2;
@@ -31,6 +50,30 @@
 .item3 {
   grid-column: 3;
   grid-row: 1 / span 2;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 1px;
+  height: 800px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
   </style>
 
@@ -120,35 +163,80 @@
         </div> -->
       </div>
 
-    <img src="public\home1.png" alt="1" style="width: 100%">
+    <img src="home1.png" alt="1" style="width: 100%">
     <img src="home2.png" alt="2" style="width: 100%">
 
     <input type="text" placeholder="Search.." id="search" name="search" >
     <button onclick="findData()" id="search_button">Search XR!</button>
 
+    <!-- begin grid work here -->
 
-<div class="grid-container" id= "container">
-<div class = "grid-item item1" id = "grid-item item1">
-<img id = "item-image1" src="" style="width:200px;height:200px;"  align="right"> 
+  <div class="row">
+    <div class="column left" style="background-color:#FFF;">
+
+      <div class="explore_tags">
+
+      <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
+
+      <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
+
+
+
+
+      <p style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
+      <p style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Communication</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
+      <p style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Geographical Sciences & Urban Planning</p>
+      <p style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">History</p>
+
+      <hr style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
+
+      <a href="#" style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced Search</a>
+
+      </div>
+
+    </div>
+    <div class="column right" style="background-color:#bbb;">
+
+      <frameset id="cntfrm" cols="250,*">
+      <div class="grid-container" id= "container">
+      <div class = "grid-item item1" id = "grid-item item1">
+      <img id = "item-image1" src="" style="width:200px;height:200px;"  align="center">
+      <p id=itemname1></p>
+      <p id=itemdesc1> </p>
+      </div>
+
+      <div class="grid-item item2" id = "grid-item item2">
+      <img id = "item-image2" src="" style="width:200px;height:200px;"  align="center">
+      <p id=itemname2></p>
+      <p id=itemdesc2> </p>
+      <font color ="red"></font>
+      </div>
+
+      <div class="grid-item item3" id = "grid-item item3">
+      <img id = "item-image3" src="" style="width:200px;height:200px;"  align="center">
+      <p id=itemname3></p>
+      <p id=itemdesc3> </p>
+      <font color ="red"></font>
+      </div>
+
+      </div>
+            <frame src="index1.html" scrolling="auto" frameborder="1" />
+            <frame src="index2.html" scrolling="auto"  />
+        </frameset>
+
+    </div>
 </div>
 
-<div class="grid-item item2" id = "grid-item item2">
-<img id = "item-image2" src="" style="width:200px;height:200px;"  align="right"> 
-<font color ="red"></font>
-</div>
 
-<div class="grid-item item3" id = "grid-item item3">
-<img id = "item-image3" src="" style="width:200px;height:200px;"  align="right"> 
-<font color ="red"></font>
-</div>
-
-</div>
 
     <img src="home4.png" alt="4" style="width: 100%">
     <img src="home5.png" alt="5" style="width: 100%">
     <img src="home6.png" alt="6" style="width: 100%">
   </body>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -157,10 +245,6 @@
 
 
 <script>
-    function showLoginForm() {
-        $("#loginForm").show();
-        $("#signupForm").hide();
-    }
     function incrementValue() {
 	page++;
 	manageData();
@@ -174,7 +258,7 @@
       var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
       var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
       var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-	
+
 	//this was 20
       for (var i = start; i < end; i++) {
         var name = data[i].name;
@@ -186,7 +270,7 @@
 	var row2 = document.createElement("TR2");
 	var row3 = document.createElement("image");
 	row3.src = image;
-		
+
         var nameCell = document.createElement("TD");
         var nameText = document.createTextNode(name);
         var dateCell = document.createElement("TD");
@@ -195,13 +279,15 @@
         row.appendChild(nameCell);
         dateCell.appendChild(dateText);
         row2.appendChild(dateCell);
-	
+
 	//imageCell.appendChild(imageText);
 	//row3.appendChild(image);
         // add the finished row
-	document.getElementById("grid-item item"+ i).appendChild(row3);
-        document.getElementById("grid-item item"+ i).appendChild(row);
-	document.getElementById("grid-item item"+ i).appendChild(row2);
+	document.getElementById("itemname"+ i).innerHTML = name;
+	document.getElementById("itemdesc"+ i).innerHTML = date;
+	//document.getElementById("grid-item item"+ i).appendChild(row3);
+    //    document.getElementById("grid-item item"+ i).appendChild(row);
+	//document.getElementById("grid-item item"+ i).appendChild(row2);
       }
     });
   }
@@ -215,23 +301,27 @@
       var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
       var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
       var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-	
-	//this was 20
+
       for (var i = start; i < end; i++) {
         var name = data[i].name;
         var date = data[i].address.country;
 	var image = data[i].images.picture_url;
+	var div = document.getElementById("grid-item item" +i);
+	alert(div.childNodes[i].value);
+	div.removeChild(div.firstChild);
+	//document.getElementById("grid-item item" +i).removeChild(row);
+	//document.getElementById("grid-item item" +i).removeChild(row2);
 	document.getElementById("item-image" + i).src = image;
         //create a row for each dataset
-        var row = document.createElement("TR");
-	var row2 = document.createElement("TR");
-	var row3 = document.createElement("image");
+        var row = document.createElement("TR2");
+	var row2 = document.createElement("TR2");
+	var row3 = document.createElement("image2");
 	row3.src = image;
-	
+
         // insert the dataset name into a cell
 	//var imageCell = document.createElement("TD");
 	//var imageText = document.createTextNode(<img src=+'"'+image+'"'+">");
-	
+
         var nameCell = document.createElement("TD");
         var nameText = document.createTextNode(name);
         var dateCell = document.createElement("TD");
@@ -240,29 +330,22 @@
         row.appendChild(nameCell);
         dateCell.appendChild(dateText);
         row2.appendChild(dateCell);
-	
+
 	//imageCell.appendChild(imageText);
 	//row3.appendChild(image);
         // add the finished row
+			document.getElementById("itemname"+ i).innerHTML = name;
+	document.getElementById("itemdesc"+ i).innerHTML = date;
 	var oldrow = document.getElementById("TR1");
-	alert("row1 done");
+//	alert("row1 done");
 	var oldrow2 = document.getElementById("TR2");
-	alert("Row2 done");
+	//alert("Row2 done");
 	var oldimage = document.getElementById("image");
-	//document.getElementById("grid-item item"+ i).parentNode.removeChild("image");
-        //document.getElementById("grid-item item"+ i).removeChild("TR1");
-	//document.getElementById("grid-item item"+ i).removeChild("TR2");
-        // add the finished row
-//	document.getElementById("grid-item item"+ i).appendChild(row3);
-        document.getElementById("grid-item item"+ i).appendChild(row);
-	document.getElementById("grid-item item"+ i).appendChild(row2);
+   // document.getElementById("grid-item item"+ i).appendChild(row);
+//	document.getElementById("grid-item item"+ i).appendChild(row2);
       }
     });
   }
-    function showSignupForm() {
-        $("#signupForm").show();
-        $("#loginForm").hide();
-    }
     $(document).ready(function() {
         var url = window.location.href;
         var n = url.lastIndexOf('/');
@@ -313,5 +396,5 @@ function getCookie(cname) {
 }
 </script>
 
-  
+
 </html>

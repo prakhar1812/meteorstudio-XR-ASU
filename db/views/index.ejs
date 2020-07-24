@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="uielements.css">
   </head>
-  <script> 
-var error = ""; 
+  <script>
+var error = "";
 var error2 = "";
 var error3 = "";
 var page = 1;
@@ -17,7 +18,7 @@ var page = 1;
   display: inline-grid;
     grid-column-gap: 50px;
   grid-template-columns: auto auto auto;
-  background-color: #FFC627;
+  background-color: #FFFFFF;#FFC627;
   padding: 10px;
   align-content: center;
 }
@@ -26,7 +27,7 @@ var page = 1;
   text-align: center;
   padding: 10px;
   font-size: 12px;
- 
+
 justify-content: center;
 }
 
@@ -41,7 +42,7 @@ opacity: 1;
   grid-column: 1
   grid-row: 1 / span2;
   background-color: #FFFFFF;
-  
+
 }
 .item2 {
   grid-column: 2;
@@ -50,6 +51,30 @@ opacity: 1;
 .item3 {
   grid-column: 3;
   grid-row: 1 / span 2;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 1px;
+  height: 800px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
   </style>
 
@@ -145,33 +170,105 @@ opacity: 1;
     <input type="text" placeholder="Search.." id="search" name="search" >
     <button onclick="findData()" id="search_button">Search XR!</button>
 
-<frameset id="cntfrm" cols="250,*">
-<div class="grid-container" id= "container">
-<div class = "grid-item item1" id = "grid-item item1">
-<img id = "item-image1" src="" style="width:200px;height:200px;"  align="center"> 
-<p id=itemname1></p>
-<p id=itemdesc1> </p>
-</div>
+    <!-- begin grid work here -->
 
-<div class="grid-item item2" id = "grid-item item2">
-<img id = "item-image2" src="" style="width:200px;height:200px;"  align="center"> 
-<p id=itemname2></p>
-<p id=itemdesc2> </p>
-<font color ="red"></font>
-</div>
+  <div class="row">
+    <div class="column left" style="background-color:#FFF;">
 
-<div class="grid-item item3" id = "grid-item item3">
-<img id = "item-image3" src="" style="width:200px;height:200px;"  align="center"> 
-<p id=itemname3></p>
-<p id=itemdesc3> </p>
-<font color ="red"></font>
-</div>
+      <div class="explore_tags">
 
-</div>
-      <frame src="index1.html" scrolling="auto" frameborder="1" />
-      <frame src="index2.html" scrolling="auto"  />
-  </frameset>
+      <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
 
+      <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
+
+
+
+
+      <p style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
+      <p style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Communication</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
+      <p style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Geographical Sciences & Urban Planning</p>
+      <p style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">History</p>
+
+      <hr style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
+
+      <a href="#" style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced Search</a>
+
+      </div>
+
+    </div>
+    <div class="column right" style="background-color:#ffffff;">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" id="item-image1" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <p class="card-text" id = "itemname1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			  <p class="card-text" id = "itemdesc1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+			  <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+			  <p class="card-text" id = "itemname2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+			  <p class="card-text" id = "itemname3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+	  
+	  <!----------------->
+	  
+	  <!-------------------->
+
+      </div>
+	
+        
+            <frame src="index1.html" scrolling="auto" frameborder="1" />
+            <frame src="index2.html" scrolling="auto"  />
+        </frameset>
+
+    </div>
+</div>
     <img src="home4.png" alt="4" style="width: 100%">
     <img src="home5.png" alt="5" style="width: 100%">
     <img src="home6.png" alt="6" style="width: 100%">
@@ -205,29 +302,14 @@ opacity: 1;
         var date = data[i].address.country;
 	var image = data[i].images.picture_url;
 	document.getElementById("item-image" + i).src = image;
-        //create a row for each dataset
-        var row = document.createElement("TR1");
-	var row2 = document.createElement("TR2");
 	var row3 = document.createElement("image");
 	row3.src = image;
 		
-        var nameCell = document.createElement("TD");
-        var nameText = document.createTextNode(name);
-        var dateCell = document.createElement("TD");
-        var dateText = document.createTextNode(date);
-        nameCell.appendChild(nameText);
-        row.appendChild(nameCell);
-        dateCell.appendChild(dateText);
-        row2.appendChild(dateCell);
 	
-	//imageCell.appendChild(imageText);
-	//row3.appendChild(image);
-        // add the finished row
+
 	document.getElementById("itemname"+ i).innerHTML = name;	
 	document.getElementById("itemdesc"+ i).innerHTML = date;	
-	//document.getElementById("grid-item item"+ i).appendChild(row3);
-    //    document.getElementById("grid-item item"+ i).appendChild(row);
-	//document.getElementById("grid-item item"+ i).appendChild(row2);
+
       }
     });
   }
@@ -246,43 +328,15 @@ opacity: 1;
         var name = data[i].name;
         var date = data[i].address.country;
 	var image = data[i].images.picture_url;
-	var div = document.getElementById("grid-item item" +i);
-	alert(div.childNodes[i].value);
-	div.removeChild(div.firstChild);
-	//document.getElementById("grid-item item" +i).removeChild(row);
-	//document.getElementById("grid-item item" +i).removeChild(row2);
 	document.getElementById("item-image" + i).src = image;
-        //create a row for each dataset
-        var row = document.createElement("TR2");
-	var row2 = document.createElement("TR2");
+
 	var row3 = document.createElement("image2");
 	row3.src = image;
 	
-        // insert the dataset name into a cell
-	//var imageCell = document.createElement("TD");
-	//var imageText = document.createTextNode(<img src=+'"'+image+'"'+">");
 	
-        var nameCell = document.createElement("TD");
-        var nameText = document.createTextNode(name);
-        var dateCell = document.createElement("TD");
-        var dateText = document.createTextNode(date);
-        nameCell.appendChild(nameText);
-        row.appendChild(nameCell);
-        dateCell.appendChild(dateText);
-        row2.appendChild(dateCell);
-	
-	//imageCell.appendChild(imageText);
-	//row3.appendChild(image);
-        // add the finished row
-			document.getElementById("itemname"+ i).innerHTML = name;	
-	document.getElementById("itemdesc"+ i).innerHTML = date;
-	var oldrow = document.getElementById("TR1");
-//	alert("row1 done");
-	var oldrow2 = document.getElementById("TR2");
-	//alert("Row2 done");
-	var oldimage = document.getElementById("image");
-   // document.getElementById("grid-item item"+ i).appendChild(row);
-//	document.getElementById("grid-item item"+ i).appendChild(row2);
+		document.getElementById("itemname"+ i).innerHTML = name;	
+		document.getElementById("itemdesc"+ i).innerHTML = date;
+
       }
     });
   }
