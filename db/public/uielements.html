@@ -18,11 +18,7 @@ var page = 1;
   display: inline-grid;
     grid-column-gap: 50px;
   grid-template-columns: auto auto auto;
-<<<<<<< HEAD
-  background-color: #FFC627;
-=======
   background-color: #FFFFFF;
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
   padding: 10px;
   align-content: center;
 }
@@ -32,11 +28,7 @@ var page = 1;
   padding: 10px;
   font-size: 12px;
 
-<<<<<<< HEAD
-justify-content: center;
-=======
 /* justify-content: center; */
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
 }
 
 .sidebar{
@@ -60,30 +52,6 @@ opacity: 1;
   grid-column: 3;
   grid-row: 1 / span 2;
 } */
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  float: left;
-  padding: 1px;
-  height: 800px;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 * {
   box-sizing: border-box;
 }
@@ -209,97 +177,81 @@ opacity: 1;
 
       <div class="explore_tags">
 
-<<<<<<< HEAD
-      <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
-
-      <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
-=======
       <p style="background-color:#000; color:#FFF; width: 140px; height: 70px; margin-left: 60px; font-size: 35px; font-weight: bolder; text-align: center; padding: 15px 0;">Explore</p>
 
       <p style="margin-left: 60px; font-weight: bold; font-size: 20px;">Popular tags</p>
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
+
+      <div class="">
 
 
+      <p class="art_icon" > <img src="articon.svg"> Art & Design</p>
+      <p class="art_icon" > <img src="communicationicon.svg"> Communication</p>
+      <p class="art_icon" > <img src="educationicon.svg"> Education</p>
+      <p class="art_icon"> <img src="engineeringicon.svg"> Engineering</p>
+      <p class="art_icon"> <img src="geographicalicon.svg"> Geographical Sciences & Urban Planning</p>
+      <p class="art_icon"> <img src="healthicon.svg"> Health & Nutrition</p>
+      <p class="art_icon"> <img src="historyicon.svg"> History</p>
 
-
-      <p style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
-      <p style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Communication</p>
-      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
-      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
-      <p style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Geographical Sciences & Urban Planning</p>
-<<<<<<< HEAD
-      <p style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
-=======
-      <p style="margin-left: 60px; height: 45px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
-      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">History</p>
+      </div>
 
       <hr style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
 
       <a href="#" style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced Search</a>
 
       </div>
-<<<<<<< HEAD
-
-    </div>
-    <div class="column right" style="background-color:#bbb;">
-
-      <frameset id="cntfrm" cols="250,*">
-      <div class="grid-container" id= "container">
-      <div class = "grid-item item1" id = "grid-item item1">
-      <img id = "item-image1" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname1></p>
-      <p id=itemdesc1> </p>
-      </div>
-
-      <div class="grid-item item2" id = "grid-item item2">
-      <img id = "item-image2" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname2></p>
-      <p id=itemdesc2> </p>
-      <font color ="red"></font>
-      </div>
-
-      <div class="grid-item item3" id = "grid-item item3">
-      <img id = "item-image3" src="" style="width:200px;height:200px;"  align="center">
-      <p id=itemname3></p>
-      <p id=itemdesc3> </p>
-      <font color ="red"></font>
-      </div>
-
-=======
 
     </div>
     <div class="column_right" style="background-color:#FFF;">
 
       <frameset id="cntfrm" cols="250,*">
       <div class="grid-container" id= "container">
-        <div class = "grid-item item1" id = "grid-item item1">
+        <div class = "grid-item_item1" id = "grid-item item1">
         <img id = "item-image1" src="" onerror=this.src="gridimg1.png" style="width: 800px; height: 320px; padding-left: 30px;" >
-        <p id=itemname1></p>
-        <p id=itemdesc1> </p>
+          <div class="article_details_display1">
+            <p id=itemname1> </p>
+            <p id=itemdesc1> </p>
+            <p id="itemtype1"> </p>
+
+            <div class="bottom_fill"></div>
+          </div>
         </div>
 
       <div class="second_layer_grid_items" >
 
-        <div class = "grid-item item1" id = "grid-item item1">
+        <div class = "grid-item_item2" id = "grid-item item1">
         <img id = "item-image1" src="" onerror=this.src="imageAmountain.png" style=" width: 252px; height: 186px;" >
-        <p id=itemname1></p>
-        <p id=itemdesc1> </p>
+
+        <div class="article_details_display2">
+          <p id=itemname2> </p>
+          <p id=itemdesc2> </p>
+          <p id="itemtype1"> </p>
+
+          <div class="bottom_fill"></div>
+        </div>
+
         </div>
 
 
-        <div class="grid-item_item2" id = "grid-item item2">
+        <div class="grid-item_item3" id = "grid-item item2">
         <img id = "item-image2" src="" onerror=this.src="imageAmountain.png" style="padding-left: 10px; margin-top: 10px; width:252px;height:186px;"  >
-        <p id=itemname2></p>
-        <p id=itemdesc2> </p>
-        <font color ="red"></font>
+        <div class="article_details_display3">
+          <p id=itemname3>  </p>
+          <p id=itemdesc3> </p>
+          <p id="itemtype1"> </p>
+
+          <div class="bottom_fill"></div>
+        </div>
         </div>
 
-        <div class="grid-item_item3" id = "grid-item item3">
+        <div class="grid-item_item4" id = "grid-item item3">
         <img id = "item-image3" src="" onerror=this.src="imageAmountain.png" style=" padding-left: 20px; margin-top: 10px; width:252px;height:186px;"  >
-        <p id=itemname3></p>
-        <p id=itemdesc3></p>
-        <font color ="red"></font>
+        <div class="article_details_display4">
+          <p id=itemname4>  </p>
+          <p id=itemdesc4> </p>
+          <p id="itemtype1"> </p>
+
+          <div class="bottom_fill"></div>
+        </div>
         </div>
 
 
@@ -309,7 +261,6 @@ opacity: 1;
       </div>
 
 
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
       </div>
             <frame src="index1.html" scrolling="auto" frameborder="1" />
             <frame src="index2.html" scrolling="auto"  />
@@ -485,8 +436,4 @@ function getCookie(cname) {
 </script>
 
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a

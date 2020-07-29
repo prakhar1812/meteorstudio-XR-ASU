@@ -70,9 +70,6 @@ nav ul li:hover ul li {
 
 .explore_tags p::selection{
   background-color: #FFC627
-<<<<<<< HEAD
-}
-=======
 }
 
 .grid-container{
@@ -89,4 +86,77 @@ nav ul li:hover ul li {
   margin-left: 20px;
   padding-left: 10px;
 }
->>>>>>> 87241bea01533f5832a611ca92cd5aa1110e3f7a
+
+.art_icon {
+  margin-left: 60px; height: 45px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0;
+}
+
+.art_icon p{
+  display: inline;
+   width: auto;
+}
+
+.art_icon img{
+  object-fit: scale-down;
+}
+
+.art_icon:hover {
+  background: #FFC627;
+}
+
+.article_details_display1{
+  padding-left: 20px;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 25px;
+  border: 0.5px solid;
+  width: 251px;
+  height: 82px;
+  top: 1300px;
+  left: 500px;
+}
+
+.article_details_display2{
+  padding-left: 20px;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 25px;
+  border: 0.5px solid;
+  width: 251px;
+  height: 82px;
+  top: 185px;
+  left: 10px;
+}
+
+.article_details_display3{
+  padding-left: 20px;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 25px;
+  border: 0.5px solid;
+  width: 251px;
+  height: 82px;
+  top: 185px;
+  left: 270px;
+}
+.article_details_display4{
+  padding-left: 20px;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 25px;
+  border: 0.5px solid;
+  width: 251px;
+  height: 82px;
+  top: 185px;
+  left: 530px;
+}
+
+.bottom_fill {
+      border-radius: 25px;
+      background-color: #FFC627;
+      height: 5%;
+      width: 90%;
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+    }
