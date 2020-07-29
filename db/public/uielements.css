@@ -155,8 +155,8 @@ nav ul li:hover ul li {
       border-radius: 25px;
       background-color: #FFC627;
       height: 5%;
-      width: 90%;
+      width: 89%;
       position: absolute;
       bottom: 0;
-      left: 10px;
+      left: 12.5px;
     }
