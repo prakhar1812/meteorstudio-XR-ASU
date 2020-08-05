@@ -1,8 +1,3 @@
-var fileHeaders = [];
-var fileName = "";
-var mapRoomDataset = [];
-var coordinates = [];
-var particleColors = [];
 
 // App config
 var express = require('express');
@@ -15,36 +10,10 @@ var firebase = require("firebase/app");
 //nodemailer
 //const nodemailer = require('nodemailer');
 
-var admin = require('firebase-admin');
-//var authAdmin = admin.initializeApp();
-var serviceAccount = require("./auth-test-5501c-firebase-adminsdk-x0yut-f1ac9cd9f3.json");
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://auth-test-5501c.firebaseio.com"
-});
-
-// Add the Firebase products that you want to use
-require("firebase/auth");
-require("firebase/firestore");
-var firebaseConfig = {
-    apiKey: "AIzaSyBuQHAlRSIKHc76nJT68V3rybrOP0qRu-4",
-    authDomain: "auth-test-5501c.firebaseapp.com",
-    databaseURL: "https://auth-test-5501c.firebaseio.com",
-    projectId: "auth-test-5501c",
-    storageBucket: "",
-    messagingSenderId: "669797740837",
-    appId: "1:669797740837:web:ccb206e3051f8308446acc"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var methodOverride = require('method-override');
 var fs = require('fs');
-var csv = require("csvtojson");
-var csvHeaders = require('csv-headers');
 var multer = require('multer');
 var error = "";
 var storage = multer.diskStorage({
@@ -57,6 +26,9 @@ var storage = multer.diskStorage({
     }
 });
 var loggedUser;
+var loggedUser2;
+var loggedUser3;
+var loggedUser4;
 var authState = {
     isAuthReady: false,
     isPerformingAuthAction: false,
@@ -104,33 +76,18 @@ app.set('views', __dirname + '/views');
 //app.use('/login', routes);
 //app.use('/createAccount', routes)
 
-// GeoBatch
-var GeoBatch = require('geobatch');
-var geoBatch = new GeoBatch({
-    apiKey: 'AIzaSyCm2_5m1YZ0GvEi64mcFKXDOeepWGdQjO4',
-});
-
-// Authentication -- utilizing Mozilla's client-sessions
-const clientSessions = require('client-sessions');
-app.use(clientSessions({
-    cookieName: 'maproom',
-    secret: 'temporarysecret', // set up as env variable later
-    duration: 1000 * 60 * 10, // duration in milliseconds - set to 10 mins,
-    activeDuration: 1000 * 60 * 5 // lengthens the duration as the user interacts with the site - set to 5 mins
-
-}));
-
 // MongoDB
 var mongo = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var mongoUri = "mongodb+srv://meteorstudio:Meteor101@maproom-rzdrm.mongodb.net/maproom";
+//var mongoUri = "mongodb+srv://meteorstudio:Meteor101@maproom-rzdrm.mongodb.net/maproom";
+var mongoUri = "mongodb+srv://dbuser:test@cluster0.0jf1o.mongodb.net/cluster0?retryWrites=true&w=majority";
 var mongoose = require('mongoose');
-var User = require('./config/user-model.js');
 mongoose.set('useCreateIndex', true);
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
-    logWithTimeStamp("Maproom started");
+    console.log("Maproom started");
+
 
     if (err) {
         console.log('Error occured when connecting to MongoDB.', error.message);
@@ -143,6 +100,27 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     app.listen(port);
     console.log("Server listening at http://" + hostname + ":" + port);
 });
+//
+
+//searching by keyword
+MongoClient.connect(mongoUri, function (err, db) {
+	if (err) throw err;
+    var dbo = db.db("sample_airbnb");
+    var keyword = "apartment";
+    var regex = RegExp(".*" + keyword + ".*");
+   // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { name: regex };
+	//var myquery = { name: "Spacious and well located apartment" };
+	//  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1 } }).toArray(function (err, result) {
+        if (err) throw err;
+      //  console.log(result);
+        db.close();
+    });
+        });
+
+//
+
 
 // Logging tools
 var intl = require('intl')
@@ -153,608 +131,41 @@ const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'nume
 /**
  * index
  */
+
 app.get('/', function(req, res) {
         //console.log(cookie);
-    if(checkCookie("rememberme",req) == true)
-    {
-        //console.log("Test");
-                var cookie = getCookie("rememberme",req);
-        firebase.auth().signInWithCustomToken(cookie).then(cred => {
-                 loggedUser = cred.user;
-                 //console.log(loggedUser.email);
+         MongoClient.connect(mongoUri, function(err, db) {
+		             if (err) throw err;
+		             var dbo = db.db("sample_airbnb");
+		           var myquery = { name: "Ribeira Charming Duplex" };
+		           //  var newvalues = { $set: {email: newEmail } };
+		 			dbo.collection("listingsAndReviews").findOne(myquery,"_id").then(result => {
+		 				 if(result) {
+		 				      console.log("Successfully found document: " + result.name);
+		 				  //    console.log(result);
+		 				      loggedUser = result.name;
+		 				      loggedUser2 = result.images.picture_url;
+		 				      loggedUser3 = result.description;
 
-             },function(error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    console.log(error);
-                    res.append('Set-Cookie',"rememberme"+"="+"; path/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;");
+		 				    } else {
+		 				 //     console.log("No document matches the provided query.");
+		 				    }
+		 				    return result;
+		 				  })
+  .catch(err => console.error(`Failed to find document: ${err}`));
+  //});
 
-               		res.render('index',
+    				res.render('index',
 			        {
-				        error: "Please re-login."
+				        error: loggedUser,
+				        error2: loggedUser2,
+				        error3: loggedUser3
 			        });
-                    failure = true;
-                    return;
+				});
 
-               }).then(function(result){
 
-               		res.render('dashboard',
-			        {
-				        email: loggedUser.email,
-			            error: ""
-			        });
 
-                    return;
-               });
 
-
-    }
-
-    else
-    {
-        console.log("No token, or token expired - redirecting to index.");
-               		res.render('index',
-			{
-				error: ""
-			});
-    }
-
-
-
-});
-
-
-/**
- * createAccount
- */
-app.post('/createAccount', function(req, res) {
-    upload(req, res, function(err) {
-        logWithTimeStamp('Attempting to create account: ', req.body.email);
-
-        // create a user a new user
-        const email = req.body.email;
-        const password = req.body.password;
-        if (req.body.password.length >= 6) {
-
-            auth.createUserWithEmailAndPassword(email, password).then(cred => {
-				loggedUser = cred.user;
-                const email = cred.user.email;
-                const uid = cred.user.uid;
-                console.log(cred.user.email);
-                console.log(req.body.password);
-
-                var newUser = new User({
-                    email: email,
-                    uid: uid,
-                    datasets: []
-                });
-
-                // save user to database
-                newUser.save(function(err) {
-                        if (err) {
-                            logWithTimeStamp('Error occured during account creation.');
-                            res.redirect('/#signupBtn');
-                            //throw err; This was causing the crash when a duplicate email was found.
-                        } else {
-                            logWithTimeStamp('New user added:', newUser.email, req.body.password);
-                            currentUser = newUser;
-                        }
-
-                                        res.render('dashboard', {
-						                    email: "newUser.email",
-						                    error: ""
-                });
-                    })
-                    //
-            }).catch(function(error) {
-                const code = error.code;
-                const message = error.message;
-                console.log(message);
-               		res.render('index',
-			{
-				error: message
-			});
-            });
-
-
-            //
-
-        } else
-            console.log('password must be 6 characters or greater');
-    });
-});
-
-app.post('/changePassword', function(req,res) {
-    upload(req, res, function(err) {
-const user = firebase.auth().currentUser;
-const newPassword = req.body.password;
-const userProvidedPassword = req.body.oldPassword;
-console.log(userProvidedPassword);
-console.log(newPassword);
-const credential = firebase.auth.EmailAuthProvider.credential(
-    user.email,
-    userProvidedPassword
-);
-
-// Now you can use that to reauthenticate
-user.reauthenticateWithCredential(credential).then(function() {
-  // User re-authenticated.
-user.updatePassword(req.body.password).then(function() {
-  // Update successful.
-firebase.auth().signOut().then(function() {
-          if(checkCookie("rememberme",req) == true)
-        {
-        res.append('Set-Cookie',"rememberme"+"="+"; path/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-        }
-               		res.render('index',
-			{
-				error: "Password successfully changed. Please log in again."
-			});
-}).catch(function(error) {
-                   var errorCode = error.code;
-                   var errorMessage = error.message;
-  console.log("Error signing out.")
-               		res.render('dashboard',
-			        {
-				        email: loggedUser.email,
-			            error: errorMessage
-			        });
-});
-}).catch(function(error) {
-                   var errorCode = error.code;
-                   var errorMessage = error.message;
-  console.log("Error updating password.");
-               		res.render('dashboard',
-			        {
-				        email: loggedUser.email,
-			            error: errorMessage
-			        });
-});
-
-}).catch(function(error) {
-                   var errorCode = error.code;
-                   var errorMessage = error.message;
-  console.log("Error validating user.");
-               		res.render('dashboard',
-			        {
-				        email: loggedUser.email,
-			            error: errorMessage
-			        });
-});
-
-
-});
-
-});
-
-
-app.post('/changeEmail', function(req,res) {
-    upload(req, res, function(err) {
-const user = firebase.auth().currentUser;
-const userProvidedPassword = req.body.currPassword;
-const newEmail = req.body.email;
-const currEmail = req.body.currEmail;
-console.log(userProvidedPassword);
-console.log(newEmail);
-const credential = firebase.auth.EmailAuthProvider.credential(
-    currEmail,
-    userProvidedPassword
-);
-
-// Now you can use that to reauthenticate
-user.reauthenticateWithCredential(credential).then(function() {
-      // User re-authenticated.
-    user.updateEmail(newEmail).then(function() {
-      // Update successful.
-          MongoClient.connect(mongoUri, function(err, db) {
-            if (err) throw err;
-            var dbo = db.db("maproom");
-            var myquery = { email: currEmail };
-            var newvalues = { $set: {email: newEmail } };
-            dbo.collection("users").updateOne(myquery, newvalues, function(err, res) {
-              if (err) throw err;
-              console.log("1 document updated");
-              db.close();
-            });
-        });
-    firebase.auth().signOut().then(function() {
-              if(checkCookie("rememberme",req) == true)
-            {
-            res.append('Set-Cookie',"rememberme"+"="+"; path/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-            }
-            res.redirect('/');
-    }).catch(function(error) {
-      console.log("Error signing out.")
-                               var errorCode = error.code;
-                               var errorMessage = error.message;
-                               console.log(error)
-                               res.render('dashboard',
-                               {
-                                    email: loggedUser.email,
-                                    error: errorMessage
-                               });
-    });
-    }).catch(function(error) {
-      console.log("Error updating password.");
-                                 var errorCode = error.code;
-                                 var errorMessage = error.message;
-                                 console.log(error)
-                                res.render('dashboard',
-                                {
-                                    email: loggedUser.email,
-                                    error: errorMessage
-                                });
-    });
-
-    }).catch(function(error) {
-      console.log("Error validating user.");
-                               // Handle Errors here.
-                               var errorCode = error.code;
-                               var errorMessage = error.message;
-                               console.log(error);
-                                res.render('dashboard',
-                                {
-                                    email: loggedUser.email,
-                                    error: errorMessage
-                                });
-
-    });
-
-
-});
-
-});
-/**
- * login
- */
-app.post('/login', function(req, res) {
-    var failure = false;
-    upload(req, res, function(err) {
-        logWithTimeStamp('Logging in:', req.body);
-        //if(req.body.rememberMechecked) {
-        console.log(req.body.rememberMe);
-//}
-        User.findOne({ email: req.body.email }, function(err, user) {
-            if (err) {
-                console.log('Error occured when finding user', err.message);
-                //throw err;
-            }
-
-            if (!user) {
-                res.render('index', { error: 'Invalid email or password.' });
-                return;
-            } else {
-                auth.signInWithEmailAndPassword(req.body.email, req.body.password).then(cred => {
-                        loggedUser = cred.user;
-                        //const displayName = user.email;
-                        //req.maproom.user = user;
-                    },function(error) {
-                          // Handle Errors here.
-                          var errorCode = error.code;
-                          var errorMessage = error.message;
-                          console.log(error);
-                          failure = true;
-                      }).then(function(result){
-                      if(failure)
-                      {
-                        console.log("Login failed");
-                        res.render('index', { error: 'Invalid email or password.' });
-                        return;
-
-                      }
-
-                else
-                {
-                    console.log("Success!");
-                    let uid = loggedUser.uid;
-
-                    admin.auth().createCustomToken(uid)
-                      .then(function(customToken) {
-                        console.log("Successfully created custom token for user " + loggedUser.email);
-                      		const date = new Date();
-                      		const name = "rememberme";
-                      		const days = 30;
-                      		const value = customToken;
-                      		date.setTime(date.getTime()+(days*24*60*60*1000));
-                      		const expires = "; expires="+date.toGMTString();
-                        //createCookie("remember",customToken,5,req);
-                        console.log(res.cookie);
-                        console.log("---------------");
-                        console.log(req.cookie);
-                        res.append('Set-Cookie',name+"="+value+expires+"; path/");
-                 		res.render('dashboard',
-			{
-				email: loggedUser.email,
-				error: ""
-			
-			});
-                        return;
-
-                      })
-                      .catch(function(error) {
-                        console.log('Error creating custom token:', error);
-                      });
-                    //res.setHeader('Set-Cookie',[remember=customToken]);
-                     //res.redirect('dashboard');
-
-                }
-
-                });
-            };
-        });
-    });
-});
-//
-
-
-app.post('/contact-form-handler.php', async function(req, res) {
-/*	console.log("blahblahblah");
-
-	const output = `
-	<p> You have a new contact request </p>
-	<h3> Contact Details:</h3>
-	<ul>
-	<li>Name: ${req.body.name}</li>
-	<li>Email: ${req.body.email}</li>
-	</ul>
-	<h3>Message</h3>
-	<p>${req.body.message}</p>
-	`;
-
-	let transporter = nodemailer.createTransport({
-		service: 'Gmail',
-	    auth: {
-	       user: 'bra2091589@gmail.com',
-	       pass: ''
-	    	}
-		});
-
-	  let info = await transporter.sendMail({
-	    from: '"Coordinate Contact" <bra2091589@gmail.com>', // sender address
-	    to: "bra2091589@gmail.com", // list of receivers
-	    subject: "Coordinate Contact Request", // Subject line
-	    text: "Hello world?", // plain text body
-	    html: output // html body
-	  });
-
-	  console.log("Message sent: %s", info.messageId);
-	  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-	  // Preview only available when sending through an Ethereal account
-	  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-	  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-
-	  res.render('support');
-*/
-//}
-});
-
-//
-app.post('/delete', async function(req, res) {
-
-var user = firebase.auth().currentUser;
-
-    //delete user from firebase
-    //remove the user db info
-    user.delete().then(function() {
-      // User deleted.
-                MongoClient.connect(mongoUri, function(err, db) {
-                  if (err) throw err;
-                  var dbo = db.db("maproom");
-                  var myquery = { email: user.email };
-                  dbo.collection("users").deleteOne(myquery, function(err, res) {
-                    if (err) throw err;
-                    console.log("1 document deleted");
-                    db.close();
-                  });
-              });
-              res.append('Set-Cookie',"rememberme"+"="+"; path/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-              res.render('index');
-              return;
-
-    }).catch(function(error) {
-      console.log("Error deleting user");
-    });
-
-});
-
-app.get('/privacyPolicy', function(req, res) {
-
-res.render('privacyPolicy');
-
-
-
-});
-
-//
-/**
- * upload
- */
-app.post('/upload', function(req, res) {
-    upload(req, res, function(err) {
-        if (err) {
-            console.log(err);
-            return res.send("Error uploading file.");
-        }
-
-        //reset values
-        mapRoomDataset = [];
-        coordinates = [];
-        particleColors = [];
-
-        // get colors from form
-        for (var i = 0; i < 10; i++) {
-            particleColors.push({
-                r: req.body['color' + i + '_r'],
-                g: req.body['color' + i + '_g'],
-                b: req.body['color' + i + '_b']
-            })
-        }
-
-        // If no errors, convert the csv file to json
-        var categories = [];
-        var csvFilePath = "temp/" + fileName;
-        csv()
-            .fromFile(csvFilePath)
-            .then(function(result) {
-
-                console.log('csv file was uploaded');
-                // When parsing is finished, result will be here.
-                //console.log(res);
-                //console.log(res.length);
-                var jsonObjects = result;
-
-                // get file headers
-                //var fileHeaders = [];
-                var csvHeadersOptions = { file: csvFilePath, delimiter: ',' };
-                csvHeaders(csvHeadersOptions, function(err, headers) {
-                    if (!err) {
-                        console.log(headers);
-                        fileHeaders = headers;
-                    }
-
-                });
-
-                var addresses = [];
-                for (var i = 0; i < jsonObjects.length; i++) {
-                    var address = "";
-                    if (jsonObjects[i]["Street Address"] != null || jsonObjects[i]["Street Address"] != undefined) {
-                        address = jsonObjects[i]["Street Address"] + " ";
-                    }
-                    if (jsonObjects[i]["City"] != null || jsonObjects[i]["City"] != undefined) {
-                        address += jsonObjects[i]["City"] + " ";
-                    }
-                    if (jsonObjects[i]["State"] != null || jsonObjects[i]["State"] != undefined) {
-                        address += jsonObjects[i]["State"] + " ";
-                    }
-                    if (jsonObjects[i]["Postal Code"] != null || jsonObjects[i]["Postal Code"] != undefined) {
-                        address += jsonObjects[i]["Postal Code"] + " ";
-                    }
-                    address.replace("  ", " ");
-                    addresses.push(address);
-                    categories.push(jsonObjects[i]["Category"]);
-                }
-
-                geoBatch.geocode(addresses)
-                    .on('data', function(data) {
-                        var coordinate = { lat: data.location.lat, lng: data.location.lng }
-                        coordinates.push(coordinate);
-                        //console.log(coordinates.length);
-                    })
-                    .on('end', function() {
-                        //this is the last block that gets executed when uploading data
-
-                        // get column headers for custom variable types (e.g., "# of employees" or "revenue")
-                        console.log("total points: " + jsonObjects.length);
-
-                        createJSONFile(coordinates, fileHeaders, jsonObjects);
-
-
-                        // send colors
-                        var distinctCategories = categories.filter(distinctValues);
-                        //res.end("" + distinctCategories.length);
-
-
-                        // generate the table for user to confirm data
-                        // var html ="";
-                        // html += "<h2>Your data was uploaded successfully.</h2>";
-                        // html += "<table border='1'>";
-                        // html += "<tr>";
-                        // for (var i = 0; i < fileHeaders.length; i++) {
-                        // 	html += "<th>" + fileHeaders[i] + "</th>";
-                        // }
-                        // html += "</tr>";
-                        // for (i in jsonObjects) {
-                        // 	html += "<tr>";
-                        // 	for (j in fileHeaders) {
-                        // 	  	html += "<td>" + jsonObjects[i][fileHeaders[j]] + "</td>";
-                        //   	}
-                        //   	html += "</tr>";
-                        // }
-                        // html += "</table>"
-                        //res.send(html);
-
-
-
-                        //delete the user's original file from temp folder
-                        fs.unlink(csvFilePath, function(err) {
-                            if (err) return console.log(err);
-                            console.log('original file deleted successfully');
-                            res.redirect('/uploadFinished');
-                        });
-
-                    });
-            });
-    });
-});
-
-
-
-
-/**
- * dashboard
- */
-app.get("/dashboard", function(req, res) {
-
-    console.log(res.cookie);
-    console.log("test");
-
- //   while (email == " ? ? ? ") {
- //       console.log("test");
- //   }
-
-    if (loggedUser) {
-        res.render('dashboard', {
-            email: loggedUser.email,
-            error: ""
-        });
-        console.log("User captured")
-    } else {
-        res.render('index', { error: "Please log in." });
-    }
-});
-
-/**
- * create
- */
-app.get("/create", function(req, res) {
-    //console.log("currentUser:" + currentUser.email);
-
-    //if (currentUser == undefined) {
-    //	res.send("Please log in to add data.");
-    //} else {
-    //	res.sendFile('create.html', { root : VIEWS });
-    //}
-
-    if (loggedUser) {
-        fileHeaders = [];
-        res.render('create');
-    }
-});
-
-/**
- * uploadFinished
- */
-app.get("/uploadFinished", function(req, res) {
-    //res.sendFile('uploadFinished.html', { root : VIEWS });
-    res.render('uploadFinished');
-});
-
-/**
- * logout
- */
-app.get("/logout", function(req, res) {
-    //e.preventDefault();
-    auth.signOut().then(() => {
-        req.maproom.reset();
-        loggedUser = null;
-        if(checkCookie("rememberme",req) == true)
-        {
-        res.append('Set-Cookie',"rememberme"+"="+"; path/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;");
-        }
-        res.redirect('/');
-    })
 
 });
 
@@ -779,434 +190,77 @@ app.get("/manageData", function(req, res) {
 
     res.render('manageData');
 });
-//
-/**
- *
- */
-app.get("/support", function(req, res) {
 
-    res.render('support');
-});
-//
-app.get("/deleteAccount", function(req, res) {
-
-
-    res.render('deleteAccount');
-});
 /**
  * showDatasetTable
  */
 app.get("/showDatasetTable", function(req, res) {
-    var testUser = { email: loggedUser.email, password: loggedUser.password };
-
-
-    User.findOne({ email: testUser.email }, function(err, user) {
+	
+MongoClient.connect(mongoUri, function (err, db) {
+	if (err) throw err;
+    var dbo = db.db("sample_airbnb");
+    var keyword = "flat";
+    var regex = RegExp(".*" + keyword + ".*");
+   // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { name: regex };
+	console.log(myquery);
+	//var myquery = { name: "Spacious and well located apartment" };
+	//  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
         if (err) throw err;
-
-        var namesList = [];
-        for (var i = 0; i < user.datasets.length; i++) {
-            namesList.push({ datasetName: user.datasets[i].datasetName, date: user.datasets[i].date });
+        console.log(result[0]);
+		var namesList = [];
+        for (var i = 0; i < result.length; i++) {
+            namesList.push(result[i]);
         }
         res.send(JSON.stringify(namesList));
+        db.close();
     });
-});
-
-/**
- * deleteDataset
- * TODO: this function needs to be fixed
- */
-app.get("/deleteDataset", function(req, res) {
-    console.log("deleting " + req.query.datasetName);
+        });
 
 
-    //MongoClient.connect(mongoUri, { useNewUrlParser: true }, function(err, db) {
-    // 	if (err) throw err;
-    // 	var dbo = db.db("maproomdb");
-    // 	var query = { datasetName: req.query.datasetName, date: req.query.date };
-    // 	console.log(query);
-    // 	dbo.collection("maproomdata").deleteOne(query, function(err, obj) {
-    // 		if (err) throw err;
-    // 		console.log("1 document deleted");
-
-    // 		// send the row number to delete from table
-    // 		res.end(req.query.rowIndex);
-    // 		db.close();
-    // 	});
-    // });
-
-    var query = { datasetName: req.query.datasetName, date: req.query.date, rowIndex: req.query.rowIndex };
-
-    // mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
-    //     if (err) throw err;
-    //     console.log('Successfully connected to MongoDB');
-    // });
-
-    var testUser = { email: loggedUser.email, uid: loggedUser.uid };
-
-    User.findOne({ email: testUser.email, uid: testUser.uid }, function(err, user) {
+    });
+	
+	/**
+	* findDataSet
+	*/
+	app.get("/findDatasetTable", function(req, res) {
+		const query = req.query.search; 
+		var query2 = "";
+		query2 = String(query);
+		
+		console.log(query);
+		
+	
+MongoClient.connect(mongoUri, function (err, db) {
+	if (err) throw err;
+    var dbo = db.db("sample_airbnb");
+    var keyword = query;
+    var regex = RegExp(".*" + keyword + ".*");
+   // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { name: regex };
+	console.log(myquery);
+	//var myquery = { name: "Spacious and well located apartment" };
+	//  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
         if (err) throw err;
-        if (user) console.log("user found");
-        console.log(testUser.email);
-        console.log(testUser.uid);
-        var indicesToRemoveAt = [];
-        for (var i = user.datasets.length - 1; i >= 0; i--) {
-            if (user.datasets[i].datasetName == query.datasetName && user.datasets[i].date == query.date) {
-                console.log(i);
-                //indicesToRemoveAt.push(i);
-                //console.log(user.datasets[i].datasetName);
-                //console.log(user.datasets.remove(i));
-                user.datasets.splice(i, 1);
-                //i--;
-
-            }
+        console.log(result[0]);
+		var namesList = [];
+        for (var i = 0; i < result.length; i++) {
+            namesList.push(result[i]);
         }
-
-        // for (var i = indicesToRemoveAt.length -1; i >= 0; i--) {
-        // 	user.datasets.splice(indicesToRemoveAt[i], 1);
-        // }
-
-        user.save((err) => {
-            if (err) throw err;
-            console.log("deleted");
-            res.redirect('/manageData'); //refresh table
-            //res.send(query.rowIndex);
-
+        res.send(JSON.stringify(namesList));
+        db.close();
+    });
         });
+		
+		
+
 
     });
+	
+	app.get("/productpage", function(req, res) {
+
+    res.render('productpage');
 });
 
-// Functions
-
-/**
- * distinctValues
- * @param {*} value
- * @param {*} index
- * @param {*} self
- */
-function distinctValues(value, index, self) {
-    return self.indexOf(value) === index;
-}
-
-//
-Array.remove = function(array, from, to) {
-    var rest = array.slice((to || from) + 1 || array.length);
-    array.length = from < 0 ? array.length + from : from;
-    return array.push.apply(array, rest);
-};
-//
-
-/**
- * createJSONFile
- * @param {*} coordinates
- * @param {*} fileHeaders
- * @param {*} originalData
- */
-function createJSONFile(coordinates, fileHeaders, originalData) {
-    var presetValues = [];
-    var numericalValues = []; //these values are plotted
-
-    for (var i = 0; i < fileHeaders.length; i++) {
-        console.log(fileHeaders[i]);
-
-        if (fileHeaders[i] == "Street Address" ||
-            fileHeaders[i] == "City" ||
-            fileHeaders[i] == "State" ||
-            fileHeaders[i] == "Postal Code" ||
-            fileHeaders[i] == "Name" ||
-            fileHeaders[i] == "Category" ||
-            fileHeaders[i] == "Description") {
-            presetValues.push(fileHeaders[i]);
-        } else {
-            //  if (typeof parseFloat(originalData[0][fileHeaders[i]]) == "number") {
-            //if (typeof parseFloat(originalData[1][fileHeaders[i]]) == "number") {
-            numericalValues.push(fileHeaders[i]);
-            //}
-            // }
-        }
-    }
-    //console.log(numericalValues);
-
-    for (var i = 0; i < coordinates.length; i++) {
-        if (originalData[i] != undefined) {
-            //var x = remap(coordinates[i].lng, -112.698, -111.417, 0, 134) / 134;
-            //var y = remap(coordinates[i].lat, 33.19439748240166, 33.8900496563147, 0, 84) / 134;
-            var zip;
-            if (originalData[i]["Postal Code"] != undefined) {
-                zip = originalData[i]["Postal Code"];
-                if (zip.includes("-")) {
-                    zip = zip.substring(0, zip.indexOf('-'));
-                }
-            } else {
-                zip = undefined;
-            }
-
-
-            // current required variables: street, city, zip, name, category
-            var numRequiredVariables = 5;
-
-
-            // check if location is within map
-            //if (x >= 0.0 && x <= 1.0 && y >= 0.0 && y <= 1.0) {
-            var datapoint = {
-                name: originalData[i].Name,
-                //x: x,
-                //y: y,
-                lat: coordinates[i].lat,
-                lng: coordinates[i].lng,
-                city: originalData[i].City,
-                zipcode: zip,
-                category: originalData[i].Category,
-                description: originalData[i].Description,
-                valueTypes: numericalValues,
-                valuesToPlot: []
-                    //value1: parseFloat( originalData[i][numericalValues[0]] ),
-                    //value2: parseFloat( originalData[i][numericalValues[1]] ),
-            };
-
-
-            for (var j = 0; j < datapoint.valueTypes.length; j++) {
-                var value = parseFloat(originalData[i][numericalValues[j]]);
-                console.log(value);
-                datapoint.valuesToPlot.push(value);
-            }
-
-            mapRoomDataset.push(datapoint);
-            //console.log(datapoint);
-            //}
-        }
-    }
-
-
-    //write the json object retrieved by the Unity app
-    var mapRoomData = {
-        date: Date.now(),
-        datasetName: fileName.replace(".csv", ""),
-        datapoints: mapRoomDataset,
-        colors: particleColors
-    };
-    console.log("saving " + mapRoomData.datasetName + " to db");
-
-    User.findOne({ email: loggedUser.email, uid: loggedUser.uid }, function(err, user) {
-        console.log(loggedUser.email);
-        console.log(loggedUser.uid);
-        if (err) {
-            throw err;
-            console.log("error");
-        }
-        if (user) {
-            console.log("Found User");
-            user.datasets.push(mapRoomData);
-            user.save((err) => {
-                if (err) throw err
-            });
-        }
-    });
-}
-
-/**
- * Remap
- * @param {} coordinate
- * @param {*} minimumInput
- * @param {*} maximumInput
- * @param {*} minimumOutput
- * @param {*} maximumOutput
- */
-function remap(coordinate, minimumInput, maximumInput, minimumOutput, maximumOutput) {
-    return (coordinate - minimumInput) * (maximumOutput - minimumOutput) / (maximumInput - minimumInput) + minimumOutput;
-}
-
-/**
- * logWithTimeStamp
- *
- * Generates a console.log() prefixed by a timestamp in the format "[01/01/2019, 9:24:15 PM]"
- * @param  {...any} messages
- */
-function logWithTimeStamp(...messages) {
-    console.log("[" + intlDf.format(Date.now()) + "] - ", ...messages);
-}
-
-function createCookie(name,value,days,page) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	page.cookie = name+"="+value+expires+"; path=/";
-	page.append('Set-Cookie',name+value+expires+"; path/");
-}
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
-
-
-//
-function getcookie(req) {
-  var cookie = req.headers.cookie;
-  //user=someone; session=QyhYzXhkTZawIb5qSl3KKyPVN (this is my cookie i get)
-  return cookie.split('; ');
-}
-//
-function getCookie(cname,req) {
-  var name = cname + "=";
-  var decodedCookie = req.headers.cookie;
-
-  console.log(decodedCookie);
-  if(decodedCookie != undefined)
-  var ca = decodedCookie.split(';');
-
-  else var ca = "test";
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie(cname,object) {
-  var username = getCookie(cname,object);
-      if (username != "")
-      {
-        console.log("Captured");
-       return true;
-      }
-      else
-      {
-        return false;
-      }
-  }
-
-//
-// ROUTES ACCESSED THROUGH MOBILE APP
-
-// retrieve list of all datasets (used by the mobile app)
-// query should be domain:port/getDatasetList?email=myemail&password=mypassword&datasetName=mydatasetname
-app.get("/getDatasetList", function(req, res) {
-    console.log("Accessing " + req.query.uid);
-
-    admin.auth().verifyIdToken(req.query.uid)
-        .then(function(decodedToken) {
-            var uid = decodedToken.uid;
-            console.log("decoded");
-
-            var testUser = { email: req.query.email, uid: uid };
-
-            if (req.query.email == "" || req.query.email == null || req.query.email == undefined) {
-                testUser.email = currentUser.email;
-                testUser.uid = currentUser.uid;
-            }
-            //res.send("Got this far " + req.query.uid);
-            User.findOne({ email: testUser.email, uid: testUser.uid }, function(err, user) {
-                if (err) throw err;
-                console.log("Do you exist?");
-                // test a matching password
-                if (user) {
-                    //console.log('Password match:', isMatch);
-                    // if (isMatch) {/
-                    var namesList = [];
-                    for (var i = 0; i < user.datasets.length; i++) {
-                        namesList.push(user.datasets[i].datasetName);
-                    }
-                    var namesListObj = { namesList: namesList };
-                    console.log("Names are: " + namesList[0]);
-                    res.send(JSON.stringify(namesListObj));
-                    //} else {
-                    //	res.send("Password does not match");
-                    //}
-                } else {
-                    res.send("No user found");
-                }
-            });
-        }).catch(function(error) {
-            // Handle error
-        });
-});
-
-app.get("/getCustomToken", function(req, res) {
-    console.log("Creating token " + req.query.uid);
-
-    admin.auth().verifyIdToken(req.query.uid)
-        .then(function(decodedToken) {
-            var uid = decodedToken.uid;
-            console.log("decoded");
-
-            var testUser = { email: req.query.email, uid: uid };
-
-            if (req.query.email == "" || req.query.email == null || req.query.email == undefined) {
-                testUser.email = currentUser.email;
-                testUser.uid = currentUser.uid;
-            }
-            //res.send("Got this far " + req.query.uid);
-            User.findOne({ email: testUser.email, uid: testUser.uid }, function(err, user) {
-                if (err) throw err;
-                console.log("Do you exist?");
-                // test a matching password
-                if (user) {
-
-                //create token, sned to app
-                    admin.auth().createCustomToken(uid)
-                      .then(function(customToken) {
-                        res.send(customToken);
-                        return;
-
-                      })
-
-
-                } else {
-                    res.send("No user found");
-                }
-            });
-        }).catch(function(error) {
-            // Handle error
-        });
-});
-
-app.get("/viewData", function(req, res) {
-
-    var testUser = { email: req.query.email, password: req.query.uid };
-
-    if (req.query.email == "" || req.query.email == null || req.query.email == undefined) {
-        testUser.email = currentUser.email;
-        testUser.password = currentUser.password;
-    }
-
-    User.findOne({ email: testUser.email }, function(err, user) {
-        if (err) throw err;
-        // test a matching password
-        if (user) {
-            //user.comparePassword(testUser.password, function(err, isMatch) {
-            //  if (err) throw err;
-            // console.log('Password match:', isMatch);
-            for (var i = 0; i < user.datasets.length; i++) {
-                if (user.datasets[i].datasetName == req.query.datasetName) {
-                    res.send(JSON.stringify(user.datasets[i]));
-                    return;
-                }
-            }
-            //  });
-        } else {
-            res.send("No user found");
-        }
-    });
-
-
-
-});
