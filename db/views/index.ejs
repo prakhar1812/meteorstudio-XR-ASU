@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="uielements.css">
   </head>
@@ -31,6 +32,93 @@ var page = 1;
 /* [3] Finally, transforming the image when container gets hovered */
 .img-hover-zoom:hover img {
   transform: scale(1.5);
+}
+
+.bar-thing
+{
+	width: 80px;
+	height: 0px;
+	right:0px;
+	/* transform: matrix(0, 1, -1, 0, 0, 0); */
+	border: 5px solid #FFC627;
+	opacity: 1;
+	align-content: center;
+	text-align:center;
+}
+
+h5.roboto
+{
+
+font-family: 'Roboto', sans-serif;
+font-size: 36px;
+font-weight: 900;
+
+
+}
+
+.bouton-image:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0px;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+.monBouton:before{
+     background-image : url("Icon - chevron-right-solid.svg");
+}
+
+button
+{
+top: 1365px;
+left: 94px;
+width: 143px;
+height: 32px;
+background: #E6E6E6 0% 0% no-repeat padding-box;
+border: 1px solid #E6E6E6;
+opacity: 1;
+
+}
+
+p.roboto
+{
+margin-left:400px;
+margin-right:400px;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+letter-spacing: 0.09px;
+
+}
+.test
+{
+box-shadow: 0px 3px 6px #00000029;
+border: 1px solid #707070;
+border-radius: 171px;
+opacity: 1;
+}
+
+.searchbar
+{
+width: 529px;
+height: 48px;
+margin-left:485px;
+margin-right:485px;
+text-align:center;
+}
+
+.bar
+{
+top: 109px;
+left: 0px;
+width: 1280px;
+height: 60px;
+background: #353535 0% 0% no-repeat padding-box;
+opacity: 1;
 }
 
 
@@ -193,11 +281,22 @@ opacity: 1;
           </ul>
         </div> -->
       </div>
-
+    <!---<div class = "bar"> </div>-->
     <img src="home1.png" alt="1" style="width: 100%">
-    <img src="home2.png" alt="2" style="width: 100%">
+<div class = "text-center mt-4"> . </div>
+<div class = "text-center mt-4"> 
+	<h5 class = "text-center mt-4 roboto" >What is XR@ASU?</h5> 
+</div>
 
-    <input type="text" placeholder="Search.." id="search" name="search" >
+<div class = "text-center"> 
+<p class = "roboto text-center ml-8">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo
+</p>
+</div>
+<div class = "text-center">  
+<img src="bar.png">
+</div>	
+    <input class ="rounded text-center searchbar" type="text" placeholder="Search XR experiences"  name="search" >
     <button onclick="findData()" id="search_button">Search XR!</button>
 
     <!-- begin grid work here -->
@@ -210,7 +309,7 @@ opacity: 1;
       <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
 
       <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
-      <p style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
+      <p class ="button" style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
       <p style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Communication</p>
       <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
       <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
@@ -236,46 +335,52 @@ opacity: 1;
 		  <div class = "img-hover-zoom">
             <img class="bd-placeholder-img card-img-top rounded" id="item-image1" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
 			 </div>
-			  <h5 class="text-block bg-primary w-25 text-white text-center" style="font-size:70%">360 Video </h5>
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">360 Video </h5>
 			<div class="card-body rounded">
               <h5 class="card-title" id = "itemname1" >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
-			  <p class="card-subtitle mb-2 text-muted" id = "itemdesc1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+			  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. </p>
+            <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
 			<div class="mask pattern-8 flex-center">
 			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
 			</div>
 			</div>
           </div>
         </div>
+		
         <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
-            <div class="card-body">
-			  <p class="card-text" id = "itemname2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+			<div class="card mb-4 shadow-sm">
+				<div class = "img-hover-zoom">
+					<img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+				</div>         
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">360 Video </h5>				
+				<div class="card-body">
+			  <h5 class="card-title" id = "itemname2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
+              <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
+			<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
             </div>
           </div>
-        </div>
+		  
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
+			<div class = "img-hover-zoom">
             <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-            <div class="card-body">
-			  <p class="card-text" id = "itemname3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+			</div>       
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">360 Video </h5>							
+		   <div class="card-body">
+			  <h5 class="card-title" id = "itemname3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
+              <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
+			<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
             </div>
           </div>
         </div>
@@ -287,16 +392,75 @@ opacity: 1;
 
       </div>
 	
-        
-            <frame src="index1.html" scrolling="auto" frameborder="1" />
-            <frame src="index2.html" scrolling="auto"  />
-        </frameset>
-
+		<div style="text-align: center;"	>
+	<button type="button" class="btn btn-dark text-center">View all</button>
+	</div>
     </div>
 </div>
-    <img src="home4.png" alt="4" style="width: 100%">
-    <img src="home5.png" alt="5" style="width: 100%">
-    <img src="home6.png" alt="6" style="width: 100%">
+</div>
+<div class = "text-center mt-4"> . </div>
+<div class = "text-center mt-4"> 
+	<h5 class = "text-center mt-4 roboto">Get Started</h5> 
+</div>
+<div class = "text-center"> 
+<p class = "roboto">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo</p>
+</div>
+
+<div class = "text-center">  
+<img src="bar.png">
+</div>
+<div class="container mt-4">
+
+      <div class="row">
+        <div class="col-md-4">
+		<div class = "test">
+		<img class="card-img-top" src="goggles.png" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+		<h5 class = "roboto"> Get your Device </h5>
+		<p class = "text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo</p>
+</p>
+		  </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow rounded">
+		  <div class = "img-hover-zoom">
+            <img class="card-img-top" src="query.png" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+            </div>
+			<div class="card-body">
+			  <p class="card-text" id = "itemname2">Find your experience</p>
+              <p class="card-text" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+						<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+			<div class = "img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" src="immerse.png" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            </div>
+			<div class="card-body">
+			  <p class="card-text" id = "itemname3">Immerse Yourself</p>
+              <p class="card-text" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+						<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+          </div>
+        </div>
+
+	  
+	  <!----------------->
+	  
+	  <!-------------------->
+
+      </div>
+	
+        
+    </div>  
   </body>
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

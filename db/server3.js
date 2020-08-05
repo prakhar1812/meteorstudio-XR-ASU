@@ -253,7 +253,14 @@ MongoClient.connect(mongoUri, function (err, db) {
         db.close();
     });
         });
+		
+		
 
 
     });
+	
+	app.get("/productpage", function(req, res) {
+
+    res.render('productpage');
+});
 

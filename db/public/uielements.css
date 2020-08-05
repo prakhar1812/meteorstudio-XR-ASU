@@ -11,11 +11,11 @@ body{
 }
 
 .logo{
-  float: left;
+ 
 }
 
 nav{
-  float: right;
+
 }
 
 nav ul{
@@ -54,7 +54,6 @@ nav ul li:hover ul li {
 }
 
 #search{
-  position: absolute;
   top: 1072px;
   left: 445px;
   height: 50px;
@@ -63,9 +62,9 @@ nav ul li:hover ul li {
 }
 
 #search_button{
-  position: absolute;
     top: 1090px;
     left: 1080px;
+display: inline-block;
 }
 
 .explore_tags p::selection{
