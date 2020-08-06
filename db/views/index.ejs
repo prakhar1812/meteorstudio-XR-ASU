@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="uielements.css">
+  </head>
+  <script>
+var error = "";
+var error2 = "";
+var error3 = "";
+var page = 1;
+</script>
+<body onload="manageData()">
+  <style>
+  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+  
+.img-hover-zoom {
+  height: 200px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+}
+
+.bar-thing
+{
+	width: 80px;
+	height: 0px;
+	right:0px;
+	/* transform: matrix(0, 1, -1, 0, 0, 0); */
+	border: 5px solid #FFC627;
+	opacity: 1;
+	align-content: center;
+	text-align:center;
+}
+
+h5.roboto
+{
+
+font-family: 'Roboto', sans-serif;
+font-size: 36px;
+font-weight: 900;
+
+
+}
+
+.bouton-image:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0px;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+}
+
+.monBouton:before{
+     background-image : url("Icon - chevron-right-solid.svg");
+}
+
+button
+{
+top: 1365px;
+left: 94px;
+width: 143px;
+height: 32px;
+background: #E6E6E6 0% 0% no-repeat padding-box;
+border: 1px solid #E6E6E6;
+opacity: 1;
+
+}
+
+p.roboto
+{
+margin-left:400px;
+margin-right:400px;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+letter-spacing: 0.09px;
+
+}
+.test
+{
+box-shadow: 0px 3px 6px #00000029;
+border: 1px solid #707070;
+border-radius: 171px;
+opacity: 1;
+}
+
+.searchbar
+{
+width: 529px;
+height: 48px;
+margin-left:485px;
+margin-right:485px;
+text-align:center;
+}
+
+.bar
+{
+top: 109px;
+left: 0px;
+width: 1280px;
+height: 60px;
+background: #353535 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+
+  .grid-container {
+  display: inline-grid;
+    grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #FFFFFF;#FFC627;
+  padding: 10px;
+  align-content: center;
+}
+.grid-item {
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  
+  .text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+justify-content: center;
+}
+
+.sidebar{
+top: 1310px;
+left: 78px;
+width: 220px;
+height: 363px;
+opacity: 1;
+}
+.item1 {
+  grid-column: 1
+  grid-row: 1 / span2;
+  background-color: #FFFFFF;
+
+}
+.item2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.item3 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 1px;
+  height: 800px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  </style>
+
+    <header>
+      <div class="container">
+        <!-- Logo -->
+        <div id="asu_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" class="logo" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a><!--<a id="asu-hdr-mobile-logo" href="https://www.asu.edu/" target="_top"> <img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/asu-logo.png"></a>--></div>
+
+        <nav>
+            <ul><!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+                <li><a href="https://www.asu.edu/" target="_top" id="main_menu_items">ASU Home</a>
+
+                  <ul>
+                       <li><a class="first" href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a></li>
+                       <li><a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a></li>
+                       <li><a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a></li>
+                       <li><a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a></li>
+                       <li><a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a></li>
+                       <li><a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a></li>
+                       <li><a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a></li>
+                       <li><a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://my.asu.edu/" target="_top">My ASU</a></li>
+                <li><a href="https://www.asu.edu/colleges/" target="_top" id="menu_main">Colleges and Schools</a>
+
+                  <ul>
+                     <li class="ccb"><a class="first" href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and Sciences</a></li>
+                     <li class="ccb"><a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a></li>
+                     <li class="ccb"><a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the Arts</a></li>
+                     <li class="ccb"><a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a></li>
+                     <li class="ccb"><a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a></li>
+                     <li class="ccb"><a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future of
+                        Innovation in Society</a>
+                     </li>
+                     <li class="ccb"><a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a></li>
+                     <li class="ccb"><a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a></li>
+                     <li class="ccb"><a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a></li>
+                     <li class="ccb"><a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a></li>
+                     <li class="ccb"><a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a></li>
+                     <li class="ccb"><a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a></li>
+                     <li class="ccb"><a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service and
+                        Community Solutions</a>
+                     </li>
+                     <li class="ccb"><a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a></li>
+                     <li class="ccb"><a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a></li>
+                     <li class="ccb"><a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://www.asu.edu/map/" target="_top">Map and Locations</a>
+
+                  <ul>
+                     <li class="ccb"><a class="border first" href="https://www.asu.edu/map/" target="_top">Map</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a></li>
+                     <li class="ccb"><a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
+                        Phoenix</a>
+                     </li>
+                     <li class="ccb"><a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
+                        Extended</a>
+                     </li>
+                     <li class="ccb"><a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a></li>
+                     <li class="ccb"><a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a></li>
+                     <li class="ccb"><a href="https://asuresearchpark.com/" target="_top">Research Park</a></li>
+                     <li class="ccb"><a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a></li>
+                     <li class="ccb"><a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a></li>
+                  </ul>
+
+                </li>
+                <li><a href="https://isearch.asu.edu/" target="_top" title="Directory, Index and other info">Directory</a></li>
+                <li><a href="https://weblogin.asu.edu/cgi-bin/login" onclick="this.href=ASUHeader.alterLoginHref(this.href);" onfocus="this.href=ASUHeader.alterLoginHref(this.href);" onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
+            </ul>
+            <div>
+              <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie" type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client" type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box" placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit" value="Search"></form>
+            </div>
+        </nav>
+
+        <!-- <div class="nav2grey">
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">search</a></li>
+            <li><a href="#">abt</a></li>
+          </ul>
+        </div> -->
+      </div>
+    <!---<div class = "bar"> </div>-->
+    <img src="home1.png" alt="1" style="width: 100%">
+<div class = "text-center mt-4"> . </div>
+<div class = "text-center mt-4"> 
+	<h5 class = "text-center mt-4 roboto" >What is XR@ASU?</h5> 
+</div>
+
+<div class = "text-center"> 
+<p class = "roboto text-center ml-8">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo
+</p>
+</div>
+<div class = "text-center">  
+<img src="bar.png">
+</div>	
+    <input class ="rounded text-center searchbar" type="text" placeholder="Search XR experiences"  name="search" >
+    <button onclick="findData()" id="search_button">Search XR!</button>
+
+    <!-- begin grid work here -->
+
+  <div class="row">
+    <div class="column left bg-light" style="background-color:#FFF;">
+
+      <div class="explore_tags">
+
+      <p style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</p>
+
+      <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
+      <p class ="button" style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Art & Design</p>
+      <p style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Communication</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Education</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Engineering</p>
+      <p style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Geographical Sciences & Urban Planning</p>
+      <p style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">Health & Nutrition</p>
+      <p style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">History</p>
+
+      <hr style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
+
+      <a href="#" style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced Search</a>
+
+      </div>
+
+    </div>
+    <div class="column right" style="background-color:#ffffff;">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm rounded"> 
+		  <div class = "img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top rounded" id="item-image1" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+			 </div>
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">360 Video </h5>
+			<div class="card-body rounded">
+              <h5 class="card-title" id = "itemname1" >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
+			  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc1">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. </p>
+            <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
+			<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+          </div>
+        </div>
+		
+        <div class="col-md-4">
+			<div class="card mb-4 shadow-sm">
+				<div class = "img-hover-zoom">
+					<img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+				</div>         
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">360 Video </h5>				
+				<div class="card-body">
+			  <h5 class="card-title" id = "itemname2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
+              <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
+			<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+            </div>
+          </div>
+		  
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+			<div class = "img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+			</div>       
+			  <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">360 Video </h5>							
+		   <div class="card-body">
+			  <h5 class="card-title" id = "itemname3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h5>
+              <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+			</div>
+			<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+            </div>
+          </div>
+        </div>
+
+	  
+	  <!----------------->
+	  
+	  <!-------------------->
+
+      </div>
+	
+		<div style="text-align: center;"	>
+	<button type="button" class="btn btn-dark text-center">View all</button>
+	</div>
+    </div>
+</div>
+</div>
+<div class = "text-center mt-4"> . </div>
+<div class = "text-center mt-4"> 
+	<h5 class = "text-center mt-4 roboto">Get Started</h5> 
+</div>
+<div class = "text-center"> 
+<p class = "roboto">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo</p>
+</div>
+
+<div class = "text-center">  
+<img src="bar.png">
+</div>
+<div class="container mt-4">
+
+      <div class="row">
+        <div class="col-md-4">
+		<div class = "test">
+		<img class="card-img-top" src="goggles.png" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+		<h5 class = "roboto"> Get your Device </h5>
+		<p class = "text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo</p>
+</p>
+		  </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow rounded">
+		  <div class = "img-hover-zoom">
+            <img class="card-img-top" src="query.png" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef" dy=".3em"></text></svg>
+            </div>
+			<div class="card-body">
+			  <p class="card-text" id = "itemname2">Find your experience</p>
+              <p class="card-text" id = "itemdesc2">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+						<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+			<div class = "img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" src="immerse.png" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            </div>
+			<div class="card-body">
+			  <p class="card-text" id = "itemname3">Immerse Yourself</p>
+              <p class="card-text" id = "itemdesc3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+						<div class="mask pattern-8 flex-center">
+			<div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
+			</div>
+			</div>
+          </div>
+        </div>
+
+	  
+	  <!----------------->
+	  
+	  <!-------------------->
+
+      </div>
+	
+        
+    </div>  
+  </body>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="asyncReq.js"></script>
+
+
+<script>
+    function incrementValue() {
+	page++;
+	manageData();
+    }
+  function manageData() {
+    loadFile("./showDatasetTable", function(result){
+      // show a table of the user's datasets
+      var data = JSON.parse(result);
+      var totalItemsCount = data.length;
+      var numberOfItemsPerPage = 5;
+      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+	
+	//this was 20
+      for (var i = start; i < end; i++) {
+        var name = data[i].name;
+        var date = data[i].address.country;
+	var image = data[i].images.picture_url;
+	document.getElementById("item-image" + i).src = image;
+	var row3 = document.createElement("image");
+	row3.src = image;
+		
+	
+
+	document.getElementById("itemname"+ i).innerHTML = name;	
+	document.getElementById("itemdesc"+ i).innerHTML = date;	
+
+      }
+    });
+  }
+  function findData() {
+    var search = document.getElementById("search").value;
+    loadFile("./findDatasetTable?search="+search, function(result){
+      // show a table of the user's datasets
+      var data = JSON.parse(result);
+      var totalItemsCount = data.length;
+      var numberOfItemsPerPage = 5;
+      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+	
+      for (var i = start; i < end; i++) {
+        var name = data[i].name;
+        var date = data[i].address.country;
+	var image = data[i].images.picture_url;
+	document.getElementById("item-image" + i).src = image;
+
+	var row3 = document.createElement("image2");
+	row3.src = image;
+	
+	
+		document.getElementById("itemname"+ i).innerHTML = name;	
+		document.getElementById("itemdesc"+ i).innerHTML = date;
+
+      }
+    });
+  }
+    $(document).ready(function() {
+        var url = window.location.href;
+        var n = url.lastIndexOf('/');
+        var href = url.substring(n + 1);
+        console.log(href);
+        //console.log(window.location.href.split('/')[1]);
+        if (href == "#loginBtn") {
+            showLoginForm();
+        } else if (href == "#signinBtn") {
+            showSignupForm();
+        }
+        $("#loginBtn").click(function() {
+            showLoginForm();
+        });
+        $("#signupBtn").click(function() {
+            showSignupForm();
+        });
+        var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords do not match");
+            } else if (password.value.length < 6) {
+                confirm_password.setCustomValidity("Password must be six digits");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    });
+const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("email");
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+</script>
+
+  
+</html>
