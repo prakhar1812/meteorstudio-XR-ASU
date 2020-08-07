@@ -54,3 +54,11 @@ form .submit:hover{
 	background-color:#f44336;
 	cursor:pointer;
 }
+
+.ovalButton {
+	height: 25px;
+	width: 25px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+}
