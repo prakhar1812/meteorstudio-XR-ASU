@@ -42,6 +42,7 @@
             font-weight: bold;
             border-width: 0px;
         }
+
         .rectButton {
             height: 35px;
             width: 150px;
@@ -53,6 +54,7 @@
             font-weight: bold;
             border-width: 0px;
         }
+
         .categoriesButton {
             height: 35px;
             width: 130px;
@@ -65,35 +67,71 @@
             border-width: 0px;
             letter-spacing: 0.07px;
         }
+        .dot {
+            height: 40px;
+            width: 40px;
+            background-color: #E5E5E5;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .line {
+            display: block;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+            color: #E5E5E5;
+        }
+        .three-sixtyVid {
+            background-color: #FF7F32;
+            width: 64px;
+            height: 18px;
+            font-size: 12px;
+            color: #ffffff;
+            letter-spacing: 0.06px;
+            font-weight: bold;
+        }
+
+
         #sectionTitle {
             color: #2A2A2A;
             font-weight: bold;
             font-size: 18px;
         }
+        #similarSubtitle {
+            font-size: 12px;
+            letter-spacing: 0.06px;
+            color: #2A2A2A;
+        }
+
         #creditLabels {
             color: #1E1E1E;
             font-weight: light;
             font-size: 18px;
             letter-spacing: 0.09px;
         }
+
         #infoLabels {
             color: #1E1E1E;
             font-weight: light;
             font-size: 16px;
             letter-spacing: 0.09px;
         }
+
         #creditNames {
             color: #1E1E1E;
             font-weight: bold;
             font-size: 18px;
             letter-spacing: 0.09px;
         }
+
         .carousel-control-prev {
             width: 5%;
         }
+
         .carousel-control-next {
             width: 5%;
         }
+
         #carousel-prev-arrow {
             height: 25px;
             width: 25px;
@@ -102,7 +140,7 @@
             display: inline-block;
             opacity: 100% !important;
         }
-        
+
 
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -173,11 +211,12 @@
         .bottom_fill {
             border-radius: 25px;
             background-color: #FFC627;
-            height: 2%;
+            height: 3%;
             width: 100%;
             position: absolute;
-            bottom: 0;
-            left: 0px;
+            bottom: -0.8px;
+            left: 0;
+            border-radius: 0 0 12px 12px;
         }
 
         .align_left {
@@ -197,300 +236,303 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-</head><body>
+</head>
+<body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard">XR Search</a>
         <a class="nav-link" href="logout" style="color: white">Upload</a>
     </nav>
-	
-	<header>
-  <div class="overlay"></div>
-  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-  </video>
-  <div class="container h-100">
-    <div class="d-flex h-100 text-center align-items-center">
-      <div class="w-100 text-white">
-        <h1 class="display-3">Video Header</h1>
-        <p class="lead mb-0">DB-referenced video</p>
-      </div>
-    </div>
-  </div>
-</header>
 
-<section class="my-5">
-
-</section>
-
-<div class="container-fluid">
-
-
-
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-        <h1 class="h2" style="font-weight: 900; font-size: 36px;">ASU Campus Scavenger Hunt</h1>
-        <div class="col"> <button type="button" class="ovalButton">Share<img style="width: 15px; margin: 0 0 0.3em 1em;" src="share.png" alt="share"></button></div>
-
-    </div>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-        <div class="d-flex flex-row bd-highlight mb-3">
-            <div class="p-2" style="color: #6E6E6E; padding: .5rem .4rem .5rem .5rem !important; font-size: 24px;">Created by:</div>
-            <div class="p-2 bd-highlight border-right" style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">LFC</div>
-            <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton">AR Experience</button></div>
-            <div class="p-2 bd-highlight" style="color: #1e1e1e; font-size: 18px;">2019</div>
-        </div>
-    </div>
-    <div class="d-flex flex-wrap flex-md-nowrap pt-3">
-        <div class="col">
-            <p class="mr-4 pr-4 align_left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
-            <div class="border-bottom w-75"> </div>
-        </div>
-        <div class="border mt-4">
-            <div class="ml-4 pl-4 justify-content-start mx-auto">
-                <button type="button" class="btn btn-primary btn-sm">Device Compatibility</button>
-                <p> Compatible Devices: </p>
-                <button type="button" class="btn btn-primary btn-sm">Send to my phone</button>
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3">Video Header</h1>
+                    <p class="lead mb-0">DB-referenced video</p>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div>
-        <h1 id="sectionTitle" style="font-weight: bolder;"> Categories: </h1>
-    </div>
-    <div style="padding-top: 0.5em;">
-        <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />Education</button></span>
-        <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />History</button></span>
-    </div>
+    <section class="my-5">
+    </section>
+
+    <div class="container-fluid">
+
+        <div>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+            <h1 class="h2" style="font-weight: 900; font-size: 36px;">ASU Campus Scavenger Hunt</h1>
+            <div class="col"> <button type="button" class="ovalButton">Share<img style="width: 15px; margin: 0 0 0.3em 1em;" src="share.png" alt="share"></button></div>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="p-2" style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">Created by:</div>
+                <div class="p-2 bd-highlight border-right" style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">LFC</div>
+                <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton">AR Experience</button></div>
+                <div class="p-2 bd-highlight" style="color: #1e1e1e; font-size: 18px;">2019</div>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap flex-md-nowrap pt-3">
+            <div class="col" style="padding: 0;">
+                <p class="mr-4 pr-4 align_left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
+                <div class="border-bottom w-75"> </div>
+            </div>
+            <div class="border mt-4" style="margin-right: 85px; margin-top: -150px !important; text-align: center; height: 236px; width: 331px; border-radius: 8px;">
+                <div class="ml-4  mt-4 justify-content-start mx-auto" style="height: 236px; width: 331px; display: inline-block; ">
+                    <button type="button" class="categoriesButton" style="width: 270px; height: 60px; border-radius: 35px; font-size: 17px;">This devive is not compatible</button>
+                    <div>
+                        <p id="creditLabels" style="margin: 20px 0;"> Compatible Devices: <span class="dot" style="margin: 0 0 -10px 10px;"></span> </p>
+                    </div>
+                    <div class="mt-4 line" style="width: 80%; margin-left: 10%;"></div>
+                    <div style="color: #8C1D40; text-decoration: underline; font-size: 19px; font-weight: bold; margin-top: 20px;">Send to my phone<img style="width: 27px; margin: 0 0 0.3em 1em;" src="redShare.png" alt="share"></div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <div>
+            <h1 id="sectionTitle" style="font-weight: bolder;"> Categories: </h1>
+        </div>
+        <div style="padding-top: 0.5em;">
+            <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />Education</button></span>
+            <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />History</button></span>
+        </div>
         <div class="row">
-        <div class="w-100"></div>
-        <div class="col mt-5 mb-4" style="flex-grow: 1.5;">
-            <div id="sectionTitle">Credits</div>
-            <!--------->
-            <div>
-                <p class="mt-4">
-                    <span id="creditLabels"> Colored by: </span>
-                    <span id="creditNames"> John Smith </span>
-                </p>
-                <p>
-                    <span id="creditLabels"> Animation: </span>
-                    <span id="creditNames"> Terry Summers </span>
-                </p>
-                <p>
-                    <span id="creditLabels"> Model by: </span>
-                    <span id="creditNames"> Gina Halway </span>
-                </p>
-
-            </div>
-
-            <div>
-                <div class="mt-4">
-                    <h1 id="sectionTitle"> Screenshots and Videos </h1>
-                </div>
-                <div class="container">
-                    <!--Carousel Wrapper-->
-                    <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
-                        <!--Indicators-->
-                        <ol class="carousel-indicators">
-                            <li data-target="#video-carousel-example" data-slide-to="0" class="active"></li>
-                            <li data-target="#video-carousel-example" data-slide-to="1"></li>
-                            <li data-target="#video-carousel-example" data-slide-to="2"></li>
-                        </ol>
-                        <!--/.Indicators-->
-                        <!--Slides-->
-                        <div class="row">
-                            <div class="col" style="position: relative;">
-                                <div class="carousel-inner d-inline-block" role="listbox">
-                                    <div class="carousel-item active">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="carousel-inner d-inline-block" role="listbox">
-                                    <div class="carousel-item active">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col w-100">
-                                <div class="carousel-inner d-inline-block" role="listbox">
-                                    <div class="carousel-item active">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <video class="video-fluid" autoplay loop muted width="198" height="135">
-                                            <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.Slides-->
-                        <!--Controls-->
-                        <a class="carousel-control-prev" href="#video-carousel-example" role="button" data-slide="prev" style="position: absolute;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#video-carousel-example" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                        <!--/.Controls-->
-                    </div>
-                    <!--Carousel Wrapper-->
-                </div>
-            </div>
-
-            <div>
-                <h1 id="sectionTitle"> Compatible Locations </h1>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="list-group list-group-horizontal" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ASU Tempe</a>
-                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">ASU West</a>
-                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ASU Downtown</a>
-                            <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">ASU Polytechnic</a>
-                            <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">At Home</a>
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-                        </div>
-                    </div>
-                </div>
-                <!--Google map-->
-                <div id="map-container-google-4" class="z-depth-1-half map-container-4 w-100 h-100" style="height: 730px">
-                    <iframe src="https://maps.google.com/maps?q=tempe&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                            style="border:0" allowfullscreen></iframe>
-                </div>
-
-                <!--Google Maps-->
-
-                <div id="sectionTitle">Information</div>
-
+            <div class="w-100"></div>
+            <div class="col mt-5 mb-4" style="flex-grow: 1.5;">
+                <div id="sectionTitle">Credits</div>
+                <!--------->
                 <div>
                     <p class="mt-4">
-                        <span id="infoLabels"> Language </span>
-                        <span id="infoLabels"> English </span>
+                        <span id="creditLabels"> Colored by: </span>
+                        <span id="creditNames"> John Smith </span>
                     </p>
                     <p>
-                        <span id="infoLabels"> Compatibility </span>
-                        <span id="infoLabels"> Requires iOS 10.0 or later. </span>
+                        <span id="creditLabels"> Animation: </span>
+                        <span id="creditNames"> Terry Summers </span>
                     </p>
                     <p>
-                        <span id="infoLabels"> Release Date </span>
-                        <span id="infoLabels"> March 30, 2020 </span>
+                        <span id="creditLabels"> Model by: </span>
+                        <span id="creditNames"> Gina Halway </span>
                     </p>
 
                 </div>
 
-                <h1 id="sectionTitle"> Information </h1>
+                <div>
+                    <div class="mt-4">
+                        <h1 id="sectionTitle"> Screenshots and Videos </h1>
+                    </div>
+                    <div class="container">
+                        <!--Carousel Wrapper-->
+                        <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#video-carousel-example" data-slide-to="0" class="active"></li>
+                                <li data-target="#video-carousel-example" data-slide-to="1"></li>
+                                <li data-target="#video-carousel-example" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="row">
+                                <div class="col" style="position: relative;">
+                                    <div class="carousel-inner d-inline-block" role="listbox">
+                                        <div class="carousel-item active">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
 
-            </div>
-            <!-------->
-        </div>
-        <div class="col" style="flex-grow: 1;"> </div>
-        <div class="col ml-4 align-right" style="flex-grow: 0.5;">
-            <h1 id="sectionTitle">Similar Content</h1>
+                                <div class="col">
+                                    <div class="carousel-inner d-inline-block" role="listbox">
+                                        <div class="carousel-item active">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div class="card mb-4" style="width: 232px; height:300px;">
-                <img src="imageAmountain.png" class="card-img-top" alt="...">
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">360 Video </h5>
-                <div class="card-body">
-                    <h6 class="card-title">Card title</h6>
-                    <p class="card-text">Card Desc</p>
+                                <div class="col w-100">
+                                    <div class="carousel-inner d-inline-block" role="listbox">
+                                        <div class="carousel-item active">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video class="video-fluid" autoplay loop muted width="198" height="135">
+                                                <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#video-carousel-example" role="button" data-slide="prev" style="position: absolute;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#video-carousel-example" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--Carousel Wrapper-->
+                    </div>
                 </div>
-                <div class="bottom_fill"></div>
-            </div>
 
-            <div class="card mb-4" style="width: 232px; height:300px;">
-                <img src="imageAmountain.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Card title</h6>
-                    <p class="card-text">Card Desc</p>
+                <div>
+                    <h1 id="sectionTitle"> Compatible Locations </h1>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="list-group list-group-horizontal" id="list-tab" role="tablist">
+                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ASU Tempe</a>
+                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">ASU West</a>
+                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ASU Downtown</a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">ASU Polytechnic</a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">At Home</a>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Google map-->
+                    <div id="map-container-google-4" class="z-depth-1-half map-container-4 w-100 h-100" style="height: 730px">
+                        <iframe src="https://maps.google.com/maps?q=tempe&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                                style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                    <!--Google Maps-->
+
+                    <div id="sectionTitle">Information</div>
+
+                    <div>
+                        <p class="mt-4">
+                            <span id="infoLabels"> Language </span>
+                            <span id="infoLabels"> English </span>
+                        </p>
+                        <p>
+                            <span id="infoLabels"> Compatibility </span>
+                            <span id="infoLabels"> Requires iOS 10.0 or later. </span>
+                        </p>
+                        <p>
+                            <span id="infoLabels"> Release Date </span>
+                            <span id="infoLabels"> March 30, 2020 </span>
+                        </p>
+
+                    </div>
+
                 </div>
-                <div class="bottom_fill"></div>
+                <!-------->
             </div>
+            <div style="margin-right: 85px;">
+            <div class="col" style="flex-grow: 1;"> </div>
+            <div class="col ml-4 align-right" style="flex-grow: 0.5;">
+                <h1 id="sectionTitle">Similar Content</h1>
 
-            <div class="card mb-4" style="width: 232px; height:300px;">
-                <img src="imageAmountain.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Card title</h6>
-                    <p class="card-text">Card Desc</p>
+                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                    <div>
+                        <img src="placeholder.png" class="card-img-top" alt="...">
+                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                        <div class="card-body" style="padding: 0 1.25em !important;">
+                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                            <div class="bottom_fill"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bottom_fill"></div>
+                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                    <div>
+                        <img src="placeholder.png" class="card-img-top" alt="...">
+                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                        <div class="card-body" style="padding: 0 1.25em !important;">
+                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                            <div class="bottom_fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                    <div>
+                        <img src="placeholder.png" class="card-img-top" alt="...">
+                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                        <div class="card-body" style="padding: 0 1.25em !important;">
+                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                            <div class="bottom_fill"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
-</div>
-		</div>
-		
-		<div>
-		<p>Credits</p>
-		</div>
-		
-	<!-- Replace the following source with your local copy -->
-	<script src="https://raw2.github.com/bestiejs/platform.js/master/platform.js"></script>
-	<script type="text/javascript">
-		var info = {
-			/* Include any other info relevant to the app here. In this case, we are including the user profile */
-			//user: JSON.parse(localStorage.UserProfile || '{}'),
-			/* platform is a global variable made available by platform.js */
-			platform: platform,
-			language: navigator.language || navigator.userLanguage,
-			viewport: {
-				width: window.innerWidth,
-				height: window.innerHeight
-			}
-		}
+    </div>
 
-		document.getElementById('client-info').value = JSON.stringify(info);
-	</script>
+
+    <!-- Replace the following source with your local copy -->
+    <script src="https://raw2.github.com/bestiejs/platform.js/master/platform.js"></script>
+    <script type="text/javascript">var info = {
+            /* Include any other info relevant to the app here. In this case, we are including the user profile */
+            //user: JSON.parse(localStorage.UserProfile || '{}'),
+            /* platform is a global variable made available by platform.js */
+            platform: platform,
+            language: navigator.language || navigator.userLanguage,
+            viewport: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        }
+
+        document.getElementById('client-info').value = JSON.stringify(info);</script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
-   
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-   <script type="text/javascript" src="public/js/create.js"></script>
-   <script src="asyncReq.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="public/js/create.js"></script>
+    <script src="asyncReq.js"></script>
 
 </body>
 
