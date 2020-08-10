@@ -124,6 +124,31 @@
             letter-spacing: 0.09px;
         }
 
+        .list-group-item.active {
+            color: #8C1D40;
+            font: Bold 16px Roboto;
+            letter-spacing: 0.08px;
+            background-color: white;
+            border-color: white;
+        }
+        .list-group-item {
+            border-color: white;
+        }
+        list-group-item1 {
+            color: #8C1D40;
+            letter-spacing: 0.08px;
+            background-color: white;
+            border-color: white;
+            border-bottom: 2px solid;
+        }
+        list-group-item1-action {
+            color: #8C1D40;
+            letter-spacing: 0.08px;
+            background-color: white;
+            border-color: white;
+            border-bottom: 2px solid;
+        }
+
         .carousel-control-prev {
             width: 5%;
         }
@@ -139,6 +164,30 @@
             border-radius: 50%;
             display: inline-block;
             opacity: 100% !important;
+        }
+
+        .hLine {
+            border-top: 1px solid #EBEBEB;
+        }
+
+        .loremText {
+            text-align: center;
+            font: Regular 18px Roboto;
+            letter-spacing: 0.09px;
+            color: #2A2A2A;
+        }
+
+        .flex-container-gettingStarted {
+            display: flex;
+            justify-content: center;
+        }
+        .flex-container-gettingStarted > div {
+            width: 350px;
+            height: 660px;
+            margin: 30px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
         }
 
 
@@ -264,35 +313,35 @@
     <div class="container-fluid">
 
         <div>
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-            <h1 class="h2" style="font-weight: 900; font-size: 36px;">ASU Campus Scavenger Hunt</h1>
-            <div class="col"> <button type="button" class="ovalButton">Share<img style="width: 15px; margin: 0 0 0.3em 1em;" src="share.png" alt="share"></button></div>
-        </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+                <h1 class="h2" style="font-weight: 900; font-size: 36px;">ASU Campus Scavenger Hunt</h1>
+                <div class="col"> <button type="button" class="ovalButton">Share<img style="width: 15px; margin: 0 0 0.3em 1em;" src="share.png" alt="share"></button></div>
+            </div>
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-            <div class="d-flex flex-row bd-highlight mb-3">
-                <div class="p-2" style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">Created by:</div>
-                <div class="p-2 bd-highlight border-right" style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">LFC</div>
-                <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton">AR Experience</button></div>
-                <div class="p-2 bd-highlight" style="color: #1e1e1e; font-size: 18px;">2019</div>
-            </div>
-        </div>
-        <div class="d-flex flex-wrap flex-md-nowrap pt-3">
-            <div class="col" style="padding: 0;">
-                <p class="mr-4 pr-4 align_left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
-                <div class="border-bottom w-75"> </div>
-            </div>
-            <div class="border mt-4" style="margin-right: 85px; margin-top: -150px !important; text-align: center; height: 236px; width: 331px; border-radius: 8px;">
-                <div class="ml-4  mt-4 justify-content-start mx-auto" style="height: 236px; width: 331px; display: inline-block; ">
-                    <button type="button" class="categoriesButton" style="width: 270px; height: 60px; border-radius: 35px; font-size: 17px;">This devive is not compatible</button>
-                    <div>
-                        <p id="creditLabels" style="margin: 20px 0;"> Compatible Devices: <span class="dot" style="margin: 0 0 -10px 10px;"></span> </p>
-                    </div>
-                    <div class="mt-4 line" style="width: 80%; margin-left: 10%;"></div>
-                    <div style="color: #8C1D40; text-decoration: underline; font-size: 19px; font-weight: bold; margin-top: 20px;">Send to my phone<img style="width: 27px; margin: 0 0 0.3em 1em;" src="redShare.png" alt="share"></div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2" style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">Created by:</div>
+                    <div class="p-2 bd-highlight border-right" style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">LFC</div>
+                    <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton">AR Experience</button></div>
+                    <div class="p-2 bd-highlight" style="color: #1e1e1e; font-size: 18px;">2019</div>
                 </div>
             </div>
-        </div>
+            <div class="d-flex flex-wrap flex-md-nowrap pt-3">
+                <div class="col" style="padding: 0;">
+                    <p class="mr-4 pr-4 align_left">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
+                    <div class="border-bottom w-75"> </div>
+                </div>
+                <div class="border mt-4" style="margin-right: 85px; margin-top: -150px !important; text-align: center; height: 236px; width: 331px; border-radius: 8px;">
+                    <div class="ml-4  mt-4 justify-content-start mx-auto" style="height: 236px; width: 331px; display: inline-block; ">
+                        <button type="button" class="categoriesButton" style="width: 270px; height: 60px; border-radius: 35px; font-size: 17px;">This devive is not compatible</button>
+                        <div>
+                            <p id="creditLabels" style="margin: 20px 0;"> Compatible Devices: <span class="dot" style="margin: 0 0 -10px 10px;"></span> </p>
+                        </div>
+                        <div class="mt-4 line" style="width: 80%; margin-left: 10%;"></div>
+                        <div style="color: #8C1D40; text-decoration: underline; font-size: 19px; font-weight: bold; margin-top: 20px;">Send to my phone<img style="width: 27px; margin: 0 0 0.3em 1em;" src="redShare.png" alt="share"></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -300,8 +349,8 @@
             <h1 id="sectionTitle" style="font-weight: bolder;"> Categories: </h1>
         </div>
         <div style="padding-top: 0.5em;">
-            <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />Education</button></span>
-            <span> <button type="button" class="categoriesButton"><img style="width: 15px;margin: 0 .5em 0.4em 0; color: #2A2A2A" src="share.png" alt="share" />History</button></span>
+            <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" />Education</button></span>
+            <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" />History</button></span>
         </div>
         <div class="row">
             <div class="w-100"></div>
@@ -419,32 +468,44 @@
                 <div>
                     <h1 id="sectionTitle"> Compatible Locations </h1>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-4" style="flex: 0 0 60%; max-width: 60%;">
                             <div class="list-group list-group-horizontal" id="list-tab" role="tablist">
-                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ASU Tempe</a>
-                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">ASU West</a>
-                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ASU Downtown</a>
+                                <a class="list-group-item list-group-item-action active w-100" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ASU Tempe</a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">ASU West</a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ASU Downtown</a>
                                 <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">ASU Polytechnic</a>
                                 <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">At Home</a>
                             </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                            <div class="list-group list-group-horizontal" id="list-tab" role="tablist" style="margin: 0 0 10px 20px;">
+                                <a class="list-group-item list-group-item-action active w-100" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" style="border-top: 2px solid;"></a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile" style="border-top: 2px solid;"></a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages" style="border-top: 2px solid;"></a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings" style="border-top: 2px solid;"></a>
+                                <a class="list-group-item list-group-item-action w-100" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings" style="border-top: 2px solid;"></a>
                             </div>
                         </div>
+
+
+                        <!--<div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        </div>
+                    </div>-->
                     </div>
+
                     <!--Google map-->
                     <div id="map-container-google-4" class="z-depth-1-half map-container-4 w-100 h-100" style="height: 730px">
                         <iframe src="https://maps.google.com/maps?q=tempe&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                                style="border:0" allowfullscreen></iframe>
+                                style="border:0; height: 301px; width: 730px; border-radius: 8px; margin: 0 0 0 20px;" allowfullscreen></iframe>
                     </div>
+                </div>
+                <!--Google Maps-->
 
-                    <!--Google Maps-->
 
+                <div>
                     <div id="sectionTitle">Information</div>
 
                     <div>
@@ -467,46 +528,111 @@
                 <!-------->
             </div>
             <div style="margin-right: 85px;">
-            <div class="col" style="flex-grow: 1;"> </div>
-            <div class="col ml-4 align-right" style="flex-grow: 0.5;">
-                <h1 id="sectionTitle">Similar Content</h1>
+                <div class="col" style="flex-grow: 1;"> </div>
+                <div class="cocl ml-4 align-right" style="flex-grow: 0.5;">
+                    <h1 id="sectionTitle">Similar Content</h1>
 
-                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
-                    <div>
-                        <img src="placeholder.png" class="card-img-top" alt="...">
-                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
-                        <div class="card-body" style="padding: 0 1.25em !important;">
-                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
-                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
-                            <div class="bottom_fill"></div>
+                    <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                        <div>
+                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                                <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                                <div class="bottom_fill"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
-                    <div>
-                        <img src="placeholder.png" class="card-img-top" alt="...">
-                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
-                        <div class="card-body" style="padding: 0 1.25em !important;">
-                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
-                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
-                            <div class="bottom_fill"></div>
+                    <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                        <div>
+                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                                <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                                <div class="bottom_fill"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
-                    <div>
-                        <img src="placeholder.png" class="card-img-top" alt="...">
-                        <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
-                        <div class="card-body" style="padding: 0 1.25em !important;">
-                            <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
-                            <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
-                            <div class="bottom_fill"></div>
+                    <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
+                        <div>
+                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
+                                <p class="card-text" id="similarSubtitle">Learning Futures Celebratory</p>
+                                <div class="bottom_fill"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!--Getting Started-->
+        <div>
+            <div style="margin: 50px 20px 50px 20px ">
+                <div class="hLine"></div>
+            </div>
+            <div style="margin: 50px 20px 20px 20px ">
+                <div style="font-weight: 900; font-size: 36px; text-align: center;">Getting Started</div>
+            </div>
+            <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
+                <div class="loremText" style="width: 541px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo</div>
+            </div>
+            <div style="margin: 50px 20px 50px 20px; display: flex; justify-content: center;">
+                <div style="border-top: 5px solid #FFC627; width: 200px;"></div>
+            </div>
+            <div class="flex-container-gettingStarted" style="margin: 0 55px;">
+                <div>
+                    <div class="card mb-4" style="width: 330px; height:660px; border-radius: 200px;">
+                        <div>
+                            <img src="Gold circle.png" class="card-img-top" alt="..." style="width: 200px; margin: 50px;">
+                            <span><img src="Grid.png" class="card-img-top" alt="..." style="width: 350px; margin-top: -150px;"></span>
+                            <span><img src="phone.png" class="card-img-top" alt="..." style="width: 110px; margin: -500px 10px 0 0;"></span>
+                            <div class="bottom_fill"></div>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle" style="font-size: 25px; margin: -70px 0 30px 0;">Get your phone</h6>
+                                <p class="card-text" id="similarSubtitle" style="line-height: 1.5; font-size: 16px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card mb-4" style="width: 330px; height:660px; border-radius: 200px;">
+                        <div>
+                            <img src="Gold circle.png" class="card-img-top" alt="..." style="width: 200px; margin: 50px;">
+                            <span><img src="Grid.png" class="card-img-top" alt="..." style="width: 350px; margin-top: -150px;"></span>
+                            <span><img src="Icon graphic.png" class="card-img-top" alt="..." style="width: 250px; margin: -490px 0 0 30px;"></span>
+                            <div class="bottom_fill"></div>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle" style="font-size: 25px; margin: -70px 0 30px 0;">Find your experience</h6>
+                                <p class="card-text" id="similarSubtitle" style="line-height: 1.5; font-size: 16px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card mb-4" style="width: 330px; height:660px; border-radius: 200px;">
+                        <div>
+                            <img src="Gold circle.png" class="card-img-top" alt="..." style="width: 200px; margin: 50px;">
+                            <span><img src="Grid.png" class="card-img-top" alt="..." style="width: 350px; margin-top: -150px;"></span>
+                            <span><img src="group.png" class="card-img-top" alt="..." style="width: 160px; margin: -490px 0 0 10px;"></span>
+                            <div class="bottom_fill"></div>
+                            <div class="card-body" style="padding: 0 1.25em !important;">
+                                <h6 class="card-title" id="sectionTitle" style="font-size: 25px; margin: -70px 0 30px 0;">Immerse Yourself</h6>
+                                <p class="card-text" id="similarSubtitle" style="line-height: 1.5; font-size: 16px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 
