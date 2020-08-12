@@ -199,6 +199,30 @@ opacity: 1;
 .container ul{
   text-decoration: none;
 }
+
+.part_1{
+  object-fit: contain;
+  height: 600px;
+}
+.part_1 img{
+  max-width: 100%;
+}
+
+.part_1_triangle{
+  position: absolute;
+  top: 380px;
+  display: block;
+  width: 100%;
+}
+
+.part_1_hero{
+  position: absolute;
+  top: 55px;
+  display: block;
+  width: 850px;
+  left: 629px;
+}
+
   </style>
 
     <header>
@@ -287,7 +311,14 @@ opacity: 1;
         </div> -->
       </div>
     <!---<div class = "bar"> </div>-->
-    <img src="home1.png" alt="1" style="width: 100%">
+
+    <div class="part_1">
+        <img src="part_1_base.png" alt="">
+        <img src="part_1_triangle.svg" class="part_1_triangle">
+        <img src="part_1_hero.png" class="part_1_hero">
+      </div>
+
+
 <div class = "text-center mt-4"> . </div>
 <div class = "text-center mt-4">
 	<h5 class = "text-center mt-4 roboto" >What is XR@ASU?</h5>
