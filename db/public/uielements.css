@@ -11,11 +11,11 @@ body{
 }
 
 .logo{
- 
+  float: left;
 }
 
 nav{
-
+  float: right;
 }
 
 nav ul{
@@ -53,19 +53,6 @@ nav ul li:hover ul li {
   display: block;
 }
 
-#search{
-  top: 1072px;
-  left: 445px;
-  height: 50px;
-  width: 619px;
-  border-radius: 25px;
-}
-
-#search_button{
-    top: 1090px;
-    left: 1080px;
-display: inline-block;
-}
 
 .explore_tags p::selection{
   background-color: #FFC627
@@ -237,6 +224,83 @@ display: inline-block;
 }
 /* header ends */
 
+/* part 1 begins*/
+.part_1{
+  object-fit: contain;
+  height: 600px;
+}
+.part_1 img{
+  max-width: 100%;
+}
+
+.part_1_triangle{
+  position: absolute;
+  top: 380px;
+  display: block;
+  width: 100%;
+}
+
+.part_1_hero{
+  position: absolute;
+  top: 55px;
+  display: block;
+  width: 850px;
+  left: 629px;
+}
+/* part 1 ends */
+
+/* part 2 begins */
+.part_2{
+  height: 500px;
+  position: relative;
+  text-align: center;
+
+}
+
+.part_2 p{
+  width: 541px;
+  height: 81px;
+  display: inline-block;
+}
+
+.goldwaves{
+  position: absolute;
+  top: 110px;
+  display: block;
+  width: 100%;
+}
+
+
+.part_2_search button{
+  float: right;
+  background-color: #FFFFFF;
+  border: 0px;
+  left: -20px;
+}
+
+ #search{
+  position: absolute;
+  height: 50px;
+  width: 619px;
+  border-radius: 25px;
+  left: 450px;
+}
+
+#search_button{
+  position: absolute;
+  left: 1100px;
+  top: 255px;
+}
+
+.part_2_hr{
+  width: 80px;
+  height: 0px;
+  border: 5px solid #FFC627;
+  opacity: 1;
+  margin-bottom: 50px;
+}
+
+/* part 2 ends */
 
 /* footer begins */
 .footer{
