@@ -11,6 +11,9 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet2" href="styles.css">
+	<script>
+		var productID = "";
+	</script>
 
 
 
@@ -358,7 +361,7 @@
 
         <div class="section-container">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
-                <h1 class="h2 pageTitle">ASU Campus Scavenger Hunt</h1>
+                <h1 class="h2 pageTitle" id="productname">ASU Campus Scavenger Hunt</h1>
                 <div class="col"> <button type="button" class="shareButton">Share<img style="width: 15px; margin: 0 0 0.3em 1em;" src="share.png" alt="share"></button></div>
             </div>
 
@@ -366,13 +369,13 @@
                 <div class="d-flex flex-row bd-highlight mb-3">
                     <div class="p-2" style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">Created by:</div>
                     <div class="p-2 bd-highlight border-right" style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">LFC</div>
-                    <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton">AR Experience</button></div>
+                    <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton" id="experienceType">AR Experience</button></div>
                     <div class="p-2 bd-highlight bodyBig" style="margin-top: 4px;">2019</div>
                 </div>
             </div>
             <div class="d-flex flex-wrap flex-md-nowrap pt-3">
                 <div class="col" style="padding: 0;">
-                    <p class="bodyBig" style="width: 730px; height: 92px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
+                    <p class="bodyBig" style="width: 730px; height: 92px;" id="productDesc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet </p>
                     
                 </div>
                 <div class="border mt-4" style=" margin-top: -150px !important; text-align: center; height: 236px; width: 331px; border-radius: 8px;">
@@ -395,8 +398,8 @@
         <div class="section-container">
             <h1 id="sectionTitle"> Categories: </h1>
             <div style="padding-top: 0.5em;">
-                <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" />Education</button></span>
-                <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" />History</button></span>
+                <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" id="category1" />Education</button></span>
+                <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png" alt="share" id="category2" />History</button></span>
             </div>
         </div>
         <div class="row">
@@ -704,5 +707,44 @@
     <script src="asyncReq.js"></script>
 
 </body>
+
+<script>
+    function getProductData(product) {
+    var product = product;//document.getElementById("productID").value;
+    loadFile("./getProduct?product="+product, function(result){
+      // show a table of the user's datasets
+      var data = JSON.parse(result);
+
+	document.getElementById("productname").innerHTML = data[0].name;
+	document.getElementById("productDesc").innerHTML = data[0].name;
+	document.getElementById("category1").innerText = data[0].categories[0];
+	
+
+      
+    });
+  }
+  
+  function parseURL(url) {
+
+	var parser = document.createElement('a'),
+		searchObject = {},
+		queries, split, i;
+
+	// Let the browser do the work
+	parser.href = url;
+
+	// Convert query string to object
+	queries = parser.search.replace(/^\?/, '').split('&');
+	for( i = 0; i < queries.length; i++ ) {
+		split = queries[i].split('=');
+		searchObject[split[0]] = split[1];
+	}
+	alert(split[1]);
+	getProductData(split[1]);
+
+}
+  
+
+</script>
 
 </html>

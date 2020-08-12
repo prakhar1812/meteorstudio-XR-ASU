@@ -86,7 +86,7 @@ mongoose.set('useCreateIndex', true);
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
-    console.log("Maproom started");
+    console.log("XR@ASU started");
 
 
     if (err) {
@@ -258,7 +258,47 @@ MongoClient.connect(mongoUri, function (err, db) {
 
 
     });
+
+	app.get("/getProduct", function(req, res) {
+		const query = req.query.product; 
+		var query2 = "";
+		query2 = String(query);
+		
+		console.log(query);
+		
+		
+		
 	
+MongoClient.connect(mongoUri, function (err, db) {
+	if (err) throw err;
+    var dbo = db.db("xrasu");
+	var ObjectId = require('mongoose').Types.ObjectId; 
+    var keyword = query;
+    var regex = RegExp(".*" + keyword + ".*");
+   // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { _id: new ObjectId(query) };
+	console.log(myquery);
+	//var myquery = { name: "Spacious and well located apartment" };
+	//  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("products").find(myquery,{ projection: { _id: 1, name: 1, experienceType:1, categories:1, compatibleDevices:1, description:1, video:1, thumbnail:1, minimumRequirements:1,screenshots:1} }).toArray(function (err, result) {
+        if (err) throw err;
+        console.log(result[0]);
+		var namesList = [];
+        for (var i = 0; i < result.length; i++) {
+            namesList.push(result[i]);
+			console.log(result[i]);
+        }
+        res.send(JSON.stringify(namesList));
+        db.close();
+    });
+        });
+		
+		
+
+
+    });
+	
+
 	app.get("/productpage", function(req, res) {
 
     res.render('productpage');
