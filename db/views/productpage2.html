@@ -333,7 +333,7 @@
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 </head>
-<body>
+<body onload="parseURL(window.location.href)">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0 sidePadding" href="dashboard">XR Search</a>
         <a class="nav-link sidePadding" href="logout" style="color: white">Upload</a>
@@ -341,8 +341,8 @@
 
     <header>
         <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
+            <source src="scavhunt_appflow.mp4" type="video/mp4">
         </video>
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
@@ -424,7 +424,7 @@
 
                 <div class="section-container">
                     <div class="mt-4">
-                        <h1 id="sectionTitle"> Screenshots and Videos </h1>
+                        <h1 id="sectionTitle"> Screenshots</h1>
                     </div>
                     <div class="container">
                         <!--Carousel Wrapper-->
@@ -441,18 +441,8 @@
                                 <div class="col" style="position: relative;">
                                     <div class="carousel-inner d-inline-block" role="listbox" >
                                         <div class="carousel-item active" >
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
-                                                <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-                                            </video>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
-                                                <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
-                                            </video>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
-                                                <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
+                                            <img class="" width="198" height="135" style="border-radius: 20px;" src="placeholder.png" id="screen1">
+                                               </img>
                                             </video>
                                         </div>
                                     </div>
@@ -461,13 +451,13 @@
                                 <div class="col">
                                     <div class="carousel-inner d-inline-block" role="listbox">
                                         <div class="carousel-item active">
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
+                                            <img class="" autoplay loop muted width="198" height="135" style="border-radius: 20px;" id="screen2" src="placeholder.png">
                                                 <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
                                             </video>
                                         </div>
                                         <div class="carousel-item">
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
-                                                <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                                            <img class="" width="198" height="135" style="border-radius: 20px;">
+                                                <source src="placeholder.png" type="img" />
                                             </video>
                                         </div>
                                         <div class="carousel-item">
@@ -481,7 +471,7 @@
                                 <div class="col w-100">
                                     <div class="carousel-inner d-inline-block" role="listbox">
                                         <div class="carousel-item active">
-                                            <video class="video-fluid" autoplay loop muted width="198" height="135" style="border-radius: 20px;">
+                                            <img class="" autoplay loop muted width="198" height="135" style="border-radius: 20px;" id="screen3" src="placeholder.png">
                                                 <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
                                             </video>
                                         </div>
@@ -500,11 +490,11 @@
                             </div>
                             <!--/.Slides-->
                             <!--Controls-->
-                            <a class="carousel-control-prev" href="#video-carousel-example" role="button" data-slide="prev" style="position: relative; top: -95px; left: -5%;">
+                            <a class="carousel-control-prev" role="button" data-slide="prev" style="position: relative; top: -95px; left: -5%;">
                                 <div class="carousel-control-prev-icon" aria-hidden="true" ></div>
                                 <div class="sr-only">Previous</div>
                             </a>
-                            <a class="carousel-control-next" href="#video-carousel-example" role="button" data-slide="next" style="position: relative; top: -110px; left: 90%;">
+                            <a class="carousel-control-next"  role="button" data-slide="next" style="position: relative; top: -110px; left: 90%;">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -580,7 +570,7 @@
 
                     <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
                         <div>
-                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <img src="placeholder.png" style="width: 230px; height:170px;" class="card-img-top" alt="...">
                             <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
                             <div class="card-body" style="padding: 0 1.25em !important;">
                                 <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
@@ -591,7 +581,7 @@
                     </div>
                     <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
                         <div>
-                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <img src="placeholder.png" style="width: 230px; height:170px;" class="card-img-top" alt="...">
                             <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
                             <div class="card-body" style="padding: 0 1.25em !important;">
                                 <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
@@ -602,7 +592,7 @@
                     </div>
                     <div class="card mb-4" style="width: 232px; height:280px; border-radius: 12px;">
                         <div>
-                            <img src="placeholder.png" class="card-img-top" alt="...">
+                            <img src="placeholder.png" class="card-img-top" style="width: 230px; height:170px;" alt="...">
                             <h5 class="text-block text-center three-sixtyVid"><span>360 Video</span></h5>
                             <div class="card-body" style="padding: 0 1.25em !important;">
                                 <h6 class="card-title" id="sectionTitle">Life of an ASU Student</h6>
@@ -716,8 +706,19 @@
       var data = JSON.parse(result);
 
 	document.getElementById("productname").innerHTML = data[0].name;
-	document.getElementById("productDesc").innerHTML = data[0].name;
-	document.getElementById("category1").innerText = data[0].categories[0];
+	document.getElementById("productDesc").innerHTML = data[0].description;
+	document.getElementById("experienceType").innerHTML = data[0].experienceType;
+	
+	//var image =  JSON.parse(data.screenshots);
+	//var images = data[0].screenshots;
+	//alert(data[0].screenshots[0];)
+	var image = data[0].screenshots.ss0;
+	document.getElementById("screen1").src = image
+	document.getElementById("screen2").src = data[0].screenshots.ss1;
+	document.getElementById("screen3").src = data[0].screenshots.ss2;
+	//document.querySelector("#category1").innerHTML = 'Hide';
+	//document.getElementById("category1").innerHTML = "asdf";
+	
 	
 
       
