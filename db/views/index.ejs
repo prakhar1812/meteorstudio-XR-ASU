@@ -121,32 +121,29 @@
 
 
     .grid-container {
-      display: inline-grid;
-      grid-column-gap: 50px;
-      grid-template-columns: auto auto auto;
-      background-color: #FFFFFF;
-      padding: 10px;
-      align-content: center;
-    }
-
-    .grid-item {
-      background-color: #FFFFFF;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-
-      .text-block {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background-color: black;
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      justify-content: center;
-    }
+  display: inline-grid;
+    grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: #FFFFFF;/*#FFC627;*/
+  padding: 10px;
+  align-content: center;
+}
+.grid-item {
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  justify-content: center;
+}
+  .text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
     .sidebar {
       top: 1310px;
@@ -157,10 +154,11 @@
     }
 
     .item1 {
-      grid-column: 1 grid-row: 1 / span2;
-      background-color: #FFFFFF;
+  grid-column: 1;
+  grid-row: 1 / span2;
+  background-color: #FFFFFF;
 
-    }
+}
 
     .item2 {
       grid-column: 2;
@@ -226,124 +224,227 @@
       left: 629px;
     }
 
-    /* header begins */
-    .header_1 {
-      height: 109px;
-    }
+/* header begins
+.header_1{
+  height: 109px;
+}
 
-    .header_1 p {
-      position: relative;
-      top: 28px;
-      left: 85px;
-      width: 78px;
-      height: 29px;
-      color: #2A2A2A;
-      font-weight: 900;
-      font-size: 1.5em;
+.header_1 p{
+  position: relative;
+  top: 28px;
+  left: 85px;
+  width: 78px;
+  height: 29px;
+  color: #2A2A2A;
+  font-weight: 900;
+  font-size: 1.5em;
 
-    }
+}
 
-    .header_1_logo {
-      padding-left: 85px;
-      padding-top: 20px;
-    }
+.header_1_logo{
+  padding-left: 85px;
+  padding-top: 20px;
+}
 
-    .header_1_logo img {
-      position: absolute;
-      top: 24px;
-      left: 85px;
-      width: 207px;
-      height: 37px;
-    }
-
-
-    .header_2 {
-      background-color: #353535;
-      height: 70px;
-      padding-left: 155px;
-      padding-top: 20px;
-    }
-
-    .header_2_links {
-      /* padding-top: 3px; */
-    }
-
-    .header_2 a {
-      text-decoration: none;
-      padding-right: 50px;
-      display: inline-flex;
-      float: left;
-    }
-
-    .header_2 a:link {
-      color: white;
-    }
-
-    .header_2 a:active {
-      color: white;
-    }
-
-    .header_2 a:visited {
-      color: white;
-    }
-
-    .header_2_links {
-      margin-top: 5px;
-    }
-
-    .header_2_button {
-      position: relative;
-      top: -5px;
-      border-radius: 5px;
-      width: 150px;
-      height: 36px;
-      background: #FFC627;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #1e1e1e;
-      border-width: thin;
-    }
+.header_1_logo img{
+  position: absolute;
+  top: 24px;
+  left: 85px;
+  width: 207px;
+  height: 37px;
+} */
 
 
-    .header_1_right ul {
-      list-style: none;
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      margin-top: 5px;
-      text-decoration: none;
-    }
+.header_2{
+  background-color: #353535;
+  height: 70px;
+  padding-left: 155px;
+  padding-top: 20px;
+}
 
-    .header_1_right ul li {
-      font-size: small;
-      text-decoration: none;
-      float: right;
-      margin-left: 4px;
-    }
+/* .header_2_links{
+  padding-top: 3px;
+} */
+
+.header_2 a{
+  text-decoration: none;
+  padding-right: 50px;
+  display: inline-flex;
+  float: left;
+}
+
+.header_2 a:link{
+  color: white;
+}
+.header_2 a:active{
+  color: white;
+}
+.header_2 a:visited{
+  color: white;
+}
+
+.header_2_links{
+  margin-top: 5px;
+}
+
+.header_2_button{
+  position: relative;
+  top: -5px;
+  border-radius: 5px;
+  width: 150px;
+  height: 36px;
+  background: #FFC627;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #1e1e1e;
+  border-width: thin;
+}
+
+.header-container {
+  max-width: 1270px;
+  min-width: 990px;
+  font-size: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  height: 89px;
+  width: 1280px;
+  left: 0px;
+  top: 1px; 
+}
+.header-top {
+  position: relative;
+  width: 100%;
+  height: 58px;
+  background-color: white;
+  display: block;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1em;
+  color: black;
+  overflow: visible !important;
+}
+.header-logo img {
+  margin: 0;
+  float: left;
+  width: 207px;
+  height: 37px;
+  padding-top: 12px;
+  display: block;
+  line-height: 12.8px;
+  box-sizing: content-box;
+
+}
+
+.header-nav {
+  position: relative;
+  display: block;
+  float: right;
+  margin: 0 auto;
+  margin-top: 11px;
+  text-align: center;
+  /*top: 11px;
+  left: 736px;
+  width: 463px;
+  height: 33px;*/
+  z-index: 100;
+}
+
+/* nav items that don't dropdown*/
+.nav-link-item {
+  color: black;
+}
+/* parent of any dropdown items */
+.drop-item {
+  color: black;
+}
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: white;}
+
+.nav-item:hover .dropdown-content {display: block;}
+
+.nav-item:hover .dropitem {background-color: white;}
+
+.header-search {
+  clear: right;
+  float: right;
+  position: relative;
+}
+.header-search-button {
+  position: absolute;
+  top: 5px;
+  width: 8px;
+  height: 12px;
+  font-size: 0.01px;
+  line-height: 15px;
+  cursor: pointer;
+  text-indent: -9999px;
+  padding: 0 12px 0 0;
+  border: 0;
+}
+.header-bottom {
+  display: block;
+  overflow: hidden;
+  padding: 0 0 2px 10px;
+  font-size: 1.5em;
+  margin-top: 5px;
+  width: 100%;
+}
+/* .navbar ul{
+  list-style:none;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.navbar ul li{
+  font-size: small;
+  text-decoration: none;
+  float: right;
+  margin-left: 4px;
+}
 
 
-    .header_1_right ul li ul li {
-      font-size: small;
-      text-decoration: none;
-      display: none;
-      display: none;
-      position: relative;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
+.navbar ul li ul li{
+  font-size: small;
+  text-decoration: none;
+  display: none;
+  display: none;
+  position: relative;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-    .header_1_right ul li:hover ul li {
-      display: block;
-      /* position: relative; */
-    }
-
-    .ASU_search_box_div {
-      float: right;
-      padding-right: 15%;
-    }
-
-    /* header ends */
+.navbar ul li:hover ul li {
+  display: block;
+} */
+.ASU_search_box_div{
+  float: right;
+  padding-right: 15%;
+}
+/* header ends */
 
 
 
@@ -480,145 +581,112 @@
     /* footer ends */
   </style>
 
-  <header>
-    <div class="header">
-      <div class="header_1">
-        <!-- Logo -->
-        <div class="header_1_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-              alt="Arizona State University" class="logo"
-              src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
-        <p>ASUXR</p>
-        <div class="header_1_right">
-          <ul>
-            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-            <li><a href="https://www.asu.edu/" target="_top" id="main_menu_items">ASU Home</a>
+<header>
+  <div class="header-container">
+    <div class="header-top">
+      <!-- Logo -->
+      <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
+      <div class="header-nav">
+            <ul><!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+              <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home</a>
 
-              <ul>
-                <li><a class="first" href="https://www.asu.edu/?feature=newsevents" target="_top"
-                    title="News and Events">News/Events</a></li>
-                <li><a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a></li>
-                <li><a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a></li>
-                <li><a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a></li>
-                <li><a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a></li>
-                <li><a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a></li>
-                <li><a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a></li>
-                <li><a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a></li>
-              </ul>
+                <div class="dropdown-content">
+                    <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
+                    <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
+                    <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
+                    <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
+                    <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
+                    <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
+                    <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
+                    <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
+                </div>
 
-            </li>
-            <li><a href="https://my.asu.edu/" target="_top">My ASU</a></li>
-            <li><a href="https://www.asu.edu/colleges/" target="_top" id="menu_main">Colleges and Schools</a>
+              </li>
+              <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My ASU</a></li>
+              <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools</a>
 
-              <ul>
-                <li class="ccb"><a class="first" href="https://artsandsciences.asu.edu/" target="_top"
-                    title="Arts and Sciences website">Arts and Sciences</a></li>
-                <li class="ccb"><a href="https://wpcarey.asu.edu/" target="_top"
-                    title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                </li>
-                <li class="ccb"><a href="https://herbergerinstitute.asu.edu" target="_top"
-                    title="Herberger Institute for Design and the Arts website">Design and the Arts</a></li>
-                <li class="ccb"><a href="https://education.asu.edu/" target="_top"
-                    title="Mary Lou Fulton Teachers College website">Education</a></li>
-                <li class="ccb"><a href="https://engineering.asu.edu/" target="_top"
-                    title="Engineering website">Engineering</a></li>
-                <li class="ccb"><a href="https://sfis.asu.edu/" target="_top"
-                    title="Future of Innovation in Society website">Future of
-                    Innovation in Society</a>
-                </li>
-                <li class="ccb"><a href="https://graduate.asu.edu" target="_top"
-                    title="Graduate College website">Graduate</a></li>
-                <li class="ccb"><a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
-                    Solutions</a></li>
-                <li class="ccb"><a href="https://honors.asu.edu/" target="_top"
-                    title="Barrett, The Honors College website">Honors</a></li>
-                <li class="ccb"><a href="https://cronkite.asu.edu" target="_top"
-                    title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a></li>
-                <li class="ccb"><a href="https://www.law.asu.edu/" target="_top"
-                    title="Sandra Day O' Connor College of Law website">Law</a></li>
-                <li class="ccb"><a href="https://nursingandhealth.asu.edu/" target="_top"
-                    title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a></li>
-                <li class="ccb"><a href="https://copp.asu.edu" target="_top"
-                    title="College of Public Programs website">Public Service and
-                    Community Solutions</a>
-                </li>
-                <li class="ccb"><a href="https://schoolofsustainability.asu.edu" target="_top"
-                    title="School of Sustainability website">Sustainability</a></li>
-                <li class="ccb"><a href="https://uc.asu.edu/" target="_top"
-                    title="University College website">University College</a></li>
-                <li class="ccb"><a target="_top" href="https://thunderbird.asu.edu/"
-                    title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a>
-                </li>
-              </ul>
+                <div class="dropdown-content">
+                  <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and Sciences</a>
+                  <a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
+                  <a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the Arts</a>
+                  <a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a>
+                  <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
+                  <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future of
+                      Innovation in Society</a>
+                  <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
+                  <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a>
+                  <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
+                  <a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
+                  <a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a>
+                  <a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a>
+                  <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service and
+                      Community Solutions</a>
+                  <a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a>
+                  <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
+                  <a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a>
+                  </div>
 
-            </li>
-            <li><a href="https://www.asu.edu/map/" target="_top">Map and Locations</a>
+              </li>
+              <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and Locations</a>
 
-              <ul>
-                <li class="ccb"><a class="border first" href="https://www.asu.edu/map/" target="_top">Map</a></li>
-                <li class="ccb"><a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
-                </li>
-                <li class="ccb"><a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a></li>
-                <li class="ccb"><a href="https://campus.asu.edu/polytechnic/" target="_top"
-                    title="Polytechnic campus">Polytechnic</a></li>
-                <li class="ccb"><a href="https://campus.asu.edu/downtown/" target="_top"
-                    title="Downtown Phoenix campus">Downtown
-                    Phoenix</a>
-                </li>
-                <li class="ccb"><a href="https://asuonline.asu.edu/" target="_top"
-                    title="Online and Extended campus">Online and
-                    Extended</a>
-                </li>
-                <li class="ccb"><a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a></li>
-                <li class="ccb"><a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic
-                    Partnerships</a></li>
-                <li class="ccb"><a href="https://asuresearchpark.com/" target="_top">Research Park</a></li>
-                <li class="ccb"><a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a></li>
-                <li class="ccb"><a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
-                </li>
-              </ul>
+                <div class="dropdown-content">
+                  <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                  <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                  <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                  <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
+                  <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
+                      Phoenix</a>
+                  <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
+                      Extended</a>
+                  <a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                  <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a>
+                  <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                  <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                  <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                </div>
 
-            </li>
-            <li><a href="https://isearch.asu.edu/" target="_top" title="Directory, Index and other info">Directory</a>
-            </li>
-            <li><a href="https://weblogin.asu.edu/cgi-bin/login"
+              </li>
+              <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
+              <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login"
                 onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                 onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
                 onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
           </ul>
-          <div class="ASU_search_box_div">
+          <div class="header-search">
             <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
-                for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input
-                name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
-                value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
-                type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client"
-                type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box"
-                placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit"
-                value="Search"></form>
+              for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input
+              name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
+              value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
+              type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client"
+              type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box"
+              placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit"
+              value="Search"></form>
           </div>
         </div>
-      </div>
-
-      <div class="header_2">
-
-        <div class="header_2_links" style="background-color: #aaaaaa;">
-          <a href="#"> <img src="homeicon.svg" alt=""> </a>
-        </div>
-        <div class="header_2_links">
-          <a href="#">XR Search <img style="padding-left: 6px;" src="Icon - search-solid.svg"></a>
-        </div>
-        <div class="header_2_links">
-          <a href="#">Login</a>
-        </div>
-
-
-        <button class="header_2_button" type="button" style="float: right; margin-right: 100px;"
-          name="button">Upload</button>
-
-      </div>
-
-
     </div>
-  </header>
+    <div class="header-bottom">
+      <p>ASUXR</p>
+    </div>
+  </div>
+</header>
+
+  <div class="header_2">
+
+    <div class="header_2_links" style="background-color: #aaaaaa;">
+      <a href="#"> <img src="homeicon.svg" alt=""> </a>
+    </div>
+    <div class="header_2_links">
+      <a href="#">XR Search <img style="padding-left: 6px;" src="Icon - search-solid.svg"></a>
+    </div>
+    <div class="header_2_links">
+      <a href="#">Login</a>
+    </div>
+
+
+    <button class="header_2_button" type="button" style="float: right; margin-right: 100px;"
+      name="button">Upload</button>
+
+  </div>
 
   <div class="part_1">
     <img src="part_1_base.png" alt="">
