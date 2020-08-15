@@ -17,6 +17,7 @@
         var productID = "";
     </script>
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
@@ -274,12 +275,20 @@
             }
         }
 
-
         @media (max-width: 768px) {
             #gettingstarted {
                 display: none;
             }
+            #footer_bottom_img {
+                display: none;
+            }
+            .footer_bottom_text a {
+                font-size: 1em;
+            }   
         }
+
+
+
 
         header {
             position: relative;
@@ -446,7 +455,7 @@
             color: #1e1e1e;
         }
 
-        .footer_bottom_img {
+        #footer_bottom_img {
             position: relative;
             padding-right: 8%;
             bottom: 20px;
@@ -522,24 +531,30 @@
         <div class="row">
             <!-- BEGINNING OF LEFT COLUMN -->
             <div class="col-sm-12 col-md-8">
-                <div class="align-items-center pt-3">
-                    <h1 class="h2 pageTitle" id="productname">Product Name
-                        <!-- <button type="button" class="shareButton">Share <i class="fas fa-share-square"></i></button> -->
-                    </h1>
-                </div>
-                <div class="align-items-center pt-3">
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2"
-                            style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">
-                            Created by:</div>
-                        <div class="p-2 bd-highlight border-right"
-                            style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">
-                            LFC</div>
-                        <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton"
-                                id="experienceType">AR Experience</button></div>
-                        <div class="p-2 bd-highlight bodyBig" style="margin-top: 4px;">2019</div>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h2 pageTitle" id="productname">Product Name
+                            <!-- <button type="button" class="shareButton">Share <i class="fas fa-share-square"></i></button> -->
+                        </h1>
                     </div>
                 </div>
+                <div class="d-flex flex-row">
+                    <div class="p-2" style="margin-left: -9px">
+                        <div style="color: #6E6E6E; font-size: 1.2em;">Created by:</div>
+                    </div>
+                    <div class="p-2 border-right">
+                        <div class="bd-highlight" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</div>
+                    </div>
+                    <div class="p-2 border-right">
+                        <div class="bd-highlight">
+                            <button type="button" class="rectButton" id="experienceType">AR Experience</button>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="d-highlight bodyBig" style="margin-top: 4px;">2019</div>
+                    </div>
+                </div>
+
                 <div>
                     <p class="bodyBig" id="productDesc">Lorem ipsum dolor sit
                         amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
@@ -927,7 +942,7 @@
             </div>
             <div class="footer_bottom">
 
-                <div class="footer_bottom_img">
+                <div id="footer_bottom_img">
                     <a href="https://www.asu.edu/rankings">
                         <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
                     </a>
@@ -1057,7 +1072,7 @@
             split = queries[i].split('=');
             searchObject[split[0]] = split[1];
         }
-		alert(split[1]);
+		// alert(split[1]);
         if(split[1] != null)
         getProductData(split[1]);
 		
