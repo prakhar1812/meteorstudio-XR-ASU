@@ -773,7 +773,7 @@
 
             <!-- BEGINNING OF RIGHT COLUMN -->
             <div class="col-sm-12 col-md-4 mt-4">
-                <div class="row" style="margin-bottom: 50px">
+                <div class="row justify-content-center" style="margin-bottom: 50px">
                     <div class="border" style="text-align: center; width: 90%; border-radius: 8px; margin: auto">
                         <!-- <div class="col mt-4">
                             <button type="button" class="categoriesButton"
@@ -781,8 +781,8 @@
                                 device is not compatible
                             </button>
                         </div> -->
-                        <div class="col mt-4 mb-4">
-                            <p id="creditLabels">Compatible Devices:
+                        <div class="col mt-4 mb-4 text-center">
+                            <p id="creditLabels" style="text-align: center;">Compatible Devices:
                                 <span id="mobileDevice" class="dot">
                                     <i class="fas fa-mobile-alt" style="margin-top: 10px"></i>
                                 </span>
@@ -1020,19 +1020,19 @@
             if (data[0].compatibleDevices.includes("mobile")) {
                 document.getElementById("mobileDevice").style.visibility = "visible";
             } else {
-                document.getElementById("mobileDevice").style.visibility = "hidden";
+                document.getElementById("mobileDevice").style.display = "none";
 
             }
             if (data[0].compatibleDevices.includes("web")) {
                 document.getElementById("webDevice").style.visibility = "visibile";
             } else {
-                document.getElementById("webDevice").style.visibility = "hidden";
+                document.getElementById("webDevice").style.display = "none";
 
             }
             if (data[0].compatibleDevices.includes("vr")) {
                 document.getElementById("vrDevice").style.visibility = "visibile";
             } else {
-                document.getElementById("vrDevice").style.visibility = "hidden";
+                document.getElementById("vrDevice").style.display = "none";
             }
 
 
