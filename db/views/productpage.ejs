@@ -787,13 +787,13 @@
                         </div> -->
                         <div class="col mt-4 mb-4 text-center">
                             <p id="creditLabels" style="text-align: center;">Compatible Devices:
-                                <span id="mobileDevice" class="dot">
+                                <span id="mobileDevice" class="dot" style="display: nonee;">
                                     <i class="fas fa-mobile-alt" style="margin-top: 10px"></i>
                                 </span>
-                                <span id="webDevice" class="dot">
+                                <span id="webDevice" class="dot" style="display: none">
                                     <i class="fas fa-laptop" style="margin-top: 10px"></i>
                                 </span>
-                                <span id="vrDevice" class="dot">
+                                <span id="vrDevice" class="dot" style="display: none;">
                                     <i class="fas fa-vr-cardboard" style="margin-top: 10px"></i>
                                 </span>
                             </p>
@@ -1025,19 +1025,19 @@
 
             console.log("compatible devices:" + data[0].compatibleDevices);
             if (data[0].compatibleDevices.includes("mobile")) {
-                document.getElementById("mobileDevice").style.visibility = "visible";
+                document.getElementById("mobileDevice").style.display = "inline-block";
             } else {
                 document.getElementById("mobileDevice").style.display = "none";
 
             }
             if (data[0].compatibleDevices.includes("web")) {
-                document.getElementById("webDevice").style.visibility = "visibile";
+                document.getElementById("webDevice").style.display = "inline-block";
             } else {
                 document.getElementById("webDevice").style.display = "none";
 
             }
             if (data[0].compatibleDevices.includes("vr")) {
-                document.getElementById("vrDevice").style.visibility = "visibile";
+                document.getElementById("vrDevice").style.display = "inline-block";
             } else {
                 document.getElementById("vrDevice").style.display = "none";
             }
