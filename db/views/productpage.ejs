@@ -786,7 +786,7 @@
                                 <span id="mobileDevice" class="dot">
                                     <i class="fas fa-mobile-alt" style="margin-top: 10px"></i>
                                 </span>
-                                <span id="desktopDevice" class="dot">
+                                <span id="webDevice" class="dot">
                                     <i class="fas fa-laptop" style="margin-top: 10px"></i>
                                 </span>
                                 <span id="vrDevice" class="dot">
@@ -964,7 +964,7 @@
 
 
     <!-- Replace the following source with your local copy -->
-    <script src="https://raw2.github.com/bestiejs/platform.js/master/platform.js"></script>
+    <!-- <script src="https://raw2.github.com/bestiejs/platform.js/master/platform.js"></script>
     <script type="text/javascript">var info = {
             /* Include any other info relevant to the app here. In this case, we are including the user profile */
             //user: JSON.parse(localStorage.UserProfile || '{}'),
@@ -977,7 +977,7 @@
             }
         }
 
-        document.getElementById('client-info').value = JSON.stringify(info);</script>
+        document.getElementById('client-info').value = JSON.stringify(info);</script> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -1004,15 +1004,38 @@
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
 
+            console.log(data[0].name);
             //var image =  JSON.parse(data.screenshots);
             //var images = data[0].screenshots;
             //alert(data[0].screenshots[0];)
             var image = data[0].screenshots.ss0;
-            document.getElementById("screen1").src = image
-            document.getElementById("screen2").src = data[0].screenshots.ss1;
-            document.getElementById("screen3").src = data[0].screenshots.ss2;
+            // document.getElementById("screen1").src = image
+            // document.getElementById("screen2").src = data[0].screenshots.ss1;
+            // document.getElementById("screen3").src = data[0].screenshots.ss2;
             //document.querySelector("#category1").innerHTML = 'Hide';
             //document.getElementById("category1").innerHTML = "asdf";
+
+
+            console.log("compatible devices:" + data[0].compatibleDevices);
+            if (data[0].compatibleDevices.includes("mobile")) {
+                document.getElementById("mobileDevice").style.visibility = "visible";
+            } else {
+                document.getElementById("mobileDevice").style.visibility = "hidden";
+
+            }
+            if (data[0].compatibleDevices.includes("web")) {
+                document.getElementById("webDevice").style.visibility = "visibile";
+            } else {
+                document.getElementById("webDevice").style.visibility = "hidden";
+
+            }
+            if (data[0].compatibleDevices.includes("vr")) {
+                document.getElementById("vrDevice").style.visibility = "visibile";
+            } else {
+                document.getElementById("vrDevice").style.visibility = "hidden";
+            }
+
+
         });
     }
 
