@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <title>Product Page</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -788,7 +787,7 @@
                         </div> -->
                         <div class="col mt-4 mb-4 text-center">
                             <p class="sectionTitle" style="text-align: center;">Compatible Devices:
-                                <span id="mobileDevice" class="dot" style="display: nonee;">
+                                <span id="mobileDevice" class="dot" style="display: none;">
                                     <i class="fas fa-mobile-alt" style="margin-top: 10px"></i>
                                 </span>
                                 <span id="webDevice" class="dot" style="display: none">
@@ -1004,6 +1003,7 @@
             var data = JSON.parse(result);
 
             document.getElementById("productname").innerHTML = data[0].name;
+            document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
 			                           // <span class="creditLabels"> Colored by: </span>
@@ -1041,6 +1041,7 @@
             } else {
                 document.getElementById("vrDevice").style.display = "none";
             }
+
 
 
         });
