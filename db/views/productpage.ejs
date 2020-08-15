@@ -561,20 +561,9 @@
                 </div> -->
 
                 <div class="mt-4">
-                    <div class="sectionTitle" id="creditsSection">Credits</div>
-                    <div>
-                        <div style="margin-top: 10px;">
-                            <span class="creditLabels"> Colored by: </span>
-                            <span class="creditNames"> John Smith </span>
-                        </div>
-                        <div>
-                            <span class="creditLabels"> Animation: </span>
-                            <span class="creditNames"> Terry Summers </span>
-                        </div>
-                        <div>
-                            <span class="creditLabels"> Model by: </span>
-                            <span class="creditNames"> Gina Halway </span>
-                        </div>
+                    <div class="sectionTitle" >Credits</div>
+                    <div id="creditsSection">
+
                     </div>
                 </div>
 
@@ -1006,10 +995,16 @@
             document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-			                           // <span class="creditLabels"> Colored by: </span>
-                            //<span class="creditNames"> John Smith </span>
-			            document.getElementById("creditsSection").innerHTML +=  "<span class='creditLabels'>" + data[0].credits[0].title +"</span>"; 
-						
+			// <span class="creditLabels"> Colored by: </span>
+			//<span class="creditNames"> John Smith </span>
+			//alert(data[0].credits[0].title);
+			
+			for(var i = 0; i < 5;i++)
+			{
+				document.getElementById("creditsSection").innerHTML +=  "<div> <span class='creditLabels'>" + data[0].credits[i].title +" " + "</span>" +"<span class='creditNames'>" + data[0].credits[i].names +"</span>"; 
+			}
+			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditLabels'>" + data[0].credits[0].title +" " + "</span>"; 
+			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditNames'>" + data[0].credits[0].names +"</span>"; 
 
             console.log(data[0].name);
             //var image =  JSON.parse(data.screenshots);
