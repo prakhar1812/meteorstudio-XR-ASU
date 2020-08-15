@@ -304,3 +304,10 @@ MongoClient.connect(mongoUri, function (err, db) {
     res.render('productpage');
 });
 
+
+
+app.get("/covidcampus", function(req, res) {
+
+    res.render('covidcampus');
+});
+
