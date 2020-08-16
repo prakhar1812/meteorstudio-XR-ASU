@@ -1001,38 +1001,27 @@
 
 <script>
     function getProductData(product) {
-        var product = product;//document.getElementById("productID").value;
+        var product = product;
         loadFile("./getProduct?product=" + product, function (result) {
-            // show a table of the user's datasets
+            // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 
             document.getElementById("productname").innerHTML = data[0].name;
             document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-			// <span class="creditLabels"> Colored by: </span>
-			//<span class="creditNames"> John Smith </span>
-			//alert(data[0].credits[0].title);
 			
-			for(var i = 0; i < 5;i++)
+			//Iterate through the credits array of objects
+			for(var i = 0; i < data[0].credits.length;i++)
 			{
 				document.getElementById("creditsSection").innerHTML +=  "<div> <span class='creditLabels'>" + data[0].credits[i].title +" " + "</span>" +"<span class='creditNames'>" + data[0].credits[i].names +"</span>"; 
 			}
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditLabels'>" + data[0].credits[0].title +" " + "</span>"; 
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditNames'>" + data[0].credits[0].names +"</span>"; 
 
-            console.log(data[0].name);
-            //var image =  JSON.parse(data.screenshots);
-            //var images = data[0].screenshots;
-            //alert(data[0].screenshots[0];)
             var image = data[0].screenshots.ss0;
             // document.getElementById("screen1").src = image
             // document.getElementById("screen2").src = data[0].screenshots.ss1;
             // document.getElementById("screen3").src = data[0].screenshots.ss2;
-            //document.querySelector("#category1").innerHTML = 'Hide';
-            //document.getElementById("category1").innerHTML = "asdf";
-
-
+      
             console.log("compatible devices:" + data[0].compatibleDevices);
             if (data[0].compatibleDevices.includes("mobile")) {
                 document.getElementById("mobileDevice").style.display = "inline-block";
