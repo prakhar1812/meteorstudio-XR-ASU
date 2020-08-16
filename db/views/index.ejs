@@ -1094,7 +1094,7 @@ display: block;
         var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
 
         console.log(data[0]);
-        for (var i = 1; i < end; i++) {
+        for (var i = 0; i < numberOfItemsPerPage; i++) {
           var name = data[i].name;
           var desc = data[i].description;
           var image = data[i].thumbnail;
@@ -1109,33 +1109,32 @@ display: block;
         }
       });
     }
-    function findData() {
-      var search = document.getElementById("search").value;
-      loadFile("./findDatasetTable?search=" + search, function (result) {
-        // show a table of the user's datasets
-        var data = JSON.parse(result);
-        var totalItemsCount = data.length;
-        console.log(totalItemsCount);
-        // var numberOfItemsPerPage = 5;
-        // var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
-        // var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
-        // var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+    // function findData() {
+    //   var search = document.getElementById("search").value;
+    //   loadFile("./findDatasetTable?search=" + search, function (result) {
+    //     // show a table of the user's datasets
+    //     var data = JSON.parse(result);
+    //     var totalItemsCount = data.length;
+    //     console.log(totalItemsCount);
+    //     // var numberOfItemsPerPage = 5;
+    //     // var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+    //     // var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+    //     // var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
 
-        for (var i = 0; i < 5; i++) {
-          var name = data[i].name;
-          var date = data[i].address.country;
-          var image = data[i].images.picture_url;
-          document.getElementById("item-image" + i).src = image;
+    //     for (var i = 0; i < 5; i++) {
+    //       var name = data[i].name;
+    //       var desc = data[i].description;
+    //       var image = data[i].thumbnail;
+    //       document.getElementById("item-image" + i).src = image;
 
-          var row3 = document.createElement("image2");
-          row3.src = image;
+    //       // var row3 = document.createElement("image2");
+    //       // row3.src = image;
 
-          document.getElementById("itemname" + i).innerHTML = name;
-          document.getElementById("itemdesc" + i).innerHTML = date;
-
-        }
-      });
-    }
+    //       document.getElementById("itemname" + i).innerHTML = name;
+    //       document.getElementById("itemdesc" + i).innerHTML = desc;
+    //     }
+    //   });
+    // }
     $(document).ready(function () {
       var url = window.location.href;
       var n = url.lastIndexOf('/');
