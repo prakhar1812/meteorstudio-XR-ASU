@@ -13,9 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet2" href="styles.css">
-    <script>
+    <!-- <script>
         var productID = "";
-    </script>
+    </script> -->
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -493,9 +493,8 @@
 <!--HEADER END-->
 
     <div id="hero">
-		<button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-target="#myModal" id="modalvid">
-        <div class="overlay"></div>
-		
+		<!-- <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-target="#myModal" id="modalvid"> -->
+        <!-- <div class="overlay"></div>	 -->
         <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
             <source src="" type="video/mp4">
         </video>
@@ -1000,7 +999,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="public/js/create.js"></script>
+    <!-- <script type="text/javascript" src="public/js/create.js"></script> -->
     <script src="asyncReq.js"></script>
 
 </body>
@@ -1019,8 +1018,12 @@
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
 
-			document.getElementById("videoheader").src = data[0].video;
-			document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+            // show video if it exists
+            if (data[0].video != "") {
+                document.getElementById("videoheader").src = data[0].video;
+			    document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+            }
+
 			//alert(document.getElementById("modalvid").getAttribute("data-src"));
 			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
 			document.getElementById("creationDate").innerHTML = data[0].creationDate;
