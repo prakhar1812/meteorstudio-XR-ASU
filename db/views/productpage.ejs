@@ -389,10 +389,14 @@
     </nav>
 
     <header>
+		<button type="button" class="btn btn-primary video-btn" data-toggle="modal"
+	data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal" id="modalvid">
         <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
+		
+        <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
             <source src="scavhunt_appflow.mp4" type="video/mp4">
         </video>
+		</button>
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
@@ -411,6 +415,32 @@
     </section>
 
     <div class="container">
+	
+	<!---MODAL--->
+	<!-- Button trigger modal -->	
+	 <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <!-- 16:9 aspect ratio -->
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="video"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+	<!--END MODAL-->
         <div class="row">
             <!-- BEGINNING OF LEFT COLUMN -->
             <div class="col-sm-12 col-md-8">
@@ -769,9 +799,9 @@
 
         <div class="row justify-content-center mt-4">
             <div class="col-sm-12 col-md-3 capsule">
-                <img src="gettingstarted1.png" class="card-img-top" tyle="width: 100%;">
+                <img src="getstarted-headset.png" class="card-img-top" tyle="width: 100%;">
                 <div class="card-body">
-                    <h3 class="card-title sectionTitle">Get your phone</h3>
+                    <h3 class="card-title sectionTitle">Get your device</h3>
                     <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                         tempor invidunt ut labore et dolore.
@@ -790,7 +820,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-3 capsule">
-                <img src="gettingstarted3.png" class="card-img-top" alt="..." style="width: 100%;">
+                <img src="getstarted-vrguy.png" class="card-img-top" alt="..." style="width: 100%;">
                 <div class="card-body">
                     <h3 class="card-title sectionTitle">Immerse Yourself</h3>
                     <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
@@ -886,16 +916,21 @@
         loadFile("./getProduct?product=" + product, function (result) {
             // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
-
+			
+			document.title = data[0].name + " | ASU XR | Arizona State University"
+			
             document.getElementById("productname").innerHTML = data[0].name;
-            document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
-			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
+
 			document.getElementById("videoheader").src = data[0].video;
+			document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+			alert(document.getElementById("modalvid").getAttribute("data-src"));
+			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
 			document.getElementById("creationDate").innerHTML = data[0].creationDate;
 			document.getElementById("createdBy").innerHTML = data[0].createdBy;
+			
+			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			
 			//Iterate through the credits array of objects
 			for(var i = 0; i < data[0].credits.length;i++)
@@ -956,6 +991,33 @@
 
     }
 
+$(document).ready(function() {
+  // Gets the video src from the data-src on each button
+  var $videoSrc;
+  $(".video-btn").click(function() {
+    $videoSrc = $(this).attr("data-src");
+    console.log("button clicked" + $videoSrc);
+  });
+
+  // when the modal is opened autoplay it
+  $("#myModal").on("shown.bs.modal", function(e) {
+  	$("#video").attr("src", $videoSrc);
+    console.log("modal opened" + $videoSrc);
+    // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+    $("#video").attr(
+      "src",
+      $videoSrc + "?amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1"
+    );
+  });
+
+  // stop playing the youtube video when I close the modal
+  $("#myModal").on("hide.bs.modal", function(e) {
+    // a poor man's stop video
+    $("#video").attr("src", "");
+  });
+
+  // document ready
+});
 
 </script>
 
