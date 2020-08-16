@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
+    <!-- Footer CSS -->
+  <link href="css/footer.css" rel="stylesheet">
+
+
   <script>
     var error = "";
     var error2 = "";
@@ -210,11 +214,9 @@
       clear: both;
     }
 
-
     .container ul {
       text-decoration: none;
     }
-
 
     /* Cards */
     .ellipsis {
@@ -523,114 +525,10 @@ display: block;
     /* header ends */
 
 
-
-
     #intro {
       margin-top: 70px
     }
 
-    /* footer begins */
-    .footer {
-      background-color: #000000;
-      /* height: 434px; */
-    }
-
-    .footer_content {
-      height: 434px;
-      padding-bottom: 8px;
-    }
-
-
-    .footer_content_logo {
-      height: 100px;
-      padding-top: 40px;
-      padding-left: 85px;
-    }
-
-    .footer_content_links {
-      padding-top: 55px;
-      padding-left: 45px;
-    }
-
-    .footer_content_links li {
-      padding-top: 8px;
-    }
-
-    .footer_content_links li a {
-      text-decoration-style: dotted;
-    }
-
-    .footer_content_links li a:link {
-      color: white;
-    }
-
-    .footer_content_links li a:active {
-      color: white;
-    }
-
-    .footer_content_links li a:visited {
-      color: white;
-    }
-
-
-    .footer_content_button {
-      padding-top: 70px;
-      padding-left: 85px;
-    }
-
-    .footer_content_button button {
-      border-radius: 5px;
-      width: 102px;
-      height: 36px;
-      background: #FFC627;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #1e1e1e;
-      border-width: thin;
-
-    }
-
-    .footer_bottom {
-      background-color: #FFC627;
-      height: 77px;
-    }
-
-    .footer_bottom_text {
-      padding-top: 19px;
-      float: right;
-      font-size: 2em;
-      font-weight: 900;
-      color: #1e1e1e;
-      padding-right: 30px;
-    }
-
-    .footer_bottom_img {
-      position: relative;
-      padding-right: 8%;
-      bottom: 20px;
-      float: right;
-      top: -20px;
-      max-width: 110%;
-      max-height: 110%;
-    }
-
-
-    .footer_bot {
-      height: 69px;
-      background-color: #e5e5e5;
-      padding-left: 85px;
-      vertical-align: middle;
-      padding-top: 27px;
-    }
-
-    .footer_bot a {
-      padding-right: 28.8px;
-      text-decoration: none;
-    }
-
-    .footer_bot a:link {
-      color: #2a2a2a;
-    }
 
     .capsule {
       /* min-height: 550px; */
@@ -657,6 +555,7 @@ display: block;
       font-weight: bold;
       font-size: 18px;
     }
+
   </style>
 </head>
 
@@ -850,7 +749,7 @@ display: block;
               <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
                 dy=".3em"></text></svg>
             </div>
-            <h5 class="itemtype" id="itemtype0">Type</h5>
+            <h5 class="itemtype" id="itemtype0"></h5>
             <div class="card-body">
               <h5 class="card-title" id="itemname0">Title</h5>
               <div class="row">
@@ -881,7 +780,7 @@ display: block;
               <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
                 dy=".3em"></text></svg>
             </div>
-            <h5 class="itemtype" id="itemtype1">Type</h5>
+            <h5 class="itemtype" id="itemtype1"></h5>
             <div class="card-body">
               <h5 class="card-title" id="itemname1">Title</h5>
               <div class="row">
@@ -914,7 +813,7 @@ display: block;
               <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
                 dy=".3em"></text></svg>
             </div>
-            <h5 class="itemtype" id="itemtype2">Type</h5>
+            <h5 class="itemtype" id="itemtype2"></h5>
             <div class="card-body">
               <h5 class="card-title" id="itemname2">Title</h5>
               <div class="row">
@@ -946,7 +845,7 @@ display: block;
               <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
                 dy=".3em"></text></img>
             </div>
-            <h5 class="itemtype" id="itemtype3">Type</h5>
+            <h5 class="itemtype" id="itemtype3"></h5>
             <div class="card-body rounded">
               <h5 class="card-title" id="itemname3">Title</h5>
               <div class="row">
@@ -977,7 +876,7 @@ display: block;
               <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
                 dy=".3em"></text></svg>
             </div>
-            <h5 class="itemtype" id="itemtype4">Type</h5>
+            <h5 class="itemtype" id="itemtype4"></h5>
             <div class="card-body">
               <h5 class="card-title" id="itemname4">Title</h5>
               <div class="row">
@@ -1085,46 +984,49 @@ display: block;
   <footer>
     <div class="footer">
 
-      <div class="footer_content">
-        <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-              alt="Arizona State University" class="logo" src="abc.svg"></a></div>
+        <div class="footer_content">
+            <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
+                    target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a></div>
 
-        <div class="footer_content_links">
-          <ul style="list-style: none;">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">XR Search</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
+            <div class="footer_content_links">
+                <ul style="list-style: none;">
+                    <li><a href="https://xr.asu.edu">Home</a></li>
+                    <!-- <li><a href="https://example.com">XR Search</a></li> -->
+                    <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="footer_content_button">
+                <button class="upload-button" type="button" name="button">Upload</button>
+            </div> -->
+        </div>
+        <div class="footer_bottom">
+
+            <div id="footer_bottom_img">
+                <a href="https://www.asu.edu/rankings">
+                    <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
+                </a>
+            </div>
+
+            <div class="footer_bottom_text">
+                <a href="https://www.asu.edu/rankings">
+                    ASU is #1 in the U.S. for Innovation
+                </a>
+            </div>
+
         </div>
 
-        <div class="footer_content_button">
-          <button class="upload-button" type="button" name="button">Upload</button>
+        <div class="footer_bot">
+            <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+            <a href="https://www.asu.edu/accessibility/">Accessibility</a>
+            <a href="https://www.asu.edu/privacy/">Privacy</a>
+            <a href="https://www.asu.edu/tou/">Terms of use</a>
+            <a href="https://www.asu.edu/asujobs/">Jobs</a>
+            <a href="https://cfo.asu.edu/emergency">Emergency</a>
+            <a href="https://contact.asu.edu/">Contact ASU</a>
         </div>
-      </div>
-      <div class="footer_bottom">
-
-        <div class="footer_bottom_img">
-          <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
-        </div>
-
-        <div class="footer_bottom_text">
-          ASU is #1 in the U.S. for Innovation
-        </div>
-
-      </div>
-
-      <div class="footer_bot">
-        <a href="#">Copyright and Trademark</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms of use</a>
-        <a href="#">Jobs</a>
-        <a href="#">Emergency</a>
-        <a href="#">Contact ASU</a>
-
-      </div>
     </div>
-  </footer>
+</footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
