@@ -1,4 +1,3 @@
-
 // App config
 var express = require('express');
 // var router = express.Router();
@@ -17,10 +16,10 @@ var fs = require('fs');
 var multer = require('multer');
 var error = "";
 var storage = multer.diskStorage({
-    destination: function (req, file, callback) {
+    destination: function(req, file, callback) {
         callback(null, 'temp');
     },
-    filename: function (req, file, callback) {
+    filename: function(req, file, callback) {
         fileName = req.body.datasetname + ".csv";
         callback(null, fileName);
     }
@@ -85,7 +84,7 @@ var mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 
 // Initialize the connection once
-mongoose.connect(mongoUri, { useNewUrlParser: true }, function (err) {
+mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     console.log("XR@ASU started");
 
 
@@ -103,7 +102,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function (err) {
 //
 
 //searching by keyword
-MongoClient.connect(mongoUri, function (err, db) {
+MongoClient.connect(mongoUri, function(err, db) {
     if (err) throw err;
     var dbo = db.db("xrasu");
     var keyword = "apartment";
@@ -112,7 +111,7 @@ MongoClient.connect(mongoUri, function (err, db) {
     var myquery = { name: regex };
     //var myquery = { name: "Spacious and well located apartment" };
     //  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1 } }).toArray(function (err, result) {
+    dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1 } }).toArray(function(err, result) {
         if (err) throw err;
         //  console.log(result);
         db.close();
@@ -132,35 +131,34 @@ const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'nume
  * index
  */
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     //console.log(cookie);
-    MongoClient.connect(mongoUri, function (err, db) {
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("xrasu");
         var myquery = { name: "ASU Scavenger Hunt" };
         // var newvalues = { $set: {email: newEmail } };
         dbo.collection("products").findOne(myquery, "_id").then(result => {
-            if (result) {
-                console.log("Successfully found document: " + result.name);
-                console.log(result);
-                //   loggedUser = result.name;
-                //   loggedUser2 = result.thumbnail;
-                //   loggedUser3 = result.description;
+                if (result) {
+                    console.log("Successfully found document: " + result.name);
+                    console.log(result);
+                    //   loggedUser = result.name;
+                    //   loggedUser2 = result.thumbnail;
+                    //   loggedUser3 = result.description;
 
-            } else {
-                //     console.log("No document matches the provided query.");
-            }
-            return result;
-        })
+                } else {
+                    //     console.log("No document matches the provided query.");
+                }
+                return result;
+            })
             .catch(err => console.error(`Failed to find document: ${err}`));
         //});
 
-        res.render('index',
-            {
-                // error: loggedUser,
-                // error2: loggedUser2,
-                // error3: loggedUser3
-            });
+        res.render('index', {
+            // error: loggedUser,
+            // error2: loggedUser2,
+            // error3: loggedUser3
+        });
     });
 
 
@@ -170,7 +168,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.get("/manageData", function (req, res) {
+app.get("/manageData", function(req, res) {
     //console.log("getting dataset names");
     //res.sendFile('manageData.html', { root : VIEWS });
 
@@ -194,9 +192,9 @@ app.get("/manageData", function (req, res) {
 /**
  * showDatasetTable
  */
-app.get("/showDatasetTable", function (req, res) {
+app.get("/showDatasetTable", function(req, res) {
 
-    MongoClient.connect(mongoUri, function (err, db) {
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("xrasu");
         // var keyword = "flat";
@@ -217,10 +215,10 @@ app.get("/showDatasetTable", function (req, res) {
         //     db.close();
         // });
 
-        dbo.collection("products").find({}).toArray(function (err, result) {
+        dbo.collection("products").find({}).toArray(function(err, result) {
             if (err) throw err;
             console.log(result);
-            
+
             // res.send(JSON.stringify(namesList));
             res.send(JSON.stringify(result));
 
@@ -232,9 +230,9 @@ app.get("/showDatasetTable", function (req, res) {
 });
 
 /**
-* findDataSet
-*/
-app.get("/findDatasetTable", function (req, res) {
+ * findDataSet
+ */
+app.get("/findDatasetTable", function(req, res) {
     const query = req.query.search;
     var query2 = "";
     query2 = String(query);
@@ -242,7 +240,7 @@ app.get("/findDatasetTable", function (req, res) {
     console.log(query);
 
 
-    MongoClient.connect(mongoUri, function (err, db) {
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("xrasu");
         var keyword = query;
@@ -252,7 +250,7 @@ app.get("/findDatasetTable", function (req, res) {
         console.log(myquery);
         //var myquery = { name: "Spacious and well located apartment" };
         //  var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1, images: 1 } }).toArray(function (err, result) {
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1, images: 1 } }).toArray(function(err, result) {
             if (err) throw err;
             console.log(result[0]);
             var namesList = [];
@@ -269,7 +267,7 @@ app.get("/findDatasetTable", function (req, res) {
 
 });
 
-app.get("/getProduct", function (req, res) {
+app.get("/getProduct", function(req, res) {
     const query = req.query.product;
     var query2 = "";
     query2 = String(query);
@@ -279,7 +277,7 @@ app.get("/getProduct", function (req, res) {
 
 
 
-    MongoClient.connect(mongoUri, function (err, db) {
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("xrasu");
         var ObjectId = require('mongoose').Types.ObjectId;
@@ -290,7 +288,7 @@ app.get("/getProduct", function (req, res) {
         console.log(myquery);
         //var myquery = { name: "Spacious and well located apartment" };
         //  var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1 } }).toArray(function (err, result) {
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1 } }).toArray(function(err, result) {
             if (err) throw err;
             console.log(result[0]);
             var namesList = [];
@@ -309,15 +307,14 @@ app.get("/getProduct", function (req, res) {
 });
 
 
-app.get("/productpage", function (req, res) {
+app.get("/productpage", function(req, res) {
 
     res.render('productpage');
 });
 
 
 
-app.get("/covidcampus", function (req, res) {
+app.get("/covidcampus", function(req, res) {
 
     res.render('covidcampus');
 });
-
