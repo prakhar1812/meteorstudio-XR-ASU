@@ -513,8 +513,8 @@
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
-                    <h1 class="display-3">Video Header</h1>
-                    <p class="lead mb-0">DB-referenced video</p>
+                    <h1 class="display-3"></h1>
+                    <p class="lead mb-0"></p>
                 </div>
             </div>
         </div>
@@ -1010,6 +1010,7 @@
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
 			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
 			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
+			document.getElementById("videoheader").src = data[0].video;
 			
 			//Iterate through the credits array of objects
 			for(var i = 0; i < data[0].credits.length;i++)
