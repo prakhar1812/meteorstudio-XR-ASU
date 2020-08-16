@@ -1120,17 +1120,15 @@ height: 37px;
           document.getElementById("itemname" + i).innerHTML = name;
           document.getElementById("itemdesc" + i).innerHTML = desc;
           document.getElementById("itemtype" + i).innerHTML = type;
-          document.getElementById("productlink" + i).href = "http://xr.asu.edu/productpage?=" + id;
-          // document.getElementById("experienceCard" + i).onclick = function () { location.href = "http://xr.asu.edu/productpage?=" + id; }
+          document.getElementById("productlink" + i).href = "/productpage?=" + id;
           document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [id]);
-
         }
       });
     }
 
     function goToProduct (id, event) {
     // here you can work with you array of the arguments 'args'
-      location.href = "http://xr.asu.edu/productpage?=" + id;
+      location.href = "/productpage?=" + id;
     }
 
 
