@@ -230,8 +230,9 @@ app.get("/showDatasetTable", function(req, res) {
 });
 
 /**
- * findDataSet
+ * FindData
  */
+ /*
 app.get("/findDatasetTable", function(req, res) {
     const query = req.query.search;
     var query2 = "";
@@ -266,16 +267,13 @@ app.get("/findDatasetTable", function(req, res) {
 
 
 });
-
+*/
 app.get("/getProduct", function(req, res) {
     const query = req.query.product;
     var query2 = "";
     query2 = String(query);
 
-    console.log(query);
-
-
-
+ //   console.log(query);
 
     MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
@@ -288,7 +286,7 @@ app.get("/getProduct", function(req, res) {
         console.log(myquery);
         //var myquery = { name: "Spacious and well located apartment" };
         //  var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1 } }).toArray(function(err, result) {
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1,creationDate:1,createdBy:1,creatorURL:1 } }).toArray(function(err, result) {
             if (err) throw err;
             console.log(result[0]);
             var namesList = [];
@@ -300,10 +298,6 @@ app.get("/getProduct", function(req, res) {
             db.close();
         });
     });
-
-
-
-
 });
 
 
