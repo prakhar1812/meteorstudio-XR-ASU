@@ -392,7 +392,7 @@ height: 37px;
 
 .header-container{
   max-width: 1250px;
-  min-width: 990px;
+  min-width: 730px;
   font-size: 1rem;
   margin-right: auto;
   margin-left: auto;
@@ -400,7 +400,7 @@ height: 37px;
   padding-right: 15px;
 
   height: 109px;
-  width: 1280px;
+  /*width: 1280px;*/
   left: 0px;
   top: 1px; 
 }
@@ -431,7 +431,6 @@ height: 37px;
       margin-top: -5.5%;
       max-width: 100%;
     }
-
 .header-nav {
   width: 463px;
   position: relative;
@@ -444,6 +443,11 @@ height: 37px;
 }
 .header-nav ul {
   padding-inline-start: 0px;
+}
+@media screen and (max-width: 730px){
+  .header-nav {
+    display: none;
+  }
 }
     /* .overlayTitleContainer {
       position: relative;
