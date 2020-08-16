@@ -147,51 +147,22 @@ nav ul li:hover ul li {
       left: 12.5px;
     }
 
-/* header begins */
-.header_1{
-  height: 109px;
-}
-
-.header_1 p{
-  position: relative;
-  top: 28px;
-  left: 85px;
-  width: 78px;
-  height: 29px;
-  color: #2A2A2A;
-  font-weight: 900;
-  font-size: 1.5em;
-
-}
-
-.header_1_logo{
-  padding-left: 85px;
-  padding-top: 20px;
-}
-
-.header_1_logo img{
-  position: absolute;
-  top: 24px;
-  left: 85px;
-  width: 207px;
-  height: 37px;
-}
 
 
-.header_2{
+
+/* .header_2{
   background-color: #353535;
   height: 70px;
   padding-left: 155px;
   padding-top: 20px;
-}
+} */
 
 .header_2_links{
   /* padding-top: 3px; */
 }
 
-.header_2 a{
+/* .header_2 a{
   text-decoration: none;
-  padding-right: 50px;
   display: inline-flex;
   float: left;
 }
@@ -221,7 +192,7 @@ nav ul li:hover ul li {
   font-weight: bold;
   color: #1e1e1e;
   border-width: thin;
-}
+} */
 /* header ends */
 
 /* part 1 begins*/

@@ -20,6 +20,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+    body {
+      overflow-x: hidden;
+    }
 
     .img-hover-zoom {
       height: 200px;
@@ -223,8 +226,7 @@
       width: 850px;
       left: 629px;
     }
-
-/* header begins
+    /* header begins
 .header_1{
   height: 109px;
 }
@@ -257,23 +259,72 @@
 
 .header_2{
   background-color: #353535;
-  height: 70px;
-  padding-left: 155px;
-  padding-top: 20px;
+
+  width: 100%;
+  height: 60px;
+}
+.header-2-container{
+  max-width: 1250px;
+  min-width: 990px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  height: inherit;
+}
+.navbar-container{
+  display: flex;
+  justify-content: space-between;
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+.navbar-container li {list-style: none;}
+.navbar-link{
+  padding: 18px 30px;
+  display: inline-block;
+  text-align: left;
+  color: white;
+  letter-spacing: 0.08px;
+  font: Bold 16px/24px Roboto;
+}
+.navbar-link a {
+  height: 19px;
+  padding: 0;
+  color: inherit;
+}
+#nav-home {
+  width: 20px;
+  height: 16px;
+  top: 133px;
+  left: 110px;
+}
+#nav-search-icon {padding-left: 6px;}
+
+.navbar-link.active {background-color: black;}
+.navbar-link.active {color: #FFC627;}
+/* .navbar-link.active img{
+  background: url("search-orange.png");
+} */
+.navbar-link:hover {
+  background-color: black;
+  text-decoration: none;
+  color: #FFC627;
 }
 
 /* .header_2_links{
   padding-top: 3px;
 } */
 
-.header_2 a{
+/* .header_2 a{
   text-decoration: none;
   padding-right: 50px;
   display: inline-flex;
   float: left;
-}
+} */
 
-.header_2 a:link{
+/* .header_2 a:link{
   color: white;
 }
 .header_2 a:active{
@@ -285,7 +336,7 @@
 
 .header_2_links{
   margin-top: 5px;
-}
+} */
 
 .header_2_button{
   position: relative;
@@ -300,16 +351,16 @@
   border-width: thin;
 }
 
-.header-container {
-  max-width: 1270px;
+.header-container{
+  max-width: 1250px;
   min-width: 990px;
   font-size: 1rem;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  height: 89px;
+  height: 109px;
   width: 1280px;
   left: 0px;
   top: 1px; 
@@ -321,6 +372,7 @@
   background-color: white;
   display: block;
   margin: 0;
+  padding-top: 24px;
   font-size: 0.8rem;
   line-height: 1em;
   color: black;
@@ -331,7 +383,6 @@
   float: left;
   width: 207px;
   height: 37px;
-  padding-top: 12px;
   display: block;
   line-height: 12.8px;
   box-sizing: content-box;
@@ -339,17 +390,17 @@
 }
 
 .header-nav {
+  width: 463px;
   position: relative;
   display: block;
   float: right;
   margin: 0 auto;
-  margin-top: 11px;
+  /*margin-right: 81px;*/
   text-align: center;
-  /*top: 11px;
-  left: 736px;
-  width: 463px;
-  height: 33px;*/
   z-index: 100;
+}
+.header-nav ul {
+  padding-inline-start: 0px;
 }
 
 /* nav items that don't dropdown*/
@@ -360,94 +411,88 @@
 .drop-item {
   color: black;
 }
+.nav-item img {
+  width: 7px;
+}
+/* parent of all header links in top right */
 .nav-item {
   position: relative;
   display: inline-block;
+  padding-right: 12px;
+  font-size: 12px;
+}
+.nav-item:last-child {
+  padding-right: 0;
 }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: white;
+  /*min-width: 160px;*/
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  padding-top: 10px;
 }
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  margin: 5px 10px;
+  line-height: 20px;
   text-decoration: none;
   display: block;
+  text-align: left;
+  font-size: 12px;
 }
-.dropdown-content a:hover {background-color: white;}
 
 .nav-item:hover .dropdown-content {display: block;}
 
 .nav-item:hover .dropitem {background-color: white;}
 
+.nav-item a:hover {
+  color: #D23153;
+  text-decoration: underline;
+}
+
 .header-search {
   clear: right;
   float: right;
   position: relative;
+  width: 179px;
+  height: 22px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  
 }
-.header-search-button {
+.header-search:focus{
+  outline: none;
+}
+.header-search-button{
   position: absolute;
-  top: 5px;
+  top: 33px;
   width: 8px;
   height: 12px;
+  right: 0px;
+  margin-right: 7px;
   font-size: 0.01px;
-  line-height: 15px;
   cursor: pointer;
-  text-indent: -9999px;
-  padding: 0 12px 0 0;
+  padding: 0 12px 0 0; 
   border: 0;
+  background: url("header-search-icon.png") 0 0 no-repeat;
+  background-size: 100%;
+}
+.header-search-button:focus {
+  outline: none;
 }
 .header-bottom {
   display: block;
-  overflow: hidden;
-  padding: 0 0 2px 10px;
   font-size: 1.5em;
-  margin-top: 5px;
+  margin-top: 7px;
   width: 100%;
 }
-/* .navbar ul{
-  list-style:none;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  margin-top: 5px;
-  text-decoration: none;
+.header-title{
+  color: #2a2a2a;
+  font: 24px/34px Roboto;
+  font-weight: bold;
 }
-
-.navbar ul li{
-  font-size: small;
-  text-decoration: none;
-  float: right;
-  margin-left: 4px;
-}
-
-
-.navbar ul li ul li{
-  font-size: small;
-  text-decoration: none;
-  display: none;
-  display: none;
-  position: relative;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.navbar ul li:hover ul li {
-  display: block;
-} */
-.ASU_search_box_div{
-  float: right;
-  padding-right: 15%;
-}
-/* header ends */
-
-
-
     /* footer begins */
     .footer {
       background-color: #000000;
@@ -588,7 +633,8 @@
       <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
       <div class="header-nav">
             <ul><!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-              <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home</a>
+              <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home
+                <img src="caret-down.svg"></a>
 
                 <div class="dropdown-content">
                     <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
@@ -603,7 +649,8 @@
 
               </li>
               <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My ASU</a></li>
-              <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools</a>
+              <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools
+                <img src="caret-down.svg"></a>
 
                 <div class="dropdown-content">
                   <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and Sciences</a>
@@ -627,7 +674,8 @@
                   </div>
 
               </li>
-              <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and Locations</a>
+              <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and Locations
+                <img src="caret-down.svg"></a>
 
                 <div class="dropdown-content">
                   <a href="https://www.asu.edu/map/" target="_top">Map</a>
@@ -638,7 +686,7 @@
                       Phoenix</a>
                   <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
                       Extended</a>
-                  <a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                  <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
                   <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a>
                   <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
                   <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
@@ -647,44 +695,47 @@
 
               </li>
               <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
-              <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login"
+              <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
                 onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                 onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
-                onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
+                onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li> -->
           </ul>
-          <div class="header-search">
+          <div>
             <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
-              for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input
+              for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input
               name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
               value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
               type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client"
-              type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box"
-              placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit"
-              value="Search"></form>
+              type="hidden" value="asu_frontend"><input name="q" class="header-search"
+              placeholder="Search" autocomplete="off" type="text"><input class="header-search-button" type="submit"
+              value=""></form>
           </div>
         </div>
     </div>
     <div class="header-bottom">
-      <p>ASUXR</p>
+      <span href="xr.asu.edu" class="header-title">XR@ASU</span>
     </div>
   </div>
 </header>
 
   <div class="header_2">
+    <div class="header-2-container">
+      <ul class="navbar-container">
+      <li>
+        <a class="navbar-link" href="#"> <img id="nav-home" src="homeicon.svg" alt=""> </a>
+      </li>
+      <li>
+        <a class="navbar-link" href="#">XR Search  <img id="nav-search-icon" src="Icon - search-solid.svg"></a>
+      </li>
+      <li>
+        <a class="navbar-link" href="#">Login</a>
+      </li>
+    </ul>
 
-    <div class="header_2_links" style="background-color: #aaaaaa;">
-      <a href="#"> <img src="homeicon.svg" alt=""> </a>
-    </div>
-    <div class="header_2_links">
-      <a href="#">XR Search <img style="padding-left: 6px;" src="Icon - search-solid.svg"></a>
-    </div>
-    <div class="header_2_links">
-      <a href="#">Login</a>
-    </div>
 
-
-    <button class="header_2_button" type="button" style="float: right; margin-right: 100px;"
-      name="button">Upload</button>
+      <!-- <button class="header_2_button" type="button" style="float: right; margin-right: 100px;"
+        name="button">Upload</button> -->
+    </div>
 
   </div>
 
@@ -1046,6 +1097,8 @@
     });
   }
   $(document).ready(function () {
+    setupNavBar();
+
     var url = window.location.href;
     var n = url.lastIndexOf('/');
     var href = url.substring(n + 1);
@@ -1092,6 +1145,21 @@
       }
     }
     return "";
+  }
+  function setupNavBar() {
+    var nav_links = document.getElementsByClassName("navbar-link");
+    nav_links[0].classList.add("active");
+
+    for(i = 0; i < nav_links.length; i++) {
+      (function(index) {
+        nav_links[index].addEventListener("click", function() {
+        for(k = 0; k < nav_links.length; k++) {
+          nav_links[k].classList.remove("active");
+        }
+       nav_links[index].classList.add("active");
+     })
+  })(i);
+}
   }
 </script>
 
