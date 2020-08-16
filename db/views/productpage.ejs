@@ -543,7 +543,7 @@
                         <div style="color: #6E6E6E; font-size: 1.2em;">Created by:</div>
                     </div>
                     <div class="p-2 border-right">
-                        <div class="bd-highlight" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</div>
+                        <div class="bd-highlight" id="createdBy" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</div>
                     </div>
                     <div class="p-2 border-right">
                         <div class="bd-highlight">
@@ -1012,6 +1012,7 @@
 			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			document.getElementById("videoheader").src = data[0].video;
 			document.getElementById("creationDate").innerHTML = data[0].creationDate;
+			document.getElementById("createdBy").innerHTML = data[0].createdBy;
 			
 			//Iterate through the credits array of objects
 			for(var i = 0; i < data[0].credits.length;i++)
