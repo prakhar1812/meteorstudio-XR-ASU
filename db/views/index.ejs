@@ -1074,7 +1074,12 @@ height: 37px;
     function manageData() {
       loadFile("./showDatasetTable", function (result) {
         // show a table of the user's datasets
-        var data = JSON.parse(result);
+        // sort alphabetically
+        var data = JSON.parse(result).sort(function(a, b) {
+                var textA = a.name.toUpperCase();
+                var textB = b.name.toUpperCase();
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            });
         var totalItemsCount = data.length;
         var numberOfItemsPerPage = 5;
         var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
