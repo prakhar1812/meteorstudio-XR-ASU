@@ -1,4 +1,3 @@
-
 // App config
 var express = require('express');
 // var router = express.Router();
@@ -103,21 +102,21 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
 //
 
 //searching by keyword
-MongoClient.connect(mongoUri, function (err, db) {
-	if (err) throw err;
-    var dbo = db.db("sample_airbnb");
+MongoClient.connect(mongoUri, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("xrasu");
     var keyword = "apartment";
     var regex = RegExp(".*" + keyword + ".*");
-   // Note.find({ noteBody: regex, userID: userID })
+    // Note.find({ noteBody: regex, userID: userID })
     var myquery = { name: regex };
-	//var myquery = { name: "Spacious and well located apartment" };
-	//  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1 } }).toArray(function (err, result) {
+    //var myquery = { name: "Spacious and well located apartment" };
+    //  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1 } }).toArray(function(err, result) {
         if (err) throw err;
-      //  console.log(result);
+        //  console.log(result);
         db.close();
     });
-        });
+});
 
 //
 
@@ -133,35 +132,34 @@ const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'nume
  */
 
 app.get('/', function(req, res) {
-        //console.log(cookie);
-         MongoClient.connect(mongoUri, function(err, db) {
-		             if (err) throw err;
-		             var dbo = db.db("sample_airbnb");
-		           var myquery = { name: "Ribeira Charming Duplex" };
-		           //  var newvalues = { $set: {email: newEmail } };
-		 			dbo.collection("listingsAndReviews").findOne(myquery,"_id").then(result => {
-		 				 if(result) {
-		 				      console.log("Successfully found document: " + result.name);
-		 				  //    console.log(result);
-		 				      loggedUser = result.name;
-		 				      loggedUser2 = result.images.picture_url;
-		 				      loggedUser3 = result.description;
+    //console.log(cookie);
+    MongoClient.connect(mongoUri, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("xrasu");
+        var myquery = { name: "ASU Scavenger Hunt" };
+        // var newvalues = { $set: {email: newEmail } };
+        dbo.collection("products").findOne(myquery, "_id").then(result => {
+                if (result) {
+                    console.log("Successfully found document: " + result.name);
+                    console.log(result);
+                    //   loggedUser = result.name;
+                    //   loggedUser2 = result.thumbnail;
+                    //   loggedUser3 = result.description;
 
-		 				    } else {
-		 				 //     console.log("No document matches the provided query.");
-		 				    }
-		 				    return result;
-		 				  })
-  .catch(err => console.error(`Failed to find document: ${err}`));
-  //});
+                } else {
+                    //     console.log("No document matches the provided query.");
+                }
+                return result;
+            })
+            .catch(err => console.error(`Failed to find document: ${err}`));
+        //});
 
-    				res.render('index',
-			        {
-				        error: loggedUser,
-				        error2: loggedUser2,
-				        error3: loggedUser3
-			        });
-				});
+        res.render('index', {
+            // error: loggedUser,
+            // error2: loggedUser2,
+            // error3: loggedUser3
+        });
+    });
 
 
 
@@ -195,111 +193,121 @@ app.get("/manageData", function(req, res) {
  * showDatasetTable
  */
 app.get("/showDatasetTable", function(req, res) {
-	
-MongoClient.connect(mongoUri, function (err, db) {
-	if (err) throw err;
-    var dbo = db.db("sample_airbnb");
-    var keyword = "flat";
-    var regex = RegExp(".*" + keyword + ".*");
-   // Note.find({ noteBody: regex, userID: userID })
-    var myquery = { name: regex };
-	console.log(myquery);
-	//var myquery = { name: "Spacious and well located apartment" };
-	//  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
+
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
-        console.log(result[0]);
-		var namesList = [];
-        for (var i = 0; i < result.length; i++) {
-            namesList.push(result[i]);
-        }
-        res.send(JSON.stringify(namesList));
-        db.close();
-    });
+        var dbo = db.db("xrasu");
+        // var keyword = "flat";
+        // var regex = RegExp(".*" + keyword + ".*");
+        // Note.find({ noteBody: regex, userID: userID })
+        // var myquery = { name: regex };
+        // console.log(myquery);
+        //var myquery = { name: "Spacious and well located apartment" };
+        //  var newvalues = { $set: {email: newEmail } };
+        // dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1, images: 1 } }).toArray(function (err, result) {
+        //     if (err) throw err;
+        //     console.log(result[0]);
+        //     var namesList = [];
+        //     for (var i = 0; i < result.length; i++) {
+        //         namesList.push(result[i]);
+        //     }
+        //     res.send(JSON.stringify(namesList));
+        //     db.close();
+        // });
+
+        dbo.collection("products").find({}).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+
+            // res.send(JSON.stringify(namesList));
+            res.send(JSON.stringify(result));
+
+            db.close();
         });
-
-
     });
-	
-	/**
-	* findDataSet
-	*/
-	app.get("/findDatasetTable", function(req, res) {
-		const query = req.query.search; 
-		var query2 = "";
-		query2 = String(query);
-		
-		console.log(query);
-		
-	
-MongoClient.connect(mongoUri, function (err, db) {
-	if (err) throw err;
-    var dbo = db.db("sample_airbnb");
-    var keyword = query;
-    var regex = RegExp(".*" + keyword + ".*");
-   // Note.find({ noteBody: regex, userID: userID })
-    var myquery = { name: regex };
-	console.log(myquery);
-	//var myquery = { name: "Spacious and well located apartment" };
-	//  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("listingsAndReviews").find(myquery,{ projection: { _id: 1, name: 1, address: 1, images:1 } }).toArray(function (err, result) {
+
+
+});
+
+/**
+ * findDataSet
+ */
+app.get("/findDatasetTable", function(req, res) {
+    const query = req.query.search;
+    var query2 = "";
+    query2 = String(query);
+
+    console.log(query);
+
+
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
-        console.log(result[0]);
-		var namesList = [];
-        for (var i = 0; i < result.length; i++) {
-            namesList.push(result[i]);
-        }
-        res.send(JSON.stringify(namesList));
-        db.close();
-    });
+        var dbo = db.db("xrasu");
+        var keyword = query;
+        var regex = RegExp(".*" + keyword + ".*");
+        // Note.find({ noteBody: regex, userID: userID })
+        var myquery = { name: regex };
+        console.log(myquery);
+        //var myquery = { name: "Spacious and well located apartment" };
+        //  var newvalues = { $set: {email: newEmail } };
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1, images: 1 } }).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result[0]);
+            var namesList = [];
+            for (var i = 0; i < result.length; i++) {
+                namesList.push(result[i]);
+            }
+            res.send(JSON.stringify(namesList));
+            db.close();
         });
-		
-		
-
-
     });
 
-	app.get("/getProduct", function(req, res) {
-		const query = req.query.product; 
-		var query2 = "";
-		query2 = String(query);
-		
-		console.log(query);
-		
-		
-		
-	
-MongoClient.connect(mongoUri, function (err, db) {
-	if (err) throw err;
-    var dbo = db.db("xrasu");
-	var ObjectId = require('mongoose').Types.ObjectId; 
-    var keyword = query;
-    var regex = RegExp(".*" + keyword + ".*");
-   // Note.find({ noteBody: regex, userID: userID })
-    var myquery = { _id: new ObjectId(query) };
-	console.log(myquery);
-	//var myquery = { name: "Spacious and well located apartment" };
-	//  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("products").find(myquery,{ projection: { _id: 1, name: 1, experienceType:1, categories:1, compatibleDevices:1, description:1, video:1, thumbnail:1, minimumRequirements:1,credits:1,screenshots:1} }).toArray(function (err, result) {
+
+
+
+});
+
+app.get("/getProduct", function(req, res) {
+    const query = req.query.product;
+    var query2 = "";
+    query2 = String(query);
+
+    console.log(query);
+
+
+
+
+    MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
-        console.log(result[0]);
-		var namesList = [];
-        for (var i = 0; i < result.length; i++) {
-            namesList.push(result[i]);
-			console.log(result[i]);
-        }
-        res.send(JSON.stringify(namesList));
-        db.close();
-    });
+        var dbo = db.db("xrasu");
+        var ObjectId = require('mongoose').Types.ObjectId;
+        var keyword = query;
+        var regex = RegExp(".*" + keyword + ".*");
+        // Note.find({ noteBody: regex, userID: userID })
+        var myquery = { _id: new ObjectId(query) };
+        console.log(myquery);
+        //var myquery = { name: "Spacious and well located apartment" };
+        //  var newvalues = { $set: {email: newEmail } };
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1 } }).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result[0]);
+            var namesList = [];
+            for (var i = 0; i < result.length; i++) {
+                namesList.push(result[i]);
+                console.log(result[i]);
+            }
+            res.send(JSON.stringify(namesList));
+            db.close();
         });
-		
-		
-
-
     });
-	
 
-	app.get("/productpage", function(req, res) {
+
+
+
+});
+
+
+app.get("/productpage", function(req, res) {
 
     res.render('productpage');
 });
@@ -310,4 +318,3 @@ app.get("/covidcampus", function(req, res) {
 
     res.render('covidcampus');
 });
-

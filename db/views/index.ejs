@@ -3,27 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>XR@ASU | Arizona State University</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="uielements.css">
-</head>
-<script>
-  var error = "";
-  var error2 = "";
-  var error3 = "";
-  var page = 1;
-</script>
 
-<body onload="manageData()">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
+
+  <script>
+    var error = "";
+    var error2 = "";
+    var error3 = "";
+    var page = 1;
+  </script>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-    body {
+        body {
       overflow-x: hidden;
     }
-
     .img-hover-zoom {
       height: 200px;
       /* [1.1] Set it as per your need */
@@ -52,18 +55,26 @@
       text-align: center;
     }
 
-    h5.roboto {
+    h5 {
+      font-weight: bold;
+    }
 
-      font-family: 'Roboto', sans-serif;
-      font-size: 36px;
-      font-weight: 900;
-
-
+    .itemtype {
+      background: #FF7F32;
+      max-width: 150px;
+      padding: 5px;
+      color: white;
+      font-size: 70%;
+      text-align: center;
+      vertical-align: center;
+      position: relative;
+      margin-top: -4%;
+      margin-left: 5%;
     }
 
     .bouton-image:before {
       content: "";
-      width: 16px;
+      width: 14px;
       height: 16px;
       display: inline-block;
       margin-right: 0px;
@@ -77,7 +88,7 @@
       background-image: url("Icon - chevron-right-solid.svg");
     }
 
-    button {
+    /* button {
       top: 1365px;
       left: 94px;
       width: 143px;
@@ -86,7 +97,7 @@
       border: 1px solid #E6E6E6;
       opacity: 1;
 
-    }
+    } */
 
     p.roboto {
       margin-left: 400px;
@@ -124,29 +135,32 @@
 
 
     .grid-container {
-  display: inline-grid;
-    grid-column-gap: 50px;
-  grid-template-columns: auto auto auto;
-  background-color: #FFFFFF;/*#FFC627;*/
-  padding: 10px;
-  align-content: center;
-}
-.grid-item {
-  background-color: #FFFFFF;
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  justify-content: center;
-}
-  .text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+      display: inline-grid;
+      grid-column-gap: 50px;
+      grid-template-columns: auto auto auto;
+      background-color: #FFFFFF;
+      /*#FFC627;*/
+      padding: 10px;
+      align-content: center;
+    }
+
+    .grid-item {
+      background-color: #FFFFFF;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      justify-content: center;
+    }
+
+    .text-block {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: black;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     .sidebar {
       top: 1310px;
@@ -157,11 +171,11 @@
     }
 
     .item1 {
-  grid-column: 1;
-  grid-row: 1 / span2;
-  background-color: #FFFFFF;
+      grid-column: 1;
+      grid-row: 1 / span2;
+      background-color: #FFFFFF;
 
-}
+    }
 
     .item2 {
       grid-column: 2;
@@ -203,62 +217,74 @@
       text-decoration: none;
     }
 
-    .part_1 {
-      object-fit: contain;
-      height: 600px;
+
+    /* Cards */
+    .ellipsis {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .part_1 img {
-      max-width: 100%;
+    .nextBtn {
+      color: #2A2A2A;
     }
 
-    .part_1_triangle {
-      position: absolute;
-      top: 380px;
-      display: block;
-      width: 100%;
+    .experienceCard {
+      border: none;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      text-align: left;
     }
 
-    .part_1_hero {
-      position: absolute;
-      top: 55px;
-      display: block;
-      width: 850px;
-      left: 629px;
+    .experienceCard:active, 
+    .experienceCard:focus 
+    {
+        border: none;
+        color:transparent;
     }
+
+   .card {
+     height: 360px;
+   }
+
+
     /* header begins
 .header_1{
-  height: 109px;
+height: 109px;
 }
 
 .header_1 p{
-  position: relative;
-  top: 28px;
-  left: 85px;
-  width: 78px;
-  height: 29px;
-  color: #2A2A2A;
-  font-weight: 900;
-  font-size: 1.5em;
+position: relative;
+top: 28px;
+left: 85px;
+width: 78px;
+height: 29px;
+color: #2A2A2A;
+font-weight: 900;
+font-size: 1.5em;
 
 }
 
 .header_1_logo{
-  padding-left: 85px;
-  padding-top: 20px;
+padding-left: 85px;
+padding-top: 20px;
 }
 
 .header_1_logo img{
-  position: absolute;
-  top: 24px;
-  left: 85px;
-  width: 207px;
-  height: 37px;
+position: absolute;
+top: 24px;
+left: 85px;
+width: 207px;
+height: 37px;
 } */
 
 
 .header_2{
   background-color: #353535;
+  z-index: 99;
 
   width: 100%;
   height: 60px;
@@ -288,11 +314,15 @@
   color: white;
   letter-spacing: 0.08px;
   font: Bold 16px/24px Roboto;
+
+  z-index: 999;
 }
 .navbar-link a {
   height: 19px;
   padding: 0;
   color: inherit;
+
+  z-index: 9999;
 }
 #nav-home {
   width: 20px;
@@ -307,49 +337,42 @@
 /* .navbar-link.active img{
   background: url("search-orange.png");
 } */
-.navbar-link:hover {
+.navbar-link:hover{
   background-color: black;
   text-decoration: none;
   color: #FFC627;
 }
+    /* ASU XR  Header */
+    #asuxr_header {
+      background-color: #353535;
+      min-height: 58px;
+      height: 58px;
+    }
 
-/* .header_2_links{
-  padding-top: 3px;
-} */
+    .asuxr_header_link {
+      text-decoration: none;
+      text-align: center;
+      vertical-align: center;
+    }
 
-/* .header_2 a{
-  text-decoration: none;
-  padding-right: 50px;
-  display: inline-flex;
-  float: left;
-} */
+    .asuxr_header_link a {
+      text-decoration: none;
+      padding-right: 50px;
+      text-align: left;
+      vertical-align: center;
+    }
 
-/* .header_2 a:link{
-  color: white;
-}
-.header_2 a:active{
-  color: white;
-}
-.header_2 a:visited{
-  color: white;
-}
+    .asuxr_header_link a:link {
+      color: white;
+    }
 
-.header_2_links{
-  margin-top: 5px;
-} */
+    .asuxr_header_link a:active {
+      color: #FFC627;
+    }
 
-.header_2_button{
-  position: relative;
-  top: -5px;
-  border-radius: 5px;
-  width: 150px;
-  height: 36px;
-  background: #FFC627;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #1e1e1e;
-  border-width: thin;
-}
+    .asuxr_header_link a:visited {
+      color: white;
+    }
 
 .header-container{
   max-width: 1250px;
@@ -386,8 +409,12 @@
   display: block;
   line-height: 12.8px;
   box-sizing: content-box;
-
 }
+    #hero_img {
+      pointer-events: none;
+      margin-top: -5.5%;
+      max-width: 100%;
+    }
 
 .header-nav {
   width: 463px;
@@ -443,14 +470,26 @@
   font-size: 12px;
 }
 
-.nav-item:hover .dropdown-content {display: block;}
+    .header_2_button {
+      position: relative;
+      top: -5px;
+      border-radius: 5px;
+      width: 150px;
+      height: 36px;
+      background: #FFC627;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1e1e1e;
+      border-width: thin;
+    }
 
-.nav-item:hover .dropitem {background-color: white;}
 
 .nav-item a:hover {
   color: #D23153;
   text-decoration: underline;
 }
+.nav-item:hover .dropdown-content {display: block;}
+.nav-item:hover .dropitem {background-color: white;}
 
 .header-search {
   clear: right;
@@ -493,6 +532,15 @@
   font: 24px/34px Roboto;
   font-weight: bold;
 }
+
+    /* header ends */
+
+
+
+
+    #intro {
+      margin-top: 70px
+    }
     /* footer begins */
     .footer {
       background-color: #000000;
@@ -597,35 +645,35 @@
     }
 
     .capsule {
-            /* min-height: 550px; */
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-right: 20px;
-            margin-left: 20px;
-            padding-top: 50px;
-            padding-bottom: 25px;
+      /* min-height: 550px; */
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-right: 20px;
+      margin-left: 20px;
+      padding-top: 50px;
+      padding-bottom: 25px;
 
-            border: 1px solid lightgray;
-            border-radius: 200px;
+      border: 1px solid lightgray;
+      border-radius: 200px;
 
-            background-image: url(getStart1.png) !important;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            text-align: center;
+      background-image: url(getStart1.png) !important;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
     }
 
     .sectionTitle {
-            padding: 0;
-            color: #2A2A2A;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-
-    /* footer ends */
+      padding: 0;
+      color: #2A2A2A;
+      font-weight: bold;
+      font-size: 18px;
+    }
   </style>
+</head>
 
+
+<body onload="manageData()">
 <header>
   <div class="header-container">
     <div class="header-top">
@@ -722,7 +770,7 @@
     <div class="header-2-container">
       <ul class="navbar-container">
       <li>
-        <a class="navbar-link" href="#"> <img id="nav-home" src="homeicon.svg" alt=""> </a>
+        <a class="navbar-link" href="xr.asu.edu"> <img id="nav-home" src="homeicon.svg" alt=""> </a>
       </li>
       <li>
         <a class="navbar-link" href="#">XR Search  <img id="nav-search-icon" src="Icon - search-solid.svg"></a>
@@ -739,245 +787,305 @@
 
   </div>
 
-  <div class="part_1">
-    <img src="part_1_base.png" alt="">
-    <img src="part_1_triangle.svg" class="part_1_triangle">
-    <img src="part_1_hero.png" class="part_1_hero">
-  </div>
-
-
-  <div class="text-center mt-4"> . </div>
-  <div class="text-center mt-4">
-    <h5 class="text-center mt-4 roboto">What is XR@ASU?</h5>
-  </div>
-
-  <div class="text-center">
-    <p class="roboto text-center ml-8">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-      dolore magna aliqyam erat, sed diam voluptua. At vero eos et accusam et justo
-    </p>
-  </div>
-  <div class="text-center">
-    <img src="bar.png">
-  </div>
-  <input class="rounded text-center searchbar" type="text" placeholder="Search XR experiences" name="search">
-  <button onclick="findData()" id="search_button">Search XR!</button>
-
-  <!-- begin grid work here -->
-
-  <div class="row">
-    <div class="column left bg-light" style="background-color:#FFF;">
-
-      <div class="explore_tags">
-
-        <p
-          style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">
-          Explore</p>
-
-        <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
-        <p class="button"
-          style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Art & Design</p>
-        <p
-          style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Communication</p>
-        <p
-          style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Education</p>
-        <p
-          style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Engineering</p>
-        <p
-          style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Geographical Sciences & Urban Planning</p>
-        <p
-          style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          Health & Nutrition</p>
-        <p
-          style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-          History</p>
-
-        <hr
-          style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
-
-        <a href="#"
-          style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced
-          Search</a>
-
-      </div>
-
-    </div>
-    <div class="column right" style="background-color:#ffffff;">
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm rounded">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top rounded" id="item-image1" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em"></text></img>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">
-                  360 Video </h5>
-                <div class="card-body rounded">
-                  <h5 class="card-title" id="itemname1">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc1">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer. </p>
-                  <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
-                    dy=".3em"></text></svg>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
-                  360 Video </h5>
-                <div class="card-body">
-                  <h5 class="card-title" id="itemname2">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc2">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer.</p>
-                  <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em"></text></svg>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
-                  360 Video </h5>
-                <div class="card-body">
-                  <h5 class="card-title" id="itemname3">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc3">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer.</p>
-                  <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
-            </div>
+  <!-- <div id="asuxr_header" class="container-fluid">
+    <div class="container">
+      <div class="d-flex flex-row">
+        <div class="p-2">
+          <div class="asuxr_header_link">
+            <a href="#"> <i style="color: #FFC627" class="fas fa-home"></i> </a>
           </div>
-
-
-          <!----------------->
-
-          <!-------------------->
-
         </div>
+         <div class="p-2">
+            <div class="asuxr_header_link">
+              <a href="#">XR Search <i class="fas fa-search"></i></a>
+            </div> 
+          </div> -->
+        <!-- <div class="p-2">
+            <div class="asuxr_header_link">
+              <a href="#">Login</a>
+            </div> 
+          </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="container-fluid hero_img_container" style="margin:0;padding:0">
+    <img id="hero_img" src="homehero.png">
+  </div>
 
-        <div style="text-align: center;">
-          <button type="button" class="btn btn-dark text-center">View all</button>
+
+  <!------ END OF HEADERS ----->
+
+  <!-- INTRODUCTION -->
+
+  <div id="intro" class="container-fluid">
+    <div class="row justify-content-center mt-4 mb-4">
+      <div class="col-12">
+        <div style="font-weight: 900; font-size: 36px; text-align: center;">What is XR@ASU?</div>
+      </div>
+      <div class="col-12 mt-4">
+        <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
+          <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur
+            sadipscing
+            elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
+            voluptua. At
+            vero eos et accusam et justo</div>
         </div>
       </div>
+      <div class="col-12" style="margin-top:-5%; margin-bottom: 100px; padding:0">
+        <img src="gold-waves-02.svg">
+      </div>
+
+      <!-- <div class="col">
+            <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+                <div style="border-top: 5px solid #FFC627; width: 200px"></div>
+            </div>
+        </div>
+          -->
     </div>
   </div>
-  
 
-    <!--Getting Started-->
-    <div id="gettingstarted" class="container" style="margin-bottom: 100px">
-      <div class="row" style="margin-top: 50px; margin-bottom: 50px">
-          <div class="col-12">
-              <hr>
-          </div>
+  <!-- Experiences -->
+  <div class="container mt-4">
+    <div class="d-flex" style="margin:-5px">
+      <div class="p-2">
+        <div class="mb-4" style="background-color:#000; color:#FFF; height: 70px; font-size: 30px; text-align: center; padding: 15px;">Experiences</div>
       </div>
-      <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-              <div style="font-weight: 900; font-size: 36px; text-align: center;">Getting Started</div>
-          </div>
-          <div class="col-12 mb-4">
-              <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
-                  <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur sadipscing
-                      elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
-                      voluptua. At
-                      vero eos et accusam et justo</div>
+    </div>
+    <div class="row">
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <button id="experienceCard0" class="experienceCard">
+          <div class="card mb-4 shadow-sm">
+            <div class="img-hover-zoom">
+              <img class="bd-placeholder-img card-img-top" id="item-image0" width="100%" height="225"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
+                dy=".3em"></text></svg>
+            </div>
+            <h5 class="itemtype" id="itemtype0">Type</h5>
+            <div class="card-body">
+              <h5 class="card-title" id="itemname0">Title</h5>
+              <div class="row">
+                <div class="col-10">
+                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc0">This is a
+                    wider card
+                    with supporting text below as a natural lead-in to additional content. This content is a little bit
+                    longer.</div>
+                </div>
+                <div class="col-2">
+                  <a id="productlink0" href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+                </div>
               </div>
+            </div>
+            <div class="card-footer bg-warning"></div>
           </div>
-          <div class="col-3">
-              <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-                  <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
-              </div>
-          </div>
+        </button>
       </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <button id="experienceCard1" class="experienceCard">
+          <div class="card mb-4 shadow-sm">
+            <div class="img-hover-zoom">
+              <img class="bd-placeholder-img card-img-top" id="item-image1" width="100%" height="225"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
+                dy=".3em"></text></svg>
+            </div>
+            <h5 class="itemtype" id="itemtype1">Type</h5>
+            <div class="card-body">
+              <h5 class="card-title" id="itemname1">Title</h5>
+              <div class="row">
+                <div class="col-10">
+                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc1">This is a
+                    wider card
+                    with supporting text below as a natural lead-in to additional content. This content is a little bit
+                    longer.</div>
+                </div>
+                <div class="col-2">
+                  <a id="productlink1" href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-warning">
+            </div>
+          </div>
+        </button>
+      </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <button id="experienceCard2" class="experienceCard">
 
-      <div class="row justify-content-center mt-4">
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted1.png" class="card-img-top" tyle="width: 100%;">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Get your phone</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
+          <div class="card mb-4 shadow-sm">
+            <div class="img-hover-zoom">
+              <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+                dy=".3em"></text></svg>
+            </div>
+            <h5 class="itemtype" id="itemtype2">Type</h5>
+            <div class="card-body">
+              <h5 class="card-title" id="itemname2">Title</h5>
+              <div class="row">
+                <div class="col-10">
+                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc2">This is a
+                    wider card
+                    with supporting text below as a natural lead-in to additional content. This content is a little bit
+                    longer.</div>
+                </div>
+                <div class="col-2">
+                  <a id="productlink2" href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+                </div>
               </div>
+            </div>
+            <div class="card-footer bg-warning">
+            </div>
           </div>
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted2.png" class="card-img-top" alt="..." style="width: 100%">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Find your experience</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
-
-              </div>
-          </div>
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted3.png" class="card-img-top" alt="..." style="width: 100%;">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Immerse Yourself</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
-              </div>
-          </div>
+        </button>
       </div>
+      <!-- Experience card-->
+      <div class=" col-sm-2 col-md-4">
+        <button id="experienceCard3" class="experienceCard">
+          <div class="card mb-4 shadow-sm rounded">
+            <div class="img-hover-zoom">
+              <img class="bd-placeholder-img card-img-top rounded" id="item-image3" width="100%" height="225"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+                dy=".3em"></text></img>
+            </div>
+            <h5 class="itemtype" id="itemtype3">Type</h5>
+            <div class="card-body rounded">
+              <h5 class="card-title" id="itemname3">Title</h5>
+              <div class="row">
+                <div class="col-10">
+                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc3">This is a
+                    wider card
+                    with supporting text below as a natural lead-in to additional content. This content is a little bit
+                    longer.</div>
+                </div>
+                <div class="col-2">
+                  <a id="productlink3" href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-warning"></div>
+          </div>
+        </button>
+      </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <button id="experienceCard4" class="experienceCard">
+          <div class="card mb-4 shadow-sm">
+            <div class="img-hover-zoom">
+              <img class="bd-placeholder-img card-img-top" id="item-image4" width="100%" height="225"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
+                dy=".3em"></text></svg>
+            </div>
+            <h5 class="itemtype" id="itemtype4">Type</h5>
+            <div class="card-body">
+              <h5 class="card-title" id="itemname4">Title</h5>
+              <div class="row">
+                <div class="col-10">
+                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc4">This is a
+                    wider card
+                    with supporting text below as a natural lead-in to additional content. This content is a little bit
+                    longer.</div>
+                </div>
+                <div class="col-2">
+                  <a id="productlink4" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-warning"></div>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 
 
-      <!----------------->
 
-      <!-------------------->
-
+  <!-- <div style="text-align: center;">
+      <button type="button" class="btn btn-dark text-center">View all</button>
     </div>
+   -->
+
+
+  <!--Getting Started-->
+  <div id="gettingstarted" class="container" style="margin-bottom: 100px; margin-top: 100px">
+    <div class="row justify-content-center">
+      <div class="col-12 mb-4">
+        <div style="font-weight: 900; font-size: 36px; text-align: center;">Get Started</div>
+      </div>
+      <div class="col-12 mb-4">
+        <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
+          <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur
+            sadipscing
+            elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
+            voluptua. At
+            vero eos et accusam et justo</div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+          <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted1.png" class="card-img-top" tyle="width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Get your phone</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted2.png" class="card-img-top" alt="..." style="width: 100%">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Find your experience</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted3.png" class="card-img-top" alt="..." style="width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Immerse Yourself</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----------------->
+
+  <!-------------------->
+
+  </div>
 
 
   </div>
@@ -1025,127 +1133,131 @@
       </div>
     </div>
   </footer>
-</body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-  integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-  integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 
-<script src="asyncReq.js"></script>
+  <script src="asyncReq.js"></script>
 
-
-<script>
-  function incrementValue() {
-    page++;
-    manageData();
-  }
-  function manageData() {
-    loadFile("./showDatasetTable", function (result) {
-      // show a table of the user's datasets
-      var data = JSON.parse(result);
-      var totalItemsCount = data.length;
-      var numberOfItemsPerPage = 5;
-      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
-      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
-      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-
-      //this was 20
-      for (var i = start; i < end; i++) {
-        var name = data[i].name;
-        var date = data[i].address.country;
-        var image = data[i].images.picture_url;
-        document.getElementById("item-image" + i).src = image;
-        var row3 = document.createElement("image");
-        row3.src = image;
-
-
-
-        document.getElementById("itemname" + i).innerHTML = name;
-        document.getElementById("itemdesc" + i).innerHTML = date;
-
-      }
-    });
-  }
-  function findData() {
-    var search = document.getElementById("search").value;
-    loadFile("./findDatasetTable?search=" + search, function (result) {
-      // show a table of the user's datasets
-      var data = JSON.parse(result);
-      var totalItemsCount = data.length;
-      var numberOfItemsPerPage = 5;
-      var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
-      var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
-      var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-
-      for (var i = start; i < end; i++) {
-        var name = data[i].name;
-        var date = data[i].address.country;
-        var image = data[i].images.picture_url;
-        document.getElementById("item-image" + i).src = image;
-
-        var row3 = document.createElement("image2");
-        row3.src = image;
-
-
-        document.getElementById("itemname" + i).innerHTML = name;
-        document.getElementById("itemdesc" + i).innerHTML = date;
-
-      }
-    });
-  }
-  $(document).ready(function () {
-    setupNavBar();
-
-    var url = window.location.href;
-    var n = url.lastIndexOf('/');
-    var href = url.substring(n + 1);
-    console.log(href);
-    //console.log(window.location.href.split('/')[1]);
-    if (href == "#loginBtn") {
-      showLoginForm();
-    } else if (href == "#signinBtn") {
-      showSignupForm();
+  <script>
+    function incrementValue() {
+      page++;
+      manageData();
     }
-    $("#loginBtn").click(function () {
-      showLoginForm();
-    });
-    $("#signupBtn").click(function () {
-      showSignupForm();
-    });
-    var password = document.getElementById("password"),
-      confirm_password = document.getElementById("confirm_password");
-    function validatePassword() {
-      if (password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords do not match");
-      } else if (password.value.length < 6) {
-        confirm_password.setCustomValidity("Password must be six digits");
-      } else {
-        confirm_password.setCustomValidity('');
-      }
+    function manageData() {
+      loadFile("./showDatasetTable", function (result) {
+        // show a table of the user's datasets
+        var data = JSON.parse(result);
+        var totalItemsCount = data.length;
+        var numberOfItemsPerPage = 5;
+        var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+        var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+        var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+
+        console.log(data[0]);
+        for (var i = 0; i < numberOfItemsPerPage; i++) {
+          var name = data[i].name;
+          var desc = data[i].description;
+          var image = data[i].thumbnail;
+          var type = data[i].experienceType;
+          var id = data[i]._id;
+
+          // Set details for each experience
+          document.getElementById("experienceCard" + i).onclick = function () { location.href = "http://xr.asu.edu/productpage?=" + id; }
+          document.getElementById("item-image" + i).src = image;
+          document.getElementById("itemname" + i).innerHTML = name;
+          document.getElementById("itemdesc" + i).innerHTML = desc;
+          document.getElementById("itemtype" + i).innerHTML = type;
+          document.getElementById("productlink" + i).href = "http://xr.asu.edu/productpage?=" + id;
+        }
+      });
     }
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-  });
-  const rmCheck = document.getElementById("rememberMe"),
-    emailInput = document.getElementById("email");
-  function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
+    // function findData() {
+    //   var search = document.getElementById("search").value;
+    //   loadFile("./findDatasetTable?search=" + search, function (result) {
+    //     // show a table of the user's datasets
+    //     var data = JSON.parse(result);
+    //     var totalItemsCount = data.length;
+    //     console.log(totalItemsCount);
+    //     // var numberOfItemsPerPage = 5;
+    //     // var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+    //     // var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+    //     // var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+
+    //     for (var i = 0; i < 5; i++) {
+    //       var name = data[i].name;
+    //       var desc = data[i].description;
+    //       var image = data[i].thumbnail;
+    //       document.getElementById("item-image" + i).src = image;
+
+    //       // var row3 = document.createElement("image2");
+    //       // row3.src = image;
+
+    //       document.getElementById("itemname" + i).innerHTML = name;
+    //       document.getElementById("itemdesc" + i).innerHTML = desc;
+    //     }
+    //   });
+    // }
+    $(document).ready(function () {
+      setupNavBar();
+
+      var url = window.location.href;
+      var n = url.lastIndexOf('/');
+      var href = url.substring(n + 1);
+      console.log(href);
+      //console.log(window.location.href.split('/')[1]);
+      if (href == "#loginBtn") {
+        showLoginForm();
+      } else if (href == "#signinBtn") {
+        showSignupForm();
       }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
+      $("#loginBtn").click(function () {
+        showLoginForm();
+      });
+      $("#signupBtn").click(function () {
+        showSignupForm();
+      });
+      var password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirm_password");
+      function validatePassword() {
+        if (password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords do not match");
+        } else if (password.value.length < 6) {
+          confirm_password.setCustomValidity("Password must be six digits");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
       }
+      if (password != null) {
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+      }
+    });
+    const rmCheck = document.getElementById("rememberMe"),
+      emailInput = document.getElementById("email");
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
     }
-    return "";
-  }
   function setupNavBar() {
     var nav_links = document.getElementsByClassName("navbar-link");
     nav_links[0].classList.add("active");
@@ -1162,6 +1274,11 @@
 }
   }
 </script>
+</body>
+
+
+
+
 
 
 </html>

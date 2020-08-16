@@ -17,6 +17,7 @@
         var productID = "";
     </script>
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
@@ -274,12 +275,20 @@
             }
         }
 
-
         @media (max-width: 768px) {
             #gettingstarted {
                 display: none;
             }
+            #footer_bottom_img {
+                display: none;
+            }
+            .footer_bottom_text a {
+                font-size: 1em;
+            }   
         }
+
+
+
 
         header {
             position: relative;
@@ -446,7 +455,7 @@
             color: #1e1e1e;
         }
 
-        .footer_bottom_img {
+        #footer_bottom_img {
             position: relative;
             padding-right: 8%;
             bottom: 20px;
@@ -504,8 +513,8 @@
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
-                    <h1 class="display-3">Video Header</h1>
-                    <p class="lead mb-0">DB-referenced video</p>
+                    <h1 class="display-3"></h1>
+                    <p class="lead mb-0"></p>
                 </div>
             </div>
         </div>
@@ -522,24 +531,30 @@
         <div class="row">
             <!-- BEGINNING OF LEFT COLUMN -->
             <div class="col-sm-12 col-md-8">
-                <div class="align-items-center pt-3">
-                    <h1 class="h2 pageTitle" id="productname">Product Name
-                        <!-- <button type="button" class="shareButton">Share <i class="fas fa-share-square"></i></button> -->
-                    </h1>
-                </div>
-                <div class="align-items-center pt-3">
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2"
-                            style="color: #6E6E6E; padding: .5rem .4rem .5rem 0rem !important; font-size: 24px;">
-                            Created by:</div>
-                        <div class="p-2 bd-highlight border-right"
-                            style="color: #8C1D40; padding: .5rem .5rem .5rem 0 !important; text-decoration: underline; font-size: 24px;">
-                            LFC</div>
-                        <div class="p-2 bd-highlight border-right"><button type="button" class="rectButton"
-                                id="experienceType">AR Experience</button></div>
-                        <div class="p-2 bd-highlight bodyBig" style="margin-top: 4px;">2019</div>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h2 pageTitle" id="productname">Product Name
+                            <!-- <button type="button" class="shareButton">Share <i class="fas fa-share-square"></i></button> -->
+                        </h1>
                     </div>
                 </div>
+                <div class="d-flex flex-row">
+                    <div class="p-2" style="margin-left: -9px">
+                        <div style="color: #6E6E6E; font-size: 1.2em;">Created by:</div>
+                    </div>
+                    <div class="p-2 border-right">
+                        <div class="bd-highlight" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</div>
+                    </div>
+                    <div class="p-2 border-right">
+                        <div class="bd-highlight">
+                            <button type="button" class="rectButton" id="experienceType">AR Experience</button>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="d-highlight bodyBig" style="margin-top: 4px;">2019</div>
+                    </div>
+                </div>
+
                 <div>
                     <p class="bodyBig" id="productDesc">Lorem ipsum dolor sit
                         amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
@@ -746,17 +761,15 @@
                     <div style="margin-top: 10px;">
                         <div>
                             <span id="infoLabels">Language: </span>
-                            <span id="infoLabels">English </span>
+                            <span class="infoLabels" id="language">English </span>
                         </div>
                         <div>
-                            <span id="infoLabels">Compatibility: </span>
-                            <span id="infoLabels">Requires iOS 10.0 or later.<span
-                                    style="margin: 0 10px; border-right: 1px solid #707070;"></span>Requires Android 7.0
-                                or later.</span>
+                            <span class="infoLabels" id="minRequirements">Compatibility: </span>
+
                         </div>
                         <div>
                             <span id="infoLabels">Release Date: </span>
-                            <span id="infoLabels">March 30, 2020 </span>
+                            <span class="infoLabels" id="releasedate">March 30, 2020 </span>
                         </div>
                     </div>
                 </div>
@@ -853,7 +866,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 mb-4">
-                <div style="font-weight: 900; font-size: 36px; text-align: center;">Getting Started</div>
+                <div style="font-weight: 900; font-size: 36px; text-align: center;">Get Started</div>
             </div>
             <div class="col-12 mb-4">
                 <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
@@ -927,7 +940,7 @@
             </div>
             <div class="footer_bottom">
 
-                <div class="footer_bottom_img">
+                <div id="footer_bottom_img">
                     <a href="https://www.asu.edu/rankings">
                         <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
                     </a>
@@ -986,38 +999,30 @@
 
 <script>
     function getProductData(product) {
-        var product = product;//document.getElementById("productID").value;
+        var product = product;
         loadFile("./getProduct?product=" + product, function (result) {
-            // show a table of the user's datasets
+            // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 
             document.getElementById("productname").innerHTML = data[0].name;
             document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-			// <span class="creditLabels"> Colored by: </span>
-			//<span class="creditNames"> John Smith </span>
-			//alert(data[0].credits[0].title);
+			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
+			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
+			document.getElementById("videoheader").src = data[0].video;
 			
-			for(var i = 0; i < 5;i++)
+			//Iterate through the credits array of objects
+			for(var i = 0; i < data[0].credits.length;i++)
 			{
 				document.getElementById("creditsSection").innerHTML +=  "<div> <span class='creditLabels'>" + data[0].credits[i].title +" " + "</span>" +"<span class='creditNames'>" + data[0].credits[i].names +"</span>"; 
 			}
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditLabels'>" + data[0].credits[0].title +" " + "</span>"; 
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditNames'>" + data[0].credits[0].names +"</span>"; 
 
-            console.log(data[0].name);
-            //var image =  JSON.parse(data.screenshots);
-            //var images = data[0].screenshots;
-            //alert(data[0].screenshots[0];)
             var image = data[0].screenshots.ss0;
             // document.getElementById("screen1").src = image
             // document.getElementById("screen2").src = data[0].screenshots.ss1;
             // document.getElementById("screen3").src = data[0].screenshots.ss2;
-            //document.querySelector("#category1").innerHTML = 'Hide';
-            //document.getElementById("category1").innerHTML = "asdf";
-
-
+      
             console.log("compatible devices:" + data[0].compatibleDevices);
             if (data[0].compatibleDevices.includes("mobile")) {
                 document.getElementById("mobileDevice").style.display = "inline-block";
@@ -1057,7 +1062,7 @@
             split = queries[i].split('=');
             searchObject[split[0]] = split[1];
         }
-		alert(split[1]);
+		// alert(split[1]);
         if(split[1] != null)
         getProductData(split[1]);
 		
