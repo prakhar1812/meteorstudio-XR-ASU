@@ -333,11 +333,19 @@ height: 37px;
   z-index: 9999;
 }
 #nav-home {
+  mask: url("homeicon.svg");
+  filter: brightness(0) saturate(100%) invert(100%) sepia(12%) saturate(7495%) hue-rotate(246deg) brightness(118%) contrast(110%);
   width: 20px;
   height: 16px;
   top: 133px;
   left: 110px;
 }
+.navbar-link:hover #nav-home {filter: brightness(0) saturate(100%) invert(85%) sepia(40%) saturate(1173%) hue-rotate(335deg) brightness(103%) contrast(101%);}
+.navbar-link.active #nav-home {filter: brightness(0) saturate(100%) invert(85%) sepia(40%) saturate(1173%) hue-rotate(335deg) brightness(103%) contrast(101%);}
+
+.navbar-link:hover #nav-search-icon {filter: brightness(0) saturate(100%) invert(85%) sepia(40%) saturate(1173%) hue-rotate(335deg) brightness(103%) contrast(101%);}
+.navbar-link.active #nav-search-icon {filter: brightness(0) saturate(100%) invert(85%) sepia(40%) saturate(1173%) hue-rotate(335deg) brightness(103%) contrast(101%);}
+
 #nav-search-icon {padding-left: 6px;}
 
 .navbar-link.active {background-color: black;}
@@ -690,8 +698,9 @@ height: 37px;
     <div class="header-2-container">
       <ul class="navbar-container">
       <li>
-        <a class="navbar-link" href="xr.asu.edu"> <img id="nav-home" src="homeicon.svg" alt=""> </a>
+        <a class="navbar-link" href="http://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg" id="nav-home"></object> </a>
       </li>
+      <!-- <img id="nav-home" src="homeicon.svg" alt=""> -->
       <li>
         <a class="navbar-link" href="#">XR Search  <img id="nav-search-icon" src="Icon - search-solid.svg"></a>
       </li>
