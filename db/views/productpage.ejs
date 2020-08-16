@@ -1010,6 +1010,7 @@
             document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
+			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
 			
 			//Iterate through the credits array of objects
 			for(var i = 0; i < data[0].credits.length;i++)
