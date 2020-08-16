@@ -460,7 +460,7 @@
                     </div>
                     <div class="p-2 border-right">
                         <div class="bd-highlight">
-                            <button type="button" class="rectButton" id="experienceType">AR Experience</button>
+                            <button type="button" disabled class="rectButton" id="experienceType">AR Experience</button>
                         </div>
                     </div>
                     <div class="p-2">
@@ -917,6 +917,7 @@
             // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 			
+			//set details for the experience
 			document.title = data[0].name + " | ASU XR | Arizona State University"
 			
             document.getElementById("productname").innerHTML = data[0].name;
@@ -937,13 +938,9 @@
 			{
 				document.getElementById("creditsSection").innerHTML +=  "<div> <span class='creditLabels'>" + data[0].credits[i].title +" " + "</span>" +"<span class='creditNames'>" + data[0].credits[i].names +"</span>"; 
 			}
-
-            //var image = data[0].screenshots.ss0;
-            // document.getElementById("screen1").src = image
-            // document.getElementById("screen2").src = data[0].screenshots.ss1;
-            // document.getElementById("screen3").src = data[0].screenshots.ss2;
-      
+			
             console.log("compatible devices:" + data[0].compatibleDevices);
+			
             if (data[0].compatibleDevices.includes("mobile")) {
                 document.getElementById("mobileDevice").style.display = "inline-block";
             } else {
