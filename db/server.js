@@ -58,7 +58,7 @@ var authState = {
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
 var hostname = process.env.HOSTNAME || 'localhost';
-var port = 8080;
+var port = 80;
 var currentUser; // Need to implement token/scope authentication
 const path = require('path');
 const VIEWS = path.join(__dirname, 'views');
