@@ -761,17 +761,15 @@
                     <div style="margin-top: 10px;">
                         <div>
                             <span id="infoLabels">Language: </span>
-                            <span id="infoLabels">English </span>
+                            <span class="infoLabels" id="language">English </span>
                         </div>
                         <div>
-                            <span id="infoLabels">Compatibility: </span>
-                            <span id="infoLabels">Requires iOS 10.0 or later.<span
-                                    style="margin: 0 10px; border-right: 1px solid #707070;"></span>Requires Android 7.0
-                                or later.</span>
+                            <span class="infoLabels" id="minRequirements">Compatibility: </span>
+
                         </div>
                         <div>
                             <span id="infoLabels">Release Date: </span>
-                            <span id="infoLabels">March 30, 2020 </span>
+                            <span class="infoLabels" id="releasedate">March 30, 2020 </span>
                         </div>
                     </div>
                 </div>
@@ -1001,38 +999,29 @@
 
 <script>
     function getProductData(product) {
-        var product = product;//document.getElementById("productID").value;
+        var product = product;
         loadFile("./getProduct?product=" + product, function (result) {
-            // show a table of the user's datasets
+            // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 
             document.getElementById("productname").innerHTML = data[0].name;
             document.title = data[0].name + " | ASU XR | Arizona State University"
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-			// <span class="creditLabels"> Colored by: </span>
-			//<span class="creditNames"> John Smith </span>
-			//alert(data[0].credits[0].title);
+			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
+			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			
-			for(var i = 0; i < 5;i++)
+			//Iterate through the credits array of objects
+			for(var i = 0; i < data[0].credits.length;i++)
 			{
 				document.getElementById("creditsSection").innerHTML +=  "<div> <span class='creditLabels'>" + data[0].credits[i].title +" " + "</span>" +"<span class='creditNames'>" + data[0].credits[i].names +"</span>"; 
 			}
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditLabels'>" + data[0].credits[0].title +" " + "</span>"; 
-			//document.getElementById("creditsSection").innerHTML +=  "<span class='creditNames'>" + data[0].credits[0].names +"</span>"; 
 
-            console.log(data[0].name);
-            //var image =  JSON.parse(data.screenshots);
-            //var images = data[0].screenshots;
-            //alert(data[0].screenshots[0];)
             var image = data[0].screenshots.ss0;
             // document.getElementById("screen1").src = image
             // document.getElementById("screen2").src = data[0].screenshots.ss1;
             // document.getElementById("screen3").src = data[0].screenshots.ss2;
-            //document.querySelector("#category1").innerHTML = 'Hide';
-            //document.getElementById("category1").innerHTML = "asdf";
-
-
+      
             console.log("compatible devices:" + data[0].compatibleDevices);
             if (data[0].compatibleDevices.includes("mobile")) {
                 document.getElementById("mobileDevice").style.display = "inline-block";
