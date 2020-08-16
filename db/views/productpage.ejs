@@ -389,10 +389,14 @@
     </nav>
 
     <header>
+		<button type="button" class="btn btn-primary video-btn" data-toggle="modal"
+	data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal" id="modalvid">
         <div class="overlay"></div>
+		
         <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
             <source src="scavhunt_appflow.mp4" type="video/mp4">
         </video>
+		</button>
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
@@ -413,12 +417,7 @@
     <div class="container">
 	
 	<!---MODAL--->
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary video-btn" data-toggle="modal"
-	data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal" id="modalvid">
-	Play Video 1
-	</button>
-	
+	<!-- Button trigger modal -->	
 	 <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -1018,6 +1017,14 @@ $(document).ready(function() {
 
   // document ready
 });
+
+  document.getElementById('videoheader').addEventListener('click', function() {
+       if (this.paused) {
+          this.play();
+       } else {
+          this.pause();
+       }
+    });
 
 </script>
 
