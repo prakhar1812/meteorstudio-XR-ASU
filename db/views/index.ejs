@@ -227,6 +227,12 @@
 
     .nextBtn {
       color: #2A2A2A;
+      font-size: 125%;
+    }
+
+    .nextBtn:hover {
+      color: #707070;
+      cursor: hand;
     }
 
     .experienceCard {
@@ -238,10 +244,10 @@
     }
 
     .experienceCard:active, 
-    .experienceCard:focus 
+    .experienceCard:focus
     {
         border: none;
-        color:transparent;
+        outline:none;
     }
 
    .card {
@@ -314,10 +320,27 @@ height: 37px;
 
     /* END OF ASU HEADER */
 
+
+/* Hero image */
     #hero_img {
       margin-top: -6%;
       max-width: 100%;
     }
+
+    /* .overlayTitleContainer {
+      position: relative;
+      text-align: left;
+    }
+    .overlayTitle {
+      font-size: 3em;
+      font-weight: bold;
+      color: white;
+      background:rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 50px;
+      left: 18%;
+      right:
+    } */
 
 
 
@@ -768,10 +791,13 @@ display: block;
     </div>
   </div>
   <div class="container-fluid hero_img_container" style="margin:0;padding:0">
-    <img id="hero_img" src="homehero.png">
+    <!-- <div class="overlayTitleContainer"> -->
+       <img id="hero_img" src="homehero.png">
+
+      <!-- <div class="overlayTitle">Immerse yourself in the future of education</div> -->
+    <!-- </div> -->
+
   </div>
-
-
   <!------ END OF HEADERS ----->
 
   <!-- INTRODUCTION -->
