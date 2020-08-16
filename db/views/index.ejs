@@ -12,8 +12,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
   <script>
@@ -24,190 +24,193 @@
   </script>
 
 
-<style>
-  .img-hover-zoom {
-    height: 200px;
-    /* [1.1] Set it as per your need */
-    overflow: hidden;
-    /* [1.2] Hide the overflowing of child elements */
-  }
+  <style>
+    .img-hover-zoom {
+      height: 200px;
+      /* [1.1] Set it as per your need */
+      overflow: hidden;
+      /* [1.2] Hide the overflowing of child elements */
+    }
 
-  /* [2] Transition property for smooth transformation of images */
-  .img-hover-zoom img {
-    transition: transform .5s ease;
-  }
+    /* [2] Transition property for smooth transformation of images */
+    .img-hover-zoom img {
+      transition: transform .5s ease;
+    }
 
-  /* [3] Finally, transforming the image when container gets hovered */
-  .img-hover-zoom:hover img {
-    transform: scale(1.5);
-  }
+    /* [3] Finally, transforming the image when container gets hovered */
+    .img-hover-zoom:hover img {
+      transform: scale(1.5);
+    }
 
-  .bar-thing {
-    width: 80px;
-    height: 0px;
-    right: 0px;
-    /* transform: matrix(0, 1, -1, 0, 0, 0); */
-    border: 5px solid #FFC627;
-    opacity: 1;
-    align-content: center;
-    text-align: center;
-  }
+    .bar-thing {
+      width: 80px;
+      height: 0px;
+      right: 0px;
+      /* transform: matrix(0, 1, -1, 0, 0, 0); */
+      border: 5px solid #FFC627;
+      opacity: 1;
+      align-content: center;
+      text-align: center;
+    }
 
-  h5.roboto {
+    h5.roboto {
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 36px;
-    font-weight: 900;
-
-
-  }
-
-  .bouton-image:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    margin-right: 0px;
-    vertical-align: text-top;
-    background-color: transparent;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .monBouton:before {
-    background-image: url("Icon - chevron-right-solid.svg");
-  }
-
-  button {
-    top: 1365px;
-    left: 94px;
-    width: 143px;
-    height: 32px;
-    background: #E6E6E6 0% 0% no-repeat padding-box;
-    border: 1px solid #E6E6E6;
-    opacity: 1;
-
-  }
-
-  p.roboto {
-    margin-left: 400px;
-    margin-right: 400px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.09px;
-
-  }
-
-  .test {
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #707070;
-    border-radius: 171px;
-    opacity: 1;
-  }
-
-  .searchbar {
-    width: 529px;
-    height: 48px;
-    margin-left: 485px;
-    margin-right: 485px;
-    text-align: center;
-  }
-
-  .bar {
-    top: 109px;
-    left: 0px;
-    width: 1280px;
-    height: 60px;
-    background: #353535 0% 0% no-repeat padding-box;
-    opacity: 1;
-  }
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
 
 
-  .grid-container {
-display: inline-grid;
-  grid-column-gap: 50px;
-grid-template-columns: auto auto auto;
-background-color: #FFFFFF;/*#FFC627;*/
-padding: 10px;
-align-content: center;
-}
-.grid-item {
-background-color: #FFFFFF;
-text-align: center;
-padding: 10px;
-font-size: 12px;
-justify-content: center;
-}
-.text-block {
-position: absolute;
-bottom: 20px;
-right: 20px;
-background-color: black;
-color: white;
-padding-left: 20px;
-padding-right: 20px;
-}
+    }
 
-  .sidebar {
-    top: 1310px;
-    left: 78px;
-    width: 220px;
-    height: 363px;
-    opacity: 1;
-  }
+    .bouton-image:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-right: 0px;
+      vertical-align: text-top;
+      background-color: transparent;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
 
-  .item1 {
-grid-column: 1;
-grid-row: 1 / span2;
-background-color: #FFFFFF;
+    .monBouton:before {
+      background-image: url("Icon - chevron-right-solid.svg");
+    }
 
-}
+    button {
+      top: 1365px;
+      left: 94px;
+      width: 143px;
+      height: 32px;
+      background: #E6E6E6 0% 0% no-repeat padding-box;
+      border: 1px solid #E6E6E6;
+      opacity: 1;
 
-  .item2 {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
+    }
 
-  .item3 {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
+    p.roboto {
+      margin-left: 400px;
+      margin-right: 400px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.09px;
 
-  * {
-    box-sizing: border-box;
-  }
+    }
 
-  .column {
-    float: left;
-    padding: 1px;
-    height: 800px;
-  }
+    .test {
+      box-shadow: 0px 3px 6px #00000029;
+      border: 1px solid #707070;
+      border-radius: 171px;
+      opacity: 1;
+    }
 
-  .left {
-    width: 25%;
-  }
+    .searchbar {
+      width: 529px;
+      height: 48px;
+      margin-left: 485px;
+      margin-right: 485px;
+      text-align: center;
+    }
 
-  .right {
-    width: 75%;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    .bar {
+      top: 109px;
+      left: 0px;
+      width: 1280px;
+      height: 60px;
+      background: #353535 0% 0% no-repeat padding-box;
+      opacity: 1;
+    }
 
 
-  .container ul {
-    text-decoration: none;
-  }
+    .grid-container {
+      display: inline-grid;
+      grid-column-gap: 50px;
+      grid-template-columns: auto auto auto;
+      background-color: #FFFFFF;
+      /*#FFC627;*/
+      padding: 10px;
+      align-content: center;
+    }
+
+    .grid-item {
+      background-color: #FFFFFF;
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      justify-content: center;
+    }
+
+    .text-block {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: black;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .sidebar {
+      top: 1310px;
+      left: 78px;
+      width: 220px;
+      height: 363px;
+      opacity: 1;
+    }
+
+    .item1 {
+      grid-column: 1;
+      grid-row: 1 / span2;
+      background-color: #FFFFFF;
+
+    }
+
+    .item2 {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+
+    .item3 {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      float: left;
+      padding: 1px;
+      height: 800px;
+    }
+
+    .left {
+      width: 25%;
+    }
+
+    .right {
+      width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    .container ul {
+      text-decoration: none;
+    }
 
 
 
 
-/* header begins
+    /* header begins
 .header_1{
 height: 109px;
 }
@@ -238,167 +241,188 @@ height: 37px;
 } */
 
 
-/* ASU XR  Header */
-  #asuxr_header{
-    background-color: #353535;
-    min-height: 58px;
-    height: 58px;
-  }
+    /* ASU XR  Header */
+    #asuxr_header {
+      background-color: #353535;
+      min-height: 58px;
+      height: 58px;
+    }
 
-  .asuxr_header_link {
-    text-decoration: none;
-    text-align: center;
-    vertical-align: center;
-  }
-  .asuxr_header_link a{
-    text-decoration: none;
-    padding-right: 50px;
-    text-align: left;
-    vertical-align: center;
-  }
-  .asuxr_header_link a:link{
-    color: white;
-  }
-  .asuxr_header_link a:active{
-    color: #FFC627;
-  }
-  .asuxr_header_link a:visited{
-    color: white;
-  }
-/* END OF ASU HEADER */
+    .asuxr_header_link {
+      text-decoration: none;
+      text-align: center;
+      vertical-align: center;
+    }
 
-  #hero_img {
-    margin-top:-6%;
-    max-width: 100%;
-  }
+    .asuxr_header_link a {
+      text-decoration: none;
+      padding-right: 50px;
+      text-align: left;
+      vertical-align: center;
+    }
 
+    .asuxr_header_link a:link {
+      color: white;
+    }
 
+    .asuxr_header_link a:active {
+      color: #FFC627;
+    }
 
-.header_2_button{
-  position: relative;
-  top: -5px;
-  border-radius: 5px;
-  width: 150px;
-  height: 36px;
-  background: #FFC627;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #1e1e1e;
-  border-width: thin;
-}
+    .asuxr_header_link a:visited {
+      color: white;
+    }
+
+    /* END OF ASU HEADER */
+
+    #hero_img {
+      margin-top: -6%;
+      max-width: 100%;
+    }
 
 
-/* Arizona State University Header */
-.header-container {
-max-width: 1270px;
-min-width: 990px;
-font-size: 1rem;
-margin-right: auto;
-margin-left: auto;
-padding-left: 25px;
-padding-right: 25px;
 
-height: 89px;
-width: 1280px;
-left: 0px;
-top: 1px; 
-}
-.header-top {
-position: relative;
-width: 100%;
-height: 58px;
-background: transparent;
-display: block;
-margin: 0;
-font-size: 0.8rem;
-line-height: 1em;
-color: black;
-overflow: visible !important;
-}
-.header-logo img {
-margin: 0;
-float: left;
-width: 207px;
-height: 37px;
-padding-top: 12px;
-display: block;
-line-height: 12.8px;
-box-sizing: content-box;
+    .header_2_button {
+      position: relative;
+      top: -5px;
+      border-radius: 5px;
+      width: 150px;
+      height: 36px;
+      background: #FFC627;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1e1e1e;
+      border-width: thin;
+    }
 
-}
 
-.header-nav {
-position: relative;
-display: block;
-float: right;
-margin: 0 auto;
-margin-top: 11px;
-text-align: center;
-/*top: 11px;
+    /* Arizona State University Header */
+    .header-container {
+      max-width: 1270px;
+      min-width: 990px;
+      font-size: 1rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+
+      height: 89px;
+      width: 1280px;
+      left: 0px;
+      top: 1px;
+    }
+
+    .header-top {
+      position: relative;
+      width: 100%;
+      height: 58px;
+      background: transparent;
+      display: block;
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 1em;
+      color: black;
+      overflow: visible !important;
+    }
+
+    .header-logo img {
+      margin: 0;
+      float: left;
+      width: 207px;
+      height: 37px;
+      padding-top: 12px;
+      display: block;
+      line-height: 12.8px;
+      box-sizing: content-box;
+
+    }
+
+    .header-nav {
+      position: relative;
+      display: block;
+      float: right;
+      margin: 0 auto;
+      margin-top: 11px;
+      text-align: center;
+      /*top: 11px;
 left: 736px;
 width: 463px;
 height: 33px;*/
-z-index: 100;
-}
+      z-index: 100;
+    }
 
-/* nav items that don't dropdown*/
-.nav-link-item {
-color: black;
-}
-/* parent of any dropdown items */
-.drop-item {
-color: black;
-}
-.nav-item {
-position: relative;
-display: inline-block;
-}
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-}
-.dropdown-content a {
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-}
-.dropdown-content a:hover {background-color: white;}
+    /* nav items that don't dropdown*/
+    .nav-link-item {
+      color: black;
+    }
 
-.nav-item:hover .dropdown-content {display: block;}
+    /* parent of any dropdown items */
+    .drop-item {
+      color: black;
+    }
 
-.nav-item:hover .dropitem {background-color: white;}
+    .nav-item {
+      position: relative;
+      display: inline-block;
+    }
 
-.header-search {
-clear: right;
-float: right;
-position: relative;
-}
-.header-search-button {
-position: absolute;
-top: 5px;
-width: 8px;
-height: 12px;
-font-size: 0.01px;
-line-height: 15px;
-cursor: pointer;
-text-indent: -9999px;
-padding: 0 12px 0 0;
-border: 0;
-}
-.header-bottom {
-display: block;
-overflow: hidden;
-padding: 0 0 2px 10px;
-font-size: 1.5em;
-margin-top: 5px;
-width: 100%;
-}
-/* .navbar ul{
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: white;
+    }
+
+    .nav-item:hover .dropdown-content {
+      display: block;
+    }
+
+    .nav-item:hover .dropitem {
+      background-color: white;
+    }
+
+    .header-search {
+      clear: right;
+      float: right;
+      position: relative;
+    }
+
+    .header-search-button {
+      position: absolute;
+      top: 5px;
+      width: 8px;
+      height: 12px;
+      font-size: 0.01px;
+      line-height: 15px;
+      cursor: pointer;
+      text-indent: -9999px;
+      padding: 0 12px 0 0;
+      border: 0;
+    }
+
+    .header-bottom {
+      display: block;
+      overflow: hidden;
+      padding: 0 0 2px 10px;
+      font-size: 1.5em;
+      margin-top: 5px;
+      width: 100%;
+    }
+
+    /* .navbar ul{
 list-style:none;
 position: absolute;
 top: 10px;
@@ -429,148 +453,149 @@ z-index: 1;
 .navbar ul li:hover ul li {
 display: block;
 } */
-.ASU_search_box_div{
-float: right;
-padding-right: 15%;
-}
-/* header ends */
+    .ASU_search_box_div {
+      float: right;
+      padding-right: 15%;
+    }
+
+    /* header ends */
 
 
 
 
-#intro {
-margin-top:70px
-}
+    #intro {
+      margin-top: 70px
+    }
 
-  /* footer begins */
-  .footer {
-    background-color: #000000;
-    /* height: 434px; */
-  }
+    /* footer begins */
+    .footer {
+      background-color: #000000;
+      /* height: 434px; */
+    }
 
-  .footer_content {
-    height: 434px;
-    padding-bottom: 8px;
-  }
-
-
-  .footer_content_logo {
-    height: 100px;
-    padding-top: 40px;
-    padding-left: 85px;
-  }
-
-  .footer_content_links {
-    padding-top: 55px;
-    padding-left: 45px;
-  }
-
-  .footer_content_links li {
-    padding-top: 8px;
-  }
-
-  .footer_content_links li a {
-    text-decoration-style: dotted;
-  }
-
-  .footer_content_links li a:link {
-    color: white;
-  }
-
-  .footer_content_links li a:active {
-    color: white;
-  }
-
-  .footer_content_links li a:visited {
-    color: white;
-  }
+    .footer_content {
+      height: 434px;
+      padding-bottom: 8px;
+    }
 
 
-  .footer_content_button {
-    padding-top: 70px;
-    padding-left: 85px;
-  }
+    .footer_content_logo {
+      height: 100px;
+      padding-top: 40px;
+      padding-left: 85px;
+    }
 
-  .footer_content_button button {
-    border-radius: 5px;
-    width: 102px;
-    height: 36px;
-    background: #FFC627;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #1e1e1e;
-    border-width: thin;
+    .footer_content_links {
+      padding-top: 55px;
+      padding-left: 45px;
+    }
 
-  }
+    .footer_content_links li {
+      padding-top: 8px;
+    }
 
-  .footer_bottom {
-    background-color: #FFC627;
-    height: 77px;
-  }
+    .footer_content_links li a {
+      text-decoration-style: dotted;
+    }
 
-  .footer_bottom_text {
-    padding-top: 19px;
-    float: right;
-    font-size: 2em;
-    font-weight: 900;
-    color: #1e1e1e;
-    padding-right: 30px;
-  }
+    .footer_content_links li a:link {
+      color: white;
+    }
 
-  .footer_bottom_img {
-    position: relative;
-    padding-right: 8%;
-    bottom: 20px;
-    float: right;
-    top: -20px;
-    max-width: 110%;
-    max-height: 110%;
-  }
+    .footer_content_links li a:active {
+      color: white;
+    }
+
+    .footer_content_links li a:visited {
+      color: white;
+    }
 
 
-  .footer_bot {
-    height: 69px;
-    background-color: #e5e5e5;
-    padding-left: 85px;
-    vertical-align: middle;
-    padding-top: 27px;
-  }
+    .footer_content_button {
+      padding-top: 70px;
+      padding-left: 85px;
+    }
 
-  .footer_bot a {
-    padding-right: 28.8px;
-    text-decoration: none;
-  }
+    .footer_content_button button {
+      border-radius: 5px;
+      width: 102px;
+      height: 36px;
+      background: #FFC627;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1e1e1e;
+      border-width: thin;
 
-  .footer_bot a:link {
-    color: #2a2a2a;
-  }
+    }
 
-  .capsule {
-          /* min-height: 550px; */
-          margin-top: 50px;
-          margin-bottom: 50px;
-          margin-right: 20px;
-          margin-left: 20px;
-          padding-top: 50px;
-          padding-bottom: 25px;
+    .footer_bottom {
+      background-color: #FFC627;
+      height: 77px;
+    }
 
-          border: 1px solid lightgray;
-          border-radius: 200px;
+    .footer_bottom_text {
+      padding-top: 19px;
+      float: right;
+      font-size: 2em;
+      font-weight: 900;
+      color: #1e1e1e;
+      padding-right: 30px;
+    }
 
-          background-image: url(getStart1.png) !important;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          text-align: center;
-  }
+    .footer_bottom_img {
+      position: relative;
+      padding-right: 8%;
+      bottom: 20px;
+      float: right;
+      top: -20px;
+      max-width: 110%;
+      max-height: 110%;
+    }
 
-  .sectionTitle {
-          padding: 0;
-          color: #2A2A2A;
-          font-weight: bold;
-          font-size: 18px;
-      }
-</style>
+
+    .footer_bot {
+      height: 69px;
+      background-color: #e5e5e5;
+      padding-left: 85px;
+      vertical-align: middle;
+      padding-top: 27px;
+    }
+
+    .footer_bot a {
+      padding-right: 28.8px;
+      text-decoration: none;
+    }
+
+    .footer_bot a:link {
+      color: #2a2a2a;
+    }
+
+    .capsule {
+      /* min-height: 550px; */
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-right: 20px;
+      margin-left: 20px;
+      padding-top: 50px;
+      padding-bottom: 25px;
+
+      border: 1px solid lightgray;
+      border-radius: 200px;
+
+      background-image: url(getStart1.png) !important;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+    }
+
+    .sectionTitle {
+      padding: 0;
+      color: #2A2A2A;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 
@@ -579,75 +604,92 @@ margin-top:70px
     <div class="header-container">
       <div class="header-top">
         <!-- Logo -->
-        <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
+        <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
+              alt="Arizona State University"
+              src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
         <div class="header-nav">
-              <ul><!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-                <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home</a>
+          <ul>
+            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU
+                Home</a>
 
-                  <div class="dropdown-content">
-                      <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
-                      <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
-                      <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
-                      <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
-                      <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
-                      <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
-                      <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
-                      <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
-                  </div>
+              <div class="dropdown-content">
+                <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
+                <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
+                <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
+                <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
+                <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
+                <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
+                <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
+                <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
+              </div>
 
-                </li>
-                <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My ASU</a></li>
-                <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools</a>
+            </li>
+            <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My ASU</a></li>
+            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
+                id="menu_main">Colleges and Schools</a>
 
-                  <div class="dropdown-content">
-                    <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and Sciences</a>
-                    <a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                    <a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the Arts</a>
-                    <a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a>
-                    <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
-                    <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future of
-                        Innovation in Society</a>
-                    <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
-                    <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a>
-                    <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
-                    <a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
-                    <a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a>
-                    <a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a>
-                    <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service and
-                        Community Solutions</a>
-                    <a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a>
-                    <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
-                    <a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a>
-                    </div>
+              <div class="dropdown-content">
+                <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
+                  Sciences</a>
+                <a href="https://wpcarey.asu.edu/" target="_top"
+                  title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
+                <a href="https://herbergerinstitute.asu.edu" target="_top"
+                  title="Herberger Institute for Design and the Arts website">Design and the Arts</a>
+                <a href="https://education.asu.edu/" target="_top"
+                  title="Mary Lou Fulton Teachers College website">Education</a>
+                <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
+                <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future of
+                  Innovation in Society</a>
+                <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
+                <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a>
+                <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
+                <a href="https://cronkite.asu.edu" target="_top"
+                  title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
+                <a href="https://www.law.asu.edu/" target="_top"
+                  title="Sandra Day O' Connor College of Law website">Law</a>
+                <a href="https://nursingandhealth.asu.edu/" target="_top"
+                  title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a>
+                <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
+                  and
+                  Community Solutions</a>
+                <a href="https://schoolofsustainability.asu.edu" target="_top"
+                  title="School of Sustainability website">Sustainability</a>
+                <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
+                <a target="_top" href="https://thunderbird.asu.edu/"
+                  title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a>
+              </div>
 
-                </li>
-                <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and Locations</a>
+            </li>
+            <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and
+                Locations</a>
 
-                  <div class="dropdown-content">
-                    <a href="https://www.asu.edu/map/" target="_top">Map</a>
-                    <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
-                    <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
-                    <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
-                    <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
-                        Phoenix</a>
-                    <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
-                        Extended</a>
-                    <a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
-                    <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a>
-                    <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
-                    <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
-                    <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
-                  </div>
+              <div class="dropdown-content">
+                <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
+                <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
+                  Phoenix</a>
+                <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
+                  Extended</a>
+                <a class="border" href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a>
+                <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+              </div>
 
-                </li>
-                <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
-                <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login"
-                  onclick="this.href=ASUHeader.alterLoginHref(this.href);"
-                  onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
-                  onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
-            </ul>
-            <div class="header-search">
-              <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
+            </li>
+            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
+                title="Directory, Index and other info">Directory</a></li>
+            <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login"
+                onclick="this.href=ASUHeader.alterLoginHref(this.href);"
+                onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
+                onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li>
+          </ul>
+          <div class="header-search">
+            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
                 for="masu_search_box">Search</label><input name="site" type="hidden" value="default_collection"><input
                 name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
                 value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
@@ -655,8 +697,8 @@ margin-top:70px
                 type="hidden" value="asu_frontend"><input name="q" class="asu_search_box" id="masu_search_box"
                 placeholder="Search" autocomplete="off" type="text"><input class="asu_search_button" type="submit"
                 value="Search"></form>
-            </div>
           </div>
+        </div>
       </div>
       <div class="header-bottom">
         <p>ASUXR</p>
@@ -665,276 +707,317 @@ margin-top:70px
   </header>
 
 
-    <div id="asuxr_header" class="container-fluid">
-      <div class="container"> 
-        <div class="d-flex flex-row">
-          <div class="p-2">
-            <div class="asuxr_header_link">
-              <a href="#"> <i style="color: #FFC627" class="fas fa-home"></i> </a>
-            </div>
+  <div id="asuxr_header" class="container-fluid">
+    <div class="container">
+      <div class="d-flex flex-row">
+        <div class="p-2">
+          <div class="asuxr_header_link">
+            <a href="#"> <i style="color: #FFC627" class="fas fa-home"></i> </a>
           </div>
-          <!-- <div class="p-2">
+        </div>
+        <!-- <div class="p-2">
             <div class="asuxr_header_link">
               <a href="#">XR Search <i class="fas fa-search"></i></a>
             </div> 
           </div> -->
-          <!-- <div class="p-2">
+        <!-- <div class="p-2">
             <div class="asuxr_header_link">
               <a href="#">Login</a>
             </div> 
           </div> -->
-        </div>
       </div>
     </div>
-    <div class="container-fluid hero_img_container" style="margin:0;padding:0">
-      <img id="hero_img" src="homehero.png">
-    </div>
+  </div>
+  <div class="container-fluid hero_img_container" style="margin:0;padding:0">
+    <img id="hero_img" src="homehero.png">
+  </div>
 
 
   <!------ END OF HEADERS ----->
 
   <!-- INTRODUCTION -->
 
-    <div id="intro" class="container-fluid">
-      <div class="row justify-content-center mt-4 mb-4">
-          <div class="col-12">
-              <div style="font-weight: 900; font-size: 36px; text-align: center;">What is XR@ASU?</div>
-          </div>
-          <div class="col-12 mt-4">
-              <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
-                  <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur sadipscing
-                      elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
-                      voluptua. At
-                      vero eos et accusam et justo</div>
-              </div>
-          </div>
-            <div class="col-12" style="margin:-5% 0 0 0; padding:0"> 
-              <img src="gold-waves-02.svg">
-            </div>
+  <div id="intro" class="container-fluid">
+    <div class="row justify-content-center mt-4 mb-4">
+      <div class="col-12">
+        <div style="font-weight: 900; font-size: 36px; text-align: center;">What is XR@ASU?</div>
+      </div>
+      <div class="col-12 mt-4">
+        <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
+          <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur
+            sadipscing
+            elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
+            voluptua. At
+            vero eos et accusam et justo</div>
+        </div>
+      </div>
+      <div class="col-12" style="margin:-5% 0 0 0; padding:0">
+        <img src="gold-waves-02.svg">
+      </div>
 
-                    <!-- <div class="col">
+      <!-- <div class="col">
             <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
                 <div style="border-top: 5px solid #FFC627; width: 200px"></div>
             </div>
         </div>
           -->
+    </div>
+  </div>
+
+
+  <div class="container">
+    <!-- Explore colulmn -->
+    <!-- <div class="col-4">
+            <div class="column">
+              <div class="explore_tags">
+                <p
+                  style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">
+                  Explore</p>
+                <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
+                <p class="button"
+                  style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Art & Design</p>
+                <p
+                  style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Communication</p>
+                <p
+                  style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Education</p>
+                <p
+                  style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Engineering</p>
+                <p
+                  style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Geographical Sciences & Urban Planning</p>
+                <p
+                  style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  Health & Nutrition</p>
+                <p
+                  style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
+                  History</p>
+        
+                <hr
+                  style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
+                <a href="#"
+                  style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced
+                  Search</a>
+              </div>
+            </div>
+          </div> -->
+
+    <!-- Experiences -->
+    <div class="row">
+      <div class="col">
+        <div class="mb-4" style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 0px; font-size: 30px; text-align: center; padding: 15px 0;">Explore</div>
       </div>
     </div>
-
-
-    <div class="container">
-      <div class="row">
-        <!-- Explore colulmn -->
-        <!-- <div class="col-4">
-          <div class="column">
-            <div class="explore_tags">
-              <p
-                style="background-color:#000; color:#FFF; width: 120px; height: 70px; margin-left: 60px; font-size: 30px; text-align: center; padding: 15px 0;">
-                Explore</p>
-              <p style="margin-left: 60px; font-weight: bold;">Popular tags</p>
-              <p class="button"
-                style="margin-left: 60px; height: 45px; width: 110px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Art & Design</p>
-              <p
-                style="margin-left: 60px; height: 45px; width: 130px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Communication</p>
-              <p
-                style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Education</p>
-              <p
-                style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Engineering</p>
-              <p
-                style="margin-left: 60px; height: 45px; width: auto; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Geographical Sciences & Urban Planning</p>
-              <p
-                style="margin-left: 60px; height: 55px; width: 150px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                Health & Nutrition</p>
-              <p
-                style="margin-left: 60px; height: 45px; width: 100px; background-color: #aaa;  border-radius: 25px; text-align: center; padding: 10px 0">
-                History</p>
-      
-              <hr
-                style="border: 1px; width: 183px; float: center;  background-color: #bbb; border: 1px solid #707070; opacity: 0.18;">
-              <a href="#"
-                style="color: #8C1D40; left: 93px; text-decoration: underline; text-align: left; letter-spacing: -0.08px; font-weight: bold;  margin-left: 60px;">Advanced
-                Search</a>
+    <div class="row">
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <div class="card mb-4 shadow-sm rounded">
+          <div class="img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top rounded" id="item-image1" width="100%" height="225"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Thumbnail">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em"></text></img>
+          </div>
+          <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">
+            360 Video </h5>
+          <div class="card-body rounded">
+            <h5 class="card-title" id="itemname1">Title</h5>
+            <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc1">This is a wider card
+              with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer. </p>
+            <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+          </div>
+          <div class="mask pattern-8 flex-center">
+            <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
             </div>
           </div>
-        </div> -->
-
-        <!-- Grid of experiences -->
-        <div class="col-12">
-          <!-- featured experience -->
-          <div class="row">
-            <div class="col-12">
-              
+        </div>
+      </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Thumbnail">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
+              dy=".3em"></text></svg>
+          </div>
+          <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
+            360 Video </h5>
+          <div class="card-body">
+            <h5 class="card-title" id="itemname2">Title</h5>
+            <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc2">This is a wider card
+              with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+          </div>
+          <div class="mask pattern-8 flex-center">
+            <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
             </div>
           </div>
-          <!-- Experiences -->
-          <div class="row">
-              <!-- Experience card-->
-            <div class="col">
-              <div class="card mb-4 shadow-sm rounded">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top rounded" id="item-image1" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em"></text></img>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">
-                  360 Video </h5>
-                <div class="card-body rounded">
-                  <h5 class="card-title" id="itemname1">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc1">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer. </p>
-                  <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Thumbnail">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em"></text></svg>
+          </div>
+          <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
+            360 Video </h5>
+          <div class="card-body">
+            <h5 class="card-title" id="itemname3">Title</h5>
+            <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc3">This is a wider card
+              with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+          </div>
+          <div class="mask pattern-8 flex-center">
+            <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
             </div>
-              <!-- Experience card-->
-            <div class="col">
-              <div class="card mb-4 shadow-sm">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
-                    dy=".3em"></text></svg>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
-                  360 Video </h5>
-                <div class="card-body">
-                  <h5 class="card-title" id="itemname2">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc2">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer.</p>
-                  <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Experience card-->
+      <div class=" col-sm-2 col-md-4">
+        <div class="card mb-4 shadow-sm rounded">
+          <div class="img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top rounded" id="item-image4" width="100%" height="225"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Thumbnail">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em"></text></img>
+          </div>
+          <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype1">
+            360 Video </h5>
+          <div class="card-body rounded">
+            <h5 class="card-title" id="itemname1">Title</h5>
+            <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc1">This is a wider card
+              with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer. </p>
+            <a href="productpage" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+          </div>
+          <div class="mask pattern-8 flex-center">
+            <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
             </div>
-              <!-- Experience card-->
-            <div class="col">
-              <div class="card mb-4 shadow-sm">
-                <div class="img-hover-zoom">
-                  <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                    dy=".3em"></text></svg>
-                </div>
-                <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
-                  360 Video </h5>
-                <div class="card-body">
-                  <h5 class="card-title" id="itemname3">This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</h5>
-                  <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc3">This is a wider card
-                    with supporting text below as a natural lead-in to additional content. This content is a little bit
-                    longer.</p>
-                  <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
-                </div>
-                <div class="mask pattern-8 flex-center">
-                  <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Experience card-->
+      <div class="col-sm-2 col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="img-hover-zoom">
+            <img class="bd-placeholder-img card-img-top" id="item-image5" width="100%" height="225"
+              xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+              aria-label="Placeholder: Thumbnail">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="100%" y="100%" fill="#eceeef"
+              dy=".3em"></text></svg>
+          </div>
+          <h5 class="text-block bg-danger w-25 text-white text-center ml-2" style="font-size:70%" id="itemtype2">
+            360 Video </h5>
+          <div class="card-body">
+            <h5 class="card-title" id="itemname2">Title</h5>
+            <p class="card-subtitle mb-2 text-muted" style="font-size:70%" id="itemdesc2">This is a wider card
+              with supporting text below as a natural lead-in to additional content. This content is a little bit
+              longer.</p>
+            <a href="#" class="btn btn-dark btn-sm rounded-circle roboto bouton-image monBouton"></a>
+          </div>
+          <div class="mask pattern-8 flex-center">
+            <div class="card-footer bg-warning d-flex align-items-center justify-content-center h-25">
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div style="text-align: center;">
-      <button type="button" class="btn btn-dark text-center">View all</button>
-    </div>
-  
-  
-
-    <!--Getting Started-->
-    <div id="gettingstarted" class="container" style="margin-bottom: 100px">
-      <div class="row" style="margin-top: 50px; margin-bottom: 50px">
-          <div class="col-12">
-              <hr>
-          </div>
-      </div>
-      <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-              <div style="font-weight: 900; font-size: 36px; text-align: center;">Getting Started</div>
-          </div>
-          <div class="col-12 mb-4">
-              <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
-                  <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur sadipscing
-                      elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
-                      voluptua. At
-                      vero eos et accusam et justo</div>
-              </div>
-          </div>
-          <div class="col-3">
-              <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-                  <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
-              </div>
-          </div>
-      </div>
-
-      <div class="row justify-content-center mt-4">
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted1.png" class="card-img-top" tyle="width: 100%;">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Get your phone</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
-              </div>
-          </div>
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted2.png" class="card-img-top" alt="..." style="width: 100%">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Find your experience</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
-
-              </div>
-          </div>
-          <div class="col-sm-12 col-md-3 capsule">
-              <img src="gettingstarted3.png" class="card-img-top" alt="..." style="width: 100%;">
-              <div class="card-body">
-                  <h3 class="card-title sectionTitle">Immerse Yourself</h3>
-                  <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore.
-                  </p>
-              </div>
-          </div>
-      </div>
   </div>
 
 
-      <!----------------->
 
-      <!-------------------->
-
+  <!-- <div style="text-align: center;">
+      <button type="button" class="btn btn-dark text-center">View all</button>
     </div>
+   -->
+
+
+  <!--Getting Started-->
+  <div id="gettingstarted" class="container" style="margin-bottom: 100px; margin-top: 100px">
+    <div class="row justify-content-center">
+      <div class="col-12 mb-4">
+        <div style="font-weight: 900; font-size: 36px; text-align: center;">Getting Started</div>
+      </div>
+      <div class="col-12 mb-4">
+        <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
+          <div class="loremText" style="width: 541px; text-align: center">Lorem ipsum dolor sit amet, consetetur
+            sadipscing
+            elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliqyam erat, sed diam
+            voluptua. At
+            vero eos et accusam et justo</div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+          <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted1.png" class="card-img-top" tyle="width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Get your phone</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted2.png" class="card-img-top" alt="..." style="width: 100%">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Find your experience</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3 capsule">
+        <img src="gettingstarted3.png" class="card-img-top" alt="..." style="width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title sectionTitle">Immerse Yourself</h3>
+          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----------------->
+
+  <!-------------------->
+
+  </div>
 
 
   </div>
@@ -984,14 +1067,14 @@ margin-top:70px
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-  </script>
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-  </script>
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 
   <script src="asyncReq.js"></script>
 
