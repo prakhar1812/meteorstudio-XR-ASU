@@ -456,7 +456,7 @@
                         <div style="color: #6E6E6E; font-size: 1.2em;">Created by:</div>
                     </div>
                     <div class="p-2 border-right">
-                        <div class="bd-highlight" id="createdBy" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</div>
+                        <a href="https://google.com" class="bd-highlight" id="createdBy" style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</a>
                     </div>
                     <div class="p-2 border-right">
                         <div class="bd-highlight">
@@ -926,10 +926,12 @@
 
 			document.getElementById("videoheader").src = data[0].video;
 			document.getElementById("modalvid").setAttribute("data-src",data[0].video);
-			alert(document.getElementById("modalvid").getAttribute("data-src"));
+			//alert(document.getElementById("modalvid").getAttribute("data-src"));
 			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
 			document.getElementById("creationDate").innerHTML = data[0].creationDate;
+			
 			document.getElementById("createdBy").innerHTML = data[0].createdBy;
+			document.getElementById("createdBy").setAttribute("href",data[0].creatorURL);
 			
 			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			
