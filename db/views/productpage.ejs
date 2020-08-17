@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -1082,21 +1083,13 @@
 
             // Set hero image
             var hero = data[0].thumbnail.substr(0, data[0].thumbnail.indexOf('_small')) + ".png";
-            // document.getElementById("hero").style.backgroundRepeat = "no-repeat";
-            // document.getElementById("hero").style.backgroundSize = "cover";
-            // document.getElementById("hero").style.backgroundPosition = "center";
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
 
-            // document.getElementById("heroImage").style.background = "url(" + data[0].image + "')";
-
-
-            // Basic info
+            // Text info
             document.getElementById("productname").innerHTML = data[0].name;
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
-
-
 
             //alert(document.getElementById("modalvid").getAttribute("data-src"));
             document.getElementById("releasedate").innerHTML = data[0].releaseDate;
