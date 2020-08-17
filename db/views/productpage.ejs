@@ -57,10 +57,30 @@
             color: #2A2A2A;
         }
 
+        .p-2 {
+            font-size: 16px;
+        }
+
+
         .bodyBig {
             text-align: left;
             font-size: 18px;
             letter-spacing: 0.09px;
+        }
+
+        @media (max-width: 768px) {
+            .pageTitle  {
+                font-size: 24px
+            }
+            .bodyBig {
+                font-size: 16px;
+            }
+        }
+
+
+            /* .subtitles {
+                font-size: 16px
+            } */
         }
 
         .sectionTitle {
@@ -121,15 +141,14 @@
         }
 
         .rectButton {
-            height: 30px;
-            width: 140px;
+            /* width: 140px; */
             background-color: #8C1D40;
             border-radius: 0;
             display: inline-block;
             color: #ffffff;
-            font-size: 18px;
             font-weight: bold;
             border-width: 0px;
+            padding-left: 5px; padding-right:5px
         }
 
         .categoriesButton {
@@ -310,23 +329,20 @@
         }
 
 
-        @media (min-width: 800px) {
+        @media (min-width: 786px) {
             #playBtn2 {
                 display: none;
             }
         }
 
-        @media (max-width: 800px) {
-            #hero {
-                height: 15%;
-            }
+        @media (max-width: 786px) {
             #playBtn1 {
                 display: none;
             }
             #playBtn2 {
                 display: block;
-                margin-top:50px;
-                margin-bottom:50px;
+                margin-top:25px;
+                margin-bottom:25px;
             }
         }
         
@@ -343,6 +359,16 @@
             border-radius:50px;
             width:100%;
             padding:10px
+        }
+
+        .playNowButtonActive {
+            font-size:1.6em;
+            background:#FFC627;
+            border:none;
+            border-radius:50px;
+            width:80%;
+            padding:10px;
+            font-weight: bold;
         }
 
         .hidden {
@@ -372,6 +398,12 @@
         #hero .container {
             position: relative;
             z-index: 2;
+        }
+
+        @media (max-width: 800px) {
+            #hero {
+                max-height: 15%;
+            }
         }
 
         /* #hero .overlay {
@@ -634,27 +666,27 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row">
-                    <div class="p-2" style="margin-left: -9px">
-                        <div style="color: #6E6E6E; font-size: 1.2em;">Created by:</div>
+                    <div class="p-2 subtitles" style="margin-left: -9px">
+                        <div style="color: #6E6E6E;">Created by:</div>
                     </div>
-                    <div class="p-2 border-right">
-                        <a href="https://google.com" class="bd-highlight" id="createdBy"
-                            style="color: #8C1D40; text-decoration: underline; font-size: 1.2em">LFC</a>
+                    <div class="p-2 border-right subtitles">
+                        <a id="createdBy"
+                            style="color: #8C1D40; text-decoration: underline;"></a>
                     </div>
-                    <div class="p-2 border-right">
-                        <div class="bd-highlight">
+                    <div class="p-2 border-right subtitles">
+                        <div>
                             <button type="button" disabled class="rectButton" id="experienceType"></button>
                         </div>
                     </div>
-                    <div class="p-2">
-                        <div class="d-highlight bodyBig" id="creationDate" style="margin-top: 4px;"></div>
+                    <div class="p-2 subtitles">
+                        <div class="d-highlight bodyBig" id="creationDate"></div>
                     </div>
                 </div>
                 <div id="playBtn2"  class="row hidden">
                     <div class="col">
                         <div class="row justify-content-center">
                             <div class="col mb-4 text-center">
-                                <button id="playButton2" class="sectionTitle" style="font-size:1.6em;background:#FFC627;border:none;border-radius:50px;width:80%;padding:10px">Play now</button>
+                                <button id="playButton2" class="sectionTitle playNowButtonActive">Play now</button>
                             </div>
                         </div>
                     </div>
@@ -880,18 +912,18 @@
             <!-- END OF LEFT COLUMN -->
 
             <!-- BEGINNING OF RIGHT COLUMN -->
-            <div class="col-sm-12 col-md-4" style="margin-bottom: 100px">
+            <div class="col-sm-12 col-md-4" style="margin-bottom: 20px">
 
                 <!-- play now button 1 -->
                 <div id="playBtn1" class="row justify-content-center hidden">
                     <div class="col mb-4 text-center">
-                        <button id="playButton1" class="sectionTitle" style="font-size:1.6em;background:#FFC627;border:none;border-radius:50px;width:80%;padding:10px">Play now</button>
+                        <button id="playButton1" class="sectionTitle playNowButtonActive">Play now</button>
                     </div>
                 </div>
 
 
                 <!-- compatible devices -->
-                <div class="row justify-content-center" style="margin-bottom: 50px">
+                <div class="row justify-content-center">
                     <div class="border" style="text-align: center; width: 80%; border-radius: 8px; margin: auto">
                         <!-- <div class="col mt-4">
                             <button type="button" class="categoriesButton"
@@ -1139,28 +1171,22 @@
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
             // Link to the experience
+            
             if (data[0].url != "" && data[0].url != null) {
                 console.log(data[0].url);
-                document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]);
-                document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
+                document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]); document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
 
-                $('#playBtn1').removeClass('hidden');
-                $('#playBtn2').removeClass('hidden');
+                $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
 
             } else {
-                document.getElementById("playButton1").innerText = "Coming soon";
-                document.getElementById("playButton2").innerText = "Coming soon"; 
+                document.getElementById("playButton1").innerText = "Coming soon"; document.getElementById("playButton2").innerText = "Coming soon"; 
 
-                document.getElementById("playButton1").style.backgroundColor = "#cdcdcd"
-                document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
-                document.getElementById("playButton1").style.cursor = "default"
-                document.getElementById("playButton2").style.cursor = "default"
-                // $('#playButton1').addClass('disabledButton');
-                // $('#playButton2').addClass('disabledButton');
-                $('#playBtn1').removeClass('hidden');
-                $('#playBtn2').removeClass('hidden');
-
+                document.getElementById("playButton1").style.backgroundColor = "#cdcdcd"; document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
+                document.getElementById("playButton1").style.cursor = "default"; document.getElementById("playButton2").style.cursor = "default";
+                $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
             }
+            
+
 
             // Text info
             document.getElementById("productname").innerHTML = data[0].name;
