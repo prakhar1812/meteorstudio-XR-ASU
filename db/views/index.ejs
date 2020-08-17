@@ -845,21 +845,40 @@
           var desc = data[i].description;
           var image = data[i].thumbnail;
           var type = data[i].experienceType;
-          var id = data[i]._id;
-
+          
+		  var id = data[i]._id;
+		  var route = data[i].route;
           // Set details for each experience
           document.getElementById("item-image" + i).src = image;
           document.getElementById("itemname" + i).innerHTML = name;
           document.getElementById("itemdesc" + i).innerHTML = desc;
           document.getElementById("itemtype" + i).innerHTML = type;
-          document.getElementById("productlink" + i).href = "/productpage?=" + id;
-          document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [id]);
+          //alert(route);
+		  if(route != "")
+		  {
+			document.getElementById("productlink" + i).href = "/" + route;
+			document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [route]);
+		  }
+          
+		  else
+		  {
+			//Redirect, set URL using ID - only should occur for pages with no route in DB
+			document.getElementById("productlink" + i).href = "/productpage?=" + id;
+			document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [id]);
+		  }
         }
       });
     }
 
     function goToProduct(id, event) {
-      location.href = "/productpage?=" + id;
+	
+		//if ID starts with 5 its mongo _id
+		if(id.charAt(0) != 5)
+		location.href = "/" + id;
+		
+		//otherwise its a route
+		else
+		location.href = "/productpage?=" + id;
     }
 
 
