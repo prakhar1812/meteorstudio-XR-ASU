@@ -54,6 +54,7 @@ var authState = {
 
 
 };
+//var globalproduct = "5f2e1b687ca85a5fef49f0c1";
 //
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
@@ -303,32 +304,30 @@ app.get("/getProduct", function(req, res) {
 
 app.get("/productpage", function(req, res) {
 
-    res.render('productpage');
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
 });
 
 //webpage routes
 
 app.get("/covidcampus", function(req, res) {
-
-    res.render('covidcampus');
+    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6"});
 });
 
-app.get("/asuscavengerhunt", function(req, res) {
-
-    res.render('asuscavengerhunt');
+app.get("/career", function(req, res) {
+    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6"});
 });
 
-app.get("/careerarcade", function(req, res) {
-
-    res.render('careerarcade');
+app.get("/campus", function(req, res) {
+    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7"});
 });
 
-app.get("/catchamimic", function(req, res) {
-
-    res.render('catchamimic');
+app.get("/scav", function(req, res) {
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+});
+app.get("/scavenger", function(req, res) {
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
 });
 
-app.get("/virtualcampus", function(req, res) {
-
-    res.render('virtualcampus');
-});
+app.get("/mimic", function(req, res) {
+    res.render('productpage', { globalproduct: "5f387906d48d43237444a814"});
+}); 

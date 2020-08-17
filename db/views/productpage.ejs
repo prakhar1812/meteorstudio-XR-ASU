@@ -26,6 +26,8 @@
     <!-- Footer CSS -->
     <link href="css/footer.css" rel="stylesheet">
     
+    <script>var globalproduct = "<%= globalproduct %>";</script>
+
 
     <style>
         /*SPACING*/
@@ -1078,13 +1080,14 @@
             split = queries[i].split('=');
             searchObject[split[0]] = split[1];
         }
-		// alert(split[1]);
-        if(split[1] != null)
-        getProductData(split[1]);
-		
-		else
-		getProductData("5f2e1b687ca85a5fef49f0c1");
 
+		// alert(split[1]);
+        if(split[1] != null) {
+            getProductData(split[1]);
+		}
+		else {
+		    getProductData(globalproduct);//"5f2e1b687ca85a5fef49f0c1");
+        }
     }
 
 $(document).ready(function() {
