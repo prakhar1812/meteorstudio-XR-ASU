@@ -310,5 +310,5 @@ app.get("/productpage", function(req, res) {
 
 
 app.get("/covidcampus", function(req, res) {
-    res.render('covidcampus', { globalproduct: "5f37365a36d55f83a9c770a6"});
+    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6"});
 });
