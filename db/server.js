@@ -306,9 +306,29 @@ app.get("/productpage", function(req, res) {
     res.render('productpage');
 });
 
-
+//webpage routes
 
 app.get("/covidcampus", function(req, res) {
 
     res.render('covidcampus');
+});
+
+app.get("/asuscavengerhunt", function(req, res) {
+
+    res.render('asuscavengerhunt');
+});
+
+app.get("/careerarcade", function(req, res) {
+
+    res.render('careerarcade');
+});
+
+app.get("/catchamimic", function(req, res) {
+
+    res.render('catchamimic');
+});
+
+app.get("/virtualcampus", function(req, res) {
+
+    res.render('virtualcampus');
 });
