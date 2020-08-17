@@ -74,6 +74,9 @@
     text-decoration: none;
     color: #FFC627;
   }
+  .navbar-link object{
+    pointer-events: none;
+  }
 .header-container{
     /* max-width: 1250px; */
     /* min-width: 730px; */
