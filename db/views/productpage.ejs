@@ -306,12 +306,41 @@
             #hero {
                 height: 30%;
             }
+
         }
 
-        @media (max-width: 1000px) {
+        @media (min-width: 800px) {
+            #playBtn2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 800px) {
             #hero {
                 height: 15%;
             }
+            #playBtn1 {
+                display: none;
+            }
+            #playBtn2 {
+                display: block;
+                margin-top:50px;
+                margin-bottom:50px;
+            }
+        }
+
+        #playBtn1:focus, #playBtn1:active, #playBtn2:focus {
+            border: none;
+            outline: none;
+        }
+        #playBtn, #playBtn:focus {
+            font-size:1.6em;
+            background:#FFC627;
+            border:none;
+            outline:none;
+            border-radius:50px;
+            width:100%;
+            padding:10px
         }
 
         /* #hero video {
@@ -627,9 +656,21 @@
                         <div class="d-highlight bodyBig" id="creationDate" style="margin-top: 4px;"></div>
                     </div>
                 </div>
+                <div id="playBtn2"  class="row">
+                    <div class="col">
+                        <div class="row justify-content-center">
+                            <div class="col mb-4 text-center">
+                                <button id="playButton2" class="sectionTitle">Play now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <div>
-                    <p class="bodyBig" id="productDesc"></p>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="bodyBig" id="productDesc"></p>
+
+                    </div>
                 </div>
 
                 <hr class="mt-4">
@@ -846,6 +887,15 @@
 
             <!-- BEGINNING OF RIGHT COLUMN -->
             <div class="col-sm-12 col-md-4" style="margin-bottom: 100px">
+
+                <!-- play now button 1 -->
+                <div id="playBtn1" class="row justify-content-center">
+                    <div class="col mb-4 text-center">
+                        <button id="playButton1" class="sectionTitle" style="font-size:1.6em;background:#FFC627;border:none;border-radius:50px;width:80%;padding:10px">Play now</button>
+                    </div>
+                </div>
+
+                <!-- compatible devices -->
                 <div class="row justify-content-center" style="margin-bottom: 50px">
                     <div class="border" style="text-align: center; width: 80%; border-radius: 8px; margin: auto">
                         <!-- <div class="col mt-4">
@@ -1085,6 +1135,11 @@
             var hero = data[0].thumbnail.substr(0, data[0].thumbnail.indexOf('_small')) + ".png";
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
+            // Link to the experience
+            if (data[0].url != "") {
+                document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]);
+                document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
+            }
 
             // Text info
             document.getElementById("productname").innerHTML = data[0].name;
@@ -1124,10 +1179,12 @@
             } else {
                 document.getElementById("vrDevice").style.display = "none";
             }
-
-
-
         });
+    }
+
+    function launchExperience (url, event) {
+        // console.log(url);
+        location.href = url
     }
 
     function parseURL(url) {
