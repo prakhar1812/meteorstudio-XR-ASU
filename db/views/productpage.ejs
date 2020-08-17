@@ -349,6 +349,11 @@
             display: none;
         }
 
+        .disableButton {
+            background:#cdcdcd;
+            cursor: default;
+        }
+
         /* #hero video {
             position: absolute;
             top: 50%;
@@ -901,6 +906,7 @@
                     </div>
                 </div>
 
+
                 <!-- compatible devices -->
                 <div class="row justify-content-center" style="margin-bottom: 50px">
                     <div class="border" style="text-align: center; width: 80%; border-radius: 8px; margin: auto">
@@ -1151,8 +1157,18 @@
                 $('#playBtn2').removeClass('hidden');
 
             } else {
-                // document.getElementById("playBtn1").style.display = "none";
-                // document.getElementById("playBtn2").style.display = "none";    
+                document.getElementById("playButton1").innerText = "Coming soon";
+                document.getElementById("playButton2").innerText = "Coming soon"; 
+
+                document.getElementById("playButton1").style.backgroundColor = "#cdcdcd"
+                document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
+                document.getElementById("playButton1").style.cursor = "default"
+                document.getElementById("playButton2").style.cursor = "default"
+                // $('#playButton1').addClass('disabledButton');
+                // $('#playButton2').addClass('disabledButton');
+                $('#playBtn1').removeClass('hidden');
+                $('#playBtn2').removeClass('hidden');
+
             }
 
             // Text info
