@@ -309,6 +309,7 @@
 
         }
 
+
         @media (min-width: 800px) {
             #playBtn2 {
                 display: none;
@@ -328,6 +329,7 @@
                 margin-bottom:50px;
             }
         }
+        
 
         #playBtn1:focus, #playBtn1:active, #playBtn2:focus {
             border: none;
@@ -341,6 +343,10 @@
             border-radius:50px;
             width:100%;
             padding:10px
+        }
+
+        .hidden {
+            display: none;
         }
 
         /* #hero video {
@@ -656,7 +662,7 @@
                         <div class="d-highlight bodyBig" id="creationDate" style="margin-top: 4px;"></div>
                     </div>
                 </div>
-                <div id="playBtn2"  class="row">
+                <div id="playBtn2"  class="row hidden">
                     <div class="col">
                         <div class="row justify-content-center">
                             <div class="col mb-4 text-center">
@@ -889,7 +895,7 @@
             <div class="col-sm-12 col-md-4" style="margin-bottom: 100px">
 
                 <!-- play now button 1 -->
-                <div id="playBtn1" class="row justify-content-center">
+                <div id="playBtn1" class="row justify-content-center hidden">
                     <div class="col mb-4 text-center">
                         <button id="playButton1" class="sectionTitle" style="font-size:1.6em;background:#FFC627;border:none;border-radius:50px;width:80%;padding:10px">Play now</button>
                     </div>
@@ -1136,9 +1142,17 @@
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
             // Link to the experience
-            if (data[0].url != "") {
+            if (data[0].url != "" && data[0].url != null) {
+                console.log(data[0].url);
                 document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]);
                 document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
+
+                $('#playBtn1').removeClass('hidden');
+                $('#playBtn2').removeClass('hidden');
+
+            } else {
+                // document.getElementById("playBtn1").style.display = "none";
+                // document.getElementById("playBtn2").style.display = "none";    
             }
 
             // Text info
