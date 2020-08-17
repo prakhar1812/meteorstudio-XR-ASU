@@ -1012,18 +1012,31 @@
             // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 			
-			//set details for the experience
-			document.title = data[0].name + " | ASU XR | Arizona State University"
-			
+            // Set details for the experience
+             
+            // Page title
+            document.title = data[0].name + " | ASU XR | Arizona State University"
+            
+            // Show video if it exists
+            // if (data[0].video != "") {
+            //     document.getElementById("videoheader").src = data[0].video;
+			//     document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+            // } 
+
+            // Set hero image
+            var hero = data[0].thumbnail.substr(0, data[0].thumbnail.indexOf('_small')) + ".png";
+            document.getElementById("videoheader").poster = hero;
+           
+            
+            // document.getElementById("heroImage").style.background = "url(" + data[0].image + "')";
+
+            
+            // Basic info
             document.getElementById("productname").innerHTML = data[0].name;
             document.getElementById("productDesc").innerHTML = data[0].description;
             document.getElementById("experienceType").innerHTML = data[0].experienceType;
 
-            // show video if it exists
-            if (data[0].video != "") {
-                document.getElementById("videoheader").src = data[0].video;
-			    document.getElementById("modalvid").setAttribute("data-src",data[0].video);
-            }
+
 
 			//alert(document.getElementById("modalvid").getAttribute("data-src"));
 			document.getElementById("releasedate").innerHTML = data[0].releaseDate;
