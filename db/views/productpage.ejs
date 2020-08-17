@@ -69,9 +69,10 @@
         }
 
         @media (max-width: 768px) {
-            .pageTitle  {
+            .pageTitle {
                 font-size: 32px
             }
+
             .bodyBig {
                 font-size: 16px;
             }
@@ -114,17 +115,24 @@
         }
 
 
-        @media (max-width: 1200px) { 
-            .p-2, #creationDate {
+        @media (max-width: 1200px) {
+
+            .p-2,
+            #creationDate {
                 font-size: 14px;
             }
         }
 
-        @media (max-width: 768px) { 
-            .creditLabels, .creditNames, .infoLabels {
+        @media (max-width: 768px) {
+
+            .creditLabels,
+            .creditNames,
+            .infoLabels {
                 font-size: 14px;
             }
-            .p-2, #creationDate {
+
+            .p-2,
+            #creationDate {
                 font-size: 12px;
             }
         }
@@ -159,7 +167,8 @@
             color: #ffffff;
             font-weight: bold;
             border-width: 0px;
-            padding-left: 5px; padding-right:5px
+            padding-left: 5px;
+            padding-right: 5px
         }
 
         .categoriesButton {
@@ -350,35 +359,40 @@
             #playBtn1 {
                 display: none;
             }
+
             #playBtn2 {
                 display: block;
-                margin-top:25px;
-                margin-bottom:25px;
+                margin-top: 25px;
+                margin-bottom: 25px;
             }
         }
-        
 
-        #playBtn1:focus, #playBtn1:active, #playBtn2:focus {
+
+        #playBtn1:focus,
+        #playBtn1:active,
+        #playBtn2:focus {
             border: none;
             outline: none;
         }
-        #playBtn, #playBtn:focus {
-            font-size:1.6em;
-            background:#FFC627;
-            border:none;
-            outline:none;
-            border-radius:50px;
-            width:100%;
-            padding:10px
+
+        #playBtn,
+        #playBtn:focus {
+            font-size: 1.6em;
+            background: #FFC627;
+            border: none;
+            outline: none;
+            border-radius: 50px;
+            width: 100%;
+            padding: 10px
         }
 
         .playNowButtonActive {
-            font-size:1.6em;
-            background:#FFC627;
-            border:none;
-            border-radius:50px;
-            width:80%;
-            padding:10px;
+            font-size: 1.6em;
+            background: #FFC627;
+            border: none;
+            border-radius: 50px;
+            width: 80%;
+            padding: 10px;
             font-weight: bold;
         }
 
@@ -387,7 +401,7 @@
         }
 
         .disableButton {
-            background:#cdcdcd;
+            background: #cdcdcd;
             cursor: default;
         }
 
@@ -481,151 +495,177 @@
 </head>
 
 <body onload="parseURL(window.location.href)">
-  <!-- HEADER START -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="header-top">
-          <!-- Logo -->
-          <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-                alt="Arizona State University"
-                src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a></div>
-          <div class="header-nav">
-            <ul>
-              <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-              <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
-                  id="main_menu_items">ASU Home
-                  <img src="caret-down.svg"></a>
+    <!-- HEADER START -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header-top">
+                    <!-- Logo -->
+                    <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
+                                alt="Arizona State University"
+                                src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
+                    </div>
+                    <div class="header-nav">
+                        <ul>
+                            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
+                                    id="main_menu_items">ASU Home
+                                    <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://www.asu.edu/?feature=newsevents" target="_top"
-                    title="News and Events">News/Events</a>
-                  <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
-                  <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
-                  <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
-                  <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
-                  <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
-                  <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
-                  <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
-                </div>
+                                <div class="dropdown-content">
+                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top"
+                                        title="News and Events">News/Events</a>
+                                    <a href="https://www.asu.edu/?feature=academics" target="_top"
+                                        title="Academics">Academics</a>
+                                    <a href="https://www.asu.edu/?feature=research" target="_top"
+                                        title="Research">Research</a>
+                                    <a href="https://www.asu.edu/?feature=athletics" target="_top"
+                                        title="Athletics">Athletics</a>
+                                    <a href="https://www.asu.edu/?feature=alumni" target="_top"
+                                        title="Alumni">Alumni</a>
+                                    <a href="https://www.asu.edu/?feature=giving" target="_top"
+                                        title="Giving">Giving</a>
+                                    <a href="https://www.asu.edu/?feature=president" target="_top"
+                                        title="President">President</a>
+                                    <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My ASU</a></li>
-              <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
-                  id="menu_main">Colleges and Schools
-                  <img src="caret-down.svg"></a>
+                            </li>
+                            <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
+                                    ASU</a></li>
+                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
+                                    id="menu_main">Colleges and Schools
+                                    <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
-                    Sciences</a>
-                  <a href="https://wpcarey.asu.edu/" target="_top"
-                    title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                  <a href="https://herbergerinstitute.asu.edu" target="_top"
-                    title="Herberger Institute for Design and the Arts website">Design and the Arts</a>
-                  <a href="https://education.asu.edu/" target="_top"
-                    title="Mary Lou Fulton Teachers College website">Education</a>
-                  <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
-                  <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future
-                    of
-                    Innovation in Society</a>
-                  <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
-                  <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health Solutions</a>
-                  <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
-                  <a href="https://cronkite.asu.edu" target="_top"
-                    title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
-                  <a href="https://www.law.asu.edu/" target="_top"
-                    title="Sandra Day O' Connor College of Law website">Law</a>
-                  <a href="https://nursingandhealth.asu.edu/" target="_top"
-                    title="College of Nursing and Health Innovation website">Nursing and Health Innovation</a>
-                  <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
-                    and
-                    Community Solutions</a>
-                  <a href="https://schoolofsustainability.asu.edu" target="_top"
-                    title="School of Sustainability website">Sustainability</a>
-                  <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
-                  <a target="_top" href="https://thunderbird.asu.edu/"
-                    title="Thunderbird School of Global Management website">Thunderbird School of Global Management</a>
-                </div>
+                                <div class="dropdown-content">
+                                    <a href="https://artsandsciences.asu.edu/" target="_top"
+                                        title="Arts and Sciences website">Arts and
+                                        Sciences</a>
+                                    <a href="https://wpcarey.asu.edu/" target="_top"
+                                        title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
+                                    <a href="https://herbergerinstitute.asu.edu" target="_top"
+                                        title="Herberger Institute for Design and the Arts website">Design and the
+                                        Arts</a>
+                                    <a href="https://education.asu.edu/" target="_top"
+                                        title="Mary Lou Fulton Teachers College website">Education</a>
+                                    <a href="https://engineering.asu.edu/" target="_top"
+                                        title="Engineering website">Engineering</a>
+                                    <a href="https://sfis.asu.edu/" target="_top"
+                                        title="Future of Innovation in Society website">Future
+                                        of
+                                        Innovation in Society</a>
+                                    <a href="https://graduate.asu.edu" target="_top"
+                                        title="Graduate College website">Graduate</a>
+                                    <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
+                                        Solutions</a>
+                                    <a href="https://honors.asu.edu/" target="_top"
+                                        title="Barrett, The Honors College website">Honors</a>
+                                    <a href="https://cronkite.asu.edu" target="_top"
+                                        title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
+                                    <a href="https://www.law.asu.edu/" target="_top"
+                                        title="Sandra Day O' Connor College of Law website">Law</a>
+                                    <a href="https://nursingandhealth.asu.edu/" target="_top"
+                                        title="College of Nursing and Health Innovation website">Nursing and Health
+                                        Innovation</a>
+                                    <a href="https://copp.asu.edu" target="_top"
+                                        title="College of Public Programs website">Public Service
+                                        and
+                                        Community Solutions</a>
+                                    <a href="https://schoolofsustainability.asu.edu" target="_top"
+                                        title="School of Sustainability website">Sustainability</a>
+                                    <a href="https://uc.asu.edu/" target="_top"
+                                        title="University College website">University College</a>
+                                    <a target="_top" href="https://thunderbird.asu.edu/"
+                                        title="Thunderbird School of Global Management website">Thunderbird School of
+                                        Global Management</a>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map and Locations
-                  <img src="caret-down.svg"></a>
+                            </li>
+                            <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
+                                    and Locations
+                                    <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://www.asu.edu/map/" target="_top">Map</a>
-                  <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
-                  <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
-                  <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
-                  <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
-                    Phoenix</a>
-                  <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
-                    Extended</a>
-                  <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
-                  <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and Strategic Partnerships</a>
-                  <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
-                  <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
-                  <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
-                </div>
+                                <div class="dropdown-content">
+                                    <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                                    <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                                    <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                                    <a href="https://campus.asu.edu/polytechnic/" target="_top"
+                                        title="Polytechnic campus">Polytechnic</a>
+                                    <a href="https://campus.asu.edu/downtown/" target="_top"
+                                        title="Downtown Phoenix campus">Downtown
+                                        Phoenix</a>
+                                    <a href="https://asuonline.asu.edu/" target="_top"
+                                        title="Online and Extended campus">Online and
+                                        Extended</a>
+                                    <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                                    <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
+                                        Strategic Partnerships</a>
+                                    <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                                    <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                                    <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
-                  title="Directory, Index and other info">Directory</a></li>
-              <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
+                            </li>
+                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
+                                    title="Directory, Index and other info">Directory</a></li>
+                            <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
                     onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                     onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
                     onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li> -->
-            </ul>
-            <div>
-              <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
-                  for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input
-                  name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
-                  value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
-                  type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client"
-                  type="hidden" value="asu_frontend"><input name="q" class="header-search" placeholder="Search"
-                  autocomplete="off" type="text"><input class="header-search-button" type="submit" value=""></form>
+                        </ul>
+                        <div>
+                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs"
+                                role="search"><label for="masu_search_box"></label><input name="site" type="hidden"
+                                    value="default_collection"><input name="sort" type="hidden"
+                                    value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input
+                                    name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
+                                    type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input
+                                    name="client" type="hidden" value="asu_frontend"><input name="q"
+                                    class="header-search" placeholder="Search" autocomplete="off" type="text"><input
+                                    class="header-search-button" type="submit" value=""></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <span class="header-title"><a href="/">XR@ASU</a></span>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="header-bottom">
-          <span class="header-title"><a href="/">XR@ASU</a></span>
-        </div>
-      </div>
+
     </div>
+    <!-- END OF ASU HEADER -->
 
-  </div>
-  <!-- END OF ASU HEADER -->
-
-  <div class="container-fluid header-2-container">
-    <div class="row">
-      <div class="col">
-        <div class="container">
-          <div class="row">
+    <div class="container-fluid header-2-container">
+        <div class="row">
             <div class="col">
-              <ul class="navbar-container">
-                <li>
-                  <a class="navbar-link" href="http://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg"
-                      id="nav-home"></object> </a>
-                </li>
-              </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="navbar-container">
+                                <li>
+                                    <a class="navbar-link" href="http://xr.asu.edu"> <object type="image/svg+xml"
+                                            data="homeicon.svg" id="nav-home"></object> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!------ END OF HEADERS ----->
+    <!------ END OF HEADERS ----->
 
     <div id="hero">
         <!-- <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-target="#myModal" -->
-            <!-- id="modalvid"> -->
-            <!-- <div class="overlay"></div>	 -->
-            <!-- <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"
+        <!-- id="modalvid"> -->
+        <!-- <div class="overlay"></div>	 -->
+        <!-- <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"
                 id="videoheader">
                 <source src="" type="video/mp4">
             </video> -->
         <!-- </button> -->
-        <div class="container h-100" >
+        <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
                     <h1 class="display-3"></h1>
@@ -681,8 +721,7 @@
                         <div style="color: #6E6E6E; margin-right:-10px">Created by:</div>
                     </div>
                     <div class="p-2 border-right subtitles">
-                        <a id="createdBy"
-                            style="color: #8C1D40; text-decoration: underline;"></a>
+                        <a id="createdBy" style="color: #8C1D40; text-decoration: underline;"></a>
                     </div>
                     <div class="p-2 border-right subtitles">
                         <div>
@@ -693,7 +732,7 @@
                         <div class="d-highlight subtitles" id="creationDate"></div>
                     </div>
                 </div>
-                <div id="playBtn2"  class="row hidden">
+                <div id="playBtn2" class="row hidden">
                     <div class="col">
                         <div class="row justify-content-center">
                             <div class="col mb-4 text-center">
@@ -1075,55 +1114,77 @@
     </div> -->
     <footer>
         <div class="container-fluid" style="margin:0;padding:0">
-          <div class="row" style="margin:0;padding:0">
-            <div class="col" style="margin:0;padding:0">
-              <div class="footer">
-                <div class="footer_content">
-                  <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-                        alt="Arizona State University" class="logo" src="abc.svg"></a></div>
-          
-                  <div class="footer_content_links">
-                    <ul style="list-style: none;">
-                      <li><a href="https://xr.asu.edu">Home</a></li>
-                      <!-- <li><a href="https://example.com">XR Search</a></li> -->
-                      <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
-                    </ul>
-                  </div>
-          
-                  <!-- <div class="footer_content_button">
+            <div class="row" style="margin:0;padding:0">
+                <div class="col" style="margin:0;padding:0">
+                    <div class="footer">
+                        <div class="footer_content">
+                            <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
+                                    target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
+                            </div>
+
+                            <div class="footer_content_links">
+                                <ul style="list-style: none;">
+                                    <li><a href="https://xr.asu.edu">Home</a></li>
+                                    <!-- <li><a href="https://example.com">XR Search</a></li> -->
+                                    <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- <div class="footer_content_button">
                           <button class="upload-button" type="button" name="button">Upload</button>
                       </div> -->
+                        </div>
+                        <div class="footer_bottom">
+
+                            <div id="footer_bottom_img">
+                                <a href="https://www.asu.edu/rankings">
+                                    <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
+                                </a>
+                            </div>
+
+                            <div class="footer_bottom_text">
+                                <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- <div class="footer_bot">
+                            <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+                            <a href="https://www.asu.edu/privacy/">Privacy</a>
+                            <a href="https://www.asu.edu/tou/">Terms of use</a>
+                            <a href="https://www.asu.edu/asujobs/">Jobs</a>
+                            <a href="https://cfo.asu.edu/emergency">Emergency</a>
+                            <a href="https://contact.asu.edu/">Contact ASU</a>
+                        </div> -->
+                        <div class="container-fluid" style="background-color:#e5e5e5; margin:0; padding:0">
+                            <div class="container ">
+                                <div class="row footer_bot footerBottomLinks">
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://www.asu.edu/accessibility/">Accessibility</a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://www.asu.edu/tou/">Terms of use</a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://www.asu.edu/asujobs/">Jobs</a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://cfo.asu.edu/emergency">Emergency</a>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2">
+                                        <a href="https://contact.asu.edu/">Contact ASU</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="footer_bottom">
-          
-                  <div id="footer_bottom_img">
-                    <a href="https://www.asu.edu/rankings">
-                      <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
-                    </a>
-                  </div>
-          
-                  <div class="footer_bottom_text">
-                    <a href="https://www.asu.edu/rankings">
-                      ASU is #1 in the U.S. for Innovation
-                    </a>
-                  </div>
-          
-                </div>
-          
-                <div class="footer_bot">
-                  <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
-                  <a href="https://www.asu.edu/accessibility/">Accessibility</a>
-                  <a href="https://www.asu.edu/privacy/">Privacy</a>
-                  <a href="https://www.asu.edu/tou/">Terms of use</a>
-                  <a href="https://www.asu.edu/asujobs/">Jobs</a>
-                  <a href="https://cfo.asu.edu/emergency">Emergency</a>
-                  <a href="https://contact.asu.edu/">Contact ASU</a>
-                </div>
-  
-  
             </div>
-          </div>   
-        </div>
         </div>
     </footer>
 
@@ -1147,8 +1208,6 @@
         document.getElementById('client-info').value = JSON.stringify(info);</script> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -1182,7 +1241,7 @@
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
             // Link to the experience
-            
+
             if (data[0].url != "" && data[0].url != null) {
                 console.log(data[0].url);
                 document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]); document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
@@ -1190,13 +1249,13 @@
                 $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
 
             } else {
-                document.getElementById("playButton1").innerText = "Coming soon"; document.getElementById("playButton2").innerText = "Coming soon"; 
+                document.getElementById("playButton1").innerText = "Coming soon"; document.getElementById("playButton2").innerText = "Coming soon";
 
                 document.getElementById("playButton1").style.backgroundColor = "#cdcdcd"; document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
                 document.getElementById("playButton1").style.cursor = "default"; document.getElementById("playButton2").style.cursor = "default";
                 $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
             }
-            
+
 
 
             // Text info
@@ -1240,7 +1299,7 @@
         });
     }
 
-    function launchExperience (url, event) {
+    function launchExperience(url, event) {
         // console.log(url);
         location.href = url
     }

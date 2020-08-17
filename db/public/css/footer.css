@@ -67,7 +67,7 @@
 
 .footer_bottom_text {
     padding-top: 19px;
-    float: right;
+    /* float: right; */
     font-size: 2em;
     font-weight: 900;
     color: #1e1e1e;
@@ -77,7 +77,10 @@
 .footer_bottom_text a {
     text-decoration: none;
     color: #1e1e1e;
+    float:right;
+    text-align:right
 }
+
 
 #footer_bottom_img {
     position: relative;
@@ -91,16 +94,17 @@
 
 
 .footer_bot {
-    height: 69px;
+    /* height: 69px; */
     background-color: #e5e5e5;
     padding-left: 85px;
     vertical-align: middle;
     padding-top: 27px;
+    text-align:center;
 }
 
 .footer_bot a {
-    padding-right: 28.8px;
     text-decoration: none;
+    text-align:center;
 }
 
 .footer_bot a {
@@ -112,6 +116,10 @@
         display: none;
     }
     .footer_bottom_text a {
-        font-size: 1em;
+        font-size: 20px;
     }   
+    .footerBottomLinks {
+        padding: 10px;
+        text-align:left;
+    }
 }
