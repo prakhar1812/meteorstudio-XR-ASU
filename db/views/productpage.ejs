@@ -70,17 +70,11 @@
 
         @media (max-width: 768px) {
             .pageTitle  {
-                font-size: 24px
+                font-size: 32px
             }
             .bodyBig {
                 font-size: 16px;
             }
-        }
-
-
-            /* .subtitles {
-                font-size: 16px
-            } */
         }
 
         .sectionTitle {
@@ -118,6 +112,23 @@
             font-size: 18px;
             letter-spacing: 0.09px;
         }
+
+
+        @media (max-width: 1200px) { 
+            .p-2, #creationDate {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) { 
+            .creditLabels, .creditNames, .infoLabels {
+                font-size: 14px;
+            }
+            .p-2, #creationDate {
+                font-size: 12px;
+            }
+        }
+
 
         .card {
             width: 70%;
@@ -679,7 +690,7 @@
                         </div>
                     </div>
                     <div class="p-2 subtitles">
-                        <div class="d-highlight bodyBig" id="creationDate"></div>
+                        <div class="d-highlight subtitles" id="creationDate"></div>
                     </div>
                 </div>
                 <div id="playBtn2"  class="row hidden">
@@ -894,7 +905,7 @@
                     <div class="sectionTitle">Information</div>
                     <div>
                         <div>
-                            <span id="infoLabels">Language: </span>
+                            <span class="infoLabels">Language: </span>
                             <span class="infoLabels" id="language">English </span>
                         </div>
                         <div>
@@ -902,8 +913,8 @@
 
                         </div>
                         <div>
-                            <span id="infoLabels">Release Date: </span>
-                            <span class="infoLabels" id="releasedate">March 30, 2020 </span>
+                            <span class="infoLabels">Release Date: </span>
+                            <span class="infoLabels" id="releasedate"></span>
                         </div>
                     </div>
                 </div>
