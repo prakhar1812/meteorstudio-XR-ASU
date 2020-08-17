@@ -54,7 +54,7 @@ var authState = {
 
 
 };
-var globalproduct = "5f2e1b687ca85a5fef49f0c1";
+//var globalproduct = "5f2e1b687ca85a5fef49f0c1";
 //
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
@@ -304,12 +304,11 @@ app.get("/getProduct", function(req, res) {
 
 app.get("/productpage", function(req, res) {
 
-    res.render('productpage');
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
 });
 
 
 
 app.get("/covidcampus", function(req, res) {
-    globalproduct = "5f37365a36d55f83a9c770a6";
-    res.render('covidcampus');
+    res.render('covidcampus', { globalproduct: "5f37365a36d55f83a9c770a6"});
 });
