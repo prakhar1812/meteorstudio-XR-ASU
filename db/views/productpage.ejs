@@ -1078,13 +1078,16 @@
             split = queries[i].split('=');
             searchObject[split[0]] = split[1];
         }
+        if (globalproduct != null) {
+            getProductData(globalproduct)
+        }
 		// alert(split[1]);
-        if(split[1] != null)
-        getProductData(split[1]);
-		
-		else
-		getProductData("5f2e1b687ca85a5fef49f0c1");
-
+        else if(split[1] != null) {
+            getProductData(split[1]);
+		}
+		else {
+		    getProductData("5f2e1b687ca85a5fef49f0c1");
+        }
     }
 
 $(document).ready(function() {
