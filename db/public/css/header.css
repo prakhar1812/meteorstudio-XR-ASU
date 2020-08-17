@@ -2,16 +2,21 @@
     background-color: #353535;
     z-index: 99;
   
-    width: 100%;
+    /* width: 100%; */
     height: 60px;
   }
   .header-2-container{
-    max-width: 1250px;
-    min-width: 990px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* max-width: 1250px; */
+    /* min-width: 990px; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    /* margin-right: 0; */
+    /* margin-left: 0; */
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+
+    background-color: #353535;
+
   
     height: inherit;
   }
@@ -70,18 +75,18 @@
     color: #FFC627;
   }
 .header-container{
-    max-width: 1250px;
-    min-width: 730px;
+    /* max-width: 1250px; */
+    /* min-width: 730px; */
     font-size: 1rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-right: 0;
+    margin-left: 0;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
   
     height: 109px;
     /*width: 1280px;*/
-    left: 0px;
-    top: 1px; 
+    /* left: 0px; */
+    /* top: 1px;  */
   }
   .header-top {
     position: relative;
@@ -214,6 +219,7 @@
     border: 0;
     /* background-image: url("http://xr.asu.edu/header-search-icon.png") 0 0 no-repeat; */
     background-size: 100%;
+    visibility: hidden;
   }
   .header-search-button:focus {
     outline: none; 
