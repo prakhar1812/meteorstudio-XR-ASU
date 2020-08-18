@@ -6,6 +6,7 @@ var app = express();
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
 
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 //nodemailer
 //const nodemailer = require('nodemailer');
 
@@ -330,8 +331,8 @@ app.get("/scavenger", function(req, res) {
 
 app.get("/mimic", function(req, res) {
     res.render('productpage', { globalproduct: "5f387906d48d43237444a814"});
-}); 
+});
 
 app.get("/virtualtutor", function(req, res) {
     res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
-}); 
+});
