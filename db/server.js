@@ -64,7 +64,7 @@ var authState = {
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
 var hostname = process.env.HOSTNAME || 'localhost';
-var port = 80;
+var port = 443;
 var currentUser; // Need to implement token/scope authentication
 const path = require('path');
 const VIEWS = path.join(__dirname, 'views');
@@ -101,11 +101,34 @@ const credentials = {
 	ca: ca
 };
 
-// var httpServer = http.createServer(app);
-// var httpsServer = https.createServer(credentials, app);
+app.use (function (req, res, next) {
+        if (req.secure) {
+                // request was via https, so do no special handling
+                next();
+        } else {
+                // request was via http, so redirect to https
+                res.redirect('https://' + req.headers.host + req.url);
+        }
+});
+
+
+
+var httpServer = http.createServer(app).listen(80);
+
+/*var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
+*/
+var httpsServer = https.createServer(credentials, app);
 //
-// httpServer.listen(8080);
-// httpsServer.listen(8443);
+// httpServer.listen(80);
+ httpsServer.listen(443);
+
+
+
+
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
@@ -120,8 +143,8 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     }
 
     // Start the application after the database connection is ready.
-     app.listen(port);
-    console.log("Server listening at http://" + hostname + ":" + port);
+//     app.listen(port);
+    console.log("Server listening at https://" + hostname + ":" + port);
 });
 //
 
