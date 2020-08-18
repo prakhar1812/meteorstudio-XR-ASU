@@ -120,7 +120,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     }
 
     // Start the application after the database connection is ready.
-    app.listen(port);
+    // app.listen(port);
     console.log("Server listening at http://" + hostname + ":" + port);
 });
 //
