@@ -1220,11 +1220,11 @@
             document.getElementById("createdBy").innerHTML = data[0].createdBy;
             document.getElementById("createdBy").setAttribute("href", data[0].creatorURL);
 			
-			document.getElementById("createdBy").setAttribute("href", data[0].creatorURL);
+			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			
 			//Play Button will say "play beta" if Beta is in the title
-			var experienceType = data[0].name.toLowerCase().includes("beta");
-			if(experienceType)
+			var isBeta = data[0].name.toLowerCase().includes("beta");
+			if(isBeta)
             document.getElementById("playButton1").innerHTML = "Play Beta";
 
             //Iterate through the credits array of objects
