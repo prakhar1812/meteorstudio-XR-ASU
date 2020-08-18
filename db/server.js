@@ -100,6 +100,7 @@ const credentials = {
 	ca: ca
 };
 
+const httpsServer = https.createServer(credentials, app);
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
