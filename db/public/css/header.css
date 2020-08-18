@@ -1,23 +1,10 @@
 .header_2{
     background-color: #353535;
     z-index: 99;
-  
-    /* width: 100%; */
     height: 60px;
   }
   .header-2-container{
-    /* max-width: 1250px; */
-    /* min-width: 990px; */
-    /* margin-right: auto; */
-    /* margin-left: auto; */
-    /* margin-right: 0; */
-    /* margin-left: 0; */
-    /* padding-left: 15px; */
-    /* padding-right: 15px; */
-
     background-color: #353535;
-
-  
     height: inherit;
   }
   .navbar-container{
@@ -119,7 +106,6 @@
         max-width: 100%;
       }
   .header-nav {
-    width: 463px;
     position: relative;
     display: block;
     float: right;
