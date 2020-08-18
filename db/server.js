@@ -102,6 +102,10 @@ const credentials = {
 
 const httpsServer = https.createServer(credentials, app);
 
+httpsServer.listen(443, () => {
+	console.log('HTTPS Server running on port 443');
+});
+
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     console.log("XR@ASU started");
