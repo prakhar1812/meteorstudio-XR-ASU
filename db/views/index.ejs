@@ -210,7 +210,7 @@
     }
 
     .card {
-      height: 360px;
+      height: 350px;
     }
 
 
@@ -262,7 +262,7 @@
       padding-bottom: 25px;
 
       border: 1px solid lightgray;
-      border-radius: 200px;
+      border-radius: 250px;
 
       background-image: url('getStart1.png');
       background-position: center bottom;
@@ -271,6 +271,20 @@
       text-align: center;
     }
 
+    .capsuleText {
+      line-height: 1.5; 
+      font-size: 16px; 
+      text-align: center;
+      padding: 5px;
+    }
+
+    @media(max-width: 786px) {
+      .capsuleText {
+        font-size: 14px; 
+        padding: 20px;
+      }
+
+    }
     .sectionTitle {
       padding: 0;
       color: #2A2A2A;
@@ -643,7 +657,7 @@
         <img src="gettingstarted2.png" class="card-img-top" style="width: 100%">
         <div class="card-body">
           <h3 class="card-title sectionTitle">Find your experience</h3>
-          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">A full
+          <p class="card-text capsuleText">A full
             listing of the experiences can be found on the XR@ASU homepage. Click on the experience card to see more
             details and access the experience.</p>
         </div>
@@ -652,7 +666,7 @@
         <img src="getstarted-headset.png" class="card-img-top" tyle="width: 100%;">
         <div class="card-body">
           <h3 class="card-title sectionTitle">Get your device</h3>
-          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+          <p class="card-text capsuleText" style="">
             Check the experience page for details on which device(s) the experience is compatible with. Compatible
             devices may include phones, laptops/desktops, and augmented/virtual reality headsets.
           </p>
@@ -663,7 +677,7 @@
         <img src="getstarted-vrguy.png" class="card-img-top" alt="..." style="width: 100%;">
         <div class="card-body">
           <h3 class="card-title sectionTitle">Immerse yourself</h3>
-          <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">
+          <p class="card-text capsuleText">
             Follow the instructions on the experience page to load your experience on the right device. Then, enjoy!
           </p>
         </div>
