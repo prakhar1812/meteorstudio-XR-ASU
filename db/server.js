@@ -101,11 +101,11 @@ const credentials = {
 	ca: ca
 };
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(8080);
-httpsServer.listen(8443);
+// var httpServer = http.createServer(app);
+// var httpsServer = https.createServer(credentials, app);
+//
+// httpServer.listen(8080);
+// httpsServer.listen(8443);
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
@@ -120,7 +120,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     }
 
     // Start the application after the database connection is ready.
-    // app.listen(port);
+     app.listen(port);
     console.log("Server listening at http://" + hostname + ":" + port);
 });
 //
