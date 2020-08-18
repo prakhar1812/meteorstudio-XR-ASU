@@ -91,18 +91,15 @@ mongoose.set('useCreateIndex', true);
 
 
 // Certificate
-var keyPath = "/etc/letsencrypt/live/xr.asu.edu/privkey.pem";
-if (fs.existsSync(keyPath)) {
-    const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
-    const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
-    const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
 
-    const credentials = {
-        key: privateKey,
-        cert: certificate,
-        ca: ca
-    };
-}
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
 
 app.use (function (req, res, next) {
         if (req.secure) {
