@@ -6,6 +6,7 @@ var app = express();
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
 
+const http = require('http');
 const https = require('https');
 
 
@@ -100,11 +101,11 @@ const credentials = {
 	ca: ca
 };
 
-const httpsServer = https.createServer(credentials, app);
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
 
-httpsServer.listen(443, () => {
-	console.log('HTTPS Server running on port 443');
-});
+httpServer.listen(80);
+httpsServer.listen(443);
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
