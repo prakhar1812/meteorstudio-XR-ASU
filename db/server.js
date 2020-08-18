@@ -60,7 +60,7 @@ var authState = {
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
 var hostname = process.env.HOSTNAME || 'localhost';
-var port = 80;
+var port = 443;
 var currentUser; // Need to implement token/scope authentication
 const path = require('path');
 const VIEWS = path.join(__dirname, 'views');
@@ -87,9 +87,9 @@ mongoose.set('useCreateIndex', true);
 
 
 // Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
 
 const credentials = {
 	key: privateKey,
@@ -97,10 +97,6 @@ const credentials = {
 	ca: ca
 };
 
-const httpsServer = https.createServer(credentials, app);
-httpsServer.listen(443, () => {
-	console.log('HTTPS Server running on port 443');
-});
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
