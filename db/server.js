@@ -6,6 +6,9 @@ var app = express();
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
 
+const https = require('https');
+const fs = require('fs');
+
 app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 //nodemailer
 //const nodemailer = require('nodemailer');
