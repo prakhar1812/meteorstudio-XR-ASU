@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <title>XR@ASU | Arizona State University</title>
   <link rel="icon" href="favicon.png">
-
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+      <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="uielements.css">
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
@@ -22,8 +22,6 @@
   <link href="css/header.css" rel="stylesheet">
   <!-- Footer CSS -->
   <link href="css/footer.css" rel="stylesheet">
-
-
 
   <script>
     var error = "";
@@ -97,28 +95,6 @@
     .monBouton:before {
       background-image: url("Icon - chevron-right-solid.svg");
     }
-
-    /* button {
-      top: 1365px;
-      left: 94px;
-      width: 143px;
-      height: 32px;
-      background: #E6E6E6 0% 0% no-repeat padding-box;
-      border: 1px solid #E6E6E6;
-      opacity: 1;
-
-    } */
-
-    p.roboto {
-      margin-left: 400px;
-      margin-right: 400px;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-      font-size: 18px;
-      letter-spacing: 0.09px;
-
-    }
-
     .test {
       box-shadow: 0px 3px 6px #00000029;
       border: 1px solid #707070;
@@ -142,7 +118,6 @@
       background: #353535 0% 0% no-repeat padding-box;
       opacity: 1;
     }
-
 
     .grid-container {
       display: inline-grid;
@@ -180,23 +155,6 @@
       opacity: 1;
     }
 
-    .item1 {
-      grid-column: 1;
-      grid-row: 1 / span2;
-      background-color: #FFFFFF;
-
-    }
-
-    .item2 {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-
-    .item3 {
-      grid-column: 3;
-      grid-row: 1 / span 2;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -213,13 +171,6 @@
 
     .right {
       width: 75%;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
     }
 
     .container ul {
@@ -253,8 +204,7 @@
       text-align: left;
     }
 
-    .experienceCard:active,
-    .experienceCard:focus {
+    .experienceCard:active, .experienceCard:focus {
       border: none;
       outline: none;
     }
@@ -295,7 +245,6 @@
     .asuxr_header_link a:visited {
       color: white;
     }
-
     /* header ends */
 
 
@@ -443,10 +392,10 @@
         </div>
       </div>
     </div>
-
   </div>
   <!-- END OF ASU HEADER -->
 
+  <!-- ASU XR HEADER -->
   <div class="container-fluid header-2-container">
     <div class="row">
       <div class="col">
@@ -466,17 +415,12 @@
     </div>
   </div>
 
-  <!------ END OF HEADERS ----->
+<!------ END OF HEADERS ----->
 
 
   <!-- HERO IMAGE -->
   <div class="container-fluid hero_img_container" style="margin:0;padding:0">
-    <!-- <div class="overlayTitleContainer"> -->
     <img id="hero_img" src="homehero.png">
-
-    <!-- <div class="overlayTitle">Immerse yourself in the future of education</div> -->
-    <!-- </div> -->
-
   </div>
 
 
@@ -498,13 +442,7 @@
         </div>
       </div>
       <div class="col-12" style="margin-top:-50px; margin-bottom: 50px; padding:0">
-        <img src="gold-waves-02.svg" style="width:150%;>
-      
-
-      <!-- <div class=" col">
-        <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-          <!--  -->
-        </div>
+        <img src="gold-waves-02.svg" style="width:150%;">
       </div>
     </div>
   </div>
@@ -674,14 +612,6 @@
     </div>
   </div>
 
-
-
-  <!-- <div style="text-align: center;">
-      <button type="button" class="btn btn-dark text-center">View all</button>
-    </div>
-   -->
-
-
   <!--Getting Started-->
   <div class="container-fluid" style="padding:0;height:50px;margin-top:50px">
     <div class="row">
@@ -710,7 +640,7 @@
 
     <div class="row justify-content-center mt-4">
       <div class="col-sm-12 col-md-3 capsule">
-        <img src="gettingstarted2.png" class="card-img-top" alt="..." style="width: 100%">
+        <img src="gettingstarted2.png" class="card-img-top" style="width: 100%">
         <div class="card-body">
           <h3 class="card-title sectionTitle">Find your experience</h3>
           <p class="card-text similarSubtitle" style="line-height: 1.5; font-size: 16px; text-align: center;">A full
@@ -741,81 +671,75 @@
     </div>
   </div>
 
-
-  <!----------------->
-
-  <!-------------------->
-
-  </div>
-
-
-  </div>
-
   <footer>
-    <div class="container-fluid" style="margin:0;padding:0">
-        <div class="row" style="margin:0;padding:0">
-            <div class="col" style="margin:0;padding:0">
-                <div class="footer">
-                    <div class="footer_content">
-                        <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
-                                target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
-                        </div>
-
-                        <div class="footer_content_links">
-                            <ul style="list-style: none;">
-                                <li><a href="https://xr.asu.edu">Home</a></li>
-                                <!-- <li><a href="https://example.com">XR Search</a></li> -->
-                                <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- <div class="footer_content_button">
-                      <button class="upload-button" type="button" name="button">Upload</button>
-                  </div> -->
-                    </div>
-                    <div class="footer_bottom">
-
-                        <div id="footer_bottom_img">
-                            <a href="https://www.asu.edu/rankings">
-                                <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
-                            </a>
-                        </div>
-
-                        <div class="footer_bottom_text">
-                            <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
-                        </div>
-
-                    </div>
-                    <div class="container-fluid" style="background-color:#e5e5e5; margin:0; padding:0">
-                        <div class="container ">
-                            <div class="row footer_bot footerBottomLinks">
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
-                                </div>
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://www.asu.edu/accessibility/">Accessibility</a>
-                                </div>
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://www.asu.edu/tou/">Terms of use</a>
-                                </div>
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://www.asu.edu/asujobs/">Jobs</a>
-                                </div>
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://cfo.asu.edu/emergency">Emergency</a>
-                                </div>
-                                <div class="col-sm-12 col-md-2">
-                                    <a href="https://contact.asu.edu/">Contact ASU</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+    <div class="container-fluid" style="background:#1e1e1e">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+              <div class="footer_content">
+                <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
+                    target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
                 </div>
-            </div>
+              </div>
+          </div>
         </div>
+        <div class="row">
+            <div class="footer_content_links">
+                <ul style="list-style: none;">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
+                </ul>
+              </div>
+        </div>
+      </div>
     </div>
-</footer>
+
+    <div class="container-fluid" style="background:#FFC627;min-height:70px">
+      <div class="container" style="height:70px">
+        <div class="row">
+          <div class="col-sm-12 col-md-10">
+            <div class="goldbarText">
+              <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div id="footer_bottom_img">
+              <a href="https://www.asu.edu/rankings">
+                <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row footer_bot">
+          <div class="col-sm-12 col-md-2 footerBottomLinks">
+            <a  class="" href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+          </div>
+          <div class="col-sm-12 col-md-2 footerBottomLinks">
+            <a href="https://www.asu.edu/accessibility/">Accessibility</a>
+          </div>
+          <div class="col-sm-12 col-md-2 footerBottomLinks">
+            <a href="https://www.asu.edu/tou/">Terms of use</a>
+          </div>
+          <div class="col-sm-12 col-md-2 footerBottomLinks">
+            <a href="https://www.asu.edu/asujobs/">Jobs</a>
+          </div>
+          <div class="col-sm-12 col-md-2 footerBottomLinks" >
+            <a href="https://cfo.asu.edu/emergency">Emergency</a>
+          </div>
+          <div class="col-sm-12 col-md-2 footerBottomLinks">
+            <a href="https://contact.asu.edu/">Contact ASU</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -877,18 +801,8 @@
       });
     }
 
-    function goToProduct(id, event) {
-      // if (id != "") {
-      //   //if ID starts with 5 its mongo _id
-      //   if (id.charAt(0) != 5)
-      //     location.href = "/" + id;
-
-      //   //otherwise its a route
-      //   else
-      //     location.href = "/productpage?=" + id;
-      // }
-
-      location.href = "/" + id;
+    function goToProduct(product, event) {
+      location.href = "/" + product;
 
     }
 
