@@ -5,30 +5,27 @@
     <link rel="icon" href="favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet2" href="styles.css">
-    <!-- <script>
-        var productID = "";
-    </script> -->
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
     <!-- Header CSS -->
     <link href="css/header.css" rel="stylesheet">
+
     <!-- Footer CSS -->
     <link href="css/footer.css" rel="stylesheet">
 
-    <script>var globalproduct = "<%= globalproduct %>";</script>
 
+    <script>var globalproduct = "<%= globalproduct %>";</script>
 
     <style>
         /*SPACING*/
@@ -405,21 +402,6 @@
             cursor: default;
         }
 
-        /* #hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            -ms-transform: translateX(-50%) translateY(-50%);
-            -moz-transform: translateX(-50%) translateY(-50%);
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-        } */
-
         #hero .container {
             position: relative;
             z-index: 2;
@@ -430,27 +412,6 @@
                 max-height: 15%;
             }
         }
-
-        /* #hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgb(232, 231, 235);
-            opacity: 0.5;
-            z-index: 1;
-        } */
-
-        /* @media (pointer: coarse) and (hover: none) {
-            #hero {
-                background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-            }
-
-            #hero video {
-                display: none;
-            }
-        } */
 
         .huge-title {
             position: relative;
@@ -492,6 +453,7 @@
             text-decoration: underline;
         }
     </style>
+
 </head>
 
 <body onload="parseURL(window.location.href)">
@@ -1113,72 +1075,73 @@
         </div>
     </div> -->
     <footer>
-        <div class="container-fluid" style="margin:0;padding:0">
-            <div class="row" style="margin:0;padding:0">
-                <div class="col" style="margin:0;padding:0">
-                    <div class="footer">
-                        <div class="footer_content">
-                            <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
-                                    target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
-                            </div>
-
-                            <div class="footer_content_links">
-                                <ul style="list-style: none;">
-                                    <li><a href="https://xr.asu.edu">Home</a></li>
-                                    <!-- <li><a href="https://example.com">XR Search</a></li> -->
-                                    <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- <div class="footer_content_button">
-                          <button class="upload-button" type="button" name="button">Upload</button>
-                      </div> -->
-                        </div>
-                        <div class="footer_bottom">
-
-                            <div id="footer_bottom_img">
-                                <a href="https://www.asu.edu/rankings">
-                                    <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
-                                </a>
-                            </div>
-
-                            <div class="footer_bottom_text">
-                                <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
-                            </div>
-
-                        </div>
-                        <div class="container-fluid" style="background-color:#e5e5e5; margin:0; padding:0">
-                            <div class="container ">
-                                <div class="row footer_bot footerBottomLinks">
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://www.asu.edu/accessibility/">Accessibility</a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://www.asu.edu/tou/">Terms of use</a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://www.asu.edu/asujobs/">Jobs</a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://cfo.asu.edu/emergency">Emergency</a>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2">
-                                        <a href="https://contact.asu.edu/">Contact ASU</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+        <div class="container-fluid" style="background:#1e1e1e">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                  <div class="footer_content">
+                    <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
+                        target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
                     </div>
-                </div>
+                  </div>
+              </div>
             </div>
+            <div class="row">
+                <div class="footer_content_links">
+                    <ul style="list-style: none;">
+                      <li><a href="/">Home</a></li>
+                      <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
+                    </ul>
+                  </div>
+            </div>
+          </div>
         </div>
-    </footer>
-
-
+    
+        <div class="container-fluid" style="background:#FFC627;min-height:70px">
+          <div class="container" style="height:70px">
+            <div class="row">
+              <div class="col-sm-12 col-md-10">
+                <div class="goldbarText">
+                  <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div id="footer_bottom_img">
+                  <a href="https://www.asu.edu/rankings">
+                    <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row footer_bot">
+              <div class="col-sm-12 col-md-2 footerBottomLinks">
+                <a  class="" href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+              </div>
+              <div class="col-sm-12 col-md-2 footerBottomLinks">
+                <a href="https://www.asu.edu/accessibility/">Accessibility</a>
+              </div>
+              <div class="col-sm-12 col-md-2 footerBottomLinks">
+                <a href="https://www.asu.edu/tou/">Terms of use</a>
+              </div>
+              <div class="col-sm-12 col-md-2 footerBottomLinks">
+                <a href="https://www.asu.edu/asujobs/">Jobs</a>
+              </div>
+              <div class="col-sm-12 col-md-2 footerBottomLinks" >
+                <a href="https://cfo.asu.edu/emergency">Emergency</a>
+              </div>
+              <div class="col-sm-12 col-md-2 footerBottomLinks">
+                <a href="https://contact.asu.edu/">Contact ASU</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
 
 
     <!-- Replace the following source with your local copy -->
