@@ -91,8 +91,8 @@ mongoose.set('useCreateIndex', true);
 
 
 // Certificate
-var path = "/etc/letsencrypt/live/xr.asu.edu/privkey.pem";
-if (fs.existsSync(path)) {
+var keyPath = "/etc/letsencrypt/live/xr.asu.edu/privkey.pem";
+if (fs.existsSync(keyPath)) {
     const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
     const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
     const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
