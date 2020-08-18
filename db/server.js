@@ -60,7 +60,7 @@ var authState = {
 var upload = multer({ storage: storage }).single('csvfile');
 var db;
 var hostname = process.env.HOSTNAME || 'localhost';
-var port = 80;
+var port = 443;
 var currentUser; // Need to implement token/scope authentication
 const path = require('path');
 const VIEWS = path.join(__dirname, 'views');
@@ -84,6 +84,19 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoUri = "mongodb+srv://dbuser:test@cluster0.0jf1o.mongodb.net/cluster0?retryWrites=true&w=majority";
 var mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
+
+
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
 
 // Initialize the connection once
 mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
