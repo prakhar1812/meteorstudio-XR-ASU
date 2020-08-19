@@ -71,11 +71,6 @@ const VIEWS = path.join(__dirname, 'views');
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(__dirname + '/public'));
-app.use(errorHandler());
-
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
 
 //var routes = require('./routes/index.js');
 //app.use('/login', routes);
@@ -112,6 +107,12 @@ app.use (function (req, res, next) {
 });
 
 
+
+app.use(express.static(__dirname + '/public'));
+app.use(errorHandler());
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
 var httpServer = http.createServer(app).listen(80);
 
