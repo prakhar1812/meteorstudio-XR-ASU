@@ -691,15 +691,17 @@
                         <div class="d-highlight subtitles" id="creationDate"></div>
                     </div>
                 </div>
-                <div id="playBtn2" class="row hidden">
-                    <div class="col">
-                        <div class="row justify-content-center">
-                            <div class="col mb-4 text-center">
-                                <button id="playButton2" class="sectionTitle playNowButtonActive">Play now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div id ="playBtns2">
+					<div id="playBtn2" class="row hidden">
+						<div class="col">
+							<div class="row justify-content-center">
+								<div class="col mb-4 text-center">
+									<button id="playButton2" class="sectionTitle playNowButtonActive">Play now</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
                 <div class="row">
                     <div class="col-12">
@@ -921,14 +923,19 @@
             <!-- END OF LEFT COLUMN -->
 
             <!-- BEGINNING OF RIGHT COLUMN -->
+			
             <div class="col-sm-12 col-md-4" style="margin-bottom: 20px">
 
                 <!-- play now button 1 -->
-                <div id="playBtn1" class="row justify-content-center hidden">
-                    <div class="col mb-4 text-center">
-                        <button id="playButton1" class="sectionTitle playNowButtonActive">Play now</button>
-                    </div>
-                </div>
+					<div id="playBtn1" class="row justify-content-center hidden">
+						<div class="col mb-4 text-center">
+							<button id="playButton1" class="sectionTitle playNowButtonActive">Play now</button>
+						</div>
+					</div>
+					
+					<div id="playBtns1">
+					
+					</div>
 
 
                 <!-- compatible devices -->
@@ -1191,10 +1198,55 @@
             document.getElementById("hero").style.backgroundImage = "url('" + hero + "'";
 
             // Link to the experience
+			
+			//If multiple URLs, dynamically add buttons
+			if(data[0].urls != null && data[0].urls.length != 0)
+			{
+				for(var i =0;i<data[0].urls.length;i++)
+				{			
+					//If we aren't on the first button
+					if(i != 0)
+					{
+						//create button 
+						
+						var button1 ="dbutton"+(i);
 
-            if (data[0].url != "" && data[0].url != null) {
+						document.getElementById("playBtns1").innerHTML+="<div id='dynabutton' class='row justify-content-center'> <div class='col mb-4 text-center'><button id='"+(button1)+"' class='sectionTitle playNowButtonActive playbutton2'>Play now2</button></div></div>";
+							
+						if( (data[0].urls[i].url != "" && data[0].urls[i].url != null) )
+						{	
+							document.getElementById(button1).innerText="Play Now(" + data[0].urls[i].platform + ")";
+							document.getElementById(button1).onclick = launchExperience.bind(this, [data[0].urls[i].url]);
+						}
+						
+						else 
+						{
+						
+							document.getElementById(button1).innerText = "Coming soon(" +data[0].urls[i].platform+")"; 
+							document.getElementById(button1).style.backgroundColor = "#cdcdcd"; 
+							document.getElementById(button1).style.cursor = "default"; 
+
+						}
+					}
+					
+					//Otherwise follow original procedure to manipulate the premade buttons
+					else
+					{
+						console.log(data[0].urls[i]);
+						document.getElementById("playButton1").innerText="Play Now(" + data[0].urls[i].platform + ")";
+						document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].urls[i].url]); 
+						document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
+
+						$('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
+					}
+				}
+			
+			}
+
+            else if (data[0].url != "" && data[0].url != null) {
                 console.log(data[0].url);
-                document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]); document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
+                document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]); 
+				document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
 
                 $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
 
@@ -1223,9 +1275,9 @@
 			document.getElementById("minRequirements").innerHTML = data[0].minimumRequirements;
 			
 			//Play Button will say "play beta" if Beta is in the title
-			var isBeta = data[0].name.toLowerCase().includes("beta");
-			if(isBeta)
-            document.getElementById("playButton1").innerHTML = "Play Beta";
+			//var isBeta = data[0].name.toLowerCase().includes("beta");
+			//if(isBeta)
+            //document.getElementById("playButton1").innerHTML = "Play Beta";
 
             //Iterate through the credits array of objects
             for (var i = 0; i < data[0].credits.length; i++) {
