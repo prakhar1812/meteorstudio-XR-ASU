@@ -10,7 +10,7 @@ const http = require('http');
 const https = require('https');
 
 
-app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+//app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 //nodemailer
 //const nodemailer = require('nodemailer');
 
@@ -108,7 +108,13 @@ app.use (function (req, res, next) {
 
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {
+    setHeaders: function(res, path) {
+        if(path.endsWith(".unityweb")){
+            res.set("Content-Encoding", "gzip");
+        }
+    }
+}));
 app.use(errorHandler());
 
 app.set('view engine', 'ejs');
