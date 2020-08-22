@@ -10,6 +10,8 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+	
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
@@ -468,7 +470,7 @@
   <div id="intro" class="container-fluid mt-4">
     <div class="row justify-content-center mb-4">
       <div class="col-12">
-        <div style="font-weight: 900; font-size: 36px; text-align: center;">Welcome to XR@ASU!</div>
+        <div style="font-weight: 900; font-size: 36px; text-align: center; font-family: 'Roboto', sans-serif;">Welcome to XR@ASU!</div>
       </div>
       <div class="col-12 mt-4">
         <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
@@ -845,33 +847,6 @@
 
     }
 
-
-    // function findData() {
-    //   var search = document.getElementById("search").value;
-    //   loadFile("./findDatasetTable?search=" + search, function (result) {
-    //     // show a table of the user's datasets
-    //     var data = JSON.parse(result);
-    //     var totalItemsCount = data.length;
-    //     console.log(totalItemsCount);
-    //     // var numberOfItemsPerPage = 5;
-    //     // var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
-    //     // var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
-    //     // var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-
-    //     for (var i = 0; i < 5; i++) {
-    //       var name = data[i].name;
-    //       var desc = data[i].description;
-    //       var image = data[i].thumbnail;
-    //       document.getElementById("item-image" + i).src = image;
-
-    //       // var row3 = document.createElement("image2");
-    //       // row3.src = image;
-
-    //       document.getElementById("itemname" + i).innerHTML = name;
-    //       document.getElementById("itemdesc" + i).innerHTML = desc;
-    //     }
-    //   });
-    // }
     $(document).ready(function () {
       setupNavBar();
 
