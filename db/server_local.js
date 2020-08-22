@@ -1,0 +1,270 @@
+// App config
+var express = require('express');
+// var router = express.Router();
+var app = express();
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+//var firebase = require("firebase/app");
+
+//const http = require('http');
+//const https = require('https');
+
+
+//app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+//nodemailer
+//const nodemailer = require('nodemailer');
+
+var bodyParser = require('body-parser');
+var errorHandler = require('errorhandler');
+var methodOverride = require('method-override');
+var fs = require('fs');
+var multer = require('multer');
+var error = "";
+var storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+        callback(null, 'temp');
+    },
+    filename: function(req, file, callback) {
+        fileName = req.body.datasetname + ".csv";
+        callback(null, fileName);
+    }
+});
+
+
+var upload = multer({ storage: storage }).single('csvfile');
+var db;
+var hostname = process.env.HOSTNAME || 'localhost';
+var port = 80;
+const path = require('path');
+const VIEWS = path.join(__dirname, 'views');
+app.use(methodOverride());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// MongoDB
+var mongo = require('mongodb');
+var MongoClient = require('mongodb').MongoClient;
+//var mongoUri = "mongodb+srv://meteorstudio:Meteor101@maproom-rzdrm.mongodb.net/maproom";
+var mongoUri = "mongodb+srv://dbuser:test@cluster0.0jf1o.mongodb.net/cluster0?retryWrites=true&w=majority";
+var mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
+
+/*
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
+app.use (function (req, res, next) {
+        if (req.secure) {
+                // request was via https, so do no special handling
+                next();
+        } else {
+                // request was via http, so redirect to https
+                res.redirect('https://' + req.headers.host + req.url);
+        }
+});
+
+*/
+
+app.use(express.static(__dirname + '/public', {
+    setHeaders: function(res, path) {
+        if(path.endsWith(".unityweb")){
+            res.set("Content-Encoding", "gzip");
+        }
+    }
+}));
+app.use(errorHandler());
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+//var httpServer = http.createServer(app).listen(80);
+
+/*var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
+*/
+//var httpsServer = https.createServer(credentials, app);
+//
+// httpServer.listen(80);
+ //httpsServer.listen(443);
+
+
+
+
+
+// Initialize the connection once
+mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
+    console.log("XR@ASU started");
+
+
+    if (err) {
+        console.log('Error occured when connecting to MongoDB.', error.message);
+        throw err;
+    } else {
+        console.log('Successfully connected to MongoDB');
+    }
+
+    // Start the application after the database connection is ready.
+    app.listen(port);
+    console.log("Server listening at https://" + hostname + ":" + port);
+});
+//
+
+//searching by keyword
+MongoClient.connect(mongoUri, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("xrasu");
+    var keyword = "apartment";
+    var regex = RegExp(".*" + keyword + ".*");
+    // Note.find({ noteBody: regex, userID: userID })
+    var myquery = { name: regex };
+    //var myquery = { name: "Spacious and well located apartment" };
+    //  var newvalues = { $set: {email: newEmail } };
+    dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1 } }).toArray(function(err, result) {
+        if (err) throw err;
+        //  console.log(result);
+        db.close();
+    });
+});
+
+//
+
+
+// Logging tools
+var intl = require('intl')
+const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'numeric', second: 'numeric', day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'America/Phoenix' });
+
+// Express Routing
+
+/**
+ * index
+ */
+
+app.get('/', function(req, res) {
+    //console.log(cookie);
+    MongoClient.connect(mongoUri, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("xrasu");
+        var myquery = { name: "ASU Scavenger Hunt" };
+        // var newvalues = { $set: {email: newEmail } };
+        dbo.collection("products").findOne(myquery, "_id").then(result => {
+                if (result) {
+                    console.log("Successfully found document: " + result.name);
+                    console.log(result);
+
+                } else {
+                    //     console.log("No document matches the provided query.");
+                }
+                return result;
+            })
+            .catch(err => console.error(`Failed to find document: ${err}`));
+        //});
+
+        res.render('index', {
+
+        });
+    });
+
+
+
+
+
+});
+
+/**
+ * showDatasetTable
+ */
+app.get("/showDatasetTable", function(req, res) {
+
+    MongoClient.connect(mongoUri, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("xrasu");
+
+        dbo.collection("products").find({}).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
+
+            // res.send(JSON.stringify(namesList));
+            res.send(JSON.stringify(result));
+
+            db.close();
+        });
+    });
+
+
+});
+
+app.get("/getProduct", function(req, res) {
+    const query = req.query.product;
+    var query2 = "";
+    query2 = String(query);
+
+    MongoClient.connect(mongoUri, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("xrasu");
+        var ObjectId = require('mongoose').Types.ObjectId;
+        var keyword = query;
+        var regex = RegExp(".*" + keyword + ".*");
+        // Note.find({ noteBody: regex, userID: userID })
+        var myquery = { _id: new ObjectId(query) };
+        console.log(myquery);
+        //var myquery = { name: "Spacious and well located apartment" };
+        //  var newvalues = { $set: {email: newEmail } };
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1,creationDate:1,createdBy:1,creatorURL:1,image: 1, url: 1, urls:1} }).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result[0]);
+            var namesList = [];
+            for (var i = 0; i < result.length; i++) {
+                namesList.push(result[i]);
+                console.log(result[i]);
+            }
+            res.send(JSON.stringify(namesList));
+            db.close();
+        });
+    });
+});
+
+
+app.get("/productpage", function(req, res) {
+
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+});
+
+//webpage routes
+
+app.get("/covidcampus", function(req, res) {
+    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6"});
+});
+
+app.get("/career", function(req, res) {
+    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6"});
+});
+
+app.get("/campus", function(req, res) {
+    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7"});
+});
+
+app.get("/scav", function(req, res) {
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+});
+app.get("/scavenger", function(req, res) {
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+});
+
+app.get("/mimic", function(req, res) {
+    res.render('productpage', { globalproduct: "5f387906d48d43237444a814"});
+});
+
+app.get("/virtualtutor", function(req, res) {
+    res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
+});
