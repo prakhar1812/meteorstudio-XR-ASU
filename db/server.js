@@ -10,7 +10,7 @@ const http = require('http');
 const https = require('https');
 
 
-//app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 //nodemailer
 //const nodemailer = require('nodemailer');
 

@@ -516,7 +516,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="d-flex" style="margin:-5px">
       <div class="p-2" style="text-align:center;">
         <div class="mb-4"
-            style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
+          style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
           Explore
 			<div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
               <div class="mb-4 mt-2" style="border-top: 5px solid #FFC627; width: 100px"></div>
@@ -676,8 +676,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <a id="productlink5" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
                 </div>
               </div>
+<<<<<<< HEAD
+				<div class="bottom_fill">
+				</div>
+=======
 			  				<div class="bottom_fill">
 				      </div>
+>>>>>>> 1d893574f5865286aacebd523574cfe1d3b1dc01
             </div>
           </div>
         </button>
@@ -845,12 +850,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
         var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
         var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+
         console.log(data[0]);
         for (var i = 0; i < numberOfItemsPerPage; i++) {
           var name = data[i].name;
           var desc = data[i].description;
           var image = data[i].thumbnail;
           var type = data[i].experienceType;
+
           var id = data[i]._id;
           var route = data[i].route;
           // Set details for each experience
@@ -871,11 +878,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
       });
     }
+
     function goToProduct(product, event) {
       location.href = "/" + product;
+
     }
+
     $(document).ready(function () {
       setupNavBar();
+
       var url = window.location.href;
       var n = url.lastIndexOf('/');
       var href = url.substring(n + 1);
@@ -906,6 +917,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (password != null) {
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
+
       }
     });
     const rmCheck = document.getElementById("rememberMe"),
@@ -928,6 +940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function setupNavBar() {
       var nav_links = document.getElementsByClassName("navbar-link");
       nav_links[0].classList.add("active");
+
       for (i = 0; i < nav_links.length; i++) {
         (function (index) {
           nav_links[index].addEventListener("click", function () {
