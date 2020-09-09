@@ -1316,9 +1316,9 @@
 
             if (data[0].compatibleDevices.includes("mobile")) {
                 console.log("experience is compatible on mobile");
-                if (deviceIsMobile) {   
-                    document.getElementById("mobileDevice").style.display = "inline-block";
-                } else {
+                document.getElementById("mobileDevice").style.display = "inline-block";
+
+                if (!deviceIsMobile) {   
                     document.getElementById("playBtn1").style.display = "none";
                     document.getElementById("playBtn2").style.display = "none";
                 }
