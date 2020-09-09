@@ -45,7 +45,18 @@
     <link href="css/footer.css" rel="stylesheet">
 
 
-    <script>var globalproduct = "<%= globalproduct %>";</script>
+    <script>
+    var globalproduct = "<%= globalproduct %>";
+
+    var deviceIsMobile;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // mobile
+        deviceIsMobile = true;
+    } else {
+        deviceIsMobile = false;
+    }
+    console.log("deviceIsMobile: " + deviceIsMobile);
+    </script>
 
     <style>
         /*SPACING*/
@@ -1241,9 +1252,7 @@
                             document.getElementById(button1).innerText = "Play Now(" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         }
-
                         else {
-
                             document.getElementById(button1).innerText = "Coming soon(" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).style.backgroundColor = "#cdcdcd";
                             document.getElementById(button1).style.cursor = "default";
@@ -1263,14 +1272,12 @@
                 }
 
             }
-
             else if (data[0].url != "" && data[0].url != null) {
                 console.log(data[0].url);
                 document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]);
                 document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
 
                 $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
-
             } else {
                 document.getElementById("playButton1").innerText = "Coming soon"; document.getElementById("playButton2").innerText = "Coming soon";
 
@@ -1308,16 +1315,25 @@
             console.log("compatible devices:" + data[0].compatibleDevices);
 
             if (data[0].compatibleDevices.includes("mobile")) {
-                document.getElementById("mobileDevice").style.display = "inline-block";
+                console.log("experience is compatible on mobile");
+                if (deviceIsMobile) {   
+                    document.getElementById("mobileDevice").style.display = "inline-block";
+                } else {
+                    document.getElementById("playBtn1").style.display = "none";
+                    document.getElementById("playBtn2").style.display = "none";
+                }
             } else {
+                console.log("experience is not compatible on mobile");
                 document.getElementById("mobileDevice").style.display = "none";
-
+                if (deviceIsMobile) {
+                    document.getElementById("playBtn1").style.display = "none";
+                    document.getElementById("playBtn2").style.display = "none";
+                }
             }
             if (data[0].compatibleDevices.includes("web")) {
                 document.getElementById("webDevice").style.display = "inline-block";
             } else {
                 document.getElementById("webDevice").style.display = "none";
-
             }
             if (data[0].compatibleDevices.includes("vr")) {
                 document.getElementById("vrDevice").style.display = "inline-block";
