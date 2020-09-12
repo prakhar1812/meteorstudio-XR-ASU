@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156254967-2"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156254967-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -11,531 +11,534 @@
     gtag('config', 'UA-156254967-2');
   </script> -->
 
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');</script>
-  <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');
+    </script>
+    <!-- End Google Tag Manager -->
 
 
-  <meta charset="utf-8">
-  <title>XR@ASU | Arizona State University</title>
-  <link rel="icon" href="favicon.png">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta charset="utf-8">
+    <title>XR@ASU | Arizona State University</title>
+    <link rel="icon" href="favicon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
 
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
-    integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Header CSS -->
+    <link href="css/header.css" rel="stylesheet">
 
-  <!-- Header CSS -->
-  <link href="css/header.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link href="css/footer.css" rel="stylesheet">
 
-  <!-- Footer CSS -->
-  <link href="css/footer.css" rel="stylesheet">
+    <script>
+        var error = "";
+        var error2 = "";
+        var error3 = "";
+        var page = 1;
 
-  <script>
-    var error = "";
-    var error2 = "";
-    var error3 = "";
-    var page = 1;
-  </script>
+        var deviceType;
+        var isMobile;
 
-  <style>
-    body {
-      overflow-x: hidden;
-    }
+        function detectDevice() {
+            if (navigator.userAgent.match(/Android/i) ||
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPad/i) ||
+                navigator.userAgent.match(/iPod/i) ||
+                navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/Windows Phone/i)) {
+                isMobile = true;
+            } else {
+                isMobile = false;
+            }
 
-    .img-hover-zoom {
-      height: 200px;
-      /* [1.1] Set it as per your need */
-      overflow: hidden;
-      /* [1.2] Hide the overflowing of child elements */
-    }
+            deviceType = navigator.userAgent;
+            consle.log(deviceType);
 
-    /* [2] Transition property for smooth transformation of images */
-    .img-hover-zoom img {
-      transition: transform .5s ease;
-    }
+        }
 
-    /* [3] Finally, transforming the image when container gets hovered */
-    .img-hover-zoom:hover img {
-      transform: scale(1.5);
-    }
+        window.onload = function() {
+            detectDevice()
+        }
+    </script>
 
-    .bar-thing {
-      width: 80px;
-      height: 0px;
-      right: 0px;
-      /* transform: matrix(0, 1, -1, 0, 0, 0); */
-      border: 5px solid #FFC627;
-      opacity: 1;
-      align-content: center;
-      text-align: center;
-    }
-
-    h5 {
-      font-weight: bold;
-    }
-
-    .bottom_fill {
-      border-radius: 25px;
-      background-color: #FFC627;
-      height: 2%;
-      width: 100%;
-      position: absolute;
-      bottom: -0.8px;
-      left: 0;
-      border-radius: 0 0 6px 6px;
-    }
-
-    .itemtype {
-      background: #FF7F32;
-      max-width: 150px;
-      padding: 5px;
-      color: white;
-      font-size: 70%;
-      text-align: center;
-      vertical-align: center;
-      position: relative;
-      margin-top: -4%;
-      margin-left: 5%;
-    }
-
-    .bouton-image:before {
-      content: "";
-      width: 14px;
-      height: 16px;
-      display: inline-block;
-      margin-right: 0px;
-      vertical-align: text-top;
-      background-color: transparent;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-
-    .monBouton:before {
-      background-image: url("Icon - chevron-right-solid.svg");
-    }
-
-    .test {
-      box-shadow: 0px 3px 6px #00000029;
-      border: 1px solid #707070;
-      border-radius: 171px;
-      opacity: 1;
-    }
-
-    .searchbar {
-      width: 529px;
-      height: 48px;
-      margin-left: 485px;
-      margin-right: 485px;
-      text-align: center;
-    }
-
-    .bar {
-      top: 109px;
-      left: 0px;
-      width: 1280px;
-      height: 60px;
-      background: #353535 0% 0% no-repeat padding-box;
-      opacity: 1;
-    }
-
-    .grid-container {
-      display: inline-grid;
-      grid-column-gap: 50px;
-      grid-template-columns: auto auto auto;
-      background-color: #FFFFFF;
-      /*#FFC627;*/
-      padding: 10px;
-      align-content: center;
-    }
-
-    .grid-item {
-      background-color: #FFFFFF;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      justify-content: center;
-    }
-
-    .text-block {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background-color: black;
-      color: white;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .sidebar {
-      top: 1310px;
-      left: 78px;
-      width: 220px;
-      height: 363px;
-      opacity: 1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .column {
-      float: left;
-      padding: 1px;
-      height: 800px;
-    }
-
-    .left {
-      width: 25%;
-    }
-
-    .right {
-      width: 75%;
-    }
-
-    .container ul {
-      text-decoration: none;
-    }
-
-    /* Cards */
-    .ellipsis {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .nextBtn {
-      color: #2A2A2A;
-      font-size: 125%;
-    }
-
-    .nextBtn:hover {
-      color: #707070;
-      cursor: hand;
-    }
-
-    .experienceCard {
-      border: none;
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      text-align: left;
-    }
-
-    .experienceCard:active,
-    .experienceCard:focus {
-      border: none;
-      outline: none;
-    }
-
-    .card {
-      height: 350px;
-    }
-
-
-    /* ASU XR  Header */
-    #asuxr_header {
-      background-color: #353535;
-      min-height: 58px;
-      height: 58px;
-    }
-
-    .asuxr_header_link {
-      text-decoration: none;
-      text-align: center;
-      vertical-align: center;
-    }
-
-    .asuxr_header_link a {
-      text-decoration: none;
-      padding-right: 50px;
-      text-align: left;
-      vertical-align: center;
-    }
-
-    .asuxr_header_link a:link {
-      color: white;
-    }
-
-    .asuxr_header_link a:active {
-      color: #FFC627;
-    }
-
-    .asuxr_header_link a:visited {
-      color: white;
-    }
-
-    /* header ends */
-
-
-    #intro {
-      margin-top: 70px
-    }
-
-    .capsule {
-      /* min-height: 550px; */
-      margin-top: 50px;
-      margin-bottom: 50px;
-      margin-right: 20px;
-      margin-left: 20px;
-      padding-top: 50px;
-      padding-bottom: 25px;
-
-      border: 1px solid lightgray;
-      border-radius: 250px;
-
-      background-image: url('getStart1.png');
-      background-position: center bottom;
-      background-size: cover;
-      background-repeat: no-repeat;
-      text-align: center;
-    }
-
-    .capsuleText {
-      line-height: 1.5;
-      font-size: 16px;
-      text-align: center;
-      padding: 5px;
-    }
-
-    @media(max-width: 786px) {
-      .capsuleText {
-        font-size: 14px;
-        padding: 20px;
-      }
-
-    }
-
-    .sectionTitle {
-      padding: 0;
-      color: #2A2A2A;
-      font-weight: bold;
-      font-size: 18px;
-    }
-  </style>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        
+        .img-hover-zoom {
+            height: 200px;
+            /* [1.1] Set it as per your need */
+            overflow: hidden;
+            /* [1.2] Hide the overflowing of child elements */
+        }
+        /* [2] Transition property for smooth transformation of images */
+        
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+        /* [3] Finally, transforming the image when container gets hovered */
+        
+        .img-hover-zoom:hover img {
+            transform: scale(1.5);
+        }
+        
+        .bar-thing {
+            width: 80px;
+            height: 0px;
+            right: 0px;
+            /* transform: matrix(0, 1, -1, 0, 0, 0); */
+            border: 5px solid #FFC627;
+            opacity: 1;
+            align-content: center;
+            text-align: center;
+        }
+        
+        h5 {
+            font-weight: bold;
+        }
+        
+        .bottom_fill {
+            border-radius: 25px;
+            background-color: #FFC627;
+            height: 2%;
+            width: 100%;
+            position: absolute;
+            bottom: -0.8px;
+            left: 0;
+            border-radius: 0 0 6px 6px;
+        }
+        
+        .itemtype {
+            background: #FF7F32;
+            max-width: 150px;
+            padding: 5px;
+            color: white;
+            font-size: 70%;
+            text-align: center;
+            vertical-align: center;
+            position: relative;
+            margin-top: -4%;
+            margin-left: 5%;
+        }
+        
+        .bouton-image:before {
+            content: "";
+            width: 14px;
+            height: 16px;
+            display: inline-block;
+            margin-right: 0px;
+            vertical-align: text-top;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        
+        .monBouton:before {
+            background-image: url("Icon - chevron-right-solid.svg");
+        }
+        
+        .test {
+            box-shadow: 0px 3px 6px #00000029;
+            border: 1px solid #707070;
+            border-radius: 171px;
+            opacity: 1;
+        }
+        
+        .searchbar {
+            width: 529px;
+            height: 48px;
+            margin-left: 485px;
+            margin-right: 485px;
+            text-align: center;
+        }
+        
+        .bar {
+            top: 109px;
+            left: 0px;
+            width: 1280px;
+            height: 60px;
+            background: #353535 0% 0% no-repeat padding-box;
+            opacity: 1;
+        }
+        
+        .grid-container {
+            display: inline-grid;
+            grid-column-gap: 50px;
+            grid-template-columns: auto auto auto;
+            background-color: #FFFFFF;
+            /*#FFC627;*/
+            padding: 10px;
+            align-content: center;
+        }
+        
+        .grid-item {
+            background-color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            justify-content: center;
+        }
+        
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: black;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .sidebar {
+            top: 1310px;
+            left: 78px;
+            width: 220px;
+            height: 363px;
+            opacity: 1;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .column {
+            float: left;
+            padding: 1px;
+            height: 800px;
+        }
+        
+        .left {
+            width: 25%;
+        }
+        
+        .right {
+            width: 75%;
+        }
+        
+        .container ul {
+            text-decoration: none;
+        }
+        /* Cards */
+        
+        .ellipsis {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .nextBtn {
+            color: #2A2A2A;
+            font-size: 125%;
+        }
+        
+        .nextBtn:hover {
+            color: #707070;
+            cursor: hand;
+        }
+        
+        .experienceCard {
+            border: none;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            text-align: left;
+        }
+        
+        .experienceCard:active,
+        .experienceCard:focus {
+            border: none;
+            outline: none;
+        }
+        
+        .card {
+            height: 350px;
+        }
+        /* ASU XR  Header */
+        
+        #asuxr_header {
+            background-color: #353535;
+            min-height: 58px;
+            height: 58px;
+        }
+        
+        .asuxr_header_link {
+            text-decoration: none;
+            text-align: center;
+            vertical-align: center;
+        }
+        
+        .asuxr_header_link a {
+            text-decoration: none;
+            padding-right: 50px;
+            text-align: left;
+            vertical-align: center;
+        }
+        
+        .asuxr_header_link a:link {
+            color: white;
+        }
+        
+        .asuxr_header_link a:active {
+            color: #FFC627;
+        }
+        
+        .asuxr_header_link a:visited {
+            color: white;
+        }
+        /* header ends */
+        
+        #intro {
+            margin-top: 70px
+        }
+        
+        .capsule {
+            /* min-height: 550px; */
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-right: 20px;
+            margin-left: 20px;
+            padding-top: 50px;
+            padding-bottom: 25px;
+            border: 1px solid lightgray;
+            border-radius: 250px;
+            background-image: url('getStart1.png');
+            background-position: center bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        
+        .capsuleText {
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        @media(max-width: 786px) {
+            .capsuleText {
+                font-size: 14px;
+                padding: 20px;
+            }
+        }
+        
+        .sectionTitle {
+            padding: 0;
+            color: #2A2A2A;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 
 <body onload="manageData()">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBVHVWJ" height="0" width="0"
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBVHVWJ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ASU HEADER -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="header-top">
-          <!-- Logo -->
-          <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-                alt="Arizona State University"
-                src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
-          </div>
-          <div class="header-nav">
-            <ul>
-              <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-              <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
-                  id="main_menu_items">ASU Home
+    <!-- ASU HEADER -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header-top">
+                    <!-- Logo -->
+                    <div class="header-logo">
+                        <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
+                    </div>
+                    <div class="header-nav">
+                        <ul>
+                            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home
                   <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://www.asu.edu/?feature=newsevents" target="_top"
-                    title="News and Events">News/Events</a>
-                  <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
-                  <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
-                  <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
-                  <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
-                  <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
-                  <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
-                  <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
-                </div>
+                                <div class="dropdown-content">
+                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
+                                    <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
+                                    <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
+                                    <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
+                                    <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
+                                    <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
+                                    <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
+                                    <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
+                            </li>
+                            <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
                   ASU</a></li>
-              <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
-                  id="menu_main">Colleges and Schools
+                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools
                   <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
+                                <div class="dropdown-content">
+                                    <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
                     Sciences</a>
-                  <a href="https://wpcarey.asu.edu/" target="_top"
-                    title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                  <a href="https://herbergerinstitute.asu.edu" target="_top"
-                    title="Herberger Institute for Design and the Arts website">Design and the
+                                    <a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
+                                    <a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the
                     Arts</a>
-                  <a href="https://education.asu.edu/" target="_top"
-                    title="Mary Lou Fulton Teachers College website">Education</a>
-                  <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
-                  <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future
+                                    <a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a>
+                                    <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
+                                    <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future
                     of
                     Innovation in Society</a>
-                  <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
-                  <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
+                                    <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
+                                    <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
                     Solutions</a>
-                  <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
-                  <a href="https://cronkite.asu.edu" target="_top"
-                    title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
-                  <a href="https://www.law.asu.edu/" target="_top"
-                    title="Sandra Day O' Connor College of Law website">Law</a>
-                  <a href="https://nursingandhealth.asu.edu/" target="_top"
-                    title="College of Nursing and Health Innovation website">Nursing and Health
+                                    <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
+                                    <a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
+                                    <a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a>
+                                    <a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health
                     Innovation</a>
-                  <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
+                                    <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
                     and
                     Community Solutions</a>
-                  <a href="https://schoolofsustainability.asu.edu" target="_top"
-                    title="School of Sustainability website">Sustainability</a>
-                  <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
-                  <a target="_top" href="https://thunderbird.asu.edu/"
-                    title="Thunderbird School of Global Management website">Thunderbird School of
+                                    <a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a>
+                                    <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
+                                    <a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of
                     Global Management</a>
-                </div>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
+                            </li>
+                            <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
                   and Locations
                   <img src="caret-down.svg"></a>
 
-                <div class="dropdown-content">
-                  <a href="https://www.asu.edu/map/" target="_top">Map</a>
-                  <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
-                  <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
-                  <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
-                  <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
+                                <div class="dropdown-content">
+                                    <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                                    <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                                    <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                                    <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
+                                    <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
                     Phoenix</a>
-                  <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
+                                    <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
                     Extended</a>
-                  <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
-                  <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
+                                    <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                                    <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
                     Strategic Partnerships</a>
-                  <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
-                  <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
-                  <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
-                </div>
+                                    <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                                    <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                                    <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                                </div>
 
-              </li>
-              <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
-                  title="Directory, Index and other info">Directory</a></li>
-              <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
+                            </li>
+                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
+                            <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
                 onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                 onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
                 onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li> -->
-            </ul>
-            <div>
-              <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label
-                  for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input
-                  name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden"
-                  value="xml_no_dtd"><input name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
-                  type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client"
-                  type="hidden" value="asu_frontend"><input name="q" class="header-search" placeholder="Search"
-                  autocomplete="off" type="text"><input class="header-search-button" type="submit" value=""></form>
+                        </ul>
+                        <div>
+                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input name="proxystylesheet"
+                                    type="hidden" value="asu_frontend"><input name="ie" type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client" type="hidden" value="asu_frontend"><input name="q" class="header-search"
+                                    placeholder="Search" autocomplete="off" type="text"><input class="header-search-button" type="submit" value=""></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <span class="header-title"><a href="/">XR@ASU</a></span>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="header-bottom">
-          <span class="header-title"><a href="/">XR@ASU</a></span>
-        </div>
-      </div>
+
     </div>
+    <!-- END OF ASU HEADER -->
 
-  </div>
-  <!-- END OF ASU HEADER -->
-
-  <!-- ASU XR HEADER -->
-  <div class="container-fluid header-2-container">
-    <div class="row">
-      <div class="col">
-        <div class="container">
-          <div class="row">
+    <!-- ASU XR HEADER -->
+    <div class="container-fluid header-2-container">
+        <div class="row">
             <div class="col">
-              <ul class="navbar-container">
-                <li>
-                  <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg"
-                      id="nav-home"></object> </a>
-                </li>
-              </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="navbar-container">
+                                <li>
+                                    <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg" id="nav-home"></object> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!------ END OF HEADERS ----->
-
-
-  <!-- HERO IMAGE -->
-  <div class="container-fluid hero_img_container" style="margin:0;padding:0">
-    <img id="hero_img" src="homehero.png">
-  </div>
+    <!------ END OF HEADERS ----->
 
 
-  <!-- INTRODUCTION -->
+    <!-- HERO IMAGE -->
+    <div class="container-fluid hero_img_container" style="margin:0;padding:0">
+        <img id="hero_img" src="homehero.png">
+    </div>
 
-  <div id="intro" class="container-fluid mt-4">
-    <div class="row justify-content-center mb-4">
-      <div class="col-12">
-        <div style="font-weight: 900; font-size: 36px; text-align: center; font-family: 'Roboto', sans-serif;">Welcome
-          to XR@ASU!</div>
-      </div>
-      <div class="col-12 mt-4">
-        <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
-          <div class="loremText" style="width: 541px; text-align: center">Find and enjoy immersive learning experiences
-            created for ASU learners by ASU students, staff and faculty.
-            <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-              <div class="mt-4" style="border-top: 5px solid #FFC627; width: 100px"></div>
+
+    <!-- INTRODUCTION -->
+
+    <div id="intro" class="container-fluid mt-4">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12">
+                <div style="font-weight: 900; font-size: 36px; text-align: center; font-family: 'Roboto', sans-serif;">Welcome to XR@ASU!</div>
             </div>
-          </div>
+            <div class="col-12 mt-4">
+                <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
+                    <div class="loremText" style="width: 541px; text-align: center">Find and enjoy immersive learning experiences created for ASU learners by ASU students, staff and faculty.
+                        <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+                            <div class="mt-4" style="border-top: 5px solid #FFC627; width: 100px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" style="margin-top:-50px; margin-bottom: 50px; padding:0">
+                <img src="gold-waves-02.svg" style="width:100%;">
+            </div>
         </div>
-      </div>
-      <div class="col-12" style="margin-top:-50px; margin-bottom: 50px; padding:0">
-        <img src="gold-waves-02.svg" style="width:100%;">
-      </div>
     </div>
-  </div>
 
-  <!-- EXPERIENCES -->
-  <div class="container mt-4">
-    <div class="d-flex" style="margin:-5px">
-      <div class="p-2" style="text-align:center;">
-        <div class="mb-4"
-          style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
-          Explore
-          <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-            <div class="mb-4 mt-2" style="border-top: 5px solid #FFC627; width: 100px"></div>
-          </div>
+    <!-- EXPERIENCES -->
+    <div class="container mt-4">
+        <div class="d-flex" style="margin:-5px">
+            <div class="p-2" style="text-align:center;">
+                <div class="mb-4" style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
+                    Explore
+                    <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+                        <div class="mb-4 mt-2" style="border-top: 5px solid #FFC627; width: 100px"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-      </div>
-    </div>
-    <div class="row">
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard0" class="experienceCard">
+        <div class="row">
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard0" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image0" width="100%" height="225"
@@ -558,10 +561,10 @@
             </div>
           </div>
         </button>
-      </div>
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard1" class="experienceCard">
+            </div>
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard1" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image1" width="100%" height="225"
@@ -584,10 +587,10 @@
             </div>
           </div>
         </button>
-      </div>
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard2" class="experienceCard">
+            </div>
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard2" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
@@ -610,10 +613,10 @@
             </div>
           </div>
         </button>
-      </div>
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard3" class="experienceCard">
+            </div>
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard3" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
@@ -636,10 +639,10 @@
             </div>
           </div>
         </button>
-      </div>
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard4" class="experienceCard">
+            </div>
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard4" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image4" width="100%" height="225"
@@ -662,10 +665,10 @@
             </div>
           </div>
         </button>
-      </div>
-      <!-- Experience card-->
-      <div class="col-sm-2 col-md-4">
-        <button id="experienceCard5" class="experienceCard">
+            </div>
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard5" class="experienceCard">
           <div class="card mb-4 shadow-sm">
             <div class="img-hover-zoom">
               <img class="bd-placeholder-img card-img-top" id="item-image5" width="100%" height="225"
@@ -688,264 +691,262 @@
             </div>
           </div>
         </button>
-      </div>
-    </div>
-  </div>
-
-  <!--Getting Started-->
-  <div class="container-fluid" style="padding:0;height:50px;margin-top:50px">
-    <div class="row">
-      <div class="col-12">
-        <img src="goldwavescorner.svg">
-      </div>
-    </div>
-  </div>
-  <div id="gettingstarted" class="container" style="margin-bottom: 50px; margin-top: 80px">
-    <div class="row justify-content-center">
-      <div class="col-12 mb-4">
-        <div style="font-weight: 900; font-size: 36px; text-align: center;">Get Started</div>
-      </div>
-      <div class="col-12 mb-4">
-        <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
-          <div class="loremText" style="width: 541px; text-align: center">Just follow these few simple steps and you
-            will be ready to go.</div>
-        </div>
-      </div>
-      <div class="col-12">
-        <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
-          <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center mt-4">
-      <div class="col-sm-12 col-md-3 capsule">
-        <img src="gettingstarted2.png" class="card-img-top" style="width: 100%">
-        <div class="card-body">
-          <h3 class="card-title sectionTitle">Find your experience</h3>
-          <p class="card-text capsuleText">A full
-            listing of the experiences can be found on the XR@ASU homepage. Click on the experience card to see more
-            details and access the experience.</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3 capsule">
-        <img src="getstarted-headset.png" class="card-img-top" tyle="width: 100%;">
-        <div class="card-body">
-          <h3 class="card-title sectionTitle">Get your device</h3>
-          <p class="card-text capsuleText" style="">
-            Check the experience page for details on which device(s) the experience is compatible with. Compatible
-            devices may include phones, laptops/desktops, and augmented/virtual reality headsets.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3 capsule">
-        <img src="getstarted-vrguy.png" class="card-img-top" alt="..." style="width: 100%;">
-        <div class="card-body">
-          <h3 class="card-title sectionTitle">Immerse yourself</h3>
-          <p class="card-text capsuleText">
-            Follow the instructions on the experience page to load your experience on the right device. Then, enjoy!
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container-fluid" style="background:#1e1e1e">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="footer_content">
-              <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-                    alt="Arizona State University" class="logo" src="abc.svg"></a>
-              </div>
             </div>
-          </div>
         </div>
+    </div>
+
+    <!--Getting Started-->
+    <div class="container-fluid" style="padding:0;height:50px;margin-top:50px">
         <div class="row">
-          <div class="footer_content_links">
-            <ul style="list-style: none;">
-              <li><a href="/">Home</a></li>
-              <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid" style="background:#FFC627;min-height:70px">
-      <div class="container" style="height:70px">
-        <div class="row">
-          <div class="col-sm-12 col-md-10">
-            <div class="goldbarText">
-              <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
+            <div class="col-12">
+                <img src="goldwavescorner.svg">
             </div>
-          </div>
-          <div class="col-md-2">
-            <div id="footer_bottom_img">
-              <a href="https://www.asu.edu/rankings">
-                <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
-              </a>
+        </div>
+    </div>
+    <div id="gettingstarted" class="container" style="margin-bottom: 50px; margin-top: 80px">
+        <div class="row justify-content-center">
+            <div class="col-12 mb-4">
+                <div style="font-weight: 900; font-size: 36px; text-align: center;">Get Started</div>
             </div>
-          </div>
+            <div class="col-12 mb-4">
+                <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
+                    <div class="loremText" style="width: 541px; text-align: center">Just follow these few simple steps and you will be ready to go.</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
+                    <div style="border-top: 5px solid #FFC627; width: 100px;"></div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-3 capsule">
+                <img src="gettingstarted2.png" class="card-img-top" style="width: 100%">
+                <div class="card-body">
+                    <h3 class="card-title sectionTitle">Find your experience</h3>
+                    <p class="card-text capsuleText">A full listing of the experiences can be found on the XR@ASU homepage. Click on the experience card to see more details and access the experience.</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 capsule">
+                <img src="getstarted-headset.png" class="card-img-top" tyle="width: 100%;">
+                <div class="card-body">
+                    <h3 class="card-title sectionTitle">Get your device</h3>
+                    <p class="card-text capsuleText" style="">
+                        Check the experience page for details on which device(s) the experience is compatible with. Compatible devices may include phones, laptops/desktops, and augmented/virtual reality headsets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 capsule">
+                <img src="getstarted-vrguy.png" class="card-img-top" alt="..." style="width: 100%;">
+                <div class="card-body">
+                    <h3 class="card-title sectionTitle">Immerse yourself</h3>
+                    <p class="card-text capsuleText">
+                        Follow the instructions on the experience page to load your experience on the right device. Then, enjoy!
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row footer_bot">
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a class="" href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
-          </div>
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a href="https://www.asu.edu/accessibility/">Accessibility</a>
-          </div>
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a href="https://www.asu.edu/tou/">Terms of use</a>
-          </div>
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a href="https://www.asu.edu/asujobs/">Jobs</a>
-          </div>
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a href="https://cfo.asu.edu/emergency">Emergency</a>
-          </div>
-          <div class="col-sm-12 col-md-2 footerBottomLinks">
-            <a href="https://contact.asu.edu/">Contact ASU</a>
-          </div>
+    <footer>
+        <div class="container-fluid" style="background:#1e1e1e">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content">
+                            <div class="footer_content_logo">
+                                <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer_content_links">
+                        <ul style="list-style: none;">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="https://weblogin.asu.edu/cas/login">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+
+        <div class="container-fluid" style="background:#FFC627;min-height:70px">
+            <div class="container" style="height:70px">
+                <div class="row">
+                    <div class="col-sm-12 col-md-10">
+                        <div class="goldbarText">
+                            <a href="https://www.asu.edu/rankings">ASU is #1 in the U.S. for Innovation</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="footer_bottom_img">
+                            <a href="https://www.asu.edu/rankings">
+                                <img src="91d8b908-f1fc-457e-a744-dd414ab2409e.png" alt="ASU">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row footer_bot">
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a class="" href="https://www.asu.edu/copyright/">Copyright and Trademark</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a href="https://www.asu.edu/accessibility/">Accessibility</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a href="https://www.asu.edu/tou/">Terms of use</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a href="https://www.asu.edu/asujobs/">Jobs</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a href="https://cfo.asu.edu/emergency">Emergency</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2 footerBottomLinks">
+                        <a href="https://contact.asu.edu/">Contact ASU</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
     </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
 
-  <script src="asyncReq.js"></script>
+    <script src="asyncReq.js"></script>
 
-  <script>
-    function incrementValue() {
-      page++;
-      manageData();
-    }
-    function manageData() {
-      loadFile("./showDatasetTable", function (result) {
-        // show a table of the user's datasets
-        // sort alphabetically
-        var data = JSON.parse(result).sort(function (a, b) {
-          var textA = a.name.toUpperCase();
-          var textB = b.name.toUpperCase();
-          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-        });
-        var totalItemsCount = data.length;
-        var numberOfItemsPerPage = 6;
-        var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
-        var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
-        var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
-        console.log(data[0]);
-        for (var i = 0; i < numberOfItemsPerPage; i++) {
-          var name = data[i].name;
-          var desc = data[i].description;
-          var image = data[i].thumbnail;
-          var type = data[i].experienceType;
-          var id = data[i]._id;
-          var route = data[i].route;
-          // Set details for each experience
-          document.getElementById("item-image" + i).src = image;
-          document.getElementById("itemname" + i).innerHTML = name;
-          document.getElementById("itemdesc" + i).innerHTML = desc;
-          document.getElementById("itemtype" + i).innerHTML = type;
-          //alert(route);
-          if (route != "") {
-            document.getElementById("productlink" + i).href = "/" + route;
-            document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [route]);
-          }
-          else {
-            //Redirect, set URL using ID - only should occur for pages with no route in DB
-            document.getElementById("productlink" + i).href = "/productpage?=" + id;
-            document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [id]);
-          }
+    <script>
+        function incrementValue() {
+            page++;
+            manageData();
         }
-      });
-    }
-    function goToProduct(product, event) {
-      location.href = "/" + product;
-    }
-    $(document).ready(function () {
-      setupNavBar();
-      var url = window.location.href;
-      var n = url.lastIndexOf('/');
-      var href = url.substring(n + 1);
-      console.log(href);
-      //console.log(window.location.href.split('/')[1]);
-      if (href == "#loginBtn") {
-        showLoginForm();
-      } else if (href == "#signinBtn") {
-        showSignupForm();
-      }
-      $("#loginBtn").click(function () {
-        showLoginForm();
-      });
-      $("#signupBtn").click(function () {
-        showSignupForm();
-      });
-      var password = document.getElementById("password"),
-        confirm_password = document.getElementById("confirm_password");
-      function validatePassword() {
-        if (password.value != confirm_password.value) {
-          confirm_password.setCustomValidity("Passwords do not match");
-        } else if (password.value.length < 6) {
-          confirm_password.setCustomValidity("Password must be six digits");
-        } else {
-          confirm_password.setCustomValidity('');
+
+        function manageData() {
+            loadFile("./showDatasetTable", function(result) {
+                // show a table of the user's datasets
+                // sort alphabetically
+                var data = JSON.parse(result).sort(function(a, b) {
+                    var textA = a.name.toUpperCase();
+                    var textB = b.name.toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                });
+                var totalItemsCount = data.length;
+                var numberOfItemsPerPage = 6;
+                var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+                var start = (page * numberOfItemsPerPage) - (numberOfItemsPerPage - 1);
+                var end = Math.min(start + numberOfItemsPerPage - 1, totalItemsCount);
+                console.log(data[0]);
+                for (var i = 0; i < numberOfItemsPerPage; i++) {
+                    var name = data[i].name;
+                    var desc = data[i].description;
+                    var image = data[i].thumbnail;
+                    var type = data[i].experienceType;
+                    var id = data[i]._id;
+                    var route = data[i].route;
+                    // Set details for each experience
+                    document.getElementById("item-image" + i).src = image;
+                    document.getElementById("itemname" + i).innerHTML = name;
+                    document.getElementById("itemdesc" + i).innerHTML = desc;
+                    document.getElementById("itemtype" + i).innerHTML = type;
+                    //alert(route);
+                    if (route != "") {
+                        document.getElementById("productlink" + i).href = "/" + route;
+                        document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [route]);
+                    } else {
+                        //Redirect, set URL using ID - only should occur for pages with no route in DB
+                        document.getElementById("productlink" + i).href = "/productpage?=" + id;
+                        document.getElementById("experienceCard" + i).onclick = goToProduct.bind(this, [id]);
+                    }
+                }
+            });
         }
-      }
-      if (password != null) {
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
-      }
-    });
-    const rmCheck = document.getElementById("rememberMe"),
-      emailInput = document.getElementById("email");
-    function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
+
+        function goToProduct(product, event) {
+            location.href = "/" + product;
         }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-    function setupNavBar() {
-      var nav_links = document.getElementsByClassName("navbar-link");
-      nav_links[0].classList.add("active");
-      for (i = 0; i < nav_links.length; i++) {
-        (function (index) {
-          nav_links[index].addEventListener("click", function () {
-            for (k = 0; k < nav_links.length; k++) {
-              nav_links[k].classList.remove("active");
+        $(document).ready(function() {
+            setupNavBar();
+            var url = window.location.href;
+            var n = url.lastIndexOf('/');
+            var href = url.substring(n + 1);
+            console.log(href);
+            //console.log(window.location.href.split('/')[1]);
+            if (href == "#loginBtn") {
+                showLoginForm();
+            } else if (href == "#signinBtn") {
+                showSignupForm();
             }
-            nav_links[index].classList.add("active");
-          })
-        })(i);
-      }
-    }
-  </script>
+            $("#loginBtn").click(function() {
+                showLoginForm();
+            });
+            $("#signupBtn").click(function() {
+                showSignupForm();
+            });
+            var password = document.getElementById("password"),
+                confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+                if (password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords do not match");
+                } else if (password.value.length < 6) {
+                    confirm_password.setCustomValidity("Password must be six digits");
+                } else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
+            if (password != null) {
+                password.onchange = validatePassword;
+                confirm_password.onkeyup = validatePassword;
+            }
+        });
+        const rmCheck = document.getElementById("rememberMe"),
+            emailInput = document.getElementById("email");
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function setupNavBar() {
+            var nav_links = document.getElementsByClassName("navbar-link");
+            nav_links[0].classList.add("active");
+            for (i = 0; i < nav_links.length; i++) {
+                (function(index) {
+                    nav_links[index].addEventListener("click", function() {
+                        for (k = 0; k < nav_links.length; k++) {
+                            nav_links[k].classList.remove("active");
+                        }
+                        nav_links[index].classList.add("active");
+                    })
+                })(i);
+            }
+        }
+    </script>
 </body>
+
 </html>

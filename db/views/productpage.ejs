@@ -12,14 +12,22 @@
     </script> -->
 
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');
+    </script>
     <!-- End Google Tag Manager -->
 
     <link rel="icon" href="favicon.png">
@@ -29,12 +37,10 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -46,36 +52,36 @@
 
 
     <script>
-    var globalproduct = "<%= globalproduct %>";
+        var globalproduct = "<%= globalproduct %>";
 
-    var deviceIsMobile;
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        // mobile
-        deviceIsMobile = true;
-    } else {
-        deviceIsMobile = false;
-    }
-    console.log("deviceIsMobile: " + deviceIsMobile);
+        var deviceIsMobile;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // mobile
+            deviceIsMobile = true;
+        } else {
+            deviceIsMobile = false;
+        }
+        console.log("deviceIsMobile: " + deviceIsMobile);
     </script>
 
     <style>
         /*SPACING*/
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0 auto;
             width: 100%;
         }
-
+        
         h3 {
             text-align: center;
         }
-
+        
         .pt-3 {
             padding-top: 0.25rem !important;
         }
-
         /*TEXT*/
+        
         .pageTitle {
             text-align: left;
             font-weight: 900;
@@ -83,41 +89,40 @@
             letter-spacing: 0.18px;
             color: #2A2A2A;
         }
-
+        
         .p-2 {
             font-size: 16px;
         }
-
+        
         .bodyBig {
             text-align: left;
             font-size: 18px;
             letter-spacing: 0.09px;
         }
-
+        
         @media (max-width: 768px) {
             .pageTitle {
                 font-size: 32px
             }
-
             .bodyBig {
                 font-size: 16px;
             }
         }
-
+        
         .sectionTitle {
             padding: 0;
             color: #2A2A2A;
             font-weight: bold;
             font-size: 18px;
         }
-
+        
         .similarSubtitle {
             font-size: 12px;
             letter-spacing: 0.06px;
             color: #2A2A2A;
             margin-top: -10px;
         }
-
+        
         .creditLabels {
             color: #1E1E1E;
             font-weight: light;
@@ -125,53 +130,47 @@
             letter-spacing: 0.09px;
             margin-bottom: 2px;
         }
-
+        
         #infoLabels {
             color: #1E1E1E;
             font-weight: light;
             font-size: 16px;
             letter-spacing: 0.09px;
         }
-
+        
         .creditNames {
             color: #1E1E1E;
             font-weight: bold;
             font-size: 18px;
             letter-spacing: 0.09px;
         }
-
-
+        
         @media (max-width: 1200px) {
-
             .p-2,
             #creationDate {
                 font-size: 14px;
             }
         }
-
+        
         @media (max-width: 768px) {
-
             .creditLabels,
             .creditNames,
             .infoLabels {
                 font-size: 14px;
             }
-
             .p-2,
             #creationDate {
                 font-size: 12px;
             }
         }
-
-
+        
         .card {
             width: 70%;
             /* min-height: 270px; */
             margin: auto;
         }
-
         /*BUTTONS*/
-
+        
         .shareButton {
             height: 32px;
             width: 94px;
@@ -184,7 +183,7 @@
             font-weight: bold;
             border-width: 0px;
         }
-
+        
         .rectButton {
             /* width: 140px; */
             background-color: #8C1D40;
@@ -196,7 +195,7 @@
             padding-left: 5px;
             padding-right: 5px
         }
-
+        
         .categoriesButton {
             height: 35px;
             width: 130px;
@@ -209,19 +208,18 @@
             border-width: 0px;
             letter-spacing: 0.07px;
         }
-
+        
         #colorsRow td {
             height: 50px;
             width: 50px;
             border: 5px solid white;
         }
-
+        
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
         }
-
-
+        
         .dot {
             height: 40px;
             width: 40px;
@@ -229,7 +227,7 @@
             border-radius: 50%;
             display: inline-block;
         }
-
+        
         .line {
             display: block;
             overflow: hidden;
@@ -237,7 +235,7 @@
             border-width: 1px;
             color: #E5E5E5;
         }
-
+        
         .three-sixtyVid {
             background-color: #FF7F32;
             width: 64px;
@@ -247,7 +245,7 @@
             letter-spacing: 0.06px;
             font-weight: bold;
         }
-
+        
         .list-group-item.active {
             color: #8C1D40;
             font-style: bold;
@@ -255,7 +253,7 @@
             border-bottom: 3px solid #8C1D40;
             background-color: white;
         }
-
+        
         .list-group-item {
             border: none;
             color: black;
@@ -263,33 +261,33 @@
             padding: 0;
             margin: 5px;
         }
-
+        
         .carousel-control-prev {
             width: 5%;
         }
-
+        
         .carousel-control-next {
             width: 5%;
         }
-
+        
         .carousel-control-next-icon {
             background-image: url(next.png) !important;
             opacity: 1 !important;
         }
-
+        
         .carousel-control-prev-icon {
             background-image: url(prev.png) !important;
             opacity: 1 !important;
         }
-
+        
         .map {
             display: none;
         }
-
+        
         .map.active {
             display: block;
         }
-
+        
         .capsule {
             /* min-height: 550px; */
             margin-top: 50px;
@@ -298,16 +296,14 @@
             margin-left: 20px;
             padding-top: 50px;
             padding-bottom: 25px;
-
             border: 1px solid lightgray;
             border-radius: 200px;
-
             background-image: url(getStart1.png) !important;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
         }
-
+        
         #carousel-prev-arrow {
             height: 25px;
             width: 25px;
@@ -316,23 +312,23 @@
             display: inline-block;
             opacity: 100% !important;
         }
-
+        
         .hLine {
             border-top: 1px solid #EBEBEB;
         }
-
+        
         .loremText {
             text-align: center;
             font: Regular 18px Roboto;
             letter-spacing: 0.09px;
             color: #2A2A2A;
         }
-
+        
         .flex-container-gettingStarted {
             display: flex;
             justify-content: center;
         }
-
+        
         .flex-container-gettingStarted>div {
             width: 350px;
             height: 660px;
@@ -341,20 +337,19 @@
             line-height: 75px;
             font-size: 30px;
         }
-
-
+        
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
         }
-
+        
         @media (max-width: 768px) {
             #gettingstarted {
                 display: none;
             }
         }
-
+        
         #hero {
             position: relative;
             background-color: rgb(209, 208, 212);
@@ -366,41 +361,37 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-
+        
         @media (max-width: 1600px) {
             #hero {
                 height: 30%;
             }
-
         }
-
-
+        
         @media (min-width: 786px) {
             #playBtn2 {
                 display: none;
             }
         }
-
+        
         @media (max-width: 786px) {
             #playBtn1 {
                 display: none;
             }
-
             #playBtn2 {
                 display: block;
                 margin-top: 25px;
                 margin-bottom: 25px;
             }
         }
-
-
+        
         #playBtn1:focus,
         #playBtn1:active,
         #playBtn2:focus {
             border: none;
             outline: none;
         }
-
+        
         #playBtn,
         #playBtn:focus {
             font-size: 1.6em;
@@ -411,7 +402,7 @@
             width: 100%;
             padding: 10px
         }
-
+        
         .playNowButtonActive {
             font-size: 1.6em;
             background: #FFC627;
@@ -421,27 +412,27 @@
             padding: 10px;
             font-weight: bold;
         }
-
+        
         .hidden {
             display: none;
         }
-
+        
         .disableButton {
             background: #cdcdcd;
             cursor: default;
         }
-
+        
         #hero .container {
             position: relative;
             z-index: 2;
         }
-
+        
         @media (max-width: 800px) {
             #hero {
                 max-height: 15%;
             }
         }
-
+        
         .huge-title {
             position: relative;
             top: 20%;
@@ -450,7 +441,7 @@
             margin: auto;
             height: 100%;
         }
-
+        
         .bottom_fill {
             border-radius: 25px;
             background-color: #FFC627;
@@ -461,7 +452,7 @@
             left: 0;
             border-radius: 0 0 12px 12px;
         }
-
+        
         .align_left {
             top: 729px;
             left: 85px;
@@ -476,7 +467,7 @@
             color: #1E1E1E;
             opacity: 1;
         }
-
+        
         .creditNames a {
             color: #8C1D40;
             text-decoration: underline;
@@ -497,82 +488,57 @@
             <div class="col-12">
                 <div class="header-top">
                     <!-- Logo -->
-                    <div class="header-logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
-                                alt="Arizona State University"
-                                src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
+                    <div class="header-logo">
+                        <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
                     </div>
                     <div class="header-nav">
                         <ul>
                             <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
-                                    id="main_menu_items">ASU Home
+                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home
                                     <img src="caret-down.svg"></a>
 
                                 <div class="dropdown-content">
-                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top"
-                                        title="News and Events">News/Events</a>
-                                    <a href="https://www.asu.edu/?feature=academics" target="_top"
-                                        title="Academics">Academics</a>
-                                    <a href="https://www.asu.edu/?feature=research" target="_top"
-                                        title="Research">Research</a>
-                                    <a href="https://www.asu.edu/?feature=athletics" target="_top"
-                                        title="Athletics">Athletics</a>
-                                    <a href="https://www.asu.edu/?feature=alumni" target="_top"
-                                        title="Alumni">Alumni</a>
-                                    <a href="https://www.asu.edu/?feature=giving" target="_top"
-                                        title="Giving">Giving</a>
-                                    <a href="https://www.asu.edu/?feature=president" target="_top"
-                                        title="President">President</a>
+                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
+                                    <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
+                                    <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
+                                    <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
+                                    <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
+                                    <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
+                                    <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
                                     <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
                                 </div>
 
                             </li>
                             <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
                                     ASU</a></li>
-                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
-                                    id="menu_main">Colleges and Schools
+                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools
                                     <img src="caret-down.svg"></a>
 
                                 <div class="dropdown-content">
-                                    <a href="https://artsandsciences.asu.edu/" target="_top"
-                                        title="Arts and Sciences website">Arts and
+                                    <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
                                         Sciences</a>
-                                    <a href="https://wpcarey.asu.edu/" target="_top"
-                                        title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                                    <a href="https://herbergerinstitute.asu.edu" target="_top"
-                                        title="Herberger Institute for Design and the Arts website">Design and the
+                                    <a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
+                                    <a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the
                                         Arts</a>
-                                    <a href="https://education.asu.edu/" target="_top"
-                                        title="Mary Lou Fulton Teachers College website">Education</a>
-                                    <a href="https://engineering.asu.edu/" target="_top"
-                                        title="Engineering website">Engineering</a>
-                                    <a href="https://sfis.asu.edu/" target="_top"
-                                        title="Future of Innovation in Society website">Future
+                                    <a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a>
+                                    <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
+                                    <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future
                                         of
                                         Innovation in Society</a>
-                                    <a href="https://graduate.asu.edu" target="_top"
-                                        title="Graduate College website">Graduate</a>
+                                    <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
                                     <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
                                         Solutions</a>
-                                    <a href="https://honors.asu.edu/" target="_top"
-                                        title="Barrett, The Honors College website">Honors</a>
-                                    <a href="https://cronkite.asu.edu" target="_top"
-                                        title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
-                                    <a href="https://www.law.asu.edu/" target="_top"
-                                        title="Sandra Day O' Connor College of Law website">Law</a>
-                                    <a href="https://nursingandhealth.asu.edu/" target="_top"
-                                        title="College of Nursing and Health Innovation website">Nursing and Health
+                                    <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
+                                    <a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
+                                    <a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a>
+                                    <a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health
                                         Innovation</a>
-                                    <a href="https://copp.asu.edu" target="_top"
-                                        title="College of Public Programs website">Public Service
+                                    <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
                                         and
                                         Community Solutions</a>
-                                    <a href="https://schoolofsustainability.asu.edu" target="_top"
-                                        title="School of Sustainability website">Sustainability</a>
-                                    <a href="https://uc.asu.edu/" target="_top"
-                                        title="University College website">University College</a>
-                                    <a target="_top" href="https://thunderbird.asu.edu/"
-                                        title="Thunderbird School of Global Management website">Thunderbird School of
+                                    <a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a>
+                                    <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
+                                    <a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of
                                         Global Management</a>
                                 </div>
 
@@ -585,13 +551,10 @@
                                     <a href="https://www.asu.edu/map/" target="_top">Map</a>
                                     <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
                                     <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
-                                    <a href="https://campus.asu.edu/polytechnic/" target="_top"
-                                        title="Polytechnic campus">Polytechnic</a>
-                                    <a href="https://campus.asu.edu/downtown/" target="_top"
-                                        title="Downtown Phoenix campus">Downtown
+                                    <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
+                                    <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
                                         Phoenix</a>
-                                    <a href="https://asuonline.asu.edu/" target="_top"
-                                        title="Online and Extended campus">Online and
+                                    <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
                                         Extended</a>
                                     <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
                                     <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
@@ -602,23 +565,16 @@
                                 </div>
 
                             </li>
-                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
-                                    title="Directory, Index and other info">Directory</a></li>
+                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
                             <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
                     onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                     onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
                     onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li> -->
                         </ul>
                         <div>
-                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs"
-                                role="search"><label for="masu_search_box"></label><input name="site" type="hidden"
-                                    value="default_collection"><input name="sort" type="hidden"
-                                    value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input
-                                    name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
-                                    type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input
-                                    name="client" type="hidden" value="asu_frontend"><input name="q"
-                                    class="header-search" placeholder="Search" autocomplete="off" type="text"><input
-                                    class="header-search-button" type="submit" value=""></form>
+                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input name="proxystylesheet"
+                                    type="hidden" value="asu_frontend"><input name="ie" type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client" type="hidden" value="asu_frontend"><input name="q" class="header-search"
+                                    placeholder="Search" autocomplete="off" type="text"><input class="header-search-button" type="submit" value=""></form>
                         </div>
                     </div>
                 </div>
@@ -638,8 +594,7 @@
                         <div class="col">
                             <ul class="navbar-container">
                                 <li>
-                                    <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml"
-                                            data="homeicon.svg" id="nav-home"></object> </a>
+                                    <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg" id="nav-home"></object> </a>
                                 </li>
                             </ul>
                         </div>
@@ -678,8 +633,7 @@
         <!---MODAL--->
         <!-- Button trigger modal -->
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
 
@@ -690,9 +644,7 @@
                         </button>
                         <!-- 16:9 aspect ratio -->
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>></iframe>
+                            <iframe class="embed-responsive-item" src="" id="video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>></iframe>
                         </div>
 
                     </div>
@@ -1120,8 +1072,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="footer_content">
-                            <div class="footer_content_logo"><a id="asu-hdr-full-logo" href="https://www.asu.edu/"
-                                    target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
+                            <div class="footer_content_logo">
+                                <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
                             </div>
                         </div>
                     </div>
@@ -1203,12 +1155,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="asyncReq.js"></script>
 
 </body>
@@ -1216,7 +1164,7 @@
 <script>
     function getProductData(product) {
         var product = product;
-        loadFile("./getProduct?product=" + product, function (result) {
+        loadFile("./getProduct?product=" + product, function(result) {
             // fetch collection using passed in product ObjectID
             var data = JSON.parse(result);
 
@@ -1249,10 +1197,9 @@
                         document.getElementById("playBtns1").innerHTML += "<div id='dynabutton' class='row justify-content-center'> <div class='col mb-4 text-center'><button id='" + (button1) + "' class='sectionTitle playNowButtonActive playbutton2'>Play now2</button></div></div>";
 
                         if ((data[0].urls[i].url != "" && data[0].urls[i].url != null)) {
-                            document.getElementById(button1).innerText = "Play Now(" + data[0].urls[i].platform + ")";
+                            document.getElementById(button1).innerText = "Play Now (" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).onclick = launchExperience.bind(this, [data[0].urls[i].url]);
-                        }
-                        else {
+                        } else {
                             document.getElementById(button1).innerText = "Coming soon(" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).style.backgroundColor = "#cdcdcd";
                             document.getElementById(button1).style.cursor = "default";
@@ -1267,23 +1214,28 @@
                         document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
 
-                        $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
+                        $('#playBtn1').removeClass('hidden');
+                        $('#playBtn2').removeClass('hidden');
                     }
                 }
 
-            }
-            else if (data[0].url != "" && data[0].url != null) {
+            } else if (data[0].url != "" && data[0].url != null) {
                 console.log(data[0].url);
                 document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].url]);
                 document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].url]);
 
-                $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
+                $('#playBtn1').removeClass('hidden');
+                $('#playBtn2').removeClass('hidden');
             } else {
-                document.getElementById("playButton1").innerText = "Coming soon"; document.getElementById("playButton2").innerText = "Coming soon";
+                document.getElementById("playButton1").innerText = "Coming soon";
+                document.getElementById("playButton2").innerText = "Coming soon";
 
-                document.getElementById("playButton1").style.backgroundColor = "#cdcdcd"; document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
-                document.getElementById("playButton1").style.cursor = "default"; document.getElementById("playButton2").style.cursor = "default";
-                $('#playBtn1').removeClass('hidden'); $('#playBtn2').removeClass('hidden');
+                document.getElementById("playButton1").style.backgroundColor = "#cdcdcd";
+                document.getElementById("playButton2").style.backgroundColor = "#cdcdcd"
+                document.getElementById("playButton1").style.cursor = "default";
+                document.getElementById("playButton2").style.cursor = "default";
+                $('#playBtn1').removeClass('hidden');
+                $('#playBtn2').removeClass('hidden');
             }
 
 
@@ -1318,7 +1270,7 @@
                 console.log("experience is compatible on mobile");
                 document.getElementById("mobileDevice").style.display = "inline-block";
 
-                if (!deviceIsMobile) {   
+                if (!deviceIsMobile) {
                     document.getElementById("playBtn1").style.display = "none";
                     document.getElementById("playBtn2").style.display = "none";
                 }
@@ -1369,20 +1321,20 @@
         //    getProductData(split[1]);
         //}
         //else {
-            getProductData(globalproduct);//"5f2e1b687ca85a5fef49f0c1");
+        getProductData(globalproduct); //"5f2e1b687ca85a5fef49f0c1");
         //}
     }
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         // Gets the video src from the data-src on each button
         var $videoSrc;
-        $(".video-btn").click(function () {
+        $(".video-btn").click(function() {
             $videoSrc = $(this).attr("data-src");
             console.log("button clicked" + $videoSrc);
         });
 
         // when the modal is opened autoplay it
-        $("#myModal").on("shown.bs.modal", function (e) {
+        $("#myModal").on("shown.bs.modal", function(e) {
             $("#video").attr("src", $videoSrc);
             console.log("modal opened" + $videoSrc);
             // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
@@ -1393,14 +1345,13 @@
         });
 
         // stop playing the youtube video when I close the modal
-        $("#myModal").on("hide.bs.modal", function (e) {
+        $("#myModal").on("hide.bs.modal", function(e) {
             // a poor man's stop video
             $("#video").attr("src", "");
         });
 
         // document ready
     });
-
 </script>
 
 </html>
