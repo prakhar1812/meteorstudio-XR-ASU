@@ -1289,10 +1289,9 @@
 
             } else if (data[0].url != "" && data[0].url != null) {
                 var button = document.createElement('button');
-                button.innerText = "Play Now (" + data[0].urls[i].platform + ")";
-                button.onclick = launchExperience.bind(this, [data[0].urls[i].url]);
+                button.innerText = "Play Now";
+                button.onclick = launchExperience.bind(this, [data[0].url]);
                 button.classList.add('sectionTitle', 'playNowButton');
-                console.log("added: " + data[0].urls[i].url)
 
                 var playButtonsDesktop = document.getElementById('playButtonsDesktop');
                 playButtonsDesktop.appendChild(button);
@@ -1302,7 +1301,7 @@
                 playButtonsMobile.appendChild(button_mobile);
             } else {
                 var button = document.createElement('button');
-                button.innerText = "Coming soon (" + data[0].urls[i].platform + ")";
+                button.innerText = "Coming soon";
                 button.style.backgroundColor = "#cdcdcd";
                 button.style.cursor = "default";
 
