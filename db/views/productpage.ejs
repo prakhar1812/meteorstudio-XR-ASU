@@ -733,7 +733,6 @@
                         <div class="row justify-content-center">
                             <div id="playButtonsMobile" class="col mb-4 text-center">
                                 <!-- play buttons on mobile -->
-                                <!-- <button id="playButton2" class="sectionTitle playNowButton">Play now</button> -->
                             </div>
                         </div>
                     </div>
@@ -964,7 +963,6 @@
                 <div class="row justify-content-center">
                     <div id="playButtonsDesktop" class="col mb-4 text-center">
                         <!-- play buttons on desktop -->
-                        <!-- <button id="playButton1" class="sectionTitle playNowButton">Play now</button> -->
                     </div>
                 </div>
 
@@ -1237,10 +1235,9 @@
                 for (var i = 0; i < data[0].urls.length; i++) {
                     var button = document.createElement('button');
                     if ((data[0].urls[i].url != "" && data[0].urls[i].url != null)) {
-                        button.innerText = "Play Now (" + data[0].urls[i].platform + ")";
+                        button.innerHTML = "Play Now <small>(" + data[0].urls[i].platform + ")</small>";
                         button.onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         button.classList.add('sectionTitle', 'playNowButton');
-                        console.log("added: " + data[0].urls[i].url)
                     } else {
                         button.innerText = "Coming soon (" + data[0].urls[i].platform + ")";
                         button.style.backgroundColor = "#cdcdcd";
@@ -1253,41 +1250,9 @@
                     var playButtonsMobile = document.getElementById('playButtonsMobile');
                     var button_mobile = button.cloneNode(true);
                     playButtonsMobile.appendChild(button_mobile);
-
-
-                    //If we aren't on the first button
-                    /*
-                    if (i != 0) {
-                        //create button 
-
-                        var button1 = "dbutton" + (i);
-
-                        document.getElementById("playBtns1").innerHTML += "<div id='dynabutton' class='row justify-content-center'> <div class='col mb-4 text-center'><button id='" + (button1) + "' class='sectionTitle playNowButton playbutton2'>Play now2</button></div></div>";
-
-                        if ((data[0].urls[i].url != "" && data[0].urls[i].url != null)) {
-                            document.getElementById(button1).innerText = "Play Now (" + data[0].urls[i].platform + ")";
-                            document.getElementById(button1).onclick = launchExperience.bind(this, [data[0].urls[i].url]);
-                            console.log("added: " + data[0].urls[i].url)
-                        } else {
-                            document.getElementById(button1).innerText = "Coming soon (" + data[0].urls[i].platform + ")";
-                            document.getElementById(button1).style.backgroundColor = "#cdcdcd";
-                            document.getElementById(button1).style.cursor = "default";
-                        }
-
-                    }
-                    else {
-                        console.log(data[0].urls[i]);
-                        document.getElementById("playButton1").innerText = "Play Now (" + data[0].urls[i].platform + ")";
-                        document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
-                        document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
-
-                        $('#playBtn1').removeClass('hidden');
-                        $('#playBtn2').removeClass('hidden');
-                    }
-                    */
                 }
-
             } else if (data[0].url != "" && data[0].url != null) {
+                // Experience only has one URL
                 var button = document.createElement('button');
                 button.innerText = "Play Now";
                 button.onclick = launchExperience.bind(this, [data[0].url]);
@@ -1300,10 +1265,15 @@
                 var button_mobile = button.cloneNode(true);
                 playButtonsMobile.appendChild(button_mobile);
             } else {
+                // Experience has no URL
                 var button = document.createElement('button');
                 button.innerText = "Coming soon";
+                button.classList.add('sectionTitle', 'playNowButton');
                 button.style.backgroundColor = "#cdcdcd";
                 button.style.cursor = "default";
+
+                var playButtonsDesktop = document.getElementById('playButtonsDesktop');
+                playButtonsDesktop.appendChild(button);
 
                 var playButtonsMobile = document.getElementById('playButtonsMobile');
                 var button_mobile = button.cloneNode(true);
