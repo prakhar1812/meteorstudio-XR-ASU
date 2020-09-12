@@ -1200,7 +1200,7 @@
                             document.getElementById(button1).innerText = "Play Now (" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         } else {
-                            document.getElementById(button1).innerText = "Coming soon(" + data[0].urls[i].platform + ")";
+                            document.getElementById(button1).innerText = "Coming soon (" + data[0].urls[i].platform + ")";
                             document.getElementById(button1).style.backgroundColor = "#cdcdcd";
                             document.getElementById(button1).style.cursor = "default";
 
@@ -1210,7 +1210,7 @@
                     //Otherwise follow original procedure to manipulate the premade buttons
                     else {
                         console.log(data[0].urls[i]);
-                        document.getElementById("playButton1").innerText = "Play Now(" + data[0].urls[i].platform + ")";
+                        document.getElementById("playButton1").innerText = "Play Now (" + data[0].urls[i].platform + ")";
                         document.getElementById("playButton1").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         document.getElementById("playButton2").onclick = launchExperience.bind(this, [data[0].urls[i].url]);
 
