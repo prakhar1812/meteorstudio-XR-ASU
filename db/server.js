@@ -156,21 +156,6 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
 //
 
 //searching by keyword
-MongoClient.connect(mongoUri, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("xrasu");
-    var keyword = "apartment";
-    var regex = RegExp(".*" + keyword + ".*");
-    // Note.find({ noteBody: regex, userID: userID })
-    var myquery = { name: regex };
-    //var myquery = { name: "Spacious and well located apartment" };
-    //  var newvalues = { $set: {email: newEmail } };
-    dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, address: 1 } }).toArray(function(err, result) {
-        if (err) throw err;
-        //  console.log(result);
-        db.close();
-    });
-});
 
 //
 
@@ -187,38 +172,12 @@ const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'nume
 
 app.get('/', function(req, res) {
     //console.log(cookie);
-    MongoClient.connect(mongoUri, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db("xrasu");
-        var myquery = { name: "ASU Scavenger Hunt" };
-        // var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").findOne(myquery, "_id").then(result => {
-                if (result) {
-                    console.log("Successfully found document: " + result.name);
-                    console.log(result);
-                    //   loggedUser = result.name;
-                    //   loggedUser2 = result.thumbnail;
-                    //   loggedUser3 = result.description;
-
-                } else {
-                    //     console.log("No document matches the provided query.");
-                }
-                return result;
-            })
-            .catch(err => console.error(`Failed to find document: ${err}`));
-        //});
-
         res.render('index', {
             // error: loggedUser,
             // error2: loggedUser2,
             // error3: loggedUser3
         });
-    });
-
-
-
-
-
+ 
 });
 
 
