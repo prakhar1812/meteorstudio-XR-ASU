@@ -29,6 +29,10 @@ var storage = multer.diskStorage({
         callback(null, fileName);
     }
 });
+// for spreadsheet upload
+const {GoogleSpreadsheet} = require('google-spreadsheet')
+const creds = require('./spreadsheet-creds.json')
+
 var loggedUser;
 var loggedUser2;
 var loggedUser3;
@@ -347,3 +351,49 @@ app.get("/mimic", function(req, res) {
 app.get("/virtualtutor", function(req, res) {
     res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
 });
+
+// Google spreadsheet function for COVID CAMPUS experience
+app.post("/append-data", async function(req, res){
+    // Identifying which document we'll be accessing/reading from
+    const doc = new GoogleSpreadsheet(req.body.sheetID);
+
+    // Authentication
+    doc.useServiceAccountAuth(creds)
+
+    await doc.loadInfo()
+        .catch(function(err) {
+            console.log("LOAD INFO ERR: " + err)
+        })
+    console.log(doc.title);
+    const sheet = doc.sheetsByIndex[req.body.sheetNumber]; // first sheet
+    const rows = await sheet.getRows()
+        .catch (function(err) {
+            console.log("GET ROWS ERR: " + err);
+        })
+    //console.log(rows);
+
+    console.log(sheet.headerValues);
+
+    i = 0;
+    while (req.body[i] !== undefined) {
+        //console.log(req.body[i]);
+        currRow = req.body[i].split("_");
+
+        await sheet.addRow(currRow)
+            .catch(function(err) {
+                console.log(err);
+            })
+        
+        i++
+
+        // ensure no malicious shennanigans
+        if (i > 10000) {
+            break;
+        }
+    }
+
+    // Getting cells back from tab #2 of the file
+    console.log("finished")
+    res.sendStatus(200);
+    
+  });

@@ -28,6 +28,7 @@
     "firebase": "^6.6.2",
     "firebase-admin": "^8.7.0",
     "geobatch": "^1.4.3",
+    "google-spreadsheet": "^3.0.13",
     "intl": "^1.2.5",
     "method-override": "^3.0.0",
     "mongodb": "^3.3.2",
