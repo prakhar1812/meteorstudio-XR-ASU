@@ -380,6 +380,12 @@
             #playButtonsMobile {
                 display: none;
             }
+            #compatibleDevices {
+                display: block;
+            }
+            #compatibleDevicesMobile {
+                display: none;
+            }
         }
         
         @media (max-width: 786px) {
@@ -387,6 +393,15 @@
                 display: none;
             }
             #playButtonsMobile {
+                display: block;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+
+            #compatibleDevices {
+                display: none;
+            }
+            #compatibleDevicesMobile {
                 display: block;
                 margin-top: 25px;
                 margin-bottom: 25px;
@@ -737,11 +752,10 @@
                         </div>
                     </div>
                 </div>
-
+                <div id="compatibleDevicesMobile"></div>
                 <div class="row">
                     <div class="col-12">
                         <p class="bodyBig" id="productDesc"></p>
-
                     </div>
                 </div>
 
@@ -959,15 +973,14 @@
 
             <!-- BEGINNING OF RIGHT COLUMN -->
 
-            <div class="col-sm-12 col-md-4" style="margin-bottom: 20px">
+            <div class="col-sm-12 col-md-4 order-sm-1 order-md-2" style="margin-bottom: 20px">
                 <div class="row justify-content-center">
                     <div id="playButtonsDesktop" class="col mb-4 text-center">
                         <!-- play buttons on desktop -->
                     </div>
                 </div>
-
                 <!-- compatible devices -->
-                <div class="row justify-content-center">
+                <div id="compatibleDevices" class="row justify-content-center">
                     <div class="border" style="text-align: center; width: 80%; border-radius: 8px; margin: auto">
                         <!-- <div class="col mt-4">
                             <button type="button" class="categoriesButton"
@@ -1334,6 +1347,12 @@
             } else {
                 document.getElementById("vrDevice").style.display = "none";
             }
+
+            var compatibleDevicesRow = document.getElementById("compatibleDevices");
+            var compatibleDevicesRowClone = compatibleDevicesRow.cloneNode(true);
+            compatibleDevicesRowClone.id = "compatibleDevicesClone";
+            var compatibleDevicesRowMobile = document.getElementById('compatibleDevicesMobile');
+            compatibleDevicesRowMobile.appendChild(compatibleDevicesRowClone);
         });
     }
 
@@ -1392,7 +1411,6 @@
             $("#video").attr("src", "");
         });
 
-        // document ready
     });
 </script>
 
