@@ -13,7 +13,7 @@
 
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
+        (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -42,10 +42,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-VhBcF/php0Z/P5ZxlxaEx1GwqTQVIBu4G4giRWxTKOCjTxsPFETUDdVL5B6vYvOt" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -82,7 +84,7 @@
 
         }
 
-        window.onload = function() {
+        window.onload = function () {
             detectDevice()
         }
     </script>
@@ -91,24 +93,26 @@
         body {
             overflow-x: hidden;
         }
-        
+
         .img-hover-zoom {
             height: 200px;
             /* [1.1] Set it as per your need */
             overflow: hidden;
             /* [1.2] Hide the overflowing of child elements */
         }
+
         /* [2] Transition property for smooth transformation of images */
-        
+
         .img-hover-zoom img {
             transition: transform .5s ease;
         }
+
         /* [3] Finally, transforming the image when container gets hovered */
-        
+
         .img-hover-zoom:hover img {
             transform: scale(1.5);
         }
-        
+
         .bar-thing {
             width: 80px;
             height: 0px;
@@ -119,11 +123,11 @@
             align-content: center;
             text-align: center;
         }
-        
+
         h5 {
             font-weight: bold;
         }
-        
+
         .bottom_fill {
             border-radius: 25px;
             background-color: #FFC627;
@@ -134,7 +138,7 @@
             left: 0;
             border-radius: 0 0 6px 6px;
         }
-        
+
         .itemtype {
             background: #FF7F32;
             max-width: 150px;
@@ -147,7 +151,7 @@
             margin-top: -4%;
             margin-left: 5%;
         }
-        
+
         .bouton-image:before {
             content: "";
             width: 14px;
@@ -159,18 +163,18 @@
             background-position: center center;
             background-repeat: no-repeat;
         }
-        
+
         .monBouton:before {
             background-image: url("Icon - chevron-right-solid.svg");
         }
-        
+
         .test {
             box-shadow: 0px 3px 6px #00000029;
             border: 1px solid #707070;
             border-radius: 171px;
             opacity: 1;
         }
-        
+
         .searchbar {
             width: 529px;
             height: 48px;
@@ -178,7 +182,7 @@
             margin-right: 485px;
             text-align: center;
         }
-        
+
         .bar {
             top: 109px;
             left: 0px;
@@ -187,7 +191,7 @@
             background: #353535 0% 0% no-repeat padding-box;
             opacity: 1;
         }
-        
+
         .grid-container {
             display: inline-grid;
             grid-column-gap: 50px;
@@ -197,7 +201,7 @@
             padding: 10px;
             align-content: center;
         }
-        
+
         .grid-item {
             background-color: #FFFFFF;
             text-align: center;
@@ -205,7 +209,7 @@
             font-size: 12px;
             justify-content: center;
         }
-        
+
         .text-block {
             position: absolute;
             bottom: 20px;
@@ -215,7 +219,7 @@
             padding-left: 20px;
             padding-right: 20px;
         }
-        
+
         .sidebar {
             top: 1310px;
             left: 78px;
@@ -223,30 +227,31 @@
             height: 363px;
             opacity: 1;
         }
-        
+
         * {
             box-sizing: border-box;
         }
-        
+
         .column {
             float: left;
             padding: 1px;
             height: 800px;
         }
-        
+
         .left {
             width: 25%;
         }
-        
+
         .right {
             width: 75%;
         }
-        
+
         .container ul {
             text-decoration: none;
         }
+
         /* Cards */
-        
+
         .ellipsis {
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -254,17 +259,17 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        
+
         .nextBtn {
             color: #2A2A2A;
             font-size: 125%;
         }
-        
+
         .nextBtn:hover {
             color: #707070;
             cursor: hand;
         }
-        
+
         .experienceCard {
             border: none;
             margin: 0;
@@ -272,54 +277,56 @@
             background: transparent;
             text-align: left;
         }
-        
+
         .experienceCard:active,
         .experienceCard:focus {
             border: none;
             outline: none;
         }
-        
+
         .card {
             height: 350px;
         }
+
         /* ASU XR  Header */
-        
+
         #asuxr_header {
             background-color: #353535;
             min-height: 58px;
             height: 58px;
         }
-        
+
         .asuxr_header_link {
             text-decoration: none;
             text-align: center;
             vertical-align: center;
         }
-        
+
         .asuxr_header_link a {
             text-decoration: none;
             padding-right: 50px;
             text-align: left;
             vertical-align: center;
         }
-        
+
         .asuxr_header_link a:link {
             color: white;
         }
-        
+
         .asuxr_header_link a:active {
             color: #FFC627;
         }
-        
+
         .asuxr_header_link a:visited {
             color: white;
         }
+
         /* header ends */
-        
+
         #intro {
             margin-top: 70px
         }
-        
+
         .capsule {
             /* min-height: 550px; */
             margin-top: 50px;
@@ -336,21 +343,21 @@
             background-repeat: no-repeat;
             text-align: center;
         }
-        
+
         .capsuleText {
             line-height: 1.5;
             font-size: 16px;
             text-align: center;
             padding: 5px;
         }
-        
+
         @media(max-width: 786px) {
             .capsuleText {
                 font-size: 14px;
                 padding: 20px;
             }
         }
-        
+
         .sectionTitle {
             padding: 0;
             color: #2A2A2A;
@@ -364,102 +371,208 @@
 <body onload="manageData()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBVHVWJ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- ASU HEADER -->
     <div class="container">
+
+    
+        
         <div class="row">
             <div class="col-12">
                 <div class="header-top">
                     <!-- Logo -->
                     <div class="header-logo">
-                        <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
+                        <a href="https://www.asu.edu/" target="_top"><img id="asuLogo"
+                                alt="Arizona State University"
+                                src="https://www.asu.edu/asuthemes/4.9/assets/arizona-state-university-logo.png"></a>
                     </div>
-                    <div class="header-nav">
-                        <ul>
-                            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
-                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top" id="main_menu_items">ASU Home
-                  <img src="caret-down.svg"></a>
+                    <!-- hamburger menu for mobile -->
+                    <nav id="mobileNavbar" class="navbar navbar-expand-lg navbar-light" style="float:right">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
+                                    id="main_menu_items">ASU Info
+                                    <img src="caret-down.svg"></a>
 
                                 <div class="dropdown-content">
-                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top" title="News and Events">News/Events</a>
-                                    <a href="https://www.asu.edu/?feature=academics" target="_top" title="Academics">Academics</a>
-                                    <a href="https://www.asu.edu/?feature=research" target="_top" title="Research">Research</a>
-                                    <a href="https://www.asu.edu/?feature=athletics" target="_top" title="Athletics">Athletics</a>
-                                    <a href="https://www.asu.edu/?feature=alumni" target="_top" title="Alumni">Alumni</a>
-                                    <a href="https://www.asu.edu/?feature=giving" target="_top" title="Giving">Giving</a>
-                                    <a href="https://www.asu.edu/?feature=president" target="_top" title="President">President</a>
+                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top"
+                                        title="News and Events">News/Events</a>
+                                    <a href="https://www.asu.edu/?feature=academics" target="_top"
+                                        title="Academics">Academics</a>
+                                    <a href="https://www.asu.edu/?feature=research" target="_top"
+                                        title="Research">Research</a>
+                                    <a href="https://www.asu.edu/?feature=athletics" target="_top"
+                                        title="Athletics">Athletics</a>
+                                    <a href="https://www.asu.edu/?feature=alumni" target="_top"
+                                        title="Alumni">Alumni</a>
+                                    <a href="https://www.asu.edu/?feature=giving" target="_top"
+                                        title="Giving">Giving</a>
+                                    <a href="https://www.asu.edu/?feature=president" target="_top"
+                                        title="President">President</a>
                                     <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
                                 </div>
 
                             </li>
                             <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
-                  ASU</a></li>
-                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top" id="menu_main">Colleges and Schools
-                  <img src="caret-down.svg"></a>
+                                ASU</a></li>
+                        <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
+                                id="menu_main">Maps and Locations
+
+                            <div class="dropdown-content">
+                                <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                                <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                                <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                                <a href="https://campus.asu.edu/polytechnic/" target="_top"
+                                    title="Polytechnic campus">Polytechnic</a>
+                                <a href="https://campus.asu.edu/downtown/" target="_top"
+                                    title="Downtown Phoenix campus">Downtown
+                                    Phoenix</a>
+                                <a href="https://asuonline.asu.edu/" target="_top"
+                                    title="Online and Extended campus">Online and
+                                    Extended</a>
+                                <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                                <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
+                                    Strategic Partnerships</a>
+                                <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                                <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                                <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
+                                and Locations
+                                <img src="caret-down.svg"></a>
+
+                            <div class="dropdown-content">
+                                <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                                <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                                <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                                <a href="https://campus.asu.edu/polytechnic/" target="_top"
+                                    title="Polytechnic campus">Polytechnic</a>
+                                <a href="https://campus.asu.edu/downtown/" target="_top"
+                                    title="Downtown Phoenix campus">Downtown
+                                    Phoenix</a>
+                                <a href="https://asuonline.asu.edu/" target="_top"
+                                    title="Online and Extended campus">Online and
+                                    Extended</a>
+                                <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                                <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
+                                    Strategic Partnerships</a>
+                                <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                                <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                                <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
+                                title="Directory, Index and other info">Directory</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- desktop menu -->
+                    <div class="header-nav">
+                        <ul>
+                            <!-- This will have first set of LIs which are main menu items and then those LIs will have further ULs and submenus -->
+                            <li class="nav-item"><a href="https://www.asu.edu/" class="drop-item" target="_top"
+                                    id="main_menu_items">ASU Home
+                                    <img src="caret-down.svg"></a>
 
                                 <div class="dropdown-content">
-                                    <a href="https://artsandsciences.asu.edu/" target="_top" title="Arts and Sciences website">Arts and
-                    Sciences</a>
-                                    <a href="https://wpcarey.asu.edu/" target="_top" title="W. P. Carey School of Business Web and Morrison School of Agribusiness website">Business</a>
-                                    <a href="https://herbergerinstitute.asu.edu" target="_top" title="Herberger Institute for Design and the Arts website">Design and the
-                    Arts</a>
-                                    <a href="https://education.asu.edu/" target="_top" title="Mary Lou Fulton Teachers College website">Education</a>
-                                    <a href="https://engineering.asu.edu/" target="_top" title="Engineering website">Engineering</a>
-                                    <a href="https://sfis.asu.edu/" target="_top" title="Future of Innovation in Society website">Future
-                    of
-                    Innovation in Society</a>
-                                    <a href="https://graduate.asu.edu" target="_top" title="Graduate College website">Graduate</a>
-                                    <a href="https://chs.asu.edu/" target="_top" title="Health Solutions website">Health
-                    Solutions</a>
-                                    <a href="https://honors.asu.edu/" target="_top" title="Barrett, The Honors College website">Honors</a>
-                                    <a href="https://cronkite.asu.edu" target="_top" title="Walter Cronkite School of Journalism and Mass Communication website">Journalism</a>
-                                    <a href="https://www.law.asu.edu/" target="_top" title="Sandra Day O' Connor College of Law website">Law</a>
-                                    <a href="https://nursingandhealth.asu.edu/" target="_top" title="College of Nursing and Health Innovation website">Nursing and Health
-                    Innovation</a>
-                                    <a href="https://copp.asu.edu" target="_top" title="College of Public Programs website">Public Service
-                    and
-                    Community Solutions</a>
-                                    <a href="https://schoolofsustainability.asu.edu" target="_top" title="School of Sustainability website">Sustainability</a>
-                                    <a href="https://uc.asu.edu/" target="_top" title="University College website">University College</a>
-                                    <a target="_top" href="https://thunderbird.asu.edu/" title="Thunderbird School of Global Management website">Thunderbird School of
-                    Global Management</a>
+                                    <a href="https://www.asu.edu/?feature=newsevents" target="_top"
+                                        title="News and Events">News/Events</a>
+                                    <a href="https://www.asu.edu/?feature=academics" target="_top"
+                                        title="Academics">Academics</a>
+                                    <a href="https://www.asu.edu/?feature=research" target="_top"
+                                        title="Research">Research</a>
+                                    <a href="https://www.asu.edu/?feature=athletics" target="_top"
+                                        title="Athletics">Athletics</a>
+                                    <a href="https://www.asu.edu/?feature=alumni" target="_top"
+                                        title="Alumni">Alumni</a>
+                                    <a href="https://www.asu.edu/?feature=giving" target="_top"
+                                        title="Giving">Giving</a>
+                                    <a href="https://www.asu.edu/?feature=president" target="_top"
+                                        title="President">President</a>
+                                    <a href="https://www.asu.edu/about" target="_top" title="About ASU">About ASU</a>
                                 </div>
 
                             </li>
-                            <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
-                  and Locations
-                  <img src="caret-down.svg"></a>
+                            <li class="nav-item"><a href="https://my.asu.edu/" class="nav-link-item" target="_top">My
+                                    ASU</a></li>
+                            <li class="nav-item"><a href="https://www.asu.edu/colleges/" class="drop-item" target="_top"
+                                    id="menu_main">Maps and Locations
 
                                 <div class="dropdown-content">
                                     <a href="https://www.asu.edu/map/" target="_top">Map</a>
                                     <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
                                     <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
-                                    <a href="https://campus.asu.edu/polytechnic/" target="_top" title="Polytechnic campus">Polytechnic</a>
-                                    <a href="https://campus.asu.edu/downtown/" target="_top" title="Downtown Phoenix campus">Downtown
-                    Phoenix</a>
-                                    <a href="https://asuonline.asu.edu/" target="_top" title="Online and Extended campus">Online and
-                    Extended</a>
+                                    <a href="https://campus.asu.edu/polytechnic/" target="_top"
+                                        title="Polytechnic campus">Polytechnic</a>
+                                    <a href="https://campus.asu.edu/downtown/" target="_top"
+                                        title="Downtown Phoenix campus">Downtown
+                                        Phoenix</a>
+                                    <a href="https://asuonline.asu.edu/" target="_top"
+                                        title="Online and Extended campus">Online and
+                                        Extended</a>
                                     <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
                                     <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
-                    Strategic Partnerships</a>
+                                        Strategic Partnerships</a>
                                     <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
                                     <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
                                     <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
                                 </div>
 
                             </li>
-                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top" title="Directory, Index and other info">Directory</a></li>
+                            <li class="nav-item"><a href="https://www.asu.edu/map/" class="drop-item" target="_top">Map
+                                    and Locations
+                                    <img src="caret-down.svg"></a>
+
+                                <div class="dropdown-content">
+                                    <a href="https://www.asu.edu/map/" target="_top">Map</a>
+                                    <a href="https://campus.asu.edu/tempe/" target="_top" title="Tempe campus">Tempe</a>
+                                    <a href="https://campus.asu.edu/west/" target="_top" title="West campus">West</a>
+                                    <a href="https://campus.asu.edu/polytechnic/" target="_top"
+                                        title="Polytechnic campus">Polytechnic</a>
+                                    <a href="https://campus.asu.edu/downtown/" target="_top"
+                                        title="Downtown Phoenix campus">Downtown
+                                        Phoenix</a>
+                                    <a href="https://asuonline.asu.edu/" target="_top"
+                                        title="Online and Extended campus">Online and
+                                        Extended</a>
+                                    <a href="https://havasu.asu.edu/" target="_top">Lake Havasu</a>
+                                    <a href="https://corporate.asu.edu/" target="_top">Corporate Engagement and
+                                        Strategic Partnerships</a>
+                                    <a href="https://asuresearchpark.com/" target="_top">Research Park</a>
+                                    <a href="https://washingtoncenter.asu.edu/" target="_top">Washington D.C.</a>
+                                    <a href="https://wpcarey.asu.edu/mba/china-program/english/" target="_top">China</a>
+                                </div>
+
+                            </li>
+                            <li class="nav-item"><a href="https://isearch.asu.edu/" class="nav-link-item" target="_top"
+                                    title="Directory, Index and other info">Directory</a></li>
                             <!-- <li class="nav-item"><a href="https://weblogin.asu.edu/cgi-bin/login" class="nav-link-item"
                 onclick="this.href=ASUHeader.alterLoginHref(this.href);"
                 onfocus="this.href=ASUHeader.alterLoginHref(this.href);"
                 onmouseover="this.href=ASUHeader.alterLoginHref(this.href);" target="_top">Sign In</a></li> -->
                         </ul>
                         <div>
-                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs" role="search"><label for="masu_search_box"></label><input name="site" type="hidden" value="default_collection"><input name="sort" type="hidden" value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input name="proxystylesheet"
-                                    type="hidden" value="asu_frontend"><input name="ie" type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input name="client" type="hidden" value="asu_frontend"><input name="q" class="header-search"
-                                    placeholder="Search" autocomplete="off" type="text"><input class="header-search-button" type="submit" value=""></form>
+                            <form target="_top" action="https://search.asu.edu/search" method="get" name="gs"
+                                role="search"><label for="masu_search_box"></label><input name="site" type="hidden"
+                                    value="default_collection"><input name="sort" type="hidden"
+                                    value="date:D:L:d1"><input name="output" type="hidden" value="xml_no_dtd"><input
+                                    name="proxystylesheet" type="hidden" value="asu_frontend"><input name="ie"
+                                    type="hidden" value="UTF-8"><input name="oe" type="hidden" value="UTF-8"><input
+                                    name="client" type="hidden" value="asu_frontend"><input name="q"
+                                    class="header-search" placeholder="Search" autocomplete="off" type="text"><input
+                                    class="header-search-button" type="submit" value=""></form>
                         </div>
                     </div>
                 </div>
@@ -478,11 +591,16 @@
             <div class="col">
                 <div class="container">
                     <div class="row">
-                        <div class="col">
+                        <div class="col" id="xrNav">
                             <ul class="navbar-container">
                                 <li>
-                                    <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg" id="nav-home"></object> </a>
+                                    <a class="navbar-link" href="https://xr.asu.edu"> <object type="image/svg+xml" data="homeicon.svg" id="nav-home"></object></a>
                                 </li>
+                            </ul>
+                        </div>
+                        <div class="col" id="xrNavMobile">
+                            <ul class="navbar-container">
+                                <div id="homeLinkMobile" class="navbar-link">XR@ASU</div>
                             </ul>
                         </div>
                     </div>
@@ -505,11 +623,13 @@
     <div id="intro" class="container-fluid mt-4">
         <div class="row justify-content-center mb-4">
             <div class="col-12">
-                <div style="font-weight: 900; font-size: 36px; text-align: center; font-family: 'Roboto', sans-serif;">Welcome to XR@ASU!</div>
+                <div style="font-weight: 900; font-size: 36px; text-align: center; font-family: 'Roboto', sans-serif;">
+                    Welcome to XR@ASU!</div>
             </div>
             <div class="col-12 mt-4">
                 <div style="margin: 0px 20px 0 20px; display: flex; justify-content: center;">
-                    <div class="loremText" style="width: 541px; text-align: center">Find and enjoy immersive learning experiences created for ASU learners by ASU students, staff and faculty.
+                    <div class="loremText" style="width: 541px; text-align: center">Find and enjoy immersive learning
+                        experiences created for ASU learners by ASU students, staff and faculty.
                         <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
                             <div class="mt-4" style="border-top: 5px solid #FFC627; width: 100px"></div>
                         </div>
@@ -526,7 +646,8 @@
     <div class="container mt-4">
         <div class="d-flex" style="margin:-5px">
             <div class="p-2" style="text-align:center;">
-                <div class="mb-4" style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
+                <div class="mb-4"
+                    style="font-weight: 900; font-size: 36px; text-align: center; width: 1100px; justify-content:center; font-family: 'Roboto', sans-serif;">
                     Explore
                     <div style="margin: 0px 20px 0px 20px; display: flex; justify-content: center;">
                         <div class="mb-4 mt-2" style="border-top: 5px solid #FFC627; width: 100px"></div>
@@ -539,158 +660,170 @@
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard0" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image0" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype0"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname0"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc0"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink0" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image0" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype0"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname0"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc0"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink0" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard1" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image1" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype1"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname1"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc1"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink1" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image1" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype1"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname1"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc1"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink1" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard2" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype2"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname2"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc2"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink2" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image2" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype2"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname2"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc2"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink2" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard3" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype3"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname3"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc3"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink3" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image3" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype3"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname3"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc3"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink3" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard4" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image4" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype4"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname4"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc4"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink4" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image4" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype4"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname4"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc4"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink4" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
             <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard5" class="experienceCard">
-          <div class="card mb-4 shadow-sm">
-            <div class="img-hover-zoom">
-              <img class="bd-placeholder-img card-img-top" id="item-image5" width="100%" height="225"
-                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                aria-label="Placeholder: Thumbnail">
-            </div>
-            <h5 class="itemtype" id="itemtype5"></h5>
-            <div class="card-body">
-              <h5 class="card-title" id="itemname5"></h5>
-              <div class="row">
-                <div class="col-10">
-                  <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%" id="itemdesc5"></div>
-                </div>
-                <div class="col-2">
-                  <a id="productlink5" class="nextBtn" href="#"><i class="fas fa-chevron-circle-right"></i></a>
-                </div>
-              </div>
-              <div class="bottom_fill">
-              </div>
-            </div>
-          </div>
-        </button>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image5" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype5"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname5"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc5"></div>
+                                </div>
+                                <div class="col-2">
+                                    <a id="productlink5" class="nextBtn" href="#"><i
+                                            class="fas fa-chevron-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
     </div>
@@ -710,7 +843,8 @@
             </div>
             <div class="col-12 mb-4">
                 <div style="margin: 0px 20px 20px 20px; display: flex; justify-content: center;">
-                    <div class="loremText" style="width: 541px; text-align: center">Just follow these few simple steps and you will be ready to go.</div>
+                    <div class="loremText" style="width: 541px; text-align: center">Just follow these few simple steps
+                        and you will be ready to go.</div>
                 </div>
             </div>
             <div class="col-12">
@@ -725,7 +859,8 @@
                 <img src="gettingstarted2.png" class="card-img-top" style="width: 100%">
                 <div class="card-body">
                     <h3 class="card-title sectionTitle">Find your experience</h3>
-                    <p class="card-text capsuleText">A full listing of the experiences can be found on the XR@ASU homepage. Click on the experience card to see more details and access the experience.</p>
+                    <p class="card-text capsuleText">A full listing of the experiences can be found on the XR@ASU
+                        homepage. Click on the experience card to see more details and access the experience.</p>
                 </div>
             </div>
             <div class="col-sm-12 col-md-3 capsule">
@@ -733,7 +868,8 @@
                 <div class="card-body">
                     <h3 class="card-title sectionTitle">Get your device</h3>
                     <p class="card-text capsuleText" style="">
-                        Check the experience page for details on which device(s) the experience is compatible with. Compatible devices may include phones, laptops/desktops, and augmented/virtual reality headsets.
+                        Check the experience page for details on which device(s) the experience is compatible with.
+                        Compatible devices may include phones, laptops/desktops, and augmented/virtual reality headsets.
                     </p>
                 </div>
             </div>
@@ -743,7 +879,8 @@
                 <div class="card-body">
                     <h3 class="card-title sectionTitle">Immerse yourself</h3>
                     <p class="card-text capsuleText">
-                        Follow the instructions on the experience page to load your experience on the right device. Then, enjoy!
+                        Follow the instructions on the experience page to load your experience on the right device.
+                        Then, enjoy!
                     </p>
                 </div>
             </div>
@@ -757,7 +894,8 @@
                     <div class="col">
                         <div class="footer_content">
                             <div class="footer_content_logo">
-                                <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img alt="Arizona State University" class="logo" src="abc.svg"></a>
+                                <a id="asu-hdr-full-logo" href="https://www.asu.edu/" target="_top"><img
+                                        alt="Arizona State University" class="logo" src="abc.svg"></a>
                             </div>
                         </div>
                     </div>
@@ -820,12 +958,15 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
 
     <script src="asyncReq.js"></script>
 
@@ -836,10 +977,10 @@
         }
 
         function manageData() {
-            loadFile("./showDatasetTable", function(result) {
+            loadFile("./showDatasetTable", function (result) {
                 // show a table of the user's datasets
                 // sort alphabetically
-                var data = JSON.parse(result).sort(function(a, b) {
+                var data = JSON.parse(result).sort(function (a, b) {
                     var textA = a.name.toUpperCase();
                     var textB = b.name.toUpperCase();
                     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -878,7 +1019,7 @@
         function goToProduct(product, event) {
             location.href = "/" + product;
         }
-        $(document).ready(function() {
+        $(document).ready(function () {
             setupNavBar();
             var url = window.location.href;
             var n = url.lastIndexOf('/');
@@ -890,10 +1031,10 @@
             } else if (href == "#signinBtn") {
                 showSignupForm();
             }
-            $("#loginBtn").click(function() {
+            $("#loginBtn").click(function () {
                 showLoginForm();
             });
-            $("#signupBtn").click(function() {
+            $("#signupBtn").click(function () {
                 showSignupForm();
             });
             var password = document.getElementById("password"),
@@ -936,8 +1077,8 @@
             var nav_links = document.getElementsByClassName("navbar-link");
             nav_links[0].classList.add("active");
             for (i = 0; i < nav_links.length; i++) {
-                (function(index) {
-                    nav_links[index].addEventListener("click", function() {
+                (function (index) {
+                    nav_links[index].addEventListener("click", function () {
                         for (k = 0; k < nav_links.length; k++) {
                             nav_links[k].classList.remove("active");
                         }

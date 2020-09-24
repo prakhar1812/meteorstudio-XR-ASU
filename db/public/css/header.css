@@ -94,17 +94,14 @@
   .header-logo img {
     margin: 0;
     float: left;
-    width: 207px;
-    height: 37px;
+    max-height: 37px;
     display: block;
-    line-height: 12.8px;
-    box-sizing: content-box;
   }
-      #hero_img {
-        pointer-events: none;
-        margin-top: -5.45%;
-        max-width: 100%;
-      }
+    #hero_img {
+      pointer-events: none;
+      margin-top: -5.45%;
+      max-width: 100%;
+    }
   .header-nav {
     position: relative;
     display: block;
@@ -121,6 +118,48 @@
     .header-nav {
       display: none;
     }
+  }
+
+  @media(max-width: 786px) {
+    #mobileNavbar {
+      display: block;
+    }
+    .header-title {
+        display: none;
+    }
+    #asuLogo {
+         content:url("../images/asu.png");
+         max-height: 65px;
+         margin-top:-20px;
+         margin-left:0
+    }
+    #xrNavMobile { 
+      display: inline-block;
+    }
+    #xrNav { 
+      display: none;
+    }
+
+    #homeLinkMobile {
+      text-align: left;
+      padding: 10px 0px 10px 0;
+    }
+
+    .header-2-container {
+      background-color: #505558;
+    }
+  }
+  @media(min-width: 787px) {
+    #mobileNavbar {
+      display: none;
+    }
+    #xrNavMobile { 
+      display: none;
+    }
+    #xrNav { 
+      display: inline-block;
+    }
+
   }
 /* nav items that don't dropdown*/
 .nav-link-item {
