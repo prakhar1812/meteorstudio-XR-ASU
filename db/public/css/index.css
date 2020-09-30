@@ -326,12 +326,13 @@ h5 {
         height: 400px;
     }
     .featured-exp-text {
-        width: 75%;
+        width: 80%;
+        height: 33%;
         left: 0%;
         margin-left: 20px;
     }
     .featured-exp-title {
-        font-size: 150%;
+        font-size: 145%;
     }
     .featured-desc {
         width: 98%;
