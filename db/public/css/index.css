@@ -1,0 +1,339 @@
+body {
+    overflow-x: hidden;
+}
+
+.img-hover-zoom {
+    height: 200px;
+    /* [1.1] Set it as per your need */
+    overflow: hidden;
+    /* [1.2] Hide the overflowing of child elements */
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+/* [2] Transition property for smooth transformation of images */
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+
+/* [3] Finally, transforming the image when container gets hovered */
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+.top-left {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+.bottom_fill {
+    background-color: #FFC627;
+    height: 7px;
+    width: 100%;
+    position: absolute;
+    bottom: -0.8px;
+    left: 0;
+}
+
+.background-white {
+    background: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-white {
+    color: white
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.featuredCardImage {
+    height: 350px;
+}
+
+.featured-exp-text {
+    width: 45%;
+    height: 30%;
+    border-radius: 10px;
+    padding: 20px;
+    border-bottom: 7px solid #FFC627;
+    line-height: 1.5;
+}
+
+.featured-exp-title {
+    font-weight: bold;
+    font-size: 180%;
+    line-height: 1;
+}
+
+.itemtype {
+    background: #FF7F32;
+    max-width: 150px;
+    padding: 5px;
+    color: white;
+    font-size: 70%;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    margin-top: -4%;
+    margin-left: 5%;
+}
+
+.featured-desc {
+    color: white;
+    font-size: 115%;
+    width: 35%;
+    position: absolute;
+    top: 46%;
+    left: 2%;
+}
+
+.featured-itemtype {
+    background: #FF7F32;
+    max-width: 150px;
+    padding: 5px;
+    color: white;
+    font-size: 70%;
+    text-align: center;
+    vertical-align: center;
+    position: absolute;
+    top: -10px;
+    left: 5%
+}
+
+.test {
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 171px;
+    opacity: 1;
+}
+
+.searchbar {
+    width: 529px;
+    height: 48px;
+    margin-left: 485px;
+    margin-right: 485px;
+    text-align: center;
+}
+
+.bar {
+    top: 109px;
+    left: 0px;
+    width: 1280px;
+    height: 60px;
+    background: #353535 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sidebar {
+    top: 1310px;
+    left: 78px;
+    width: 220px;
+    height: 363px;
+    opacity: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    padding: 1px;
+    height: 800px;
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+}
+
+.container ul {
+    text-decoration: none;
+}
+
+.gradient-black {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Cards */
+
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-featured {
+    -webkit-line-clamp: 4;
+}
+
+.nextBtn {
+    color: #2A2A2A;
+    font-size: 125%;
+}
+
+.nextBtn:hover {
+    color: #707070;
+    cursor: hand;
+}
+
+.experienceCard {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.experienceCard:active,
+.experienceCard:focus {
+    border: none;
+    outline: none;
+}
+
+.card {
+    height: 350px;
+}
+
+
+/* ASU XR  Header */
+
+#asuxr_header {
+    background-color: #353535;
+    min-height: 58px;
+    height: 58px;
+}
+
+.asuxr_header_link {
+    text-decoration: none;
+    text-align: center;
+    vertical-align: center;
+}
+
+.asuxr_header_link a {
+    text-decoration: none;
+    padding-right: 50px;
+    text-align: left;
+    vertical-align: center;
+}
+
+.asuxr_header_link a:link {
+    color: white;
+}
+
+.asuxr_header_link a:active {
+    color: #FFC627;
+}
+
+.asuxr_header_link a:visited {
+    color: white;
+}
+
+
+/* header ends */
+
+#intro {
+    margin-top: 70px
+}
+
+.capsule {
+    /* min-height: 550px; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    border: 1px solid lightgray;
+    border-radius: 250px;
+    background-image: url('../getStart1.png');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.capsuleText {
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+}
+
+.sectionTitle {
+    padding: 0;
+    color: #2A2A2A;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media(max-width: 786px) {
+    .capsuleText {
+        font-size: 14px;
+        padding: 20px;
+    }
+    .featuredCardImage {
+        height: 400px;
+    }
+    .featured-exp-text {
+        width: 80%;
+        left: 0%;
+        margin-left: 20px;
+    }
+    .featured-desc {
+        width: 90%;
+        position: absolute;
+        top: 65%;
+        left: 0%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .gradient-black {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1.0) 0%, rgba(0, 0, 0, 0) 80%);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
