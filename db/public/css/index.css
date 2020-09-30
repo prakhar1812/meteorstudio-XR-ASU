@@ -112,7 +112,8 @@ h5 {
     vertical-align: center;
     position: absolute;
     top: -10px;
-    left: 5%
+    left: 5%;
+    font-weight: bold;
 }
 
 .test {
