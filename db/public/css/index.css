@@ -318,6 +318,9 @@ h5 {
         left: 0%;
         margin-left: 20px;
     }
+    .featured-exp-title {
+        font-size: 140%;
+    }
     .featured-desc {
         width: 90%;
         position: absolute;
