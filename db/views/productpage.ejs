@@ -115,6 +115,12 @@
             font-weight: bold;
             font-size: 18px;
         }
+		
+		.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #fff;
+    border-color: #fff; /*set the color you want here*/
+}
         
         .similarSubtitle {
             font-size: 12px;
@@ -235,6 +241,12 @@
             border-width: 1px;
             color: #E5E5E5;
         }
+		
+		.video-btn {
+			 background-color: Transparent;
+			 border: none;
+		
+		}
         
         .three-sixtyVid {
             background-color: #FF7F32;
@@ -688,14 +700,7 @@
     <!------ END OF HEADERS ----->
 
     <div id="hero">
-        <!-- <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-target="#myModal" -->
-        <!-- id="modalvid"> -->
-        <!-- <div class="overlay"></div>	 -->
-        <!-- <video class="video-btn" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"
-                id="videoheader">
-                <source src="" type="video/mp4">
-            </video> -->
-        <!-- </button> -->
+
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
@@ -776,8 +781,6 @@
                     </div>
                 </div>
 
-                <hr class="mt-4">
-
                 <!-- <h1 class="sectionTitle mt-4">Categories:</h1>
                 <div style="padding-top: 0.5em;">
                     <span> <button type="button" class="categoriesButton" style="font-weight: normal;"><img
@@ -787,11 +790,20 @@
                                 style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png"
                                 alt="share" id="category2" />History</button></span>
                 </div> -->
+		<button type="button" class="btn btn-primary video-btn col-md-12 col-md-12" data-toggle="modal"
+	data-src="" data-target="#myModal" id="modalvid" hidden>
+		<!-- <img src="https://meteor.ame.asu.edu/xr@asu/covidcampus.png" -->
+        <video style="border-radius: 20px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
+            <source src="" type="video/mp4" hidden>
+        </video>
+		</button>
+		<hr class="mt-4">
 
                 <div class="mt-4">
                     <div class="sectionTitle">Credits</div>
                     <div id="creditsSection"></div>
                 </div>
+
 
 
                 <!-- SCREENSHOTS -->
@@ -1244,10 +1256,13 @@
             document.title = data[0].name + " | XR@ASU | Arizona State University"
 
             // Show video if it exists
-            // if (data[0].video != "") {
-            //     document.getElementById("videoheader").src = data[0].video;
-            //     document.getElementById("modalvid").setAttribute("data-src",data[0].video);
-            // } 
+             if (data[0].video != "") {	
+				document.getElementById("videoheader").hidden = false;
+				document.getElementById("modalvid").hidden = false;
+				
+				document.getElementById("videoheader").src = data[0].video;
+				document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+             } 
 
             // Set hero image
             var hero = data[0].thumbnail.substr(0, data[0].thumbnail.indexOf('_small')) + ".png";
