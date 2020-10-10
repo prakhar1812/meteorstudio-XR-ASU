@@ -790,13 +790,11 @@
                                 style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png"
                                 alt="share" id="category2" />History</button></span>
                 </div> -->
-		<button type="button" class="btn btn-primary video-btn col-md-12 col-md-12" data-toggle="modal"
-	data-src="" data-target="#myModal" id="modalvid" hidden>
+				
 		<!-- <img src="https://meteor.ame.asu.edu/xr@asu/covidcampus.png" -->
-        <video style="border-radius: 20px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="videoheader">
-            <source src="" type="video/mp4" hidden>
+        <video style="border-radius: 0px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline"  loop="loop" id="videoheader" controls autoplay>
+            <source src="" type="video/mp4" hidden >
         </video>
-		</button>
 		<hr class="mt-4">
 
                 <div class="mt-4">
@@ -1258,10 +1256,10 @@
             // Show video if it exists
              if (data[0].video != "") {	
 				document.getElementById("videoheader").hidden = false;
-				document.getElementById("modalvid").hidden = false;
+				//document.getElementById("modalvid").hidden = false;
 				
 				document.getElementById("videoheader").src = data[0].video;
-				document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+				//document.getElementById("modalvid").setAttribute("data-src",data[0].video);
              } 
 
             // Set hero image
