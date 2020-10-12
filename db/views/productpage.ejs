@@ -792,10 +792,11 @@
                 </div> -->
 				
 		<!-- <img src="https://meteor.ame.asu.edu/xr@asu/covidcampus.png" -->
-		
-        <video id = "videoheader" style="border-radius: 0px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline"  loop="loop" id="videoheader" controls>
+		<div id="vid" hidden>
+        <video style="border-radius: 0px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline"  loop="loop" id="videoheader" controls>
             <source src="" type="video/mp4" hidden >
         </video>
+		</div>
 		<hr class="mt-4">
 
                 <div class="mt-4">
@@ -1257,6 +1258,7 @@
             // Show video if it exists
              if (data[0].video != "") {	
 				document.getElementById("videoheader").hidden = false;
+				document.getElementById("vid").hidden = false;
 				//document.getElementById("modalvid").hidden = false;
 				
 				document.getElementById("videoheader").src = data[0].video;
