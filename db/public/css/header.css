@@ -189,6 +189,9 @@
     .header-2-container {
         background-color: #505558;
     }
+    .header-nav {
+        display: none;
+    }
     .navbar-toggler {
         float: right
     }
