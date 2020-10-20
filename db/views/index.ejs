@@ -662,27 +662,25 @@
             loadFile("./showDatasetTable", function(result) {
                 // show a table of the user's datasets
                 // sort alphabetically Z-A
-                var data = JSON.parse(result).sort(function(a, b) {
-                    var textA = a.name.toUpperCase();
-                    var textB = b.name.toUpperCase();
-                    return (textA > textB) ? -1 : (textA > textB) ? 1 : 0;
-                });
 					data = JSON.parse(result).sort(function(a, b) {
-					        // true values first -
-							//(in english) if x and y are strictly equal return 0, otherwise if x is true return -1 if not return 1
+
 							var textA = a.name.toUpperCase();
 							var textB = b.name.toUpperCase();
 							var expA = a.featured;
-							//alert(a.featured);
 							var expB = b.featured;
-							//alert(b.featured);
+							
+							//In our case, are both experiences not featured?
 							if(expA == expB)
 							{
+								//If so sort alphabetically
 								if(textA<textB)
 								{
 									return -1;
 								}
 							}
+							
+							// true values first -
+							//(in english) if x and y are strictly equal return 0, otherwise if x is true return -1 if not return 1
 							return (expA === expB)? 0 : a? -1 : 1;
 							
 							// false values first
