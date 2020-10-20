@@ -667,10 +667,32 @@
                     var textB = b.name.toUpperCase();
                     return (textA > textB) ? -1 : (textA > textB) ? 1 : 0;
                 });
+					data = JSON.parse(result).sort(function(a, b) {
+					        // true values first -
+							//(in english) if x and y are strictly equal return 0, otherwise if x is true return -1 if not return 1
+							var textA = a.name.toUpperCase();
+							var textB = b.name.toUpperCase();
+							var expA = a.featured;
+							//alert(a.featured);
+							var expB = b.featured;
+							//alert(b.featured);
+							if(expA == expB)
+							{
+								if(textA<textB)
+								{
+									return -1;
+								}
+							}
+							return (expA === expB)? 0 : a? -1 : 1;
+							
+							// false values first
+							// return (x === y)? 0 : x? 1 : -1;
+				});
                 var totalItemsCount = data.length;
                 var numberOfItemsPerPage = 7;
                 var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
                 for (var i = 0; i < numberOfItemsPerPage; i++) {
+				
                     var name = data[i].name;
                     var desc = data[i].description;
                     if (i > 0) {
