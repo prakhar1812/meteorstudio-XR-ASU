@@ -268,3 +268,8 @@ app.get("/mimic", function(req, res) {
 app.get("/virtualtutor", function(req, res) {
     res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
 });
+
+app.get("/jmars", function(req, res) {
+    res.render('productpage', { globalproduct: "5f8de58ea6774267bc42c887"});
+});
+
