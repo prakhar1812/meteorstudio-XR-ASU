@@ -31,7 +31,7 @@ var storage = multer.diskStorage({
 });
 // for spreadsheet upload
 const {GoogleSpreadsheet} = require('google-spreadsheet')
-const spreadsheetCreds = fs.readFileSync('/etc/spreadsheet-creds.json', 'utf8');
+const spreadsheetCreds = require('/etc/spreadsheet-creds.json', 'utf8');
 
 var loggedUser;
 var loggedUser2;
