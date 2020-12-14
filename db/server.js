@@ -254,10 +254,7 @@ app.get("/findDatasetTable", function(req, res) {
     const query = req.query.search;
     var query2 = "";
     query2 = String(query);
-
     console.log(query);
-
-
     MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("xrasu");
@@ -279,10 +276,6 @@ app.get("/findDatasetTable", function(req, res) {
             db.close();
         });
     });
-
-
-
-
 });
 */
 app.get("/getProduct", function(req, res) {
