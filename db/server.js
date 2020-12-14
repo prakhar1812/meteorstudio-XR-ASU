@@ -10,7 +10,7 @@ const http = require('http');
 const https = require('https');
 
 
-app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+app.use(express.static(__dirname, { dotfiles: 'allow' }));
 //nodemailer
 //const nodemailer = require('nodemailer');
 
@@ -30,8 +30,8 @@ var storage = multer.diskStorage({
     }
 });
 // for spreadsheet upload
-const {GoogleSpreadsheet} = require('google-spreadsheet')
-const spreadsheetCreds = fs.readFileSync('/etc/spreadsheet-creds.json', 'utf8');
+const { GoogleSpreadsheet } = require('google-spreadsheet')
+const spreadsheetCreds = require('/etc/spreadsheet-creds.json', 'utf8');
 
 var loggedUser;
 var loggedUser2;
@@ -95,26 +95,26 @@ const certificate = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/cert.pem',
 const ca = fs.readFileSync('/etc/letsencrypt/live/xr.asu.edu/chain.pem', 'utf8');
 
 const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
+    key: privateKey,
+    cert: certificate,
+    ca: ca
 };
 
-app.use (function (req, res, next) {
-        if (req.secure) {
-                // request was via https, so do no special handling
-                next();
-        } else {
-                // request was via http, so redirect to https
-                res.redirect('https://' + req.headers.host + req.url);
-        }
+app.use(function(req, res, next) {
+    if (req.secure) {
+        // request was via https, so do no special handling
+        next();
+    } else {
+        // request was via http, so redirect to https
+        res.redirect('https://' + req.headers.host + req.url);
+    }
 });
 
 
 
 app.use(express.static(__dirname + '/public', {
     setHeaders: function(res, path) {
-        if(path.endsWith(".unityweb")){
+        if (path.endsWith(".unityweb")) {
             res.set("Content-Encoding", "gzip");
         }
     }
@@ -135,7 +135,7 @@ http.createServer(function (req, res) {
 var httpsServer = https.createServer(credentials, app);
 //
 // httpServer.listen(80);
- httpsServer.listen(443);
+httpsServer.listen(443);
 
 
 
@@ -154,7 +154,7 @@ mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
     }
 
     // Start the application after the database connection is ready.
-//     app.listen(port);
+    //     app.listen(port);
     console.log("Server listening at https://" + hostname + ":" + port);
 });
 //
@@ -176,12 +176,12 @@ const intlDf = new Intl.DateTimeFormat('en-us', { hour: 'numeric', minute: 'nume
 
 app.get('/', function(req, res) {
     //console.log(cookie);
-        res.render('index', {
-            // error: loggedUser,
-            // error2: loggedUser2,
-            // error3: loggedUser3
-        });
- 
+    res.render('index', {
+        // error: loggedUser,
+        // error2: loggedUser2,
+        // error3: loggedUser3
+    });
+
 });
 
 
@@ -249,7 +249,7 @@ app.get("/showDatasetTable", function(req, res) {
 /**
  * FindData
  */
- /*
+/*
 app.get("/findDatasetTable", function(req, res) {
     const query = req.query.search;
     var query2 = "";
@@ -290,7 +290,7 @@ app.get("/getProduct", function(req, res) {
     var query2 = "";
     query2 = String(query);
 
- //   console.log(query);
+    //   console.log(query);
 
     MongoClient.connect(mongoUri, function(err, db) {
         if (err) throw err;
@@ -303,7 +303,7 @@ app.get("/getProduct", function(req, res) {
         console.log(myquery);
         //var myquery = { name: "Spacious and well located apartment" };
         //  var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1,creationDate:1,createdBy:1,creatorURL:1,image: 1, url: 1, urls:1} }).toArray(function(err, result) {
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1, creationDate: 1, createdBy: 1, creatorURL: 1, image: 1, url: 1, urls: 1 } }).toArray(function(err, result) {
             if (err) throw err;
             console.log(result[0]);
             var namesList = [];
@@ -320,44 +320,48 @@ app.get("/getProduct", function(req, res) {
 
 app.get("/productpage", function(req, res) {
 
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 
 //webpage routes
 
 app.get("/covidcampus", function(req, res) {
-    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6"});
+    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6" });
 });
 
 app.get("/career", function(req, res) {
-    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6"});
+    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6" });
 });
 
 app.get("/campus", function(req, res) {
-    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7"});
+    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7" });
 });
 
 app.get("/scav", function(req, res) {
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 app.get("/scavenger", function(req, res) {
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 
 app.get("/mimic", function(req, res) {
-    res.render('productpage', { globalproduct: "5f387906d48d43237444a814"});
+    res.render('productpage', { globalproduct: "5f387906d48d43237444a814" });
 });
 
 app.get("/virtualtutor", function(req, res) {
-    res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
+    res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d" });
 });
 
 app.get("/jmars", function(req, res) {
-    res.render('productpage', { globalproduct: "5f8de58ea6774267bc42c887"});
+    res.render('productpage', { globalproduct: "5f8de58ea6774267bc42c887" });
+});
+
+app.get("/commencement", function(req, res) {
+    res.render('productpage', { globalproduct: "5fd6e9bf15c5b3c2d46aaff1" });
 });
 
 // Google spreadsheet function for COVID CAMPUS experience
-app.post("/append-data", async function(req, res){
+app.post("/append-data", async function(req, res) {
     // Identifying which document we'll be accessing/reading from
     const doc = new GoogleSpreadsheet(req.body.sheetID);
 
@@ -371,10 +375,10 @@ app.post("/append-data", async function(req, res){
     console.log(doc.title);
     const sheet = doc.sheetsByIndex[req.body.sheetNumber]; // first sheet
     const rows = await sheet.getRows()
-        .catch (function(err) {
+        .catch(function(err) {
             console.log("GET ROWS ERR: " + err);
         })
-    //console.log(rows);
+        //console.log(rows);
 
     console.log(sheet.headerValues);
 
@@ -387,7 +391,7 @@ app.post("/append-data", async function(req, res){
             .catch(function(err) {
                 console.log(err);
             })
-        
+
         i++
 
         // ensure no malicious shennanigans
@@ -399,5 +403,5 @@ app.post("/append-data", async function(req, res){
     // Getting cells back from tab #2 of the file
     console.log("finished")
     res.sendStatus(200);
-    
-  });
+
+});

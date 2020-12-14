@@ -75,7 +75,7 @@ app.use (function (req, res, next) {
 
 app.use(express.static(__dirname + '/public', {
     setHeaders: function(res, path) {
-        if(path.endsWith(".unityweb")){
+        if (path.endsWith(".unityweb")) {
             res.set("Content-Encoding", "gzip");
         }
     }
@@ -96,7 +96,7 @@ http.createServer(function (req, res) {
 //var httpsServer = https.createServer(credentials, app);
 //
 // httpServer.listen(80);
- //httpsServer.listen(443);
+//httpsServer.listen(443);
 
 
 
@@ -220,7 +220,7 @@ app.get("/getProduct", function(req, res) {
         console.log(myquery);
         //var myquery = { name: "Spacious and well located apartment" };
         //  var newvalues = { $set: {email: newEmail } };
-        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1,creationDate:1,createdBy:1,creatorURL:1,image: 1, url: 1, urls:1} }).toArray(function(err, result) {
+        dbo.collection("products").find(myquery, { projection: { _id: 1, name: 1, experienceType: 1, categories: 1, compatibleDevices: 1, description: 1, video: 1, thumbnail: 1, minimumRequirements: 1, credits: 1, screenshots: 1, releaseDate: 1, creationDate: 1, createdBy: 1, creatorURL: 1, image: 1, url: 1, urls: 1 } }).toArray(function(err, result) {
             if (err) throw err;
             console.log(result[0]);
             var namesList = [];
@@ -237,39 +237,42 @@ app.get("/getProduct", function(req, res) {
 
 app.get("/productpage", function(req, res) {
 
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 
 //webpage routes
 
 app.get("/covidcampus", function(req, res) {
-    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6"});
+    res.render('productpage', { globalproduct: "5f37365a36d55f83a9c770a6" });
 });
 
 app.get("/career", function(req, res) {
-    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6"});
+    res.render('productpage', { globalproduct: "5f30f3147d7f876a9cdee2f6" });
 });
 
 app.get("/campus", function(req, res) {
-    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7"});
+    res.render('productpage', { globalproduct: "5f37383e36d55f83a9c770a7" });
 });
 
 app.get("/scav", function(req, res) {
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 app.get("/scavenger", function(req, res) {
-    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1"});
+    res.render('productpage', { globalproduct: "5f2e1b687ca85a5fef49f0c1" });
 });
 
 app.get("/mimic", function(req, res) {
-    res.render('productpage', { globalproduct: "5f387906d48d43237444a814"});
+    res.render('productpage', { globalproduct: "5f387906d48d43237444a814" });
 });
 
 app.get("/virtualtutor", function(req, res) {
-    res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d"});
+    res.render('productpage', { globalproduct: "5f3a0149f4e42a193bdbb45d" });
 });
 
 app.get("/jmars", function(req, res) {
-    res.render('productpage', { globalproduct: "5f8de58ea6774267bc42c887"});
+    res.render('productpage', { globalproduct: "5f8de58ea6774267bc42c887" });
 });
 
+app.get("/commencement", function(req, res) {
+    res.render('productpage', { globalproduct: "5fd6e9bf15c5b3c2d46aaff1" });
+});

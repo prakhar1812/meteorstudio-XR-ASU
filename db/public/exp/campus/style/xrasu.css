@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto/Roboto-Bold.ttf);
+    font-weight: bold;
+}
+
+body {
+    background: black;
+    object-fit: cover;
+    background-size: 105%;
+    background-repeat: no-repeat;
+    background-position: 0 120px;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.webgl-content {
+    top: 700px;
+}
+
+header {
+    height: 77px;
+    background-color: #F8F8F8;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-content {
+    position: relative;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.asulogo {
+    position: relative;
+    height: 50%;
+    width: auto;
+}
+
+.name {
+    display: inline-block;
+    border-left: 1px solid #707070;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 150%;
+    margin-left: 10px;
+}
+
+.back-arrow {
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.back {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#loader {
+    background: #FFC627;
+}
+
+#game {
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    position: fixed;
+    height: calc(100% - 77px);
+    top: 77px;
+    display: none;
+}
+
+#gameContainer {
+    width: 100%;
+    height: 100%;
+}
+
+[data-unity-loaded='true'] #game {
+    display: inline-block;
+}
+
+
+/* Controls */
+
+.controls {
+    width: 960px;
+}
+
+.controls-heading {
+    font-weight: bold;
+    font-size: 200%;
+    margin: 50px 0 10px 0;
+}
+
+.controls-grid {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid #FFC627;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 70px
+}
+
+.control-item {
+    height: 120px;
+    width: auto;
+    border-radius: 15px;
+    border: none;
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: 5px;
+}
+
+.control-label {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 125%;
+    color: #484848
+}
+
+.control-item img {
+    height: 75%;
+    width: auto;
+    display: block;
+    margin: auto;
+}

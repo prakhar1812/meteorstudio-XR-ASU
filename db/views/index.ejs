@@ -20,18 +20,24 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');
     </script>
     <!-- End Google Tag Manager -->
-	
-	<!-- Hotjar Tracking Code for http://xr.asu.edu -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2064365,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script> 
+
+    <!-- Hotjar Tracking Code for http://xr.asu.edu -->
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 2064365,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
 
 
 
@@ -503,8 +509,8 @@
                     </div>
                 </button>
             </div>
-			
-			            <!-- Experience card-->
+
+            <!-- Experience card-->
             <div class="col-sm-2 col-md-4">
                 <button id="experienceCard6" class="experienceCard">
                     <div class="card mb-4 shadow-sm">
@@ -520,6 +526,31 @@
                                 <div class="col-10">
                                     <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
                                         id="itemdesc6"></div>
+                                </div>
+                            </div>
+                            <div class="bottom_fill">
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Experience card-->
+            <div class="col-sm-2 col-md-4">
+                <button id="experienceCard7" class="experienceCard">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="img-hover-zoom">
+                            <img class="bd-placeholder-img card-img-top" id="item-image7" width="100%" height="225"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        </div>
+                        <h5 class="itemtype" id="itemtype7"></h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="itemname7"></h5>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-subtitle mb-2 text-muted ellipsis" style="font-size:70%"
+                                        id="itemdesc7"></div>
                                 </div>
                             </div>
                             <div class="bottom_fill">
@@ -675,35 +706,32 @@
             loadFile("./showDatasetTable", function(result) {
                 // show a table of the user's datasets
                 // sort alphabetically Z-A
-					data = JSON.parse(result).sort(function(a, b) {
+                data = JSON.parse(result).sort(function(a, b) {
 
-							var textA = a.name.toUpperCase();
-							var textB = b.name.toUpperCase();
-							var expA = a.featured;
-							var expB = b.featured;
-							
-							//In our case, are both experiences not featured?
-							if(expA == expB)
-							{
-								//If so sort alphabetically
-								if(textA<textB)
-								{
-									return -1;
-								}
-							}
-							
-							// true values first -
-							//(in english) if x and y are strictly equal return 0, otherwise if x is true return -1 if not return 1
-							return (expA === expB)? 0 : a? -1 : 1;
-							
-							// false values first
-							// return (x === y)? 0 : x? 1 : -1;
-				});
+                    var textA = a.name.toUpperCase();
+                    var textB = b.name.toUpperCase();
+                    var expA = a.featured;
+                    var expB = b.featured;
+
+                    //In our case, are both experiences not featured?
+                    if (expA == expB) {
+                        //If so sort alphabetically
+                        if (textA < textB) {
+                            return -1;
+                        }
+                    }
+
+                    // true values first -
+                    //(in english) if x and y are strictly equal return 0, otherwise if x is true return -1 if not return 1
+                    return (expA === expB) ? 0 : a ? -1 : 1;
+
+                    // false values first
+                    // return (x === y)? 0 : x? 1 : -1;
+                });
                 var totalItemsCount = data.length;
-                var numberOfItemsPerPage = 7;
-                var numberOfPages = Math.floor((totalItemsCount + numberOfItemsPerPage - 1) / numberOfItemsPerPage);
+                var numberOfItemsPerPage = 8;
                 for (var i = 0; i < numberOfItemsPerPage; i++) {
-				
+
                     var name = data[i].name;
                     var desc = data[i].description;
                     if (i > 0) {

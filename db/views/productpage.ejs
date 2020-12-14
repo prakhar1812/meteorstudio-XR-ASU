@@ -29,18 +29,24 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NBVHVWJ');
     </script>
     <!-- End Google Tag Manager -->
-	
-	<!-- Hotjar Tracking Code for http://xr.asu.edu -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2064365,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script> 
+
+    <!-- Hotjar Tracking Code for http://xr.asu.edu -->
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 2064365,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
 
 
     <link rel="icon" href="favicon.png">
@@ -128,12 +134,17 @@
             font-weight: bold;
             font-size: 18px;
         }
-		
-		.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #fff;
-    border-color: #fff; /*set the color you want here*/
-}
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open>.dropdown-toggle.btn-primary {
+            color: #fff;
+            background-color: #fff;
+            border-color: #fff;
+            /*set the color you want here*/
+        }
         
         .similarSubtitle {
             font-size: 12px;
@@ -254,12 +265,11 @@
             border-width: 1px;
             color: #E5E5E5;
         }
-		
-		.video-btn {
-			 background-color: Transparent;
-			 border: none;
-		
-		}
+        
+        .video-btn {
+            background-color: Transparent;
+            border: none;
+        }
         
         .three-sixtyVid {
             background-color: #FF7F32;
@@ -803,14 +813,14 @@
                                 style="width: 20px;margin: 0 .5em 0.25em 0; color: #2A2A2A" src="categories.png"
                                 alt="share" id="category2" />History</button></span>
                 </div> -->
-				
-		<!-- <img src="https://meteor.ame.asu.edu/xr@asu/covidcampus.png" -->
-		<div id="vid" hidden>
-        <video style="border-radius: 0px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline"  loop="loop" id="videoheader" controls>
+
+                <!-- <img src="https://meteor.ame.asu.edu/xr@asu/covidcampus.png" -->
+                <div id="vid" hidden>
+                    <video style="border-radius: 0px;" class="video-btn col-md-12 col-md-12" playsinline="playsinline" loop="loop" id="videoheader" controls>
             <source src="" type="video/mp4" hidden >
         </video>
-		</div>
-		<hr class="mt-4">
+                </div>
+                <hr class="mt-4">
 
                 <div class="mt-4">
                     <div class="sectionTitle">Credits</div>
@@ -1269,14 +1279,14 @@
             document.title = data[0].name + " | XR@ASU | Arizona State University"
 
             // Show video if it exists
-             if (data[0].video != "") {	
-				document.getElementById("videoheader").hidden = false;
-				document.getElementById("vid").hidden = false;
-				//document.getElementById("modalvid").hidden = false;
-				
-				document.getElementById("videoheader").src = data[0].video;
-				//document.getElementById("modalvid").setAttribute("data-src",data[0].video);
-             } 
+            if (data[0].video != "") {
+                document.getElementById("videoheader").hidden = false;
+                document.getElementById("vid").hidden = false;
+                //document.getElementById("modalvid").hidden = false;
+
+                document.getElementById("videoheader").src = data[0].video;
+                //document.getElementById("modalvid").setAttribute("data-src",data[0].video);
+            }
 
             // Set hero image
             var hero = data[0].thumbnail.substr(0, data[0].thumbnail.indexOf('_small')) + ".png";
@@ -1293,7 +1303,8 @@
                         button.onclick = launchExperience.bind(this, [data[0].urls[i].url]);
                         button.classList.add('sectionTitle', 'playNowButton');
                     } else {
-                        button.innerText = "Coming soon (" + data[0].urls[i].platform + ")";
+                        button.innerHTML = "<small>" + data[0].urls[i].platform + ": Coming soon</small>";
+                        button.classList.add('sectionTitle', 'playNowButton');
                         button.style.backgroundColor = "#cdcdcd";
                         button.style.cursor = "default";
                     }
