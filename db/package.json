@@ -26,7 +26,7 @@
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "firebase": "^6.6.2",
-    "firebase-admin": "^8.7.0",
+    "firebase-admin": "^11.4.1",
     "geobatch": "^1.4.3",
     "google-spreadsheet": "^3.0.13",
     "intl": "^1.2.5",
